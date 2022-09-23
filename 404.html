@@ -29,6 +29,14 @@
     .text, .command {
       color: #C6C8C7;
     }
+    
+    .socials-url a {
+      color: #C6C8C7;
+    }
+    
+    .socials-url a:hover {
+      color: #5F5F5F;
+    }
   </style>
 </head>
 <body>
@@ -36,7 +44,9 @@
   <code class="host">u_a334</code><code class="at">@</code><code class="host">localhost</code><br />
   <code class="tilda">~</code><code class="text"> $ </code><code class="command" id="typing"></code></b></p>
   <center><p><b><pre><code class="text" id="command-output-code"></code></pre></b></p></center><br />
-  <center><p><b><pre><code class="text" id="command-output-text"></code></pre></b></p></center>
+  <center><p><b><pre><code class="text" id="command-output-text"></code></pre></b></p></center><br /><br />
+  <center><p><b><code class="socials-url" id="socials-url"></code></b></p></center>
+  <
   <script>
     //time
     const timeElement = document.getElementById('time')
@@ -67,6 +77,7 @@
       if (i >= text.length) {
         const errorCodeElement = document.getElementById('command-output-code')
         const errorTextElement = document.getElementById('command-output-text')
+        const socialPageURLElement = document.getElementById('socials-url')
         const errorCodeASCIIArray = [
           ' /$$   /$$  /$$$$$$  /$$   /$$',
           '| $$  | $$ /$$$_  $$| $$  | $$',
@@ -103,6 +114,7 @@
         setTimeout(() => {
           errorTextElement.innerText = errorTextASCIIArrayNot.join('\n') + '\n' + errorTextASCIIArrayFound.join('\n')
           
+          socialPageURLElement.innerHTML = '<a href="https://www.stefdp.tk">Go to Socials page!</a>'
         }, 500)
       }
     }, 100)
