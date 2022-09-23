@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #1E1F21;
+    }
+    
+    .square_bracket {
+      color: #4A4B09;
+    }
+    
+    .time {
+      color: #EFC677;
+    }
+    
+    .host {
+      color: #AD0101;
+    }
+    
+    .tilda {
+      color: #045803;
+    }
+    
+    .at {
+      color: #055E80;
+    }
+    
+    .text, .command {
+      color: #C6C8C7;
+    }
+  </style>
+</head>
+<body>
+  <p><b><code class="square_bracket">[</code><code class="time" id="time">abc</code><code class="square_bracket">]</code><br />
+  <code class="host">u_a334</code><code class="at">@</code><code class="host">localhost</code><br />
+  <code class="tilda">~</code><code class="text"> $ </code><code class="command" id="typing"></code></b></p>
+  <center><p><b><pre><code class="text" id="command-output-code"></code></pre></b></p></center><br />
+  <center><p><b><pre><code class="text" id="command-output-text"></code></pre></b></p></center>
+  <script>
+    //time
+    const timeElement = document.getElementById('time')
+    let time = new Date().toTimeString().split(' ')[0]
+    timeElement.innerText = time
+    setInterval(() => {
+      time = new Date().toTimeString().split(' ')[0]
+      timeElement.innerText = time
+    }, 1000)
+    
+    //typing animation
+    var i = 0;
+    var text = 'bash /system/bin/404.sh';
+    const speed = 80;
+    
+    function typing() {
+      if (i < text.length) {
+        document.getElementById('typing').innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typing, speed);
+      }
+    }
+    
+    typing()
+    
+    //after typing animation
+    setInterval(() => {
+      if (i >= text.length) {
+        const errorCodeElement = document.getElementById('command-output-code')
+        const errorTextElement = document.getElementById('command-output-text')
+        const errorCodeASCIIArray = [
+          ' /$$   /$$  /$$$$$$  /$$   /$$',
+          '| $$  | $$ /$$$_  $$| $$  | $$',
+          '| $$  | $$| $$$$\ $$| $$  | $$',
+          '| $$$$$$$$| $$ $$ $$| $$$$$$$$',
+          '|_____  $$| $$\ $$$$|_____  $$',
+          '      | $$| $$ \ $$$      | $$',
+          '      | $$|  $$$$$$/      | $$',
+          '      |__/ \______/       |__/'
+        ]
+        const errorTextASCIIArrayNot = [
+          ' /$$   /$$             /$$    ',
+          '| $$$ | $$            | $$    ',
+          '| $$$$| $$  /$$$$$$  /$$$$$$  ',
+          '| $$ $$ $$ /$$__  $$|_  $$_/  ',
+          '| $$  $$$$| $$  \ $$  | $$    ',
+          '| $$\  $$$| $$  | $$  | $$ /$$',
+          '| $$ \  $$|  $$$$$$/  |  $$$$/',
+          '|__/  \__/ \______/    \___/  '
+        ]
+        const errorTextASCIIArrayFound = [
+          ' /$$$$$$$$                                  /$$',
+          '| $$_____/                                 | $$',
+          '| $$     /$$$$$$  /$$   /$$ /$$$$$$$   /$$$$$$$',
+          '| $$$$$ /$$__  $$| $$  | $$| $$__  $$ /$$__  $$',
+          '| $$__/| $$  \ $$| $$  | $$| $$  \ $$| $$  | $$',
+          '| $$   | $$  | $$| $$  | $$| $$  | $$| $$  | $$',
+          '| $$   |  $$$$$$/|  $$$$$$/| $$  | $$|  $$$$$$$',
+          '|__/    \______/  \______/ |__/  |__/ \_______/'
+        ]
+        
+        errorCodeElement.innerText = errorCodeASCIIArray.join('\n')
+        
+        setTimeout(() => {
+          errorTextElement.innerText = errorTextASCIIArrayNot.join('\n') + '\n' + errorTextASCIIArrayFound.join('\n')
+          
+        }, 500)
+      }
+    }, 100)
+  </script>
+</body>
