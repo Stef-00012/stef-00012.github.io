@@ -30,6 +30,16 @@
       color: #C6C8C7;
     }
     
+    .hidden {
+      text-decoration: none;
+      color: #C6C8C7;
+    }
+    
+    .hidden-host {
+      text-decoration: none;
+      color: #AD0101;
+    }
+    
     .socials-url a {
       color: #C6C8C7;
     }
@@ -37,16 +47,19 @@
     .socials-url a:hover {
       color: #5F5F5F;
     }
+    
+    .bg-hidden, .bg-hidden a {
+      color: #1C1D1E;
+    }
   </style>
 </head>
 <body>
   <p><b><code class="square_bracket">[</code><code class="time" id="time">abc</code><code class="square_bracket">]</code><br />
-  <code class="host">u_a334</code><code class="at">@</code><code class="host">localhost</code><br />
+  <code class="host">u_a334</code><code class="at">@</code><code class="host"><a class="hidden-host" href="https://instagram.com/lejla_ly">l</a>oca<a class="hidden-host" href="https://instagram.com/lejla_ly">l</a>host</a></code><br />
   <code class="tilda">~</code><code class="text"> $ </code><code class="command" id="typing"></code></b></p>
   <center><p><b><pre><code class="text" id="command-output-code"></code></pre></b></p></center><br />
   <center><p><b><pre><code class="text" id="command-output-text"></code></pre></b></p></center><br /><br />
   <center><p><b><code class="socials-url" id="socials-url"></code></b></p></center>
-  <
   <script>
     //time
     const timeElement = document.getElementById('time')
@@ -109,14 +122,16 @@
           '|__/    \______/  \______/ |__/  |__/ \_______/'
         ]
         
-        errorCodeElement.innerText = errorCodeASCIIArray.join('\n')
+        errorCodeElement.innerHTML = errorCodeASCIIArray.join('\n')
         
         setTimeout(() => {
-          errorTextElement.innerText = errorTextASCIIArrayNot.join('\n') + '\n' + errorTextASCIIArrayFound.join('\n')
+          errorTextElement.innerHTML = errorTextASCIIArrayNot.join('\n') + '\n' + errorTextASCIIArrayFound.join('\n')
           
           socialPageURLElement.innerHTML = '<a href="https://www.stefdp.tk">Go to Socials page!</a>'
         }, 500)
       }
     }, 100)
   </script>
+  <br />
+  <p class="bg-hidden">Something could be here</p>
 </body>
