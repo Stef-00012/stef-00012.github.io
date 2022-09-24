@@ -48,7 +48,7 @@
       color: #5F5F5F;
     }
     
-    .bg-hidden code {
+    .bg-hidden {
       color: #1C1D1E;
     }
     
@@ -131,7 +131,6 @@
   <center><p><b><pre><code class="text" id="command-output-text"></code></pre></b></p></center><br /><br />
   <center><p><b><code class="socials-url" id="socials-url"></code></b></p></center>
   <script>
-    //time
     const timeElement = document.getElementById('time')
     let time = new Date().toTimeString().split(' ')[0]
     timeElement.innerText = time
@@ -140,7 +139,6 @@
       timeElement.innerText = time
     }, 1000)
     
-    //typing animation
     var i = 0;
     var text = 'bash /system/bin/404.sh';
     const speed = 80;
@@ -155,7 +153,6 @@
     
     typing()
     
-    //after typing animation
     setInterval(() => {
       if (i >= text.length) {
         const errorCodeElement = document.getElementById('command-output-code')
