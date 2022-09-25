@@ -245,23 +245,36 @@
     const modal3 = document.getElementById('modal3')
     const span3 = document.getElementById('close3')
     
-    setTimeout(() => {
-      modal3.style.display = "none";
-      modal2.style.display = "none";
-      modal1.style.display = "block";
-    }, 180000)
-    
-    setTimeout(() => {
-      modal1.style.display = "none";
-      modal3.style.display = "none";
-      modal2.style.display = "block";
-    }, 300000)
-    
-    setTimeout(() => {
-      modal1.style.display = "none";
-      modal2.style.display = "none";
-      modal3.style.display = "block";
-    }, 480000)
+    function startTimeouts() {
+      const tim1 = setTimeout(() => {
+        modal3.style.display = "none";
+        modal2.style.display = "none";
+        modal1.style.display = "block";
+      }, 180000)
+      
+      const tim2 = setTimeout(() => {
+        modal1.style.display = "none";
+        modal3.style.display = "none";
+        modal2.style.display = "block";
+      }, 300000)
+      
+      const tim3 = setTimeout(() => {
+        modal1.style.display = "none";
+        modal2.style.display = "none";
+        modal3.style.display = "block";
+      }, 480000)
+      
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState == "hidden") {
+          clearTimeout(tim1)
+          clearTimeout(tim2)
+          clearTimeout(tim3)
+        } else {
+          startTimeouts()
+        }
+      })
+    }
+    startTimeouts()
     
     span1.onclick = function() {
       modal1.style.display = "none";
