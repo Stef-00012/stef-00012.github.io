@@ -383,12 +383,15 @@
     
     spoiler.onclick = function() {
       spoiler.style.backgroundColor = "rgba(54, 47, 46, 0.65)";
-      spoiler.style.color = "#ffffff"
+      spoiler.style.color = "rgba(255, 255, 255, 0.85)"
     }
     function aboutMeModal() {
       rabbitModalElement.style.display = "none";
       alternativeLinksModalElement.style.display = "none";
       aboutMeModalElement.style.display = "block";
+      
+      spoiler.style.backgroundColor = "rgba(54, 47, 46, 1)";
+      spoiler.style.color = "transparent"
     }
     
     function rabbitModal() {
