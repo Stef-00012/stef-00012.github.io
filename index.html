@@ -311,7 +311,7 @@
         <p><b>~~~~~~~~~~~~~~</b></p>
         <p><b>15 March 200<code><u id="unknown-char1">#</u></code></b> 🇮🇹</p>
         <img class="modal-content-image" src="icons/code-info.png">
-        <p><em>(I'd like to change my reddit username, but there is no way to do so)</em></p>
+        <p><em class="spoiler" id="spoiler2">(I'd like to change my reddit username, but there is no way to do so)</em></p>
       </div>
     </div>
   </div>
@@ -368,6 +368,7 @@
   </div>
   <script>
     const spoiler = document.getElementById('spoiler')
+    const spoiler2 = document.getElementById('spoiler2')
     
     const unknownCharacterOne = document.getElementById('unknown-char1')
     const unknownCharacterTwo = document.getElementById('unknown-char2')
@@ -385,6 +386,12 @@
       spoiler.style.backgroundColor = "rgba(54, 47, 46, 0.65)";
       spoiler.style.color = "rgba(255, 255, 255, 0.85)"
     }
+    
+    spoiler2.onclick = function() {
+      spoiler2.style.backgroundColor = "rgba(54, 47, 46, 0.65)";
+      spoiler2.style.color = "rgba(255, 255, 255, 0.85)"
+    }
+    
     function aboutMeModal() {
       rabbitModalElement.style.display = "none";
       alternativeLinksModalElement.style.display = "none";
