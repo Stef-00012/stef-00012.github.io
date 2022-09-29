@@ -244,6 +244,12 @@
     #unknown-char1, #unknown-char2 {
       font-size: 17px;
     }
+    
+    .spoiler {
+      color: transparent;
+      background-color: #362f2e;
+      border-radius: 5px;
+    }
   </style>
 </head>
 <body>
@@ -301,7 +307,7 @@
       </div>
       <div class="modal-body">
         <p>My name is <b>Stefano Del Prete</b> and i'm <code><b><u id="unknown-char2">##</u></code></b> years old</p>
-        <p>I have a small rabbit which has <b>9 years</b> (<u><em>69 in rabbit years</em></u>)</p>
+        <p>I have a small rabbit which has <b>9 years</b> (<em class="spoiler" id="spoiler">69 in rabbit years</em>)</p>
         <p><b>~~~~~~~~~~~~~~</b></p>
         <p><b>15 March 200<code><u id="unknown-char1">#</u></code></b> 🇮🇹</p>
         <img class="modal-content-image" src="icons/code-info.png">
@@ -361,6 +367,8 @@
     </div>
   </div>
   <script>
+    const spoiler = document.getElementById('spoiler')
+    
     const unknownCharacterOne = document.getElementById('unknown-char1')
     const unknownCharacterTwo = document.getElementById('unknown-char2')
     
@@ -373,6 +381,10 @@
     const alternativeLinksModalElement = document.getElementById('alternativeLinksModal')
     const alternativeLinksModalClose = document.getElementById('alternativeLinksModal-close')
     
+    spoiler.onclick = function() {
+      spoiler.style.backgroundColor = "none";
+      spoiler.style.color = "#ffffff"
+    }
     function aboutMeModal() {
       rabbitModalElement.style.display = "none";
       alternativeLinksModalElement.style.display = "none";
