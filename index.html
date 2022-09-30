@@ -20,12 +20,23 @@
       margin-left: auto;
       margin-right: auto;
       display: block;
+      transition: transform .65s, padding-bottom .65s;
+    }
+    
+    .avatar:hover {
+      transform: scale(1.35);
+      padding-bottom: 30px;
     }
     
     .name {
       color: #fff;
       text-align: center;
       font-size: 25px;
+      transition: transform .65s;
+    }
+    
+    .name:hover {
+      transform: scale(1.18);
     }
     
     .name-bg {
@@ -160,11 +171,13 @@
       width: 90%;
       height: 75px;
       font-size: 20px;
+      transition: transform .65s;
     }
     
     .buttons:hover {
       background-color: rgba(0, 0, 0, 0.5);
       border-color: #565047;
+      transform: scale(1.05);
     }
     
     .btn-icon {
