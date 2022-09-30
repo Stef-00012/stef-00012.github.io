@@ -28,16 +28,38 @@
       font-size: 25px;
     }
     
+    .name-bg {
+      background-color: rgba(00, 00, 00, 0.6);
+      border-radius: 13px;
+      padding: 4px;
+      padding-right: 8px;
+      padding-left: 8px;
+    }
+    
     .social {
       width: 53px;
       padding-left: 8px;
       padding-right: 8px;
+      transition: transform .65s;
+    }
+    
+    .social:hover {
+      /* width: 62px; */
+      /* padding-left: 6px; */
+      /* padding-right: 6px; */
+      transform: scale(1.35);
     }
     
     .socials {
       margin: auto;
       display: flex;
       justify-content: center;
+    }
+    
+    .socials-bg {
+      padding: 5px;
+      background-color: rgba(00, 00, 00, 0.6);
+      border-radius: 22px;
     }
     
     .social.youtube {
@@ -58,7 +80,6 @@
     
     #socials-3 {
       padding-top: 15px;
-      padding-bottom: 35px;
     }
     
     .social-url {
@@ -122,6 +143,7 @@
     }
     
     .aboutme {
+      padding-top: 35px;
       display: flex;
       justify-content: center;
     }
@@ -222,10 +244,13 @@
     
     .modal-header {
       padding: 2px 16px;
-      background-color: #2E2F31;
+      /* background-color:  rgba(46, 47, 49, 0.05); */
+      background-image: linear-gradient(180deg, rgba(00, 00, 00, 1), rgba(00, 00, 00, 0.5), rgba(00, 00, 00, 0.05));
       color: white;
       border-top-left-radius: 22px;
       border-top-right-radius: 22px;
+      border-bottom-left-radius: 22px;
+      border-bottom-right-radius: 22px;
     }
     
     .modal-body {
@@ -255,29 +280,31 @@
 <body>
   <div>
     <img class="avatar" src="icons/bio-pfp.png">
-    <p class="name"><b><code>Stef</code></b></p>
+    <p class="name"><b><code class="name-bg">Stef</code></b></p>
   </div>
-  
-  <div class="socials">
-    <a href="https://www.stefdp.tk/socials/discord"><img class="social discord" src="icons/social_logos/discord.png"></a>
-    <a href=https://www.stefdp.tk/socials/twitch><img class="social twitch" src="icons/social_logos/twitch.png"></a>
-    <a href="https://www.stefdp.tk/socials/instagram"><img class="social instagram" src="icons/social_logos/instagram.png"></a>
-    <a href="https://www.stefdp.tk/code/github"><img class="social github" src="icons/social_logos/github.png"></a>
-    <a href="https://www.stefdp.tk/socials/telegram"><img class="social telegram" src="icons/social_logos/telegram.png"></a>
+  <!-- -->
+  <div class="socials-bg">
+    <div class="socials">
+      <a href="https://www.stefdp.tk/socials/discord"><img class="social discord" src="icons/social_logos/discord.png"></a>
+      <a href=https://www.stefdp.tk/socials/twitch><img class="social twitch" src="icons/social_logos/twitch.png"></a>
+      <a href="https://www.stefdp.tk/socials/instagram"><img class="social instagram" src="icons/social_logos/instagram.png"></a>
+      <a href="https://www.stefdp.tk/code/github"><img class="social github" src="icons/social_logos/github.png"></a>
+      <a href="https://www.stefdp.tk/socials/telegram"><img class="social telegram" src="icons/social_logos/telegram.png"></a>
+    </div>
+    
+    <div class="socials" id="socials-2">
+      <a href="https://www.stefdp.tk/socials/youtube"><img class="social youtube" src="icons/social_logos/youtube.png"></a>
+      <a href="https://www.stefdp.tk/socials/twitter"><img class="social twitter" src="icons/social_logos/twitter.png"></a>
+      <a href="https://www.stefdp.tk/socials/spotify"><img class="social spotify" src="icons/social_logos/spotify.png"></a>
+      <a href="https://www.stefdp.tk/socials/tiktok"><img class="social tiktok" src="icons/social_logos/tiktok.png"></a>
+      <a href="https://www.stefdp.tk/socials/reddit"><img class="social reddit" src="icons/social_logos/reddit.png"></a>
+    </div>
+    
+    <div class="socials" id="socials-3">
+      <a href="https://www.stefdp.tk/socials/revolt"><img class="social revolt" src="icons/social_logos/revolt.png"></a>
+    </div>
   </div>
-  
-  <div class="socials" id="socials-2">
-    <a href="https://www.stefdp.tk/socials/youtube"><img class="social youtube" src="icons/social_logos/youtube.png"></a>
-    <a href="https://www.stefdp.tk/socials/twitter"><img class="social twitter" src="icons/social_logos/twitter.png"></a>
-    <a href="https://www.stefdp.tk/socials/spotify"><img class="social spotify" src="icons/social_logos/spotify.png"></a>
-    <a href="https://www.stefdp.tk/socials/tiktok"><img class="social tiktok" src="icons/social_logos/tiktok.png"></a>
-    <a href="https://www.stefdp.tk/socials/reddit"><img class="social reddit" src="icons/social_logos/reddit.png"></a>
-  </div>
-  
-  <div class="socials" id="socials-3">
-    <a href="https://www.stefdp.tk/socials/revolt"><img class="social revolt" src="icons/social_logos/revolt.png"></a>
-  </div>
-  
+  <!-- -->
   <div class="aboutme">
     <button onclick="aboutMeModal()" class="buttons">
       <img class="btn-icon" src="icons/aboutMe.png">
