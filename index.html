@@ -444,7 +444,7 @@
         <span class="close" id="aboutMeModal-close">&times;</span>
         <h2><p class="text">A small about me<br />Un po' di info su di me</p></h2>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" id="aboutMeModal-body">
         <p>My name is <b>Stefano Del Prete</b> and i'm <code><b><u id="unknown-char2">##</u></code></b> years old</p>
         <p>I have a small rabbit which has <b>9 years</b> (<em class="spoiler" id="spoiler">69 in rabbit years</em>)</p>
         <p><b>~~~~~~~~~~~~~~</b></p>
@@ -516,7 +516,7 @@
         <span class="close" id="rabbitModal-close">&times;</span>
         <h2><p class="text">Il mio coniglio<br />My rabbit</p></h2>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" id="rabbitModal-body">
         <p>his name is <b>Pallino</b></p>
         <img class="modal-content-image" src="icons/rabbit/photo/pallino-1.jpg">
         <img class="modal-content-image" src="icons/rabbit/photo/pallino-2.jpg">
@@ -538,7 +538,7 @@
         <span class="close" id="alternativeLinksModal-close">&times;</span>
         <h2><p class="text">Link Alternativi<br />Alterlative Links</p></h2>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" id="alternativeLinksModal-body">
         <p><img class="small-social-logo discord" src="/icons/social_logos/discordLogo.png">
         <b>Discord</b>: <a class="social-url discord" href="https://www.stefdp.tk/socials/discord">https://www.stefdp.tk/socials/discord</a><br />
         <img class="small-social-logo twitch" src="/icons/social_logos/twitchLogo.png">
@@ -567,61 +567,67 @@
     </div>
   </div>
   <script>
-    const spoiler = document.getElementById('spoiler')
-    const spoiler2 = document.getElementById('spoiler2')
+    const spoiler = document.getElementById('spoiler');
+    const spoiler2 = document.getElementById('spoiler2');
     
-    const codeBlock = document.getElementById('code-block')
+    const codeBlock = document.getElementById('code-block');
     
-    const unknownCharacterOne = document.getElementById('unknown-char1')
-    const unknownCharacterTwo = document.getElementById('unknown-char2')
+    const unknownCharacterOne = document.getElementById('unknown-char1');
+    const unknownCharacterTwo = document.getElementById('unknown-char2');
     
-    const aboutMeModalElement = document.getElementById('aboutMeModal')
-    const aboutMeModalClose = document.getElementById('aboutMeModal-close')
+    const aboutMeModalElement = document.getElementById('aboutMeModal');
+    const aboutMeModalClose = document.getElementById('aboutMeModal-close');
+    const aboutMeModalBody = document.getElementById('aboutMeModal-body');
     
-    const rabbitModalElement = document.getElementById('rabbitModal')
-    const rabbitModalClose = document.getElementById('rabbitModal-close')
+    const rabbitModalElement = document.getElementById('rabbitModal');
+    const rabbitModalClose = document.getElementById('rabbitModal-close');
+    const rabbitModalBody = document.getElementById('rabbitModal-body');
     
-    const alternativeLinksModalElement = document.getElementById('alternativeLinksModal')
-    const alternativeLinksModalClose = document.getElementById('alternativeLinksModal-close')
+    const alternativeLinksModalElement = document.getElementById('alternativeLinksModal');
+    const alternativeLinksModalClose = document.getElementById('alternativeLinksModal-close');
+    const alternativeLinksModalBody = document.getElementById('alternativeLinksModal-body');
     
     spoiler.onclick = function() {
       spoiler.style.backgroundColor = "rgba(54, 47, 46, 0.65)";
-      spoiler.style.color = "rgba(255, 255, 255, 0.85)"
+      spoiler.style.color = "rgba(255, 255, 255, 0.85)";
     }
     
     spoiler2.onclick = function() {
       spoiler2.style.backgroundColor = "rgba(54, 47, 46, 0.65)";
-      spoiler2.style.color = "rgba(255, 255, 255, 0.85)"
+      spoiler2.style.color = "rgba(255, 255, 255, 0.85)";
     }
     
     function aboutMeModal() {
       rabbitModalElement.style.display = "none";
       alternativeLinksModalElement.style.display = "none";
       aboutMeModalElement.style.display = "block";
+      aboutMeModalBody.scrollTop = 0;
       
       spoiler.style.backgroundColor = "rgba(54, 47, 46, 1)";
-      spoiler.style.color = "transparent"
+      spoiler.style.color = "transparent";
       
-      codeBlock.scrollTop = 0
-      codeBlock.scrollLeft = 0
+      codeBlock.scrollTop = 0;
+      codeBlock.scrollLeft = 0;
     }
     
     function rabbitModal() {
       alternativeLinksModalElement.style.display = "none";
       aboutMeModalElement.style.display = "none";
       rabbitModalElement.style.display = "block";
+      rabbitModalBody.scrollTop = 0;
     }
     
     function alternativeLinksModal() {
       aboutMeModalElement.style.display = "none";
       rabbitModalElement.style.display = "none";
       alternativeLinksModalElement.style.display = "block";
+      alternativeLinksModalBody.scrollTop = 0;
     }
     
     aboutMeModalClose.onclick = function() {
       alternativeLinksModalElement.style.display = "none";
       aboutMeModalElement.style.display = "none";
-      rabbitModalElement.style.display = "none"
+      rabbitModalElement.style.display = "none";
     }
     
     rabbitModalClose.onclick = function() {
@@ -644,14 +650,14 @@
       }
     }
     
-    const combinations = ["!", "@", "#", "$", "%", "&", "?"]
+    const combinations = ["!", "@", "#", "$", "%", "&", "?"];
     
     setInterval(() => {
-      unknownCharacterOne.innerText = combinations[Math.floor(Math.random() * combinations.length)]
-    }, 40)
+      unknownCharacterOne.innerText = combinations[Math.floor(Math.random() * combinations.length)];
+    }, 40);
     
     setInterval(() => {
-      unknownCharacterTwo.innerText = `${combinations[Math.floor(Math.random() * combinations.length)]}${combinations[Math.floor(Math.random() * combinations.length)]}`
-    }, 40)
+      unknownCharacterTwo.innerText = `${combinations[Math.floor(Math.random() * combinations.length)]}${combinations[Math.floor(Math.random() * combinations.length)]}`;
+    }, 40);
   </script>
 </body>
