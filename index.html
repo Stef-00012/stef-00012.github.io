@@ -449,7 +449,7 @@
         <p>I have a small rabbit which has <b>9 years</b> (<em class="spoiler" id="spoiler">69 in rabbit years</em>)</p>
         <p><b>~~~~~~~~~~~~~~</b></p>
         <p><b>15 March 200<code><u id="unknown-char1">#</u></code></b> 🇮🇹</p>
-        <div class="code-block">
+        <div class="code-block" id="code-block">
           <code>
             <p class="code-block code comment">&nbsp;/*<br />&nbsp;&nbsp;Programming&nbsp;Languages,&nbsp;Markup&nbsp;Languages&nbsp;and&nbsp;Terminal<br />&nbsp;*/<br /><br /></p>
             
@@ -570,6 +570,8 @@
     const spoiler = document.getElementById('spoiler')
     const spoiler2 = document.getElementById('spoiler2')
     
+    const codeBlock = document.getElementById('code-block')
+    
     const unknownCharacterOne = document.getElementById('unknown-char1')
     const unknownCharacterTwo = document.getElementById('unknown-char2')
     
@@ -599,6 +601,9 @@
       
       spoiler.style.backgroundColor = "rgba(54, 47, 46, 1)";
       spoiler.style.color = "transparent"
+      
+      codeBlock.scrollTop = 0
+      codeBlock.scrollLeft = 0
     }
     
     function rabbitModal() {
