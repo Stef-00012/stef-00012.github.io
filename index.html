@@ -350,8 +350,20 @@
       color: #B653BB;
     }
     
+    .code-block.code.new {
+      color: #5196D1;
+    }
+    
+    .code-block.code.function-class {
+      color: #D0CC7E;
+    }
+    
     .code-block.code.operators {
       color: #66ABA9;
+    }
+    
+    .code-block.code.undefined {
+      color: #5196D1;
     }
     
     .code-block.code.objectProperty {
@@ -445,13 +457,56 @@
         <h2><p class="text">A small about me<br />Un po' di info su di me</p></h2>
       </div>
       <div class="modal-body" id="aboutMeModal-body">
-        <p>My name is <b>Stefano Del Prete</b> and i'm <code><b><u id="unknown-char2">##</u></code></b> years old</p>
+        <!-- <p>My name is <b>Stefano Del Prete</b> and i'm <code><b><u id="unknown-char2">##</u></code></b> years old</p>
         <p>I have a small rabbit which has <b>9 years</b> (<em class="spoiler" id="spoiler">69 in rabbit years</em>)</p>
         <p><b>~~~~~~~~~~~~~~</b></p>
-        <p><b>15 March 200<code><u id="unknown-char1">#</u></code></b> 🇮🇹</p>
+        <p><b>15 March 200<code><u id="unknown-char1">#</u></code></b> 🇮🇹</p> -->
         <div class="code-block" id="code-block">
           <code>
-            <p class="code-block code comment">&nbsp;/*<br />&nbsp;&nbsp;Programming&nbsp;Languages,&nbsp;Markup&nbsp;Languages&nbsp;and&nbsp;Terminal<br />&nbsp;*/<br /><br /></p>
+            <p class="code-block code comment">&nbsp;/*<br />&nbsp;&nbsp;&nbsp;My&nbsp;personal&nbsp;informations<br />&nbsp;*/<br /><br /></p>
+            
+            <p class="code-block code constant">&nbsp;const&nbsp;</p><p class="code-block code declaration">personalInfo&nbsp;</p><p class="code-block code operators">=&nbsp;</p><p class="code-block code bracket layer1">{<br /></p>
+            
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;fullName</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code string">"Stefano Del Prete"</p><p class="code-block code default">,<br /></p>
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;age</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code undefined">undefined</p><p class="code-block code default">,<br /></p>
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;birthday</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code new">new&nbsp;</p><p class="code-block code function-class">Date</p><p class="code-block code bracket layer1">(</p><p class="code-block code integer">1647356400000</p><p class="code-block code bracket layer1">)</p><p class="code-block code default">.</p><p class="code-block code function-class">toLocaleString</p><p class="code-block code bracket layer1">()</p><p class="code-block code default">.</p><p class="code-block code function-class">split</p><p class="code-block code bracket layer1">(</p><p class="code-block code string">','</p><p class="code-block code bracket layer1">)&#8288;[&#8288;</p><p class="code-block code integer">0</p><p class="code-block code bracket layer1">&#8288;]&#8288;</p><p class="code-block code default">.</p><p class="code-block code function-class">replace</p><p class="code-block code bracket layer1">(</p><p class="code-block code string">'2022'</p><p class="code-block code default">,&nbsp;</p><p class="code-block code string">'200#'</p><p class="code-block code bracket layer1">)</p><p class="code-block code default">,&nbsp;</p><p class="code-block code comment">//&nbsp;15/3/200#&nbsp;<br /></p>
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;nationality</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code string">"Italian 🇮🇹"</p><p class="code-block code default">,<br /></p>
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;pets</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code bracket layer2">[</p><p class="code-block code bracket layer3">{<br /></p>
+            
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code string">"rabbit"</p><p class="code-block code default">,<br /></p>
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code string">"Pallino"</p><p class="code-block code default">,<br /></p>
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;age</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code integer">9</p><p class="code-block code default">,&nbsp;</p><p class="code-block code comment">//&nbsp;69&nbsp;in&nbsp;rabbit&nbsp;years<br /></p>
+            
+            <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;]</p><p class="code-block code bracket layer3">}</p><p class="code-block code default">,<br /></p>
+            
+            <p class="code-block code bracket layer1">&nbsp;}</p><p class="code-block code default">;<br /><br /></p>
+            
+            
+            <p class="code-block code comment">&nbsp;/*<br />&nbsp;&nbsp;&nbsp;Spoken Languages<br />&nbsp;*/<br /><br /></p>
+            
+            <p class="code-block code constant">&nbsp;const&nbsp;</p><p class="code-block code declaration">knownLanguages&nbsp;</p><p class="code-block code operators">=&nbsp;</p><p class="code-block code bracket layer1">[<br /></p>
+            <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;{<br /></p>
+            
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code string">"Italian"</p><p class="code-block code default">,<br /></p>
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code integer">100&nbsp;</p><p class="code-block code comment">//&nbsp;0&#8288;-&#8288;100&nbsp;(kinda&nbsp;obv&nbsp;since&nbsp;it's&nbsp;my&nbsp;main&nbsp;lang)<br /></p>
+            
+            <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;}</p><p class="code-block code default">,<br /></p>
+            <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;{<br /></p>
+            
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code string">"English"</p><p class="code-block code default">,<br /></p>
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code integer">90&nbsp;</p><p class="code-block code comment">//&nbsp;0&#8288;-&#8288;100&nbsp;(this&nbsp;is&nbsp;how&nbsp;I&nbsp;think&nbsp;I&nbsp;am,&nbsp;idk&nbsp;if&nbsp;others&nbsp;think&nbsp;so&nbsp;too)&nbsp;<br /></p>
+            
+            <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;}</p><p class="code-block code default">,<br /></p>
+            <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;{<br /></p>
+            
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code string">"French"</p><p class="code-block code default">,<br /></p>
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code integer">2&nbsp;</p><p class="code-block code comment">//&nbsp;0&#8288;-&#8288;100&nbsp;(I&nbsp;remember&nbsp;just&nbsp;the&nbsp;basic&nbsp;things)<br /></p>
+            
+            <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;}<br /></p>
+            <p class="code-block code bracket layer1">&nbsp;]</p><p class="code-block code default">;<br /><br /></p>
+            
+            
+            <p class="code-block code comment">&nbsp;/*<br />&nbsp;&nbsp;&nbsp;Programming&nbsp;Languages,&nbsp;Markup&nbsp;Languages&nbsp;and&nbsp;Terminal<br />&nbsp;*/<br /><br /></p>
             
             <p class="code-block code constant">&nbsp;const&nbsp;</p><p class="code-block code declaration">knownProgramming&nbsp;</p><p class="code-block code operators">=&nbsp;</p><p class="code-block code bracket layer1">[<br /></p>
             <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;{<br /></p>
@@ -481,31 +536,48 @@
             <p class="code-block code bracket layer1">&nbsp;]</p><p class="code-block code default">;<br /><br /></p>
             
             
-            <p class="code-block code comment">&nbsp;/*<br />&nbsp;&nbsp;&nbsp;Spoken Languages<br />&nbsp;*/<br /><br /></p>
+            <p class="code-block code comment">&nbsp;/*<br />&nbsp;&nbsp;&nbsp;Some info about my socials<br />&nbsp;*/<br /><br /></p>
             
-            <p class="code-block code constant">&nbsp;const&nbsp;</p><p class="code-block code declaration">knownLanguages&nbsp;</p><p class="code-block code operators">=&nbsp;</p><p class="code-block code bracket layer1">[<br /></p>
-            <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;{<br /></p>
+            <p class="code-block code constant">&nbsp;const&nbsp;</p><p class="code-block code declaration">discord&nbsp;</p><p class="code-block code operators">=&nbsp;</p><p class="code-block code bracket layer1">{<br/></p>
             
-            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code string">"Italian"</p><p class="code-block code default">,<br /></p>
-            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code integer">100&nbsp;</p><p class="code-block code comment">//&nbsp;0&#8288;-&#8288;100&nbsp;(kinda&nbsp;obv&nbsp;since&nbsp;it's&nbsp;my&nbsp;main&nbsp;lang)<br /></p>
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;botDeveloper</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code constant">true</p><p class="code-block code default">,<br /></p>
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;badges</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code bracket layer2">[</p><p class="code-block code string">"House of Bravery"</p><p class="code-block code bracket layer2">]<br /></p>
+            <p class="code-block code bracket layer1">&nbsp;}</p><p class="code-block code default">;<br /><br /></p>
             
-            <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;}</p><p class="code-block code default">,<br /></p>
-            <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;{<br /></p>
             
-            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code string">"English"</p><p class="code-block code default">,<br /></p>
-            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code integer">90&nbsp;</p><p class="code-block code comment">//&nbsp;0&#8288;-&#8288;100&nbsp;(this&nbsp;is&nbsp;how&nbsp;I&nbsp;think&nbsp;I&nbsp;am,&nbsp;idk&nbsp;if&nbsp;others&nbsp;think&nbsp;so&nbsp;too)&nbsp;<br /></p>
+            <p class="code-block code constant">&nbsp;const&nbsp;</p><p class="code-block code declaration">instagram&nbsp;</p><p class="code-block code operators">=&nbsp;</p><p class="code-block code bracket layer1">{<br/></p>
             
-            <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;}</p><p class="code-block code default">,<br /></p>
-            <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;{<br /></p>
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;followers</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code integer">61&nbsp;</p><p class="code-block code comment">//&nbsp;Last&nbsp;updated&nbsp;October&nbsp;31&nbsp;2022,&nbsp;18:19&nbsp;CET<br /></p>
+            <p class="code-block code bracket layer1">&nbsp;}</p><p class="code-block code default">;<br /><br /></p>
             
-            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code string">"French"</p><p class="code-block code default">,<br /></p>
-            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code integer">2&nbsp;</p><p class="code-block code comment">//&nbsp;0&#8288;-&#8288;100&nbsp;(I&nbsp;remember&nbsp;just&nbsp;the&nbsp;basic&nbsp;things)<br /></p>
             
-            <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;}<br /></p>
-            <p class="code-block code bracket layer1">&nbsp;]</p><p class="code-block code default">;</p>
+            <p class="code-block code constant">&nbsp;const&nbsp;</p><p class="code-block code declaration">revolt&nbsp;</p><p class="code-block code operators">=&nbsp;</p><p class="code-block code bracket layer1">{<br/></p>
+            
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;botDeveloper</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code constant">true</p><p class="code-block code default">,<br /></p>
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;badges</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code bracket layer2">[</p><p class="code-block code string">"Translator"</p><p class="code-block code bracket layer2">]<br /></p>
+            <p class="code-block code bracket layer1">&nbsp;}</p><p class="code-block code default">;<br /><br /></p>
+            
+            
+            <p class="code-block code constant">&nbsp;const&nbsp;</p><p class="code-block code declaration">github&nbsp;</p><p class="code-block code operators">=&nbsp;</p><p class="code-block code bracket layer1">{<br/></p>
+            
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;followers</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code integer">3</p><p class="code-block code default">,&nbsp;</p><p class="code-block code comment">//&nbsp;Last&nbsp;updated&nbsp;October&nbsp;31&nbsp;2022,&nbsp;18:20&nbsp;CET<br /></p>
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;repositories</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code integer">11&nbsp;</p><p class="code-block code comment">//&nbsp;(Some&nbsp;are&nbsp;private)&nbsp;&#8288;-&#8288;&nbsp;Last&nbsp;updated&nbsp;October&nbsp;31&nbsp;2022&nbsp;18:20&nbsp;CET<br /></p>
+            <p class="code-block code bracket layer1">&nbsp;}</p><p class="code-block code default">;<br /><br /></p>
+            
+            
+            <p class="code-block code constant">&nbsp;const&nbsp;</p><p class="code-block code declaration">reddit&nbsp;</p><p class="code-block code operators">=&nbsp;</p><p class="code-block code bracket layer1">{<br/></p>
+            
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;karma</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code integer">236&nbsp;</p><p class="code-block code comment">//&nbsp;Last&nbsp;updated&nbsp;October&nbsp;31&nbsp;2022,&nbsp;18:23&nbsp;CET<br /></p>
+            <p class="code-block code bracket layer1">&nbsp;}</p><p class="code-block code default">;<br /><br /></p>
+            
+            
+            <p class="code-block code constant">&nbsp;const&nbsp;</p><p class="code-block code declaration">twitter&nbsp;</p><p class="code-block code operators">=&nbsp;</p><p class="code-block code bracket layer1">{<br/></p>
+            
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;followers</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code integer">3&nbsp;</p><p class="code-block code comment">//&nbsp;Last&nbsp;updated&nbsp;October&nbsp;31&nbsp;2022,&nbsp;18:25&nbsp;CET<br /></p>
+            <p class="code-block code bracket layer1">&nbsp;}</p><p class="code-block code default">;</p>
           </code>
         </div>
-        <p><em class="spoiler" id="spoiler2">(I'd like to change my reddit username, but there is no way to do so)</em></p>
+        <p><em class="spoiler" id="spoiler">(I'd like to change my reddit username, but there is no way to do so)</em></p>
       </div>
     </div>
   </div>
@@ -568,12 +640,8 @@
   </div>
   <script>
     const spoiler = document.getElementById('spoiler');
-    const spoiler2 = document.getElementById('spoiler2');
     
     const codeBlock = document.getElementById('code-block');
-    
-    const unknownCharacterOne = document.getElementById('unknown-char1');
-    const unknownCharacterTwo = document.getElementById('unknown-char2');
     
     const aboutMeModalElement = document.getElementById('aboutMeModal');
     const aboutMeModalClose = document.getElementById('aboutMeModal-close');
@@ -590,11 +658,6 @@
     spoiler.onclick = function() {
       spoiler.style.backgroundColor = "rgba(54, 47, 46, 0.65)";
       spoiler.style.color = "rgba(255, 255, 255, 0.85)";
-    }
-    
-    spoiler2.onclick = function() {
-      spoiler2.style.backgroundColor = "rgba(54, 47, 46, 0.65)";
-      spoiler2.style.color = "rgba(255, 255, 255, 0.85)";
     }
     
     function aboutMeModal() {
@@ -649,15 +712,5 @@
         alternativeLinksModalElement.style.display = "none";
       }
     }
-    
-    const combinations = ["!", "@", "#", "$", "%", "&", "?"];
-    
-    setInterval(() => {
-      unknownCharacterOne.innerText = combinations[Math.floor(Math.random() * combinations.length)];
-    }, 40);
-    
-    setInterval(() => {
-      unknownCharacterTwo.innerText = `${combinations[Math.floor(Math.random() * combinations.length)]}${combinations[Math.floor(Math.random() * combinations.length)]}`;
-    }, 40);
   </script>
 </body>
