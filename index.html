@@ -350,11 +350,7 @@
       color: #B653BB;
     }
     
-    .code-block.code.equal {
-      color: #66ABA9;
-    }
-    
-    .code-block.code.colon {
+    .code-block.code.operators {
       color: #66ABA9;
     }
     
@@ -368,6 +364,18 @@
     
     .code-block.code.integer {
       color: #D58951;
+    }
+    
+    .code-block.code.bracket.layer1 {
+      color: #D1BC47;
+    }
+    
+    .code-block.code.bracket.layer2 {
+      color: #90578E;
+    }
+    
+    .code-block.code.bracket.layer3 {
+      color: #418AB7;
     }
     
     #unknown-char1, #unknown-char2 {
@@ -445,48 +453,56 @@
           <code>
             <p class="code-block code comment">&nbsp;/*<br />&nbsp;&nbsp;Programming&nbsp;Languages,&nbsp;Markup&nbsp;Languages&nbsp;and&nbsp;Terminal<br />&nbsp;*/<br /><br /></p>
             
-            <p class="code-block code constant">&nbsp;const&nbsp;</p><p class="code-block code declaration">knownProgramming&nbsp;</p><p class="code-block code equal">=&nbsp;</p><p class="code-block code default">[<br /></p>
-            <p class="code-block code default">&nbsp;&nbsp;&nbsp;{<br /></p>
+            <p class="code-block code constant">&nbsp;const&nbsp;</p><p class="code-block code declaration">knownProgramming&nbsp;</p><p class="code-block code operators">=&nbsp;</p><p class="code-block code bracket layer1">[<br /></p>
+            <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;{<br /></p>
             
-            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name</p><p class="code-block code colon">:&nbsp;</p><p class="code-block code string">"Javascript"</p><p class="code-block code default">,<br /></p>
-            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level</p><p class="code-block code colon">:&nbsp;</p><p class="code-block code integer">85&nbsp;</p><p class="code-block code comment">//&nbsp;0-100<br /></p>
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code string">"Javascript"</p><p class="code-block code default">,<br /></p>
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code integer">85&nbsp;</p><p class="code-block code comment">//&nbsp;0-100<br /></p>
             
-            <p class="code-block code default">&nbsp;&nbsp;&nbsp;},<br />&nbsp;&nbsp;&nbsp;{<br /></p>
+            <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;}</p><p class="code-block code default">,<br /></p>
+            <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;{<br /></p>
             
-            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name</p><p class="code-block code colon">:&nbsp;</p><p class="code-block code string">"HTML"</p><p class="code-block code default">,<br /></p>
-            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level</p><p class="code-block code colon">:&nbsp;</p><p class="code-block code integer">40&nbsp;</p><p class="code-block code comment">//&nbsp;0-100<br /></p>
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code string">"HTML"</p><p class="code-block code default">,<br /></p>
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code integer">40&nbsp;</p><p class="code-block code comment">//&nbsp;0-100<br /></p>
             
-            <p class="code-block code default">&nbsp;&nbsp;&nbsp;},<br />&nbsp;&nbsp;&nbsp;{<br /></p>
+            <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;}</p><p class="code-block code default">,<br /></p>
+            <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;{<br /></p>
             
-            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name</p><p class="code-block code colon">:&nbsp;</p><p class="code-block code string">"CSS"</p><p class="code-block code default">,<br /></p>
-            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level</p><p class="code-block code colon">:&nbsp;</p><p class="code-block code integer">60&nbsp;</p><p class="code-block code comment">//&nbsp;0-100<br /></p>
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code string">"CSS"</p><p class="code-block code default">,<br /></p>
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code integer">60&nbsp;</p><p class="code-block code comment">//&nbsp;0-100<br /></p>
             
-            <p class="code-block code default">&nbsp;&nbsp;&nbsp;},<br />&nbsp;&nbsp;&nbsp;{<br /></p>
+            <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;}</p><p class="code-block code default">,<br /></p>
+            <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;{<br /></p>
             
-            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name</p><p class="code-block code colon">:&nbsp;</p><p class="code-block code string">"Bash/Shell"</p><p class="code-block code default">,<br /></p>
-            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level</p><p class="code-block code colon">:&nbsp;</p><p class="code-block code integer">80&nbsp;</p><p class="code-block code comment">//&nbsp;0-100<br /></p>
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code string">"Bash/Shell"</p><p class="code-block code default">,<br /></p>
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code integer">80&nbsp;</p><p class="code-block code comment">//&nbsp;0-100<br /></p>
             
-            <p class="code-block code default">&nbsp;&nbsp;&nbsp;}<br />&nbsp;];<br /><br /></p>
+            <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;}<br /></p>
+            <p class="code-block code bracket layer1">&nbsp;]</p><p class="code-block code default">;<br /><br /></p>
             
             
             <p class="code-block code comment">&nbsp;/*<br />&nbsp;&nbsp;&nbsp;Spoken Languages<br />&nbsp;*/<br /><br /></p>
             
-            <p class="code-block code constant">&nbsp;const&nbsp;</p><p class="code-block code declaration">knownLanguages&nbsp;</p><p class="code-block code equal">=&nbsp;</p><p class="code-block code default">[<br />&nbsp;&nbsp;&nbsp;{<br /></p>
+            <p class="code-block code constant">&nbsp;const&nbsp;</p><p class="code-block code declaration">knownLanguages&nbsp;</p><p class="code-block code operators">=&nbsp;</p><p class="code-block code bracket layer1">[<br /></p>
+            <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;{<br /></p>
             
-            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name</p><p class="code-block code colon">:&nbsp;</p><p class="code-block code string">"Italian"</p><p class="code-block code default">,<br /></p>
-            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level</p><p class="code-block code colon">:&nbsp;</p><p class="code-block code integer">100&nbsp;</p><p class="code-block code comment">//&nbsp;0&#8288;-&#8288;100&nbsp;(kinda&nbsp;obv&nbsp;since&nbsp;it's&nbsp;my&nbsp;main&nbsp;lang)<br /></p>
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code string">"Italian"</p><p class="code-block code default">,<br /></p>
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code integer">100&nbsp;</p><p class="code-block code comment">//&nbsp;0&#8288;-&#8288;100&nbsp;(kinda&nbsp;obv&nbsp;since&nbsp;it's&nbsp;my&nbsp;main&nbsp;lang)<br /></p>
             
-            <p class="code-block code default">&nbsp;&nbsp;&nbsp;},<br />&nbsp;&nbsp;&nbsp;{<br /></p>
+            <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;}</p><p class="code-block code default">,<br /></p>
+            <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;{<br /></p>
             
-            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name</p><p class="code-block code colon">:&nbsp;</p><p class="code-block code string">"English"</p><p class="code-block code default">,<br /></p>
-            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level</p><p class="code-block code colon">:&nbsp;</p><p class="code-block code integer">90&nbsp;</p><p class="code-block code comment">//&nbsp;0&#8288;-&#8288;100&nbsp;(this&nbsp;is&nbsp;how&nbsp;I&nbsp;think&nbsp;I&nbsp;am,&nbsp;idk&nbsp;if&nbsp;others&nbsp;think&nbsp;so&nbsp;too)&nbsp;<br /></p>
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code string">"English"</p><p class="code-block code default">,<br /></p>
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code integer">90&nbsp;</p><p class="code-block code comment">//&nbsp;0&#8288;-&#8288;100&nbsp;(this&nbsp;is&nbsp;how&nbsp;I&nbsp;think&nbsp;I&nbsp;am,&nbsp;idk&nbsp;if&nbsp;others&nbsp;think&nbsp;so&nbsp;too)&nbsp;<br /></p>
             
-            <p class="code-block code default">&nbsp;&nbsp;&nbsp;},<br />&nbsp;&nbsp;&nbsp;{<br /></p>
+            <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;}</p><p class="code-block code default">,<br /></p>
+            <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;{<br /></p>
             
-            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name</p><p class="code-block code colon">:&nbsp;</p><p class="code-block code string">"French"</p><p class="code-block code default">,<br /></p>
-            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level</p><p class="code-block code colon">:&nbsp;</p><p class="code-block code integer">2&nbsp;</p><p class="code-block code comment">//&nbsp;0&#8288;-&#8288;100&nbsp;(I&nbsp;remember&nbsp;just&nbsp;the&nbsp;basic&nbsp;things)<br /></p>
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code string">"French"</p><p class="code-block code default">,<br /></p>
+            <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code integer">2&nbsp;</p><p class="code-block code comment">//&nbsp;0&#8288;-&#8288;100&nbsp;(I&nbsp;remember&nbsp;just&nbsp;the&nbsp;basic&nbsp;things)<br /></p>
             
-            <p class="code-block code default">&nbsp;&nbsp;&nbsp;}<br />&nbsp;];</p>
+            <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;}<br /></p>
+            <p class="code-block code bracket layer1">&nbsp;]</p><p class="code-block code default">;</p>
           </code>
         </div>
         <p><em class="spoiler" id="spoiler2">(I'd like to change my reddit username, but there is no way to do so)</em></p>
