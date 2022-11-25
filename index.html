@@ -716,7 +716,7 @@
           <p>I have a small rabbit which has <b>9 years</b> (<em class="spoiler" id="spoiler">69 in rabbit years</em>)</p>
           <p><b>~~~~~~~~~~~~~~</b></p>
           <p><b>15 March 200<code><u id="unknown-char1">#</u></code></b> 🇮🇹</p> -->
-          <div class="code-block" id="code-block">
+          <div class="code-block" id="code-block-desktop">
             <code>
               <p class="code-block code comment">&nbsp;/*<br />&nbsp;&nbsp;&nbsp;My&nbsp;personal&nbsp;informations<br />&nbsp;*/<br /><br /></p>
               
@@ -832,7 +832,7 @@
               <p class="code-block code bracket layer1">&nbsp;}</p><p class="code-block code default">;</p>
             </code>
           </div>
-          <p><em class="spoiler" id="spoiler">(I'd like to change my reddit username, but there is no way to do so)</em></p>
+          <p><em class="spoiler" id="spoiler-desktop">(I'd like to change my reddit username, but there is no way to do so)</em></p>
         </div>
       </div>
     </div>
@@ -896,8 +896,10 @@
   </div>
   <script>
     const spoiler = document.getElementById('spoiler');
+    const spoilerDesktop = document.getElementById('spoiler-desktop');
     
     const codeBlock = document.getElementById('code-block');
+    const codeBlockDesktop = document.getElementById('code-block-desktop');
     
     const aboutMeModalElement = document.getElementById('aboutMeModal');
     const aboutMeModalClose = document.getElementById('aboutMeModal-close');
@@ -928,6 +930,11 @@
       spoiler.style.color = "rgba(255, 255, 255, 0.85)";
     }
     
+    spoilerDesktop.onclick = function() {
+      spoilerDesktop.style.backgroundColor = "rgba(54, 47, 46, 0.65)";
+      spoilerDesktop.style.color = "rgba(255, 255, 255, 0.85)";
+    }
+    
     const close = function() {
       alternativeLinksModalElement.style.display = "none";
       alternativeLinksModalElementDesktop.style.display = "none";
@@ -944,18 +951,24 @@
         aboutMeModalElement.style.display = "block";
         
         aboutMeModalBody.scrollTop = 0;
+        
+        spoiler.style.backgroundColor = "rgba(54, 47, 46, 1)";
+        spoiler.style.color = "transparent";
+        
+        codeBlock.scrollTop = 0;
+        codeBlock.scrollLeft = 0;
       } else {
         close()
         aboutMeModalElementDesktop.style.display = "block";
         
         aboutMeModalBodyDesktop.scrollTop = 0;
+                
+        spoilerDesktop.style.backgroundColor = "rgba(54, 47, 46, 1)";
+        spoilerDesktop.style.color = "transparent";
+        
+        codeBlockDesktop.scrollTop = 0;
+        codeBlockDesktop.scrollLeft = 0;
       }
-      
-      spoiler.style.backgroundColor = "rgba(54, 47, 46, 1)";
-      spoiler.style.color = "transparent";
-      
-      codeBlock.scrollTop = 0;
-      codeBlock.scrollLeft = 0;
     }
     
     function rabbitModal() {
@@ -992,7 +1005,11 @@
     
     rabbitModalClose.onclick = close
     
+    rabbitModalCloseDesktop.onclick = close
+    
     alternativeLinksModalClose.onclick = close
+    
+    alternativeLinksModalCloseDesktop.onclick = close
     
     window.onclick = function(event) {
       if (event.target == aboutMeModalElement || event.target == rabbitModalElement || event.target == alternativeLinksModalElement || event.target == aboutMeModalElementDesktop || event.target == rabbitModalElementDesktop || event.target == alternativeLinksModalElementDesktop) {
