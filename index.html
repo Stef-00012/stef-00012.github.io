@@ -399,6 +399,24 @@
       background-color: rgba(54, 47, 46, 1);
       border-radius: 5px;
     }
+    
+    .socials.mobile {
+      display: none;
+    }
+    
+    .socials.desktop {
+      display: none;
+    }
+    
+    @media only screen and (max-width: 720px) {
+      .socials.mobile {
+        display: block;
+      }
+      
+      .socials.desktop {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
@@ -408,7 +426,21 @@
   </div>
   
   <div class="socials-bg">
-    <div class="socials">
+    <div class="socials desktop">
+      <a href="https://www.stefdp.tk/socials/discord"><img loading="lazy" class="social discord" src="icons/social_logos/discord.png"></a>
+      <a href=https://www.stefdp.tk/socials/twitch><img loading="lazy" class="social twitch" src="icons/social_logos/twitch.png"></a>
+      <a href="https://www.stefdp.tk/socials/instagram"><img loading="lazy" class="social instagram" src="icons/social_logos/instagram.png"></a>
+      <a href="https://www.stefdp.tk/code/github"><img loading="lazy" class="social github" src="icons/social_logos/github.png"></a>
+      <a href="https://www.stefdp.tk/socials/telegram"><img loading="lazy" class="social telegram" src="icons/social_logos/telegram.png"></a>
+      <a href="https://www.stefdp.tk/socials/youtube"><img loading="lazy" class="social youtube" src="icons/social_logos/youtube.png"></a>
+      <a href="https://www.stefdp.tk/socials/twitter"><img loading="lazy" class="social twitter" src="icons/social_logos/twitter.png"></a>
+      <a href="https://www.stefdp.tk/socials/spotify"><img loading="lazy" class="social spotify" src="icons/social_logos/spotify.png"></a>
+      <a href="https://www.stefdp.tk/socials/tiktok"><img loading="lazy" class="social tiktok" src="icons/social_logos/tiktok.png"></a>
+      <a href="https://www.stefdp.tk/socials/reddit"><img loading="lazy" class="social reddit" src="icons/social_logos/reddit.png"></a>
+      <a href="https://www.stefdp.tk/socials/revolt"><img loading="lazy" class="social revolt" src="icons/social_logos/revolt.png"></a>
+    </div>
+    
+    <div class="socials mobile">
       <a href="https://www.stefdp.tk/socials/discord"><img loading="lazy" class="social discord" src="icons/social_logos/discord.png"></a>
       <a href=https://www.stefdp.tk/socials/twitch><img loading="lazy" class="social twitch" src="icons/social_logos/twitch.png"></a>
       <a href="https://www.stefdp.tk/socials/instagram"><img loading="lazy" class="social instagram" src="icons/social_logos/instagram.png"></a>
@@ -416,7 +448,7 @@
       <a href="https://www.stefdp.tk/socials/telegram"><img loading="lazy" class="social telegram" src="icons/social_logos/telegram.png"></a>
     </div>
     
-    <div class="socials" id="socials-2">
+    <div class="socials mobile" id="socials-2">
       <a href="https://www.stefdp.tk/socials/youtube"><img loading="lazy" class="social youtube" src="icons/social_logos/youtube.png"></a>
       <a href="https://www.stefdp.tk/socials/twitter"><img loading="lazy" class="social twitter" src="icons/social_logos/twitter.png"></a>
       <a href="https://www.stefdp.tk/socials/spotify"><img loading="lazy" class="social spotify" src="icons/social_logos/spotify.png"></a>
@@ -424,7 +456,7 @@
       <a href="https://www.stefdp.tk/socials/reddit"><img loading="lazy" class="social reddit" src="icons/social_logos/reddit.png"></a>
     </div>
     
-    <div class="socials" id="socials-3">
+    <div class="socials mobile" id="socials-3">
       <a href="https://www.stefdp.tk/socials/revolt"><img loading="lazy" class="social revolt" src="icons/social_logos/revolt.png"></a>
     </div>
   </div>
