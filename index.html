@@ -7,8 +7,32 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
   <style>
-    body {
-      background-image: url('icons/bio-bg.png');
+    body.default {
+      background-image: url('/icons/bio-bg.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: "Inter", sans-serif;
+    }
+    
+    body.christmas {
+      background-image: url('/icons/bio-bg-christmas.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: "Inter", sans-serif;
+    }
+    
+    body.easter {
+      background-image: url('/icons/bio-bg-easter.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: "Inter", sans-serif;
+    }
+    
+    body.halloween {
+      background-image: url('/icons/bio-bg-halloween.png');
       background-repeat: no-repeat;
       background-size: cover;
       background-attachment: fixed;
@@ -423,7 +447,7 @@
     }
   </style>
 </head>
-<body>
+<body class="default">
   <div class="mobile-site">
     <div>
       <img loading="lazy" class="avatar" src="icons/bio-pfp.png">
@@ -917,6 +941,32 @@
     const alternativeLinksModalCloseDesktop = document.getElementById('alternativeLinksModalDesktop-close');
     const alternativeLinksModalBodyDesktop = document.getElementById('alternativeLinksModalDesktop-body');
     
+    function backgroundImageSet() {
+      const date = new Date();
+      const day = date.getDate();
+      const month = date.getMonth() + 1;
+      
+      if (month == 12 || month == 1) {
+        if ((month == 12 && day >= 8 && day <= 31) || (month == 1 && day >= 1 && day <= 6)) {
+          document.body.className = "christmas"; //christmas
+        }
+      }
+      
+      if (month == 4) {
+        if (day >= 9 && day <= 12) {
+          document.body.className = "easter"; //easter
+        }
+      }
+      
+      if (month == 10) {
+        if (day >= 25 && day <= 31) {
+          document.body.className = "halloween"; //halloween
+        }
+      }
+    }
+    
+    backgroundImageSet();
+    
     spoiler.onclick = function() {
       spoiler.style.backgroundColor = "rgba(54, 47, 46, 0.65)";
       spoiler.style.color = "rgba(255, 255, 255, 0.85)";
@@ -927,7 +977,7 @@
       spoilerDesktop.style.color = "rgba(255, 255, 255, 0.85)";
     }
     
-    const close = function() {
+    function close() {
       alternativeLinksModalElement.style.display = "none";
       alternativeLinksModalElementDesktop.style.display = "none";
       
@@ -937,6 +987,7 @@
       rabbitModalElement.style.display = "none";
       rabbitModalElementDesktop.style.display = "none";
     }
+    
     function aboutMeModal() {
       if (window.innerWidth < 720) {
         close()
