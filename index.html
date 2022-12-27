@@ -39,6 +39,14 @@
       font-family: "Inter", sans-serif;
     }
     
+    body.epiphany {
+      background-image: url('/icons/bio-bg-epiphany.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: "Inter", sans-serif;
+    }
+    
     .avatar {
       width: 120px;
       height: 120px;
@@ -946,22 +954,20 @@
       const day = date.getDate();
       const month = date.getMonth() + 1;
       
-      if (month == 12 || month == 1) {
-        if ((month == 12 && day >= 8 && day <= 31) || (month == 1 && day >= 1 && day <= 6)) {
-          document.body.className = "christmas"; //christmas
-        }
+      if ((month == 12 && day >= 8 && day <= 31) || (month == 1 && day >= 1 && day <= 3)) {
+        document.body.className = "christmas"; //christmas
       }
       
-      if (month == 4) {
-        if (day >= 9 && day <= 12) {
-          document.body.className = "easter"; //easter
-        }
+      if (month == 4 && day >= 9 && day <= 12) {
+        document.body.className = "easter"; //easter
       }
       
-      if (month == 10) {
-        if (day >= 25 && day <= 31) {
-          document.body.className = "halloween"; //halloween
-        }
+      if (month == 10 && day >= 25 && day <= 31) {
+        document.body.className = "halloween"; //halloween
+      }
+      
+      if (month == 1 && day >= 4 && day <= 8) {
+        document.body.className = "epiphany"; //epiphany
       }
     }
     
