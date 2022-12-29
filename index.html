@@ -47,6 +47,14 @@
       font-family: "Inter", sans-serif;
     }
     
+    body.newyear {
+      background-image: url('/icons/bio-bg-newyear.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: "Inter", sans-serif;
+    }
+    
     .avatar {
       width: 120px;
       height: 120px;
@@ -954,7 +962,7 @@
       const day = date.getDate();
       const month = date.getMonth() + 1;
       
-      if ((month == 12 && day >= 8 && day <= 31) || (month == 1 && day >= 1 && day <= 3)) {
+      if ((month == 12 && day >= 8 && day <= 31) || (month == 1 && day >= 2 && day <= 3)) {
         document.body.className = "christmas"; //christmas
       }
       
@@ -968,6 +976,10 @@
       
       if (month == 1 && day >= 4 && day <= 8) {
         document.body.className = "epiphany"; //epiphany
+      }
+      
+      if (month == 1 == day == 1) {
+        document.body.className = "newyear" //new year
       }
     }
     
