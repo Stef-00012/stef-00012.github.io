@@ -251,7 +251,7 @@
       justify-content: center;
     }
     
-    .rabbit, .alternative-links {
+    .rabbit, .alternative-links, .github-stats {
       display: flex;
       justify-content: center;
       padding-top: 15px;
@@ -518,6 +518,13 @@
       </button>
     </div>
     
+    <div class="github-stats">
+      <button onclick="githubStatsModal()" class="buttons">
+        <img loading="lazy" class="btn-icon" src="icons/githubStats.png">
+        <p class="buttons-text">Statistiche Github<br />Github Stats</p>
+      </button>
+    </div>
+    
     <div class="modal" id="aboutMeModal">
       <div class="modal-content">
         <div class="modal-header">
@@ -702,6 +709,19 @@
         </div>
       </div>
     </div>
+    
+    <div class="modal" id="githubStatsModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close" id="githubStatsModal-close">&times;</span>
+          <h2><p class="text">Statistiche Github<br />Github Stats</p></h2>
+        </div>
+        <div class="modal-body" id="githubStatsModal-body">
+          <embed type="text/html" src="https://github-readme-stats.vercel.app/api?username=Stef-00012&show_icons=true&theme=tokyonight" width="100%">
+          <embed type="text/html" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Stef-00012&theme=tokyonight" width="100%">
+        </div>
+      </div>
+    </div>
   </div>
   <div class="desktop-site">
     <div>
@@ -743,6 +763,13 @@
       <button onclick="alternativeLinksModal()" class="buttons">
         <img loading="lazy" class="btn-icon desktop" src="icons/alternativeURLs.png">
         <p class="buttons-text desktop">Link Alternativi<br />Alternative Links</p>
+      </button>
+    </div>
+    
+    <div class="github-stats">
+      <button onclick="githubStatsModal()" class="buttons">
+        <img loading="lazy" class="btn-icon desktop" src="icons/githubStats.png">
+        <p class="buttons-text desktop">Statistiche Github<br />Github Stats</p>
       </button>
     </div>
     
@@ -930,6 +957,19 @@
         </div>
       </div>
     </div>
+    
+    <div class="modal" id="githubStatsModalDesktop">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close" id="githubStatsModalDesktop-close">&times;</span>
+          <h2><p class="text">Link Alternativi<br />Alterlative Links</p></h2>
+        </div>
+        <div class="modal-body" id="githubStatsModalDesktop-body">
+          <embed type="text/html" src="https://github-readme-stats.vercel.app/api?username=Stef-00012&show_icons=true&theme=tokyonight" width="100%">
+          <embed type="text/html" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Stef-00012&theme=tokyonight" width="100%">
+        </div>
+      </div>
+    </div>
   </div>
   <script>
     const spoiler = document.getElementById('spoiler');
@@ -962,11 +1002,18 @@
     const alternativeLinksModalCloseDesktop = document.getElementById('alternativeLinksModalDesktop-close');
     const alternativeLinksModalBodyDesktop = document.getElementById('alternativeLinksModalDesktop-body');
     
+    const githubStatsModalElement = document.getElementById('githubStatsModal');
+    const githubStatsModalClose = document.getElementById('githubStatsModal-close');
+    const githubStatsModalBody = document.getElementById('githubStatsModal-body');
+    
+    const githubStatsModalElementDesktop = document.getElementById('githubStatsModalDesktop');
+    const githubStatsModalCloseDesktop = document.getElementById('githubStatsModalDesktop-close');
+    const githubStatsModalBodyDesktop = document.getElementById('githubStatsModalDesktop-body');
+    
     function backgroundImageSet() {
       const date = new Date();
       const day = date.getDate();
       const month = date.getMonth() + 1;
-      console.log(day, month)
       if ((month == 12 && day >= 8 && day <= 31) || (month == 1 && day >= 2 && day <= 3)) {
         document.body.className = "christmas"; //christmas
       }
@@ -1009,6 +1056,9 @@
       
       rabbitModalElement.style.display = "none";
       rabbitModalElementDesktop.style.display = "none";
+      
+      githubStatsModalElement.style.display = "none";
+      githubStatsModalElementDesktop.style.display = "none";
     }
     
     function aboutMeModal() {
@@ -1065,20 +1115,46 @@
       }
     }
     
-    aboutMeModalClose.onclick = close
+    function githubStatsModal() {
+      if (window.innerWidth < 720) {
+        close()
+        githubStatsModalElement.style.display = "block";
+        
+        githubStatsModalBody.scrollTop = 0;
+      } else {
+        close()
+        githubStatsModalElementDesktop.style.display = "block";
+        
+        githubStatsModalBodyDesktop.scrollTop = 0;
+      }
+    }
     
+    aboutMeModalClose.onclick = close
     aboutMeModalCloseDesktop.onclick = close
     
     rabbitModalClose.onclick = close
-    
     rabbitModalCloseDesktop.onclick = close
     
     alternativeLinksModalClose.onclick = close
-    
     alternativeLinksModalCloseDesktop.onclick = close
     
+    githubStatsModalClose.onclick = close
+    githubStatsModalCloseDesktop.onclick = close
+    
     window.onclick = function(event) {
-      if (event.target == aboutMeModalElement || event.target == rabbitModalElement || event.target == alternativeLinksModalElement || event.target == aboutMeModalElementDesktop || event.target == rabbitModalElementDesktop || event.target == alternativeLinksModalElementDesktop) {
+      if (
+        event.target == aboutMeModalElement ||
+        event.target == aboutMeModalElementDesktop ||
+        
+        event.target == rabbitModalElement ||
+        event.target == rabbitModalElementDesktop ||
+        
+        event.target == alternativeLinksModalElement ||
+        event.target == alternativeLinksModalElementDesktop ||
+        
+        event.target == githubStatsModalElement ||
+        event.target == githubStatsModalElementDesktop
+      ) {
         close()
       }
     }
