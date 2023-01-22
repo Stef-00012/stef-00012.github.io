@@ -298,7 +298,7 @@
       display: none;
       position: fixed;
       z-index: 1;
-      padding-top: 100px;
+      padding-top: 5%;
       left: 0;
       top: 0;
       width: 100%;
@@ -316,11 +316,13 @@
       border: 3px solid #888;
       border-radius: 24px;
       width: 90%;
+      height: 80%;
       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
       -webkit-animation-name: animatetop;
       -webkit-animation-duration: 0.4s;
       animation-name: animatetop;
       animation-duration: 1s;
+      overflow: scroll;
     }
     
     @-webkit-keyframes animatetop {
@@ -360,7 +362,7 @@
     .modal-body {
       padding: 2px 16px;
       color: #ffffff;
-      height: 450px;
+      height: 95%;
       background-attachment: fixed;
       overflow: scroll;
     }
@@ -447,6 +449,17 @@
       color: transparent;
       background-color: rgba(54, 47, 46, 1);
       border-radius: 5px;
+    }
+    
+    .ghstats.desktop {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      align-items: start;
+    }
+    
+    .ghstat.desktop {
+      display: inline-block;
     }
     
     .desktop-site {
@@ -965,8 +978,10 @@
           <h2><p class="text">Statistiche Github<br />Github Stats</p></h2>
         </div>
         <div class="modal-body" id="githubStatsModalDesktop-body">
-          <embed type="text/html" src="https://github-readme-stats.vercel.app/api?username=Stef-00012&show_icons=true&theme=tokyonight" width="100%">
-          <embed type="text/html" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Stef-00012&theme=tokyonight" width="100%">
+          <div class="ghstats desktop">
+            <embed class="ghstat desktop" type="text/html" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Stef-00012&theme=tokyonight" width="47%">
+            <embed class="ghstat desktop" type="text/html" src="https://github-readme-stats.vercel.app/api?username=Stef-00012&show_icons=true&theme=tokyonight" width="47%">
+          </div>
         </div>
       </div>
     </div>
