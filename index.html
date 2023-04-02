@@ -1,14 +1,59 @@
 <!DOCTYPE html>
 <head>
-  <meta name="author" content="La mia bio :) — My own bio :) | Stefano Del Prete / Home Page">
-  <meta name="description" content="Qui ci sono la maggior parte dei miei social (se non tutti) :) — Here are listed most of my socials (if not all) :)">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="My own bio :) | Stefano Del Prete / Home Page">
+  <meta name="description" content="Here are listed most of my socials (if not all) :)">
+  <meta property="og:title" content="My own bio :) - Stefano Del Prete | Home Page">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://stefdp.is-a.dev">
+  <meta property="og:description" content="Here are listed most of my socials (if not all) :)">
+  <meta name="theme-color" content="#629D6D">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
   <style>
     body {
-      background-image: url('icons/bio-bg.png');
+      background-image: url('/icons/bio-bg.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: "Inter", sans-serif;
+    }
+    
+    body.christmas {
+      background-image: url('/icons/bio-bg-christmas.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: "Inter", sans-serif;
+    }
+    
+    body.easter {
+      background-image: url('/icons/bio-bg-easter.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: "Inter", sans-serif;
+    }
+    
+    body.halloween {
+      background-image: url('/icons/bio-bg-halloween.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: "Inter", sans-serif;
+    }
+    
+    body.epiphany {
+      background-image: url('/icons/bio-bg-epiphany.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: "Inter", sans-serif;
+    }
+    
+    body.newyear {
+      background-image: url('/icons/bio-bg-newyear.png');
       background-repeat: no-repeat;
       background-size: cover;
       background-attachment: fixed;
@@ -85,6 +130,14 @@
     }
     
     .social.revolt.desktop {
+      padding-top: 5px;
+    }
+
+    .social.mastodon {
+      width: 45px;
+    }
+
+    .social.mastodon.desktop {
       padding-top: 5px;
     }
     
@@ -206,7 +259,7 @@
       justify-content: center;
     }
     
-    .rabbit, .alternative-links {
+    .rabbit, .alternative-links, .github-stats {
       display: flex;
       justify-content: center;
       padding-top: 15px;
@@ -253,7 +306,7 @@
       display: none;
       position: fixed;
       z-index: 1;
-      padding-top: 100px;
+      padding-top: 5%;
       left: 0;
       top: 0;
       width: 100%;
@@ -271,11 +324,13 @@
       border: 3px solid #888;
       border-radius: 24px;
       width: 90%;
+      height: 80%;
       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
       -webkit-animation-name: animatetop;
       -webkit-animation-duration: 0.4s;
       animation-name: animatetop;
       animation-duration: 1s;
+      overflow: scroll;
     }
     
     @-webkit-keyframes animatetop {
@@ -315,7 +370,7 @@
     .modal-body {
       padding: 2px 16px;
       color: #ffffff;
-      height: 450px;
+      height: 95%;
       background-attachment: fixed;
       overflow: scroll;
     }
@@ -404,6 +459,17 @@
       border-radius: 5px;
     }
     
+    .ghstats.desktop {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      align-items: start;
+    }
+    
+    .ghstat.desktop {
+      display: inline-block;
+    }
+    
     .desktop-site {
       display: block;
     }
@@ -423,7 +489,7 @@
     }
   </style>
 </head>
-<body>
+<body class="default">
   <div class="mobile-site">
     <div>
       <img loading="lazy" class="avatar" src="icons/bio-pfp.png">
@@ -432,23 +498,24 @@
     
     <div class="socials-bg">
       <div class="socials">
-        <a href="https://stefdp.is-a.dev/socials/discord"><img loading="lazy" class="social discord" src="icons/social_logos/discord.png"></a>
-        <a href=https://stefdp.is-a.dev/socials/twitch><img loading="lazy" class="social twitch" src="icons/social_logos/twitch.png"></a>
-        <a href="https://stefdp.is-a.dev/socials/instagram"><img loading="lazy" class="social instagram" src="icons/social_logos/instagram.png"></a>
-        <a href="https://stefdp.is-a.dev/code/github"><img loading="lazy" class="social github" src="icons/social_logos/github.png"></a>
-        <a href="https://stefdp.is-a.dev/socials/telegram"><img loading="lazy" class="social telegram" src="icons/social_logos/telegram.png"></a>
+        <a href="/socials/discord"><img loading="lazy" class="social discord" src="icons/social_logos/discord.png"></a>
+        <a href="/socials/twitch"><img loading="lazy" class="social twitch" src="icons/social_logos/twitch.png"></a>
+        <a href="/socials/instagram"><img loading="lazy" class="social instagram" src="icons/social_logos/instagram.png"></a>
+        <a href="/code/github"><img loading="lazy" class="social github" src="icons/social_logos/github.png"></a>
+        <a href="/socials/telegram"><img loading="lazy" class="social telegram" src="icons/social_logos/telegram.png"></a>
       </div>
       
       <div class="socials" id="socials-2">
-        <a href="https://stefdp.is-a.dev/socials/youtube"><img loading="lazy" class="social youtube" src="icons/social_logos/youtube.png"></a>
-        <a href="https://stefdp.is-a.dev/socials/twitter"><img loading="lazy" class="social twitter" src="icons/social_logos/twitter.png"></a>
-        <a href="https://stefdp.is-a.dev/socials/spotify"><img loading="lazy" class="social spotify" src="icons/social_logos/spotify.png"></a>
-        <a href="https://stefdp.is-a.dev/socials/tiktok"><img loading="lazy" class="social tiktok" src="icons/social_logos/tiktok.png"></a>
-        <a href="https://stefdp.is-a.dev/socials/reddit"><img loading="lazy" class="social reddit" src="icons/social_logos/reddit.png"></a>
+        <a href="/socials/youtube"><img loading="lazy" class="social youtube" src="icons/social_logos/youtube.png"></a>
+        <a href="/socials/twitter"><img loading="lazy" class="social twitter" src="icons/social_logos/twitter.png"></a>
+        <a href="/socials/spotify"><img loading="lazy" class="social spotify" src="icons/social_logos/spotify.png"></a>
+        <a href="/socials/tiktok"><img loading="lazy" class="social tiktok" src="icons/social_logos/tiktok.png"></a>
+        <a href="/socials/reddit"><img loading="lazy" class="social reddit" src="icons/social_logos/reddit.png"></a>
       </div>
       
       <div class="socials" id="socials-3">
-        <a href="https://stefdp.is-a.dev/socials/revolt"><img loading="lazy" class="social revolt" src="icons/social_logos/revolt.png"></a>
+        <a href="/socials/revolt"><img loading="lazy" class="social revolt" src="icons/social_logos/revolt.png"></a>
+        <a href="/socials/mastodon"><img loading="lazy" class="social mastodon" src="icons/social_logos/mastodon.png"></a>
       </div>
     </div>
     
@@ -473,6 +540,13 @@
       </button>
     </div>
     
+    <div class="github-stats">
+      <button onclick="githubStatsModal()" class="buttons">
+        <img loading="lazy" class="btn-icon" src="icons/githubStats.png">
+        <p class="buttons-text">Statistiche Github<br />Github Stats</p>
+      </button>
+    </div>
+    
     <div class="modal" id="aboutMeModal">
       <div class="modal-content">
         <div class="modal-header">
@@ -480,10 +554,6 @@
           <h2><p class="text">A small about me<br />Un po' di info su di me</p></h2>
         </div>
         <div class="modal-body" id="aboutMeModal-body">
-          <!-- <p>My name is <b>Stefano Del Prete</b> and i'm <code><b><u id="unknown-char2">##</u></code></b> years old</p>
-          <p>I have a small rabbit which has <b>9 years</b> (<em class="spoiler" id="spoiler">69 in rabbit years</em>)</p>
-          <p><b>~~~~~~~~~~~~~~</b></p>
-          <p><b>15 March 200<code><u id="unknown-char1">#</u></code></b> 🇮🇹</p> -->
           <div class="code-block" id="code-block">
             <code>
               <p class="code-block code comment">&nbsp;/*<br />&nbsp;&nbsp;&nbsp;My&nbsp;personal&nbsp;informations<br />&nbsp;*/<br /><br /></p>
@@ -541,7 +611,7 @@
               <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;{<br /></p>
               
               <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code string">"HTML"</p><p class="code-block code default">,<br /></p>
-              <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code integer">40&nbsp;</p><p class="code-block code comment">//&nbsp;0-100<br /></p>
+              <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code integer">55&nbsp;</p><p class="code-block code comment">//&nbsp;0-100<br /></p>
               
               <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;}</p><p class="code-block code default">,<br /></p>
               <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;{<br /></p>
@@ -564,7 +634,7 @@
               <p class="code-block code constant">&nbsp;const&nbsp;</p><p class="code-block code declaration">discord&nbsp;</p><p class="code-block code operators">=&nbsp;</p><p class="code-block code bracket layer1">{<br/></p>
               
               <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;botDeveloper</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code constant">true</p><p class="code-block code default">,<br /></p>
-              <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;badges</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code bracket layer2">[</p><p class="code-block code string">"House of Bravery"</p><p class="code-block code bracket layer2">]<br /></p>
+              <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;badges</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code bracket layer2">[</p><p class="code-block code string">"House&nbsp;of&nbsp;Bravery"</p><p class="code-block code default">,&nbsp;</p><p class="code-block code string">"Active&nbsp;Developer"</p><p class="code-block code bracket layer2">]<br /></p>
               <p class="code-block code bracket layer1">&nbsp;}</p><p class="code-block code default">;<br /><br /></p>
               
               
@@ -635,29 +705,44 @@
         </div>
         <div class="modal-body" id="alternativeLinksModal-body">
           <p><img loading="lazy" class="small-social-logo discord" src="/icons/social_logos/discordLogo.png">
-          <b>Discord</b>: <a class="social-url discord" href="https://stefdp.is-a.dev/socials/discord">https://stefdp.is-a.dev/socials/discord</a><br />
+          <b>Discord</b>: <a class="social-url discord" href="/socials/discord">https://stefdp.is-a.dev/socials/discord</a><br />
           <img loading="lazy" class="small-social-logo twitch" src="/icons/social_logos/twitchLogo.png">
-          <b>Twitch</b>: <a class="social-url twitch" href="https://stefdp.is-a.dev/socials/twitch">https://stefdp.is-a.dev/socials/twitch</a><br />
+          <b>Twitch</b>: <a class="social-url twitch" href="/socials/twitch">https://stefdp.is-a.dev/socials/twitch</a><br />
           <img loading="lazy" class="small-social-logo instagram" src="/icons/social_logos/instagramLogo.png">
-          <b>Instagram</b>: <a class="social-url instagram" href="https://stefdp.is-a.dev/socials/instagram">https://stefdp.is-a.dev/socials/instagram</a><br />
+          <b>Instagram</b>: <a class="social-url instagram" href="/socials/instagram">https://stefdp.is-a.dev/socials/instagram</a><br />
           <img loading="lazy" class="small-social-logo github" src="/icons/social_logos/githubLogo.png">
-          <b>Github</b>: <a class="social-url github" href="https://stefdp.is-a.dev/code/github">https://stefdp.is-a.dev/code/github</a><br />
+          <b>Github</b>: <a class="social-url github" href="/code/github">https://stefdp.is-a.dev/code/github</a><br />
           <img loading="lazy" class="small-social-logo telegram" src="/icons/social_logos/telegramLogo.png">
-          <b>Telegram</b>: <a class="social-url telegram" href="https://stefdp.is-a.dev/socials/telegram">https://stefdp.is-a.dev/socials/telegram</a><br />
+          <b>Telegram</b>: <a class="social-url telegram" href="/socials/telegram">https://stefdp.is-a.dev/socials/telegram</a><br />
           <img loading="lazy" class="small-social-logo youtube" src="/icons/social_logos/youtubeLogo.png">
-          <b>Youtube</b>: <a class="social-url youtube" href="https://stefdp.is-a.dev/socials/youtube">https://stefdp.is-a.dev/socials/youtube</a><br />
+          <b>Youtube</b>: <a class="social-url youtube" href="/socials/youtube">https://stefdp.is-a.dev/socials/youtube</a><br />
           <img loading="lazy" class="small-social-logo twitter" src="/icons/social_logos/twitterLogo.png">
-          <b>Twitter</b>: <a class="social-url twitter" href="https://stefdp.is-a.dev/socials/twitter">https://stefdp.is-a.dev/socials/twitter</a><br />
+          <b>Twitter</b>: <a class="social-url twitter" href="/socials/twitter">https://stefdp.is-a.dev/socials/twitter</a><br />
           <img loading="lazy" class="small-social-logo spotify" src="/icons/social_logos/spotifyLogo.png">
-          <b>Spotify</b>: <a class="social-url spotify" href="https://stefdp.is-a.dev/socials/spotify">https://stefdp.is-a.dev/socials/spotify</a><br />
+          <b>Spotify</b>: <a class="social-url spotify" href="/socials/spotify">https://stefdp.is-a.dev/socials/spotify</a><br />
           <img loading="lazy" class="small-social-logo tiktok" src="/icons/social_logos/tiktokLogo.png">
-          <b>Tiktok</b>: <a class="social-url tiktok" href="https://stefdp.is-a.dev/socials/tiktok">https://stefdp.is-a.dev/socials/tiktok</a><br />
+          <b>Tiktok</b>: <a class="social-url tiktok" href="/socials/tiktok">https://stefdp.is-a.dev/socials/tiktok</a><br />
           <img loading="lazy" class="small-social-logo revolt" src="/icons/social_logos/revoltLogo.png">
-          <b>Revolt</b>: <a class="social-url revolt" href="https://stefdp.is-a.dev/socials/revolt">https://stefdp.is-a.dev/socials/revolt</a><br />
+          <b>Revolt</b>: <a class="social-url revolt" href="/socials/revolt">https://stefdp.is-a.dev/socials/revolt</a><br />
           <img loading="lazy" class="small-social-logo reddit" src="/icons/social_logos/redditLogo.png">
-          <b>Reddit</b>: <a class="social-url reddit" href="https://stefdp.is-a.dev/socials/reddit">https://stefdp.is-a.dev/socials/reddit</a><br />
+          <b>Reddit</b>: <a class="social-url reddit" href="/socials/reddit">https://stefdp.is-a.dev/socials/reddit</a><br />
+          <img loading="lazy" class="small-social-logo mastodon" src="/icons/social_logos/mastodon.png">
+          <b>Source</b>: <a class="social-url mastodon" href="/socials/mastodon">https://stefdp.is-a.dev/code/source</a></p>
           <img loading="lazy" class="small-social-logo source" src="/icons/social_logos/sourceLogo.png">
-          <b>Source</b>: <a class="social-url github" href="https://stefdp.is-a.dev/code/source">https://stefdp.is-a.dev/code/source</a></p>
+          <b>Source</b>: <a class="social-url source" href="/code/source">https://stefdp.is-a.dev/code/source</a></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal" id="githubStatsModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close" id="githubStatsModal-close">&times;</span>
+          <h2><p class="text">Statistiche Github<br />Github Stats</p></h2>
+        </div>
+        <div class="modal-body" id="githubStatsModal-body">
+          <embed type="text/html" src="https://github-readme-stats.vercel.app/api?username=Stef-00012&show_icons=true&theme=tokyonight" width="100%">
+          <embed type="text/html" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Stef-00012&theme=tokyonight" width="100%">
         </div>
       </div>
     </div>
@@ -670,17 +755,18 @@
     
     <div class="socials-bg">
       <div class="socials">
-        <a href="https://stefdp.is-a.dev/socials/discord"><img loading="lazy" class="social discord desktop" src="icons/social_logos/discord.png"></a>
-        <a href=https://stefdp.is-a.dev/socials/twitch><img loading="lazy" class="social twitch desktop" src="icons/social_logos/twitch.png"></a>
-        <a href="https://stefdp.is-a.dev/socials/instagram"><img loading="lazy" class="social instagram desktop" src="icons/social_logos/instagram.png"></a>
-        <a href="https://stefdp.is-a.dev/code/github"><img loading="lazy" class="social github desktop" src="icons/social_logos/github.png"></a>
-        <a href="https://stefdp.is-a.dev/socials/telegram"><img loading="lazy" class="social telegram desktop" src="icons/social_logos/telegram.png"></a>
-        <a href="https://stefdp.is-a.dev/socials/youtube"><img loading="lazy" class="social youtube desktop" src="icons/social_logos/youtube.png"></a>
-        <a href="https://stefdp.is-a.dev/socials/twitter"><img loading="lazy" class="social twitter desktop" src="icons/social_logos/twitter.png"></a>
-        <a href="https://stefdp.is-a.dev/socials/spotify"><img loading="lazy" class="social spotify desktop" src="icons/social_logos/spotify.png"></a>
-        <a href="https://stefdp.is-a.dev/socials/tiktok"><img loading="lazy" class="social tiktok desktop" src="icons/social_logos/tiktok.png"></a>
-        <a href="https://stefdp.is-a.dev/socials/reddit"><img loading="lazy" class="social reddit desktop" src="icons/social_logos/reddit.png"></a>
-        <a href="https://stefdp.is-a.dev/socials/revolt"><img loading="lazy" class="social revolt desktop" src="icons/social_logos/revolt.png"></a>
+        <a href="/socials/discord"><img loading="lazy" class="social discord desktop" src="icons/social_logos/discord.png"></a>
+        <a href="/socials/twitch"><img loading="lazy" class="social twitch desktop" src="icons/social_logos/twitch.png"></a>
+        <a href="/socials/instagram"><img loading="lazy" class="social instagram desktop" src="icons/social_logos/instagram.png"></a>
+        <a href="/code/github"><img loading="lazy" class="social github desktop" src="icons/social_logos/github.png"></a>
+        <a href="/socials/telegram"><img loading="lazy" class="social telegram desktop" src="icons/social_logos/telegram.png"></a>
+        <a href="/socials/youtube"><img loading="lazy" class="social youtube desktop" src="icons/social_logos/youtube.png"></a>
+        <a href="/socials/twitter"><img loading="lazy" class="social twitter desktop" src="icons/social_logos/twitter.png"></a>
+        <a href="/socials/spotify"><img loading="lazy" class="social spotify desktop" src="icons/social_logos/spotify.png"></a>
+        <a href="/socials/tiktok"><img loading="lazy" class="social tiktok desktop" src="icons/social_logos/tiktok.png"></a>
+        <a href="/socials/reddit"><img loading="lazy" class="social reddit desktop" src="icons/social_logos/reddit.png"></a>
+        <a href="/socials/revolt"><img loading="lazy" class="social revolt desktop" src="icons/social_logos/revolt.png"></a>
+        <a href="/socials/mastodon"><img loading="lazy" class="social mastodon desktop" src="icons/social_logos/mastodon.png"></a>
       </div>
     </div>
     
@@ -705,6 +791,13 @@
       </button>
     </div>
     
+    <div class="github-stats">
+      <button onclick="githubStatsModal()" class="buttons">
+        <img loading="lazy" class="btn-icon desktop" src="icons/githubStats.png">
+        <p class="buttons-text desktop">Statistiche Github<br />Github Stats</p>
+      </button>
+    </div>
+    
     <div class="modal" id="aboutMeModalDesktop">
       <div class="modal-content">
         <div class="modal-header">
@@ -712,10 +805,6 @@
           <h2><p class="text">A small about me<br />Un po' di info su di me</p></h2>
         </div>
         <div class="modal-body" id="aboutMeModalDesktop-body">
-          <!-- <p>My name is <b>Stefano Del Prete</b> and i'm <code><b><u id="unknown-char2">##</u></code></b> years old</p>
-          <p>I have a small rabbit which has <b>9 years</b> (<em class="spoiler" id="spoiler">69 in rabbit years</em>)</p>
-          <p><b>~~~~~~~~~~~~~~</b></p>
-          <p><b>15 March 200<code><u id="unknown-char1">#</u></code></b> 🇮🇹</p> -->
           <div class="code-block" id="code-block-desktop">
             <code>
               <p class="code-block code comment">&nbsp;/*<br />&nbsp;&nbsp;&nbsp;My&nbsp;personal&nbsp;informations<br />&nbsp;*/<br /><br /></p>
@@ -773,7 +862,7 @@
               <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;{<br /></p>
               
               <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code string">"HTML"</p><p class="code-block code default">,<br /></p>
-              <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code integer">40&nbsp;</p><p class="code-block code comment">//&nbsp;0-100<br /></p>
+              <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code integer">55&nbsp;</p><p class="code-block code comment">//&nbsp;0-100<br /></p>
               
               <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;}</p><p class="code-block code default">,<br /></p>
               <p class="code-block code bracket layer2">&nbsp;&nbsp;&nbsp;{<br /></p>
@@ -796,7 +885,7 @@
               <p class="code-block code constant">&nbsp;const&nbsp;</p><p class="code-block code declaration">discord&nbsp;</p><p class="code-block code operators">=&nbsp;</p><p class="code-block code bracket layer1">{<br/></p>
               
               <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;botDeveloper</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code constant">true</p><p class="code-block code default">,<br /></p>
-              <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;badges</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code bracket layer2">[</p><p class="code-block code string">"House of Bravery"</p><p class="code-block code bracket layer2">]<br /></p>
+              <p class="code-block code objectProperty">&nbsp;&nbsp;&nbsp;badges</p><p class="code-block code operators">:&nbsp;</p><p class="code-block code bracket layer2">[</p><p class="code-block code string">"House&nbsp;of&nbsp;Bravery"</p><p class="code-block code default">,&nbsp;</p><p class="code-block code string">"Active&nbsp;Developer"</p><p class="code-block code bracket layer2">]<br /></p>
               <p class="code-block code bracket layer1">&nbsp;}</p><p class="code-block code default">;<br /><br /></p>
               
               
@@ -867,29 +956,44 @@
         </div>
         <div class="modal-body" id="alternativeLinksModalDesktop-body">
           <p><img loading="lazy" class="small-social-logo discord" src="/icons/social_logos/discordLogo.png">
-          <b>Discord</b>: <a class="social-url discord" href="https://stefdp.is-a.dev/socials/discord">https://stefdp.is-a.dev/socials/discord</a><br />
+          <b>Discord</b>: <a class="social-url discord" href="/socials/discord">https://stefdp.is-a.dev/socials/discord</a><br />
           <img loading="lazy" class="small-social-logo twitch" src="/icons/social_logos/twitchLogo.png">
-          <b>Twitch</b>: <a class="social-url twitch" href="https://stefdp.is-a.dev/socials/twitch">https://stefdp.is-a.dev/socials/twitch</a><br />
+          <b>Twitch</b>: <a class="social-url twitch" href="/socials/twitch">https://stefdp.is-a.dev/socials/twitch</a><br />
           <img loading="lazy" class="small-social-logo instagram" src="/icons/social_logos/instagramLogo.png">
-          <b>Instagram</b>: <a class="social-url instagram" href="https://stefdp.is-a.dev/socials/instagram">https://stefdp.is-a.dev/socials/instagram</a><br />
+          <b>Instagram</b>: <a class="social-url instagram" href="/socials/instagram">https://stefdp.is-a.dev/socials/instagram</a><br />
           <img loading="lazy" class="small-social-logo github" src="/icons/social_logos/githubLogo.png">
-          <b>Github</b>: <a class="social-url github" href="https://stefdp.is-a.dev/code/github">https://stefdp.is-a.dev/code/github</a><br />
+          <b>Github</b>: <a class="social-url github" href="/code/github">https://stefdp.is-a.dev/code/github</a><br />
           <img loading="lazy" class="small-social-logo telegram" src="/icons/social_logos/telegramLogo.png">
-          <b>Telegram</b>: <a class="social-url telegram" href="https://stefdp.is-a.dev/socials/telegram">https://stefdp.is-a.dev/socials/telegram</a><br />
+          <b>Telegram</b>: <a class="social-url telegram" href="/socials/telegram">https://stefdp.is-a.dev/socials/telegram</a><br />
           <img loading="lazy" class="small-social-logo youtube" src="/icons/social_logos/youtubeLogo.png">
-          <b>Youtube</b>: <a class="social-url youtube" href="https://stefdp.is-a.dev/socials/youtube">https://stefdp.is-a.dev/socials/youtube</a><br />
+          <b>Youtube</b>: <a class="social-url youtube" href="/socials/youtube">https://stefdp.is-a.dev/socials/youtube</a><br />
           <img loading="lazy" class="small-social-logo twitter" src="/icons/social_logos/twitterLogo.png">
-          <b>Twitter</b>: <a class="social-url twitter" href="https://stefdp.is-a.dev/socials/twitter">https://stefdp.is-a.dev/socials/twitter</a><br />
+          <b>Twitter</b>: <a class="social-url twitter" href="/socials/twitter">https://stefdp.is-a.dev/socials/twitter</a><br />
           <img loading="lazy" class="small-social-logo spotify" src="/icons/social_logos/spotifyLogo.png">
-          <b>Spotify</b>: <a class="social-url spotify" href="https://stefdp.is-a.dev/socials/spotify">https://stefdp.is-a.dev/socials/spotify</a><br />
+          <b>Spotify</b>: <a class="social-url spotify" href="/socials/spotify">https://stefdp.is-a.dev/socials/spotify</a><br />
           <img loading="lazy" class="small-social-logo tiktok" src="/icons/social_logos/tiktokLogo.png">
-          <b>Tiktok</b>: <a class="social-url tiktok" href="https://stefdp.is-a.dev/socials/tiktok">https://stefdp.is-a.dev/socials/tiktok</a><br />
+          <b>Tiktok</b>: <a class="social-url tiktok" href="/socials/tiktok">https://stefdp.is-a.dev/socials/tiktok</a><br />
           <img loading="lazy" class="small-social-logo revolt" src="/icons/social_logos/revoltLogo.png">
-          <b>Revolt</b>: <a class="social-url revolt" href="https://stefdp.is-a.dev/socials/revolt">https://stefdp.is-a.dev/socials/revolt</a><br />
+          <b>Revolt</b>: <a class="social-url revolt" href="/socials/revolt">https://stefdp.is-a.dev/socials/revolt</a><br />
           <img loading="lazy" class="small-social-logo reddit" src="/icons/social_logos/redditLogo.png">
-          <b>Reddit</b>: <a class="social-url reddit" href="https://stefdp.is-a.dev/socials/reddit">https://stefdp.is-a.dev/socials/reddit</a><br />
+          <b>Reddit</b>: <a class="social-url reddit" href="/socials/reddit">https://stefdp.is-a.dev/socials/reddit</a><br />
           <img loading="lazy" class="small-social-logo source" src="/icons/social_logos/sourceLogo.png">
-          <b>Source</b>: <a class="social-url github" href="https://stefdp.is-a.dev/code/source">https://stefdp.is-a.dev/code/source</a></p>
+          <b>Source</b>: <a class="social-url github" href="/code/source">https://stefdp.is-a.dev/code/source</a></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal" id="githubStatsModalDesktop">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close" id="githubStatsModalDesktop-close">&times;</span>
+          <h2><p class="text">Statistiche Github<br />Github Stats</p></h2>
+        </div>
+        <div class="modal-body" id="githubStatsModalDesktop-body">
+          <div class="ghstats desktop">
+            <embed class="ghstat desktop" type="text/html" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Stef-00012&theme=tokyonight" width="47%">
+            <embed class="ghstat desktop" type="text/html" src="https://github-readme-stats.vercel.app/api?username=Stef-00012&show_icons=true&theme=tokyonight" width="47%">
+          </div>
         </div>
       </div>
     </div>
@@ -925,6 +1029,41 @@
     const alternativeLinksModalCloseDesktop = document.getElementById('alternativeLinksModalDesktop-close');
     const alternativeLinksModalBodyDesktop = document.getElementById('alternativeLinksModalDesktop-body');
     
+    const githubStatsModalElement = document.getElementById('githubStatsModal');
+    const githubStatsModalClose = document.getElementById('githubStatsModal-close');
+    const githubStatsModalBody = document.getElementById('githubStatsModal-body');
+    
+    const githubStatsModalElementDesktop = document.getElementById('githubStatsModalDesktop');
+    const githubStatsModalCloseDesktop = document.getElementById('githubStatsModalDesktop-close');
+    const githubStatsModalBodyDesktop = document.getElementById('githubStatsModalDesktop-body');
+    
+    function backgroundImageSet() {
+      const date = new Date();
+      const day = date.getDate();
+      const month = date.getMonth() + 1;
+      if ((month == 12 && day >= 8 && day <= 31) || (month == 1 && day >= 2 && day <= 3)) {
+        document.body.className = "christmas"; //christmas
+      }
+      
+      if (month == 4 && day >= 9 && day <= 12) {
+        document.body.className = "easter"; //easter
+      }
+      
+      if (month == 10 && day >= 25 && day <= 31) {
+        document.body.className = "halloween"; //halloween
+      }
+      
+      if (month == 1 && day >= 4 && day <= 8) {
+        document.body.className = "epiphany"; //epiphany
+      }
+      
+      if (month == 1 == day == 1) {
+        document.body.className = "newyear" //new year
+      }
+    }
+    
+    backgroundImageSet();
+    
     spoiler.onclick = function() {
       spoiler.style.backgroundColor = "rgba(54, 47, 46, 0.65)";
       spoiler.style.color = "rgba(255, 255, 255, 0.85)";
@@ -935,7 +1074,7 @@
       spoilerDesktop.style.color = "rgba(255, 255, 255, 0.85)";
     }
     
-    const close = function() {
+    function close() {
       alternativeLinksModalElement.style.display = "none";
       alternativeLinksModalElementDesktop.style.display = "none";
       
@@ -944,7 +1083,11 @@
       
       rabbitModalElement.style.display = "none";
       rabbitModalElementDesktop.style.display = "none";
+      
+      githubStatsModalElement.style.display = "none";
+      githubStatsModalElementDesktop.style.display = "none";
     }
+    
     function aboutMeModal() {
       if (window.innerWidth < 720) {
         close()
@@ -999,20 +1142,46 @@
       }
     }
     
-    aboutMeModalClose.onclick = close
+    function githubStatsModal() {
+      if (window.innerWidth < 720) {
+        close()
+        githubStatsModalElement.style.display = "block";
+        
+        githubStatsModalBody.scrollTop = 0;
+      } else {
+        close()
+        githubStatsModalElementDesktop.style.display = "block";
+        
+        githubStatsModalBodyDesktop.scrollTop = 0;
+      }
+    }
     
+    aboutMeModalClose.onclick = close
     aboutMeModalCloseDesktop.onclick = close
     
     rabbitModalClose.onclick = close
-    
     rabbitModalCloseDesktop.onclick = close
     
     alternativeLinksModalClose.onclick = close
-    
     alternativeLinksModalCloseDesktop.onclick = close
     
+    githubStatsModalClose.onclick = close
+    githubStatsModalCloseDesktop.onclick = close
+    
     window.onclick = function(event) {
-      if (event.target == aboutMeModalElement || event.target == rabbitModalElement || event.target == alternativeLinksModalElement || event.target == aboutMeModalElementDesktop || event.target == rabbitModalElementDesktop || event.target == alternativeLinksModalElementDesktop) {
+      if (
+        event.target == aboutMeModalElement ||
+        event.target == aboutMeModalElementDesktop ||
+        
+        event.target == rabbitModalElement ||
+        event.target == rabbitModalElementDesktop ||
+        
+        event.target == alternativeLinksModalElement ||
+        event.target == alternativeLinksModalElementDesktop ||
+        
+        event.target == githubStatsModalElement ||
+        event.target == githubStatsModalElementDesktop
+      ) {
         close()
       }
     }
