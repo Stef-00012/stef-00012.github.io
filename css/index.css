@@ -188,47 +188,11 @@ body.newyear {
     color: #E63E00;
 }
 
-.social-url.discord:hover {
-    filter: brightness(0.8);
+.social-url.mastodon {
+    color: #5840d6;
 }
 
-.social-url.twitch:hover {
-    filter: brightness(0.8);
-}
-
-.social-url.instagram:hover {
-    filter: brightness(0.8);
-}
-
-.social-url.github:hover {
-    filter: brightness(0.8);
-}
-
-.social-url.telegram:hover {
-    filter: brightness(0.8);
-}
-
-.social-url.youtube:hover {
-    filter: brightness(0.8);
-}
-
-.social-url.twitter:hover {
-    filter: brightness(0.8);
-}
-
-.social-url.spotify:hover {
-    filter: brightness(0.8);
-}
-
-.social-url.tiktok:hover {
-    filter: brightness(0.8);
-}
-
-.social-url.revolt:hover {
-    filter: brightness(0.8);
-}
-
-.social-url.reddit:hover {
+.social-url:hover {
     filter: brightness(0.8);
 }
 
