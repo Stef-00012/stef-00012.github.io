@@ -41,23 +41,23 @@ function backgroundImageSet() {
     const day = date.getDate();
     const month = date.getMonth() + 1;
     if ((month == 12 && day >= 8 && day <= 31) || (month == 1 && day >= 2 && day <= 3)) {
-    document.body.className = "christmas"; //christmas
+        document.body.className = "christmas"; //christmas
     }
     
     if (month == 4 && day >= 9 && day <= 12) {
-    document.body.className = "easter"; //easter
+        document.body.className = "easter"; //easter
     }
     
     if (month == 10 && day >= 25 && day <= 31) {
-    document.body.className = "halloween"; //halloween
+        document.body.className = "halloween"; //halloween
     }
     
     if (month == 1 && day >= 4 && day <= 8) {
-    document.body.className = "epiphany"; //epiphany
+        document.body.className = "epiphany"; //epiphany
     }
     
     if (month == 1 == day == 1) {
-    document.body.className = "newyear" //new year
+        document.body.className = "newyear" //new year
     }
 }
 
@@ -89,69 +89,69 @@ function close() {
 
 function aboutMeModal() {
     if (window.innerWidth < 720) {
-    close()
-    aboutMeModalElement.style.display = "block";
-    
-    aboutMeModalBody.scrollTop = 0;
-    
-    spoiler.style.backgroundColor = "rgba(54, 47, 46, 1)";
-    spoiler.style.color = "transparent";
-    
-    codeBlock.scrollTop = 0;
-    codeBlock.scrollLeft = 0;
+        close()
+        aboutMeModalElement.style.display = "block";
+        
+        aboutMeModalBody.scrollTop = 0;
+        
+        spoiler.style.backgroundColor = "rgba(54, 47, 46, 1)";
+        spoiler.style.color = "transparent";
+        
+        codeBlock.scrollTop = 0;
+        codeBlock.scrollLeft = 0;
     } else {
-    close()
-    aboutMeModalElementDesktop.style.display = "block";
-    
-    aboutMeModalBodyDesktop.scrollTop = 0;
-            
-    spoilerDesktop.style.backgroundColor = "rgba(54, 47, 46, 1)";
-    spoilerDesktop.style.color = "transparent";
-    
-    codeBlockDesktop.scrollTop = 0;
-    codeBlockDesktop.scrollLeft = 0;
+        close()
+        aboutMeModalElementDesktop.style.display = "block";
+        
+        aboutMeModalBodyDesktop.scrollTop = 0;
+                
+        spoilerDesktop.style.backgroundColor = "rgba(54, 47, 46, 1)";
+        spoilerDesktop.style.color = "transparent";
+        
+        codeBlockDesktop.scrollTop = 0;
+        codeBlockDesktop.scrollLeft = 0;
     }
 }
 
 function rabbitModal() {
     if (window.innerWidth < 720) {
-    close()
-    rabbitModalElement.style.display = "block";
-    
-    rabbitModalBody.scrollTop = 0;
+        close()
+        rabbitModalElement.style.display = "block";
+        
+        rabbitModalBody.scrollTop = 0;
     } else {
-    close()
-    rabbitModalElementDesktop.style.display = "block";
-    
-    rabbitModalBody.scrollTop = 0;
+        close()
+        rabbitModalElementDesktop.style.display = "block";
+        
+        rabbitModalBody.scrollTop = 0;
     }
 }
 
 function alternativeLinksModal() {
     if (window.innerWidth < 720) {
-    close()
-    alternativeLinksModalElement.style.display = "block";
-    
-    alternativeLinksModalBody.scrollTop = 0;
+        close()
+        alternativeLinksModalElement.style.display = "block";
+        
+        alternativeLinksModalBody.scrollTop = 0;
     } else {
-    close()
-    alternativeLinksModalElementDesktop.style.display = "block";
-    
-    alternativeLinksModalBodyDesktop.scrollTop = 0;
+        close()
+        alternativeLinksModalElementDesktop.style.display = "block";
+        
+        alternativeLinksModalBodyDesktop.scrollTop = 0;
     }
 }
 
 function githubStatsModal() {
     if (window.innerWidth < 720) {
-    close()
-    githubStatsModalElement.style.display = "block";
-    
-    githubStatsModalBody.scrollTop = 0;
+        close()
+        githubStatsModalElement.style.display = "block";
+        
+        githubStatsModalBody.scrollTop = 0;
     } else {
     close()
-    githubStatsModalElementDesktop.style.display = "block";
-    
-    githubStatsModalBodyDesktop.scrollTop = 0;
+        githubStatsModalElementDesktop.style.display = "block";
+        
+        githubStatsModalBodyDesktop.scrollTop = 0;
     }
 }
 
@@ -181,120 +181,237 @@ window.onclick = function(event) {
     event.target == githubStatsModalElement ||
     event.target == githubStatsModalElementDesktop
     ) {
-    close()
+        close()
     }
 }
 
-console.log(jBox)
 
 jQuery(() => {
     new jBox('Mouse', {
         attach: '#tooltip-discord',
         position: {
-          x: 'right',
-          y: 'top'
+            x: 'right',
+            y: 'top'
+        },
+        content: 'Discord'
+    });
+
+    new jBox('Mouse', {
+        attach: '#tooltip-discord-desktop',
+        position: {
+            x: 'right',
+            y: 'top'
         },
         content: 'Discord'
     });
     
+
     new jBox('Mouse', {
         attach: '#tooltip-twitch',
         position: {
-          x: 'right',
-          y: 'top'
+            x: 'right',
+            y: 'top'
         },
-        content: 'Twitch',
-        theme: 'myTheme'
+        content: 'Twitch'
     });
+
+    new jBox('Mouse', {
+        attach: '#tooltip-twitch-desktop',
+        position: {
+            x: 'right',
+            y: 'top'
+        },
+        content: 'Twitch'
+    });
+
     
     new jBox('Mouse', {
         attach: '#tooltip-instagram',
         position: {
-          x: 'right',
-          y: 'top'
+            x: 'right',
+            y: 'top'
         },
         content: 'Instagram'
     });
+
+    new jBox('Mouse', {
+        attach: '#tooltip-instagram-desktop',
+        position: {
+            x: 'right',
+            y: 'top'
+        },
+        content: 'Instagram'
+    });
+
     
     new jBox('Mouse', {
         attach: '#tooltip-github',
         position: {
-          x: 'right',
-          y: 'top'
+            x: 'right',
+            y: 'top'
+        },
+        content: 'Github'
+    });
+
+    new jBox('Mouse', {
+        attach: '#tooltip-github-desktop',
+        position: {
+            x: 'right',
+            y: 'top'
         },
         content: 'Github'
     });
     
+
     new jBox('Mouse', {
         attach: '#tooltip-telegram',
         position: {
-          x: 'right',
-          y: 'top'
+            x: 'right',
+            y: 'top'
         },
         content: 'Telegram'
     });
+
+    new jBox('Mouse', {
+      attach: '#tooltip-telegram-desktop',
+      position: {
+          x: 'right',
+          y: 'top'
+      },
+      content: 'Telegram'
+    });
     
+
     new jBox('Mouse', {
         attach: '#tooltip-youtube',
         position: {
-          x: 'right',
-          y: 'top'
+            x: 'right',
+            y: 'top'
         },
         content: 'Youtube'
     });
+
+    new jBox('Mouse', {
+      attach: '#tooltip-youtube-desktop',
+      position: {
+          x: 'right',
+          y: 'top'
+      },
+      content: 'Youtube'
+  });
+
     
     new jBox('Mouse', {
         attach: '#tooltip-twitter',
         position: {
-          x: 'right',
-          y: 'top'
+            x: 'right',
+            y: 'top'
         },
         content: 'Twitter'
     });
+
+    new jBox('Mouse', {
+        attach: '#tooltip-twitter-desktop',
+        position: {
+            x: 'right',
+            y: 'top'
+        },
+        content: 'Twitter'
+    });
+
     
     new jBox('Mouse', {
         attach: '#tooltip-spotify',
         position: {
-          x: 'right',
-          y: 'top'
+            x: 'right',
+            y: 'top'
         },
         content: 'Spotify'
     });
+
+    new jBox('Mouse', {
+        attach: '#tooltip-spotify-desktop',
+        position: {
+            x: 'right',
+            y: 'top'
+        },
+        content: 'Spotify'
+    });
+
     
     new jBox('Mouse', {
         attach: '#tooltip-tiktok',
         position: {
-          x: 'right',
-          y: 'top'
+            x: 'right',
+            y: 'top'
         },
         content: 'Tiktok'
     });
+
+    new jBox('Mouse', {
+        attach: '#tooltip-tiktok-desktop',
+        position: {
+            x: 'right',
+            y: 'top'
+        },
+        content: 'Tiktok'
+    });
+
     
     new jBox('Mouse', {
         attach: '#tooltip-reddit',
         position: {
-          x: 'right',
-          y: 'top'
+            x: 'right',
+            y: 'top'
         },
         content: 'Reddit'
     });
+
+    new jBox('Mouse', {
+      attach: '#tooltip-reddit-desktop',
+      position: {
+          x: 'right',
+          y: 'top'
+      },
+      content: 'Reddit'
+    });
+    
     
     new jBox('Mouse', {
         attach: '#tooltip-revolt',
         position: {
-          x: 'right',
-          y: 'top'
+            x: 'right',
+            y: 'top'
         },
         content: 'Revolt'
     });
+
+    new jBox('Mouse', {
+      attach: '#tooltip-revolt-desktop',
+      position: {
+          x: 'right',
+          y: 'top'
+      },
+      content: 'Revolt'
+  });
+
     
     new jBox('Mouse', {
         attach: '#tooltip-mastodon',
         position: {
-          x: 'right',
-          y: 'top'
+            x: 'right',
+            y: 'top'
         },
         content: 'Mastodon'
     });
+
+    new jBox('Mouse', {
+      attach: '#tooltip-mastodon-desktop',
+      position: {
+          x: 'right',
+          y: 'top'
+      },
+      content: 'Mastodon'
+  });
 
 })
