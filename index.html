@@ -8,12 +8,12 @@
   <meta property="og:url" content="https://stefdp.is-a.dev">
   <meta property="og:description" content="Here are listed most of my socials (if not all) :)">
   <meta name="theme-color" content="#629D6D">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="/css/index.css" rel="stylesheet">
-  <link href="/css/jquery.toolbar.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.2/dist/jBox.all.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="/css/jquery.toolbar.css" rel="stylesheet">
+  <link href="/css/jBox.all.css" rel="stylesheet">
+  <link href="/css/index.css" rel="stylesheet">
 </head>
 <body class="default">
   <div class="mobile-site">
@@ -294,18 +294,18 @@
     
     <div class="socials-bg">
       <div class="socials">
-        <a href="/socials/discord"><img loading="lazy" class="social discord desktop" src="icons/social_logos/discord.png"></a>
-        <a href="/socials/twitch"><img loading="lazy" class="social twitch desktop" src="icons/social_logos/twitch.png"></a>
-        <a href="/socials/instagram"><img loading="lazy" class="social instagram desktop" src="icons/social_logos/instagram.png"></a>
-        <a href="/code/github"><img loading="lazy" class="social github desktop" src="icons/social_logos/github.png"></a>
-        <a href="/socials/telegram"><img loading="lazy" class="social telegram desktop" src="icons/social_logos/telegram.png"></a>
-        <a href="/socials/youtube"><img loading="lazy" class="social youtube desktop" src="icons/social_logos/youtube.png"></a>
-        <a href="/socials/twitter"><img loading="lazy" class="social twitter desktop" src="icons/social_logos/twitter.png"></a>
-        <a href="/socials/spotify"><img loading="lazy" class="social spotify desktop" src="icons/social_logos/spotify.png"></a>
-        <a href="/socials/tiktok"><img loading="lazy" class="social tiktok desktop" src="icons/social_logos/tiktok.png"></a>
-        <a href="/socials/reddit"><img loading="lazy" class="social reddit desktop" src="icons/social_logos/reddit.png"></a>
-        <a href="/socials/revolt"><img loading="lazy" class="social revolt desktop" src="icons/social_logos/revolt.png"></a>
-        <a href="/socials/mastodon"><img loading="lazy" class="social mastodon desktop" src="icons/social_logos/mastodon.png"></a>
+        <a href="/socials/discord"><img loading="lazy" class="social discord desktop" id="tooltip-discord" src="icons/social_logos/discord.png"></a>
+        <a href="/socials/twitch"><img loading="lazy" class="social twitch desktop" id="tooltip-twitch" src="icons/social_logos/twitch.png"></a>
+        <a href="/socials/instagram"><img loading="lazy" class="social instagram desktop" id="tooltip-instagram" src="icons/social_logos/instagram.png"></a>
+        <a href="/code/github"><img loading="lazy" class="social github desktop" id="tooltip-github" src="icons/social_logos/github.png"></a>
+        <a href="/socials/telegram"><img loading="lazy" class="social telegram desktop" id="tooltip-telegram" src="icons/social_logos/telegram.png"></a>
+        <a href="/socials/youtube"><img loading="lazy" class="social youtube desktop" id="tooltip-youtube" src="icons/social_logos/youtube.png"></a>
+        <a href="/socials/twitter"><img loading="lazy" class="social twitter desktop" id="tooltip-twitter" src="icons/social_logos/twitter.png"></a>
+        <a href="/socials/spotify"><img loading="lazy" class="social spotify desktop" id="tooltip-spotify" src="icons/social_logos/spotify.png"></a>
+        <a href="/socials/tiktok"><img loading="lazy" class="social tiktok desktop" id="tooltip-tiktok" src="icons/social_logos/tiktok.png"></a>
+        <a href="/socials/reddit"><img loading="lazy" class="social reddit desktop" id="tooltip-reddit" src="icons/social_logos/reddit.png"></a>
+        <a href="/socials/revolt"><img loading="lazy" class="social revolt desktop" id="tooltip-revolt" src="icons/social_logos/revolt.png"></a>
+        <a href="/socials/mastodon"><img loading="lazy" class="social mastodon desktop" id="tooltip-mastodon" src="icons/social_logos/mastodon.png"></a>
       </div>
     </div>
     
@@ -552,9 +552,9 @@
       </div>
     </div>
   </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="/js/jquery.toolbar.js"></script>
+  <script src="/js/jBox.all.js"></script>
   <script src="/js/index.js"></script>
   <script src="/js/notif.js"></script>
-  <script src="/js/jquery.toolbar.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.2/dist/jBox.all.min.js"></script>
 </body>

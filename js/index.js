@@ -184,3 +184,117 @@ window.onclick = function(event) {
     close()
     }
 }
+
+console.log(jBox)
+
+jQuery(() => {
+    new jBox('Mouse', {
+        attach: '#tooltip-discord',
+        position: {
+          x: 'right',
+          y: 'top'
+        },
+        content: 'Discord'
+    });
+    
+    new jBox('Mouse', {
+        attach: '#tooltip-twitch',
+        position: {
+          x: 'right',
+          y: 'top'
+        },
+        content: 'Twitch',
+        theme: 'myTheme'
+    });
+    
+    new jBox('Mouse', {
+        attach: '#tooltip-instagram',
+        position: {
+          x: 'right',
+          y: 'top'
+        },
+        content: 'Instagram'
+    });
+    
+    new jBox('Mouse', {
+        attach: '#tooltip-github',
+        position: {
+          x: 'right',
+          y: 'top'
+        },
+        content: 'Github'
+    });
+    
+    new jBox('Mouse', {
+        attach: '#tooltip-telegram',
+        position: {
+          x: 'right',
+          y: 'top'
+        },
+        content: 'Telegram'
+    });
+    
+    new jBox('Mouse', {
+        attach: '#tooltip-youtube',
+        position: {
+          x: 'right',
+          y: 'top'
+        },
+        content: 'Youtube'
+    });
+    
+    new jBox('Mouse', {
+        attach: '#tooltip-twitter',
+        position: {
+          x: 'right',
+          y: 'top'
+        },
+        content: 'Twitter'
+    });
+    
+    new jBox('Mouse', {
+        attach: '#tooltip-spotify',
+        position: {
+          x: 'right',
+          y: 'top'
+        },
+        content: 'Spotify'
+    });
+    
+    new jBox('Mouse', {
+        attach: '#tooltip-tiktok',
+        position: {
+          x: 'right',
+          y: 'top'
+        },
+        content: 'Tiktok'
+    });
+    
+    new jBox('Mouse', {
+        attach: '#tooltip-reddit',
+        position: {
+          x: 'right',
+          y: 'top'
+        },
+        content: 'Reddit'
+    });
+    
+    new jBox('Mouse', {
+        attach: '#tooltip-revolt',
+        position: {
+          x: 'right',
+          y: 'top'
+        },
+        content: 'Revolt'
+    });
+    
+    new jBox('Mouse', {
+        attach: '#tooltip-mastodon',
+        position: {
+          x: 'right',
+          y: 'top'
+        },
+        content: 'Mastodon'
+    });
+
+})

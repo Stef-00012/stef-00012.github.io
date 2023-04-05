@@ -483,3 +483,67 @@ body.newyear {
 * {
     scrollbar-width: none;
 }
+
+#jBox1 > .jBox-container {
+    background-color: #3342dd;
+    border: 3px solid #212b90;
+}
+
+#jBox2 > .jBox-container {
+    background-color: #6b33b2;
+    border: 3px solid #3d1d65;
+}
+
+#jBox3 > .jBox-container {
+    background-color: #e52a5d;
+    border: 3px solid #981b3d;
+}
+
+#jBox4 {
+    color: #ffffff;
+}
+
+#jBox4 > .jBox-container {
+    background-color: #313131;
+    border: 3px solid #000000;
+}
+
+#jBox5 > .jBox-container {
+    background-color: #2279a7;
+    border: 3px solid #12415a;
+}
+
+#jBox6 > .jBox-container {
+    background-color: #b20000;
+    border: 3px solid #600000;
+}
+
+#jBox7 > .jBox-container {
+    background-color: #0087bb;
+    border: 3px solid #004f6e;
+}
+
+#jBox8 > .jBox-container {
+    background-color: #12a449;
+    border: 3px solid #095726;
+}
+
+#jBox9 > .jBox-container {
+    background-color: #af0035;
+    border: 3px solid #62001d;
+}
+
+#jBox10 > .jBox-container {
+    background-color: #b12f00;
+    border: 3px solid #641a00;
+}
+
+#jBox11 > .jBox-container {
+    background-color: #b2303a;
+    border: 3px solid #651b21;
+}
+
+#jBox12 > .jBox-container {
+    background-color: #4433a5;
+    border: 3px solid #241b58;
+}
