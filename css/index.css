@@ -127,6 +127,10 @@ body.newyear {
     padding-top: 5px;
 }
 
+.social.steam {
+    width: 47px
+}
+
 #socials-2 {
     padding-top: 15px;
 }
@@ -190,6 +194,10 @@ body.newyear {
 
 .social-url.mastodon {
     color: #5840d6;
+}
+
+.social-url.steam {
+    color: #152e5b;
 }
 
 .social-url:hover {
@@ -510,4 +518,9 @@ body.newyear {
 #jBox23 > .jBox-container, #jBox24 > .jBox-container {
     background-color: #4433a5;
     border: 3px solid #241b58;
+}
+
+#jBox25 > .jBox-container, #jBox26 > .jBox-container {
+    background-color: #122b60;
+    border: 3px solid #071539;
 }

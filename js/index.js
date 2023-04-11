@@ -414,4 +414,21 @@ jQuery(() => {
       content: 'Mastodon'
   });
 
+    new jBox('Mouse', {
+        attach: '#tooltip-steam',
+        position: {
+            x: 'right',
+            'y': 'top'
+        },
+        content: 'Steam'
+    })
+
+    new jBox('Mouse', {
+        attach: '#tooltip-steam-desktop',
+        position: {
+            x: 'right',
+            'y': 'top'
+        },
+        content: 'Steam'
+    })
 })
