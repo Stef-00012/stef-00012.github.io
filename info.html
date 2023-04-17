@@ -252,18 +252,7 @@
           } else {
             outputElement.innerHTML = json.html
             
-            
-            if(inputTypeElement.value.toLowerCase() == 'ui') {
-              $('#table').DataTable({
-                scrollX: true
-              })
-  
-              setInterval(() => {
-                const tableWrapperElement = document.getElementById('tableHead')
-
-                outputElement.style.width = tableWrapperElement.clientWidth + 'px'
-              }, 1)
-            }
+            if (json.script && json.script.length > 0) eval(json.script)
           }
         } catch (e) {
           console.log(e)
