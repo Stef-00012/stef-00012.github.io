@@ -889,7 +889,7 @@ function jBoxWrapper(jQuery) {
     if (this.options.responsiveWidth || this.options.responsiveHeight)
     {
       // Responsive positioning overrides options adjustPosition and reposition
-      // TODO: Only add this resize event when the other one from adjustPosition and reposition was not set
+      // TO DO: Only add this resize event when the other one from adjustPosition and reposition was not set
       jQuery(window).on('resize.responsivejBox-' + this.id, function (ev) { if (this.isOpen) { this.position(); } }.bind(this));
     }
 
@@ -1218,8 +1218,8 @@ function jBoxWrapper(jQuery) {
 
     // Get the available space on all sides
     var availableSpace = {
-      x: windowDimensions.x - options.adjustDistance.left - options.adjustDistance.right, // TODO: substract position.x when they are numbers
-      y: windowDimensions.y - options.adjustDistance.top - options.adjustDistance.bottom, // TODO: substract position.x when they are numbers
+      x: windowDimensions.x - options.adjustDistance.left - options.adjustDistance.right, // TO DO: substract position.x when they are numbers
+      y: windowDimensions.y - options.adjustDistance.top - options.adjustDistance.bottom, // TO DO: substract position.x when they are numbers
       left: !outside ? 0 : (targetDimensions.left - jQuery(window).scrollLeft() - options.adjustDistance.left),
       right: !outside ? 0 : (windowDimensions.x - targetDimensions.left + jQuery(window).scrollLeft() - targetDimensions.x - options.adjustDistance.right),
       top: !outside ? 0 : (targetDimensions.top - jQuery(window).scrollTop() - this.options.adjustDistance.top),
@@ -1727,7 +1727,7 @@ function jBoxWrapper(jQuery) {
         if (this.options.overlay) {
           this._showOverlay();
 
-          // TODO Optimize: We have to position here again, because if the overlay has a close button, the upper adjustDistance will be wrong
+          // TO DO Optimize: We have to position here again, because if the overlay has a close button, the upper adjustDistance will be wrong
           this.position();
         }
 
@@ -1996,7 +1996,7 @@ function jBoxWrapper(jQuery) {
         this.wrapper.addClass('jBox-loading-spinner');
 
         // Reposition jBox
-        // TODO: Only reposition if dimensions change
+        // TO DO: Only reposition if dimensions change
         userOptions.spinnerReposition && (opening ? (this.positionOnFadeComplete = true) : this.position());
 
         // Add spinner to container
