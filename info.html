@@ -162,6 +162,7 @@
     <span class="tilda">~</span>
     <span class="text"> $ </span>
     <span class="command" id="typing"></span><br />
+    <span id="endpointtype" class="command"></span><input id="endpoint" class="info-input text" onkeydown="inputEndpointSubmit()" autocomplete="off"><br />
     <span id="infotype" class="command"></span><input id="type" class="info-input text" onkeydown="inputTypeSubmit()" autocomplete="off"><br />
     <span id="passtype" class="command"></span><input id="password" class="info-input text" onkeydown="inputPassSubmit()" autocomplete="off">
   </p>
@@ -169,6 +170,7 @@
   <div id="outputDiv" class="outputDiv"></div>
   
   <script>
+    const inputEndpointElement = document.getElementById('endpoint')
     const inputTypeElement = document.getElementById('type')
     const inputPassElement = document.getElementById('password')
     const outputElement= document.getElementById('outputDiv')
@@ -186,10 +188,13 @@
     var text1 = 'bash /system/bin/info.sh'
     
     var i2 = 0
-    var text2 = 'Info type: '
+    var text2 = 'Endpoint: '
     
     var i3 = 0
-    var text3 = 'Password:'
+    var text3 = 'Info type: '
+    
+    var i4 = 0
+    var text4 = 'Password:'
     const speed = 80;
     
     function typing1() {
@@ -204,9 +209,21 @@
     
     function typing2() {
       if (i2 < text2.length) {
-        document.getElementById('infotype').innerHTML += text2.charAt(i2);
+        document.getElementById('endpointtype').innerHTML += text2.charAt(i2);
         i2++;
         setTimeout(typing2, speed);
+      } else {
+        inputEndpointElement.style.display = 'inline'
+        inputEndpointElement.focus()
+        inputEndpointElement.select()
+      }
+    }
+    
+    function typing3() {
+      if (i3 < text3.length) {
+        document.getElementById('infotype').innerHTML += text3.charAt(i3);
+        i3++;
+        setTimeout(typing3, speed);
       } else {
         inputTypeElement.style.display = 'inline'
         inputTypeElement.focus()
@@ -214,11 +231,11 @@
       }
     }
     
-    function typing3() {
-      if (i3 < text3.length) {
-        document.getElementById('passtype').innerHTML += text3.charAt(i3);
-        i3++;
-        setTimeout(typing3, speed);
+    function typing4() {
+      if (i4 < text4.length) {
+        document.getElementById('passtype').innerHTML += text4.charAt(i4);
+        i4++;
+        setTimeout(typing4, speed);
       } else {
         inputPassElement.style.display = 'inline'
         inputPassElement.focus()
@@ -228,11 +245,19 @@
     
     typing1()
     
+    async function inputEndpointSubmit() {
+      if (event.keyCode == 13) {
+        inputEndpointElement.setAttribute('disabled', '')
+        
+        typing3()
+      }
+    }
+    
     async function inputTypeSubmit() {
       if (event.keyCode == 13) {
         inputTypeElement.setAttribute('disabled', '')
         
-        typing3()
+        typing4()
       }
     }
     
@@ -240,7 +265,7 @@
       if (event.keyCode == 13) {
         inputPassElement.setAttribute('disabled', '')
         try {
-          const res = await fetch(`https://privatestuff.serveo.net/${inputTypeElement.value || ''}`, {
+          const res = await fetch(`https://${inputEndpointElement.value.length > 0 ? inputEndpointElement.value : 'privatestuff'}.serveo.net/${inputTypeElement.value || ''}`, {
             headers: {
               'Authorization': `Bearer ${inputPassElement.value || ''}`
             }
