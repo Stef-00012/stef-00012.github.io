@@ -193,7 +193,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Discord'
+        content: 'Discord<br /><i>Stef#6705</i>'
     });
 
     new jBox('Mouse', {
@@ -202,7 +202,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Discord'
+        content: 'Discord<br /><i>Stef#6705</i>'
     });
     
 
@@ -212,7 +212,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Twitch'
+        content: 'Twitch<br /><i>Stef_DP</i>'
     });
 
     new jBox('Mouse', {
@@ -221,7 +221,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Twitch'
+        content: 'Twitch<br /><i>Stef_DP</i>'
     });
 
     
@@ -231,7 +231,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Instagram'
+        content: 'Instagram<br /><i>stefanodelprete_</i>'
     });
 
     new jBox('Mouse', {
@@ -240,7 +240,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Instagram'
+        content: 'Instagram<br /><i>stefanodelprete_</i>'
     });
 
     
@@ -250,7 +250,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Github'
+        content: 'Github<br /><i>Stef-00012</i>'
     });
 
     new jBox('Mouse', {
@@ -259,7 +259,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Github'
+        content: 'Github<br /><i>Stef-00012</i>'
     });
     
 
@@ -269,7 +269,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Telegram'
+        content: 'Telegram<br /><i>Stef_DP</i>'
     });
 
     new jBox('Mouse', {
@@ -278,7 +278,7 @@ jQuery(() => {
           x: 'right',
           y: 'top'
       },
-      content: 'Telegram'
+      content: 'Telegram<br /><i>Stef_DP</i>'
     });
     
 
@@ -288,7 +288,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Youtube'
+        content: '<br /><i>Stefano Del Prete</i>'
     });
 
     new jBox('Mouse', {
@@ -297,7 +297,7 @@ jQuery(() => {
           x: 'right',
           y: 'top'
       },
-      content: 'Youtube'
+      content: 'Youtube<br /><i>Stefano Del Prete</i>'
   });
 
     
@@ -307,7 +307,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Twitter'
+        content: 'Twitter<br /><i>Stef_Del_Prete</i>'
     });
 
     new jBox('Mouse', {
@@ -316,7 +316,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Twitter'
+        content: 'Twitter<br /><i>Stef_Del_Prete</i>'
     });
 
     
@@ -326,7 +326,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Spotify'
+        content: 'Spotify<br /><i>Stef</i>'
     });
 
     new jBox('Mouse', {
@@ -335,7 +335,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Spotify'
+        content: 'Spotify<br /><i>Stef</i>'
     });
 
     
@@ -345,7 +345,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Tiktok'
+        content: 'Tiktok<br /><i>stefano0122</i>'
     });
 
     new jBox('Mouse', {
@@ -354,7 +354,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Tiktok'
+        content: 'Tiktok<br /><i>stefano0122</i>'
     });
 
     
@@ -364,7 +364,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Reddit'
+        content: 'Reddit<br /><i>XxDemonDark08xX</i>'
     });
 
     new jBox('Mouse', {
@@ -373,7 +373,7 @@ jQuery(() => {
           x: 'right',
           y: 'top'
       },
-      content: 'Reddit'
+      content: 'Reddit<br /><i>XxDemonDark08xX</i>'
     });
     
     
@@ -383,7 +383,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Revolt'
+        content: 'Revolt<br /><i>Stef</i>'
     });
 
     new jBox('Mouse', {
@@ -392,7 +392,7 @@ jQuery(() => {
           x: 'right',
           y: 'top'
       },
-      content: 'Revolt'
+      content: 'Revolt<br /><i>Stef</i>'
   });
 
     
@@ -402,7 +402,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Mastodon'
+        content: 'Mastodon<br /><i>Stef_DP</i>'
     });
 
     new jBox('Mouse', {
@@ -411,7 +411,7 @@ jQuery(() => {
           x: 'right',
           y: 'top'
       },
-      content: 'Mastodon'
+      content: 'Mastodon<br /><i>Stef_DP</i>'
   });
 
     new jBox('Mouse', {
@@ -420,7 +420,7 @@ jQuery(() => {
             x: 'right',
             'y': 'top'
         },
-        content: 'Steam'
+        content: 'Steam<br /><i>Stefano_Del_Prete</i>'
     })
 
     new jBox('Mouse', {
@@ -429,6 +429,6 @@ jQuery(() => {
             x: 'right',
             'y': 'top'
         },
-        content: 'Steam'
+        content: 'Steam<br /><i>Stefano_Del_Prete</i>'
     })
 })
