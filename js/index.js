@@ -4,38 +4,6 @@ const spoilerDesktop = document.getElementById('spoiler-desktop');
 const codeBlock = document.getElementById('code-block');
 const codeBlockDesktop = document.getElementById('code-block-desktop');
 
-const aboutMeModalElement = document.getElementById('aboutMeModal');
-const aboutMeModalClose = document.getElementById('aboutMeModal-close');
-const aboutMeModalBody = document.getElementById('aboutMeModal-body');
-
-const aboutMeModalElementDesktop = document.getElementById('aboutMeModalDesktop');
-const aboutMeModalCloseDesktop = document.getElementById('aboutMeModalDesktop-close');
-const aboutMeModalBodyDesktop = document.getElementById('aboutMeModalDesktop-body');
-
-const rabbitModalElement = document.getElementById('rabbitModal');
-const rabbitModalClose = document.getElementById('rabbitModal-close');
-const rabbitModalBody = document.getElementById('rabbitModal-body');
-
-const rabbitModalElementDesktop = document.getElementById('rabbitModalDesktop');
-const rabbitModalCloseDesktop = document.getElementById('rabbitModalDesktop-close');
-const rabbitModalBodyDesktop = document.getElementById('rabbitModalDesktop-body');
-
-const alternativeLinksModalElement = document.getElementById('alternativeLinksModal');
-const alternativeLinksModalClose = document.getElementById('alternativeLinksModal-close');
-const alternativeLinksModalBody = document.getElementById('alternativeLinksModal-body');
-
-const alternativeLinksModalElementDesktop = document.getElementById('alternativeLinksModalDesktop');
-const alternativeLinksModalCloseDesktop = document.getElementById('alternativeLinksModalDesktop-close');
-const alternativeLinksModalBodyDesktop = document.getElementById('alternativeLinksModalDesktop-body');
-
-const githubStatsModalElement = document.getElementById('githubStatsModal');
-const githubStatsModalClose = document.getElementById('githubStatsModal-close');
-const githubStatsModalBody = document.getElementById('githubStatsModal-body');
-
-const githubStatsModalElementDesktop = document.getElementById('githubStatsModalDesktop');
-const githubStatsModalCloseDesktop = document.getElementById('githubStatsModalDesktop-close');
-const githubStatsModalBodyDesktop = document.getElementById('githubStatsModalDesktop-body');
-
 function backgroundImageSet() {
     const date = new Date();
     const day = date.getDate();
@@ -73,117 +41,95 @@ spoilerDesktop.onclick = function() {
     spoilerDesktop.style.color = "rgba(255, 255, 255, 0.85)";
 }
 
-function close() {
-    alternativeLinksModalElement.style.display = "none";
-    alternativeLinksModalElementDesktop.style.display = "none";
-    
-    aboutMeModalElement.style.display = "none";
-    aboutMeModalElementDesktop.style.display = "none";
-    
-    rabbitModalElement.style.display = "none";
-    rabbitModalElementDesktop.style.display = "none";
-    
-    githubStatsModalElement.style.display = "none";
-    githubStatsModalElementDesktop.style.display = "none";
-}
+document.querySelectorAll('.collapsible-button').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const collapsibleContent = btn.nextElementSibling
+        
+        btn.classList.toggle('active')
 
-function aboutMeModal() {
-    if (window.innerWidth < 720) {
-        close()
-        aboutMeModalElement.style.display = "block";
-        
-        aboutMeModalBody.scrollTop = 0;
-        
-        spoiler.style.backgroundColor = "rgba(54, 47, 46, 1)";
-        spoiler.style.color = "transparent";
-        
-        codeBlock.scrollTop = 0;
-        codeBlock.scrollLeft = 0;
-    } else {
-        close()
-        aboutMeModalElementDesktop.style.display = "block";
-        
-        aboutMeModalBodyDesktop.scrollTop = 0;
-                
-        spoilerDesktop.style.backgroundColor = "rgba(54, 47, 46, 1)";
-        spoilerDesktop.style.color = "transparent";
-        
-        codeBlockDesktop.scrollTop = 0;
-        codeBlockDesktop.scrollLeft = 0;
-    }
-}
+        if (btn.classList.contains('active')) {
+          if (collapsibleContent.children[0].classList.contains('embed-github')) {
+            if (collapsibleContent.children[0].classList.contains('desktop')) {
+                for (const embed of collapsibleContent.children) {
+                    embed.style.display = 'inline-block'
+                }
+            } else {
+                for (const embed of collapsibleContent.children) {
+                    embed.style.display = 'block'
+                }
+            }
+          }
+          
+            if (collapsibleContent.children[0] && collapsibleContent.children[0].classList.contains('code-block')) {
+                codeBlock.style.display = 'block'
+                spoiler.style.display = 'block'
+                codeBlockDesktop.style.display = 'block'
+                spoilerDesktop.style.display = 'block'
+            }
 
-function rabbitModal() {
-    if (window.innerWidth < 720) {
-        close()
-        rabbitModalElement.style.display = "block";
-        
-        rabbitModalBody.scrollTop = 0;
-    } else {
-        close()
-        rabbitModalElementDesktop.style.display = "block";
-        
-        rabbitModalBody.scrollTop = 0;
-    }
-}
+            if (collapsibleContent.children[1] && collapsibleContent.children[1].classList.contains('collapsible-content-image')) {
+                if (collapsibleContent.children[1].classList.contains('desktop')) {
+                    for (const image of collapsibleContent.children) {
+                        image.style.display = 'inline-block'
+                    }
+                } else {
+                    for (const image of collapsibleContent.children) {
+                        image.style.display = 'block'
+                    }
+                }
+            }
+            
+            if (collapsibleContent.children[0] && collapsibleContent.children[0].children[0] && collapsibleContent.children[0].children[0].classList.contains('small-social-logo')) {
+              for (const social of collapsibleContent.children[0].children) {
+                social.style.display = 'inline'
+              }
+            }
 
-function alternativeLinksModal() {
-    if (window.innerWidth < 720) {
-        close()
-        alternativeLinksModalElement.style.display = "block";
-        
-        alternativeLinksModalBody.scrollTop = 0;
-    } else {
-        close()
-        alternativeLinksModalElementDesktop.style.display = "block";
-        
-        alternativeLinksModalBodyDesktop.scrollTop = 0;
-    }
-}
+            btn.style.height = '40px'
+            collapsibleContent.style.border = '4px solid #a2a3a5'
+            collapsibleContent.style.borderTop = '0px'
+            
+            collapsibleContent.style.height = collapsibleContent.scrollHeight + 'px'
+            setTimeout(() => {
+                collapsibleContent.style.color = 'white'
+            }, 100)
+            
+            
+        } else {
+            collapsibleContent.style.height = '25px'
+            
+            setTimeout(() => {
+                if (collapsibleContent.children[0] && collapsibleContent.children[0].classList.contains('code-block')) {
+                    codeBlock.style.display = 'none'
+                    spoiler.style.display = 'none'
+                    codeBlockDesktop.style.display = 'none'
+                    spoilerDesktop.style.display = 'none'
+                }
 
-function githubStatsModal() {
-    if (window.innerWidth < 720) {
-        close()
-        githubStatsModalElement.style.display = "block";
-        
-        githubStatsModalBody.scrollTop = 0;
-    } else {
-    close()
-        githubStatsModalElementDesktop.style.display = "block";
-        
-        githubStatsModalBodyDesktop.scrollTop = 0;
-    }
-}
+              if (collapsibleContent.children[0].classList.contains('embed-github')) {
+                for (const embed of collapsibleContent.children) {
+                  embed.style.display = 'none'
+                }
+              }
+              
+                if (collapsibleContent.children[0] && collapsibleContent.children[0].children[0] && collapsibleContent.children[0].children[0].classList.contains('small-social-logo')) {
+                  for (const social of collapsibleContent.children[0].children) {
+                    social.style.display = 'none'
+                  }
+                }
+              
+                if (collapsibleContent.children[1] && collapsibleContent.children[1].classList.contains('collapsible-content-image')) {
+                    for (const image of collapsibleContent.children) {
+                        image.style.display = 'none'
+                    }
+                }
 
-aboutMeModalClose.onclick = close
-aboutMeModalCloseDesktop.onclick = close
-
-rabbitModalClose.onclick = close
-rabbitModalCloseDesktop.onclick = close
-
-alternativeLinksModalClose.onclick = close
-alternativeLinksModalCloseDesktop.onclick = close
-
-githubStatsModalClose.onclick = close
-githubStatsModalCloseDesktop.onclick = close
-
-window.onclick = function(event) {
-    if (
-    event.target == aboutMeModalElement ||
-    event.target == aboutMeModalElementDesktop ||
-    
-    event.target == rabbitModalElement ||
-    event.target == rabbitModalElementDesktop ||
-    
-    event.target == alternativeLinksModalElement ||
-    event.target == alternativeLinksModalElementDesktop ||
-    
-    event.target == githubStatsModalElement ||
-    event.target == githubStatsModalElementDesktop
-    ) {
-        close()
-    }
-}
+                btn.style.height = '20px'
+                collapsibleContent.style.color = 'transparent'
+            }, 200)
+        }
+    })
+})
 
 
 jQuery(() => {
@@ -193,7 +139,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Discord<br /><i>Stef#6705</i>'
+        content: '<b>Discord</b><br /><i>Stef#6705</i>'
     });
 
     new jBox('Mouse', {
@@ -202,7 +148,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Discord<br /><i>Stef#6705</i>'
+        content: '<b>Discord</b><br /><i>Stef#6705</i>'
     });
     
 
@@ -212,7 +158,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Twitch<br /><i>Stef_DP</i>'
+        content: '<b>Twitch</b><br /><i>Stef_DP</i>'
     });
 
     new jBox('Mouse', {
@@ -221,7 +167,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Twitch<br /><i>Stef_DP</i>'
+        content: '<b>Twitch</b><br /><i>Stef_DP</i>'
     });
 
     
@@ -231,7 +177,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Instagram<br /><i>stefanodelprete_</i>'
+        content: '<b>Instagram</b><br /><i>stefanodelprete_</i>'
     });
 
     new jBox('Mouse', {
@@ -240,7 +186,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Instagram<br /><i>stefanodelprete_</i>'
+        content: '<b>Instagram</b><br /><i>stefanodelprete_</i>'
     });
 
     
@@ -250,7 +196,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Github<br /><i>Stef-00012</i>'
+        content: '<b>Github</b><br /><i>Stef-00012</i>'
     });
 
     new jBox('Mouse', {
@@ -259,7 +205,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Github<br /><i>Stef-00012</i>'
+        content: '<b>Github</b><br /><i>Stef-00012</i>'
     });
     
 
@@ -269,7 +215,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Telegram<br /><i>Stef_DP</i>'
+        content: '<b>Telegram</b><br /><i>Stef_DP</i>'
     });
 
     new jBox('Mouse', {
@@ -278,7 +224,7 @@ jQuery(() => {
           x: 'right',
           y: 'top'
       },
-      content: 'Telegram<br /><i>Stef_DP</i>'
+      content: '<b>Telegram</b><br /><i>Stef_DP</i>'
     });
     
 
@@ -288,7 +234,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: '<br /><i>Stefano Del Prete</i>'
+        content: '<b>Youtube</b><br /><i>Stefano Del Prete</i>'
     });
 
     new jBox('Mouse', {
@@ -297,7 +243,7 @@ jQuery(() => {
           x: 'right',
           y: 'top'
       },
-      content: 'Youtube<br /><i>Stefano Del Prete</i>'
+      content: '<b>Youtube</b><br /><i>Stefano Del Prete</i>'
   });
 
     
@@ -307,7 +253,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Twitter<br /><i>Stef_Del_Prete</i>'
+        content: '<b>Twitter</b><br /><i>Stef_Del_Prete</i>'
     });
 
     new jBox('Mouse', {
@@ -316,7 +262,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Twitter<br /><i>Stef_Del_Prete</i>'
+        content: '<b>Twitter</b><br /><i>Stef_Del_Prete</i>'
     });
 
     
@@ -326,7 +272,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Spotify<br /><i>Stef</i>'
+        content: '<b>Spotify</b><br /><i>Stef</i>'
     });
 
     new jBox('Mouse', {
@@ -335,7 +281,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Spotify<br /><i>Stef</i>'
+        content: '<b>Spotify</b><br /><i>Stef</i>'
     });
 
     
@@ -345,7 +291,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Tiktok<br /><i>stefano0122</i>'
+        content: '<b>Tiktok</b><br /><i>stefano0122</i>'
     });
 
     new jBox('Mouse', {
@@ -354,7 +300,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Tiktok<br /><i>stefano0122</i>'
+        content: '<b>Tiktok</b><br /><i>stefano0122</i>'
     });
 
     
@@ -364,7 +310,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Reddit<br /><i>XxDemonDark08xX</i>'
+        content: '<b>Reddit</b><br /><i>XxDemonDark08xX</i>'
     });
 
     new jBox('Mouse', {
@@ -373,7 +319,7 @@ jQuery(() => {
           x: 'right',
           y: 'top'
       },
-      content: 'Reddit<br /><i>XxDemonDark08xX</i>'
+      content: '<b>Reddit</b><br /><i>XxDemonDark08xX</i>'
     });
     
     
@@ -383,7 +329,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Revolt<br /><i>Stef</i>'
+        content: '<b>Revolt</b><br /><i>Stef</i>'
     });
 
     new jBox('Mouse', {
@@ -392,7 +338,7 @@ jQuery(() => {
           x: 'right',
           y: 'top'
       },
-      content: 'Revolt<br /><i>Stef</i>'
+      content: '<b>Revolt</b><br /><i>Stef</i>'
   });
 
     
@@ -402,7 +348,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: 'Mastodon<br /><i>Stef_DP</i>'
+        content: '<b>Mastodon</b><br /><i>Stef_DP</i>'
     });
 
     new jBox('Mouse', {
@@ -411,7 +357,7 @@ jQuery(() => {
           x: 'right',
           y: 'top'
       },
-      content: 'Mastodon<br /><i>Stef_DP</i>'
+      content: '<b>Mastodon</b><br /><i>Stef_DP</i>'
   });
 
     new jBox('Mouse', {
@@ -420,7 +366,7 @@ jQuery(() => {
             x: 'right',
             'y': 'top'
         },
-        content: 'Steam<br /><i>Stefano_Del_Prete</i>'
+        content: '<b>Steam</b><br /><i>Stefano_Del_Prete</i>'
     })
 
     new jBox('Mouse', {
@@ -429,6 +375,6 @@ jQuery(() => {
             x: 'right',
             'y': 'top'
         },
-        content: 'Steam<br /><i>Stefano_Del_Prete</i>'
+        content: '<b>Steam</b><br /><i>Stefano_Del_Prete</i>'
     })
 })

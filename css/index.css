@@ -140,6 +140,7 @@ body.newyear {
 }
 
 .social-url {
+  display: none;
     font-weight: bold;
     text-decoration: none;
 }
@@ -209,142 +210,29 @@ body.newyear {
     height: 15px;
     border-radius: 4px;
     padding-right: 5px;
-}
-
-.aboutme {
-    padding-top: 35px;
-    display: flex;
-    justify-content: center;
-}
-
-.rabbit, .alternative-links, .github-stats {
-    display: flex;
-    justify-content: center;
-    padding-top: 15px;
-}
-
-
-.buttons {
-    border: 4px solid #8B8273;
-    border-radius: 35px;
-    background: rgba(0, 0, 0, 0.4);
-    color: #ffffff;
-    width: 90%;
-    height: 75px;
-    font-size: 20px;
-    transition: transform .65s;
-}
-
-.buttons:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-    border-color: #565047;
-    transform: scale(1.05);
-}
-
-.btn-icon {
-    padding-top: 8px;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: left;
-}
-
-.buttons-text {
-    display: flex;
-    justify-content: center;
-    transform: translateY(-72px) translateX(20px);
-}
-
-.text {
-    text-align: center;
-}
-
-.modal {
     display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 5%;
-    left: 0;
-    top: 0;
+}
+
+.collapsible-content-image {
     width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
+    display: none;
 }
 
-.modal-content {
-    position: relative;
-    background-color: #46474A;
-    margin: auto;
-    padding: 0;
-    border: 3px solid #888;
-    border-radius: 24px;
-    width: 90%;
-    height: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 1s;
-    overflow: scroll;
-}
-
-@-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
-}
-
-@keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-}
-
-.close {
-    color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.modal-header {
-    padding: 2px 16px;
-    background-image: linear-gradient(180deg, rgba(00, 00, 00, 1), rgba(00, 00, 00, 0.5), rgba(00, 00, 00, 0.05));
-    color: white;
-    border-top-left-radius: 22px;
-    border-top-right-radius: 22px;
-    border-bottom-left-radius: 22px;
-    border-bottom-right-radius: 22px;
-}
-
-.modal-body {
-    padding: 2px 16px;
-    color: #ffffff;
-    height: 95%;
-    background-attachment: fixed;
-    overflow: scroll;
-}
-
-.modal-content-image {
-    width: 340px;
-    padding-bottom: 10px;
+.collapsible-content-image.desktop {
+    width: 24.7%;
+    display: none;
+    vertical-align: top;
 }
 
 .code-block {
+    white-space: nowrap;
     border-radius: 5px;
     background-color: #2D2D2D;
     background-attachment: fixed;
     width: 100%;
     max-height: 350px;
     overflow: scroll;
+    display: none;
 }
 
 .code-block.code {
@@ -415,21 +303,78 @@ body.newyear {
     color: transparent;
     background-color: rgba(54, 47, 46, 1);
     border-radius: 5px;
-}
-
-.ghstats.desktop {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    align-items: start;
+    display: none;
 }
 
 .ghstat.desktop {
-    display: inline-block;
+    display: none;
+}
+
+.embed-github {
+  display: none;
+  padding: 5px;
+  vertical-align: top;
 }
 
 .desktop-site {
     display: block;
+}
+
+.collapsible-content::-webkit-scrollbar{
+    display: none;
+}
+
+.collapsible {
+    padding: 15px;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+.collapsible-button {
+    display: block;
+    width: 100%;
+    height: 20px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 4px solid #a2a3a5;
+    text-align: left;
+    color: white;
+    border-radius: 25px;
+    border-bottom: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.collapsible-button::after {
+    content: '˅';
+    float: right;
+    transition: transform 0.3s;
+    transform: rotate(0deg)
+}
+
+.collapsible-button.active::after {
+    content: '˅';
+    float: right;
+    transform: rotate(-90deg);
+    transition: transform 0.3s;
+}
+
+.collapsible-content {
+    overflow: hidden;
+    height: 25px;
+    max-height: 75vh;
+    overflow-y: scroll;
+    transition: height 0.4s, padding 0.4s;
+    padding: 0 15px;
+    border: 4px solid #a2a3a5;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-top: 0px;
+    color: transparent;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .mobile-site {
