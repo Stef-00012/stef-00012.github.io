@@ -139,7 +139,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: '<b>Discord</b><br /><i>Stef#6705</i>'
+        content: '<b>Discord</b><br /><i>stef_dp</i> (Ex: <i>Stef#6705</i>)'
     });
 
     new jBox('Mouse', {
@@ -148,7 +148,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: '<b>Discord</b><br /><i>Stef#6705</i>'
+        content: '<b>Discord</b><br /><i>stef_dp</i> (Ex: <i>Stef#6705</i>)'
     });
     
 
