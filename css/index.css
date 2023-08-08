@@ -97,6 +97,17 @@ body.newyear {
     justify-content: center;
 }
 
+.discord-data {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.discord-data img {
+    padding: 5px;
+}
+
 .socials-bg {
     padding: 15px;
     background-color: rgba(00, 00, 00, 0.6);
