@@ -104,6 +104,10 @@ body.newyear {
     flex-wrap: wrap;
 }
 
+.discord-data a {
+    display: flex;
+}
+
 .discord-data img {
     padding: 5px;
 }
