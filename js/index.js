@@ -1,8 +1,12 @@
-const spoiler = document.getElementById('spoiler');
-const spoilerDesktop = document.getElementById('spoiler-desktop');
+const spoiler = document.getElementById('spoiler')
+const spoilerDesktop = document.getElementById('spoiler-desktop')
 
-const codeBlock = document.getElementById('code-block');
-const codeBlockDesktop = document.getElementById('code-block-desktop');
+const codeBlock = document.getElementById('code-block')
+const codeBlockDesktop = document.getElementById('code-block-desktop')
+
+const gattinhosBotButton = document.getElementById('gattinhosBotButton')
+const gattinhosBotButtonDesktop = document.getElementById('gattinhosBotButtonDesktop')
+
 
 function backgroundImageSet() {
     const date = new Date();
@@ -31,6 +35,7 @@ function backgroundImageSet() {
 
 backgroundImageSet();
 
+
 spoiler.onclick = function() {
     spoiler.style.backgroundColor = "rgba(54, 47, 46, 0.65)";
     spoiler.style.color = "rgba(255, 255, 255, 0.85)";
@@ -40,6 +45,16 @@ spoilerDesktop.onclick = function() {
     spoilerDesktop.style.backgroundColor = "rgba(54, 47, 46, 0.65)";
     spoilerDesktop.style.color = "rgba(255, 255, 255, 0.85)";
 }
+
+
+gattinhosBotButton.onclick = function() {
+    window.location.href = '/gattinhosBot'
+}
+
+gattinhosBotButtonDesktop.onclick = function() {
+    window.location.href = '/gattinhosBot'
+}
+
 
 document.querySelectorAll('.collapsible-button').forEach(btn => {
     btn.addEventListener('click', () => {
