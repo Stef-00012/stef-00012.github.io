@@ -125,184 +125,49 @@
   </style>
 </head>
 <body>
-  <p><b><code class="square_bracket">[</code><code class="time" id="time">abc</code><code class="square_bracket">]</code><br />
-  <code class="host">u_a334</code><code class="at">@</code><code class="host"><a class="hidden-host" href="https://instagram.com/lejla_ly">l</a>oca<a class="hidden-host" href="https://instagram.com/lejla_ly">l</a>host</code><br />
-  <code class="tilda">~</code><code class="text"> $ </code><code class="command" id="typing"></code></b></p>
-  <center><p><b><pre><code class="text" id="command-output-code"></code></pre></b></p></center><br />
-  <center><p><b><pre><code class="text" id="command-output-text"></code></pre></b></p></center><br /><br />
-  <center><p><b><code class="socials-url" id="socials-url"></code></b></p></center>
-  <script>
-    const timeElement = document.getElementById('time')
-    let time = new Date().toTimeString().split(' ')[0]
-    timeElement.innerText = time
-    setInterval(() => {
-      time = new Date().toTimeString().split(' ')[0]
-      timeElement.innerText = time
-    }, 1000)
-    
-    var i = 0;
-    var text = 'bash /system/bin/404.sh';
-    const speed = 80;
-    
-    function typing() {
-      if (i < text.length) {
-        document.getElementById('typing').innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typing, speed);
-      }
-    }
-    
-    typing()
-    
-    setInterval(() => {
-      if (i >= text.length) {
-        const errorCodeElement = document.getElementById('command-output-code')
-        const errorTextElement = document.getElementById('command-output-text')
-        const socialPageURLElement = document.getElementById('socials-url')
-        const errorCodeASCIIArray = [
-          ' /$$   /$$  /$$$$$$  /$$   /$$',
-          '| $$  | $$ /$$$_  $$| $$  | $$',
-          '| $$  | $$| $$$$\\ $$| $$  | $$',
-          '| $$$$$$$$| $$ $$ $$| $$$$$$$$',
-          '|_____  $$| $$\\ $$$$|_____  $$',
-          '      | $$| $$ \\ $$$      | $$',
-          '      | $$|  $$$$$$/      | $$',
-          '      |__/ \\______/       |__/'
-        ]
-        const errorTextASCIIArrayNot = [
-          ' /$$   /$$             /$$    ',
-          '| $$$ | $$            | <a class="hidden" href="https://instagram.com/twitch">$$</a>    ',
-          '| $$$$| $$  /$$$$$$  /$$$$$$  ',
-          '| $$ $$ $$ /$$__  $$|_  $$_/  ',
-          '| $$  $$$$| $$  \\ $$  | $$    ',
-          '| $$\\  $$$| $$  | $$  | $$ /$$',
-          '| $$ \\  $$|  $$$$$$/  |  $$$$/',
-          '|__/  \\__/ \\______/    \\___/  '
-        ]
-        const errorTextASCIIArrayFound = [
-          ' /$$$$$$$$                                  /$$',
-          '| $$_____/                                 | $$',
-          '| $$     /$$$$$$  /$$   /$$ /$$$$$$$   /$$$$$$$',
-          '| $$$$$ /$$__  $$| $$  | $$| $$__  $$ /<a class="hidden" href="https://instagram.com/discord">$$</a>__  $$',
-          '| $$__/| $$  \\ $$| $$  | $$| $$  \\ $$| $$  | $$',
-          '| $$   | $$  | $$| $$  | $$| $$  | $$| $$  | $$',
-          '| $$   |  $$$$$$/|  $$$$$$/| $$  | $$|  $$$$$$$',
-          '|__/    \\______/  \\______/ |__/  |__/ \\_______/'
-        ]
-        
-        errorCodeElement.innerHTML = errorCodeASCIIArray.join('\n')
-        
-        setTimeout(() => {
-          errorTextElement.innerHTML = errorTextASCIIArrayNot.join('\n') + '\n' + errorTextASCIIArrayFound.join('\n')
-          
-          socialPageURLElement.innerHTML = '<a href="https://stefdp.is-a.dev">Go to Socials page!</a>'
-        }, 500)
-      }
-    }, 100)
-  </script>
-  <br />
-  <div class="modal" id="modal1">
-    <div class="modal-content">
-      <div class="modal-header">
-        <span class="close" id="close1">&times;</span>
-        <h2><code class="text">Why are you still here...</code></h2>
-      </div>
-      <div class="modal-body">
-        <p><b><code>Are you searching easter eggs?</code></b><br><b><code class="modal-body-no-easter-egg-text"><em>I can already tell you that there aren't easter eggs here</em></code></b></p>
-      </div>
+    <p><b><code class="square_bracket">[</code><code class="time" id="time">abc</code><code class="square_bracket">]</code><br />
+    <code class="host">u_a334</code><code class="at">@</code><code class="host"><a class="hidden-host" href="https://instagram.com/lejla_ly">l</a>oca<a class="hidden-host" href="https://instagram.com/lejla_ly">l</a>host</code><br />
+    <code class="tilda">~</code><code class="text"> $ </code><code class="command" id="typing"></code></b></p>
+    <center><p><b><pre><code class="text" id="command-output-code"></code></pre></b></p></center><br />
+    <center><p><b><pre><code class="text" id="command-output-text"></code></pre></b></p></center><br /><br />
+    <center><p><b><code class="socials-url" id="socials-url"></code></b></p></center>
+    <script src="/js/404.js"></script>
+    <br />
+    <div class="modal" id="modal1">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" id="close1">&times;</span>
+                <h2><code class="text">Why are you still here...</code></h2>
+            </div>
+            <div class="modal-body">
+                <p><b><code>Are you searching easter eggs?</code></b><br><b><code class="modal-body-no-easter-egg-text"><em>I can already tell you that there aren't easter eggs here</em></code></b></p>
+            </div>
+        </div>
     </div>
-  </div>
-  
-  <div class="modal" id="modal2">
-    <div class="modal-content">
-      <div class="modal-header">
-        <span class="close" id="close2">&times;</span>
-        <h2><code class="text">Still here searching easter eggs?</code></h2>
-      </div>
-      <div class="modal-body">
-        <p><b><code>Ok, maybe there are some easter eggs, but i won't tell you where they are</code></b></p>
-      </div>
+    
+    <div class="modal" id="modal2">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" id="close2">&times;</span>
+                <h2><code class="text">Still here searching easter eggs?</code></h2>
+            </div>
+            <div class="modal-body">
+                <p><b><code>Ok, maybe there are some easter eggs, but i won't tell you where they are</code></b></p>
+            </div>
+        </div>
     </div>
-  </div>
-  
-  <div class="modal" id="modal3">
-    <div class="modal-content">
-      <div class="modal-header">
-        <span class="close" id="close3">&times;</span>
-        <h2><code class="text">You are trying really hard to find all the easter eggs, aren't you?</code></h2>
-      </div>
-      <div class="modal-body">
-        <p><b><code>Well, I'll give you just one hint:<br><center><em><h3 class="easter-egg-hint">L</h3></em></center></code></b></p>
-      </div>
+    
+    <div class="modal" id="modal3">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" id="close3">&times;</span>
+                <h2><code class="text">You are trying really hard to find all the easter eggs, aren't you?</code></h2>
+            </div>
+            <div class="modal-body">
+                <p><b><code>Well, I'll give you just one hint:<br><center><em><h3 class="easter-egg-hint">L</h3></em></center></code></b></p>
+            </div>
+        </div>
     </div>
-  </div>
-  <script>
-    const modal1 = document.getElementById("modal1")
-    const span1 = document.getElementById("close1")
-    
-    const modal2 = document.getElementById('modal2')
-    const span2 = document.getElementById('close2')
-    
-    const modal3 = document.getElementById('modal3')
-    const span3 = document.getElementById('close3')
-    
-    function startTimeouts() {
-      const tim1 = setTimeout(() => {
-        modal3.style.display = "none";
-        modal2.style.display = "none";
-        modal1.style.display = "block";
-      }, 180000)
-      
-      const tim2 = setTimeout(() => {
-        modal1.style.display = "none";
-        modal3.style.display = "none";
-        modal2.style.display = "block";
-      }, 300000)
-      
-      const tim3 = setTimeout(() => {
-        modal1.style.display = "none";
-        modal2.style.display = "none";
-        modal3.style.display = "block";
-      }, 480000)
-      
-      document.addEventListener('visibilitychange', () => {
-        if (document.visibilityState == "hidden") {
-          clearTimeout(tim1)
-          clearTimeout(tim2)
-          clearTimeout(tim3)
-        } else {
-          startTimeouts()
-        }
-      })
-    }
-    startTimeouts()
-    
-    span1.onclick = function() {
-      modal1.style.display = "none";
-      modal2.style.display = "none";
-      modal3.style.display = "none";
-    }
-    
-    span2.onclick = function() {
-      modal1.style.display = "none";
-      modal2.style.display = "none";
-      modal3.style.display = "none";
-    }
-    
-    span3.onclick = function() {
-      modal1.style.display = "none";
-      modal2.style.display = "none";
-      modal3.style.display = "none";
-    }
-    
-    window.onclick = function(event) {
-      if (event.target == modal1 || event.target == modal2 || event.target == modal3) {
-        modal1.style.display = "none";
-        modal2.style.display = "none";
-        modal3.style.display = "none";
-      }
-    }
-  </script>
-  <script defer data-domain="stefdp.is-a.dev" src="https://analytics.is-a.dev/js/script.js"></script>
-  <p><b><code aria-hidden="true"><a class="bg-hidden" href="https://yt.be/tcJ3V">I'm just an easter egg</a></code></b></p>
+    <script defer data-domain="stefdp.is-a.dev" src="https://analytics.is-a.dev/js/script.js"></script>
+    <p><b><code aria-hidden="true"><a class="bg-hidden" href="https://yt.be/tcJ3V">I'm just an easter egg</a></code></b></p>
 </body>
