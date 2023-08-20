@@ -7,80 +7,159 @@
     <link rel="stylesheet" href="/css/gattinhosBot.css">
 </head>
 <body>
-    <header>
-        <a class="bot-invite" href="/gattinhosBot/invite">
-            <div>
-                <img src="/icons/gattinhosBot/gattinhosBot.png" alt="GattinhosBot" class="bot-avatar">
-                <h1 class="bot-name">GattinhosBot</h1>
+    <div class="desktop-site">
+        <header>
+            <a class="bot-invite" href="/gattinhosBot/invite">
+                <div>
+                    <img src="/icons/gattinhosBot/gattinhosBot.png" alt="GattinhosBot" class="bot-avatar">
+                    <h1 class="bot-name">GattinhosBot</h1>
+                </div>
+            </a>
+            <div class="bot-description">
+                <p>GattinhosBot is a little cat with customizable welcome system, reaction roles system, leveling system and logs system.</p>
+                <button class="invite-button" id="inviteButton">Invite Bot</button>
             </div>
-        </a>
-        <div class="bot-description">
-            <p>GattinhosBot is a little cat with customizable welcome system, reaction roles system, leveling system and logs system.</p>
-            <button class="invite-button" id="inviteButton">Invite Bot</button>
-        </div>
-        <div class="bot-info">
-            <img src="/icons/gattinhosBot/stef.png" alt="Stef's Avatar" class="bot-avatar">
-            <h1 class="bot-name">Stef</h1>
-        </div>
-    </header>
-    
-    <section class="features">
-        <div class="feature">
-            <img src="/icons/gattinhosBot/reactionRoles.png" alt="Reaction Roles System">
-            <h2>Reaction Roles System</h2>
-            <p>
-                <ul>
-                    <li>You can choose if add a text before the reaction legend</li>
-                    <li>You can choose if have an embed</li>
-                    <li>You can customize the color, the title, the footer, the embed image and the thumbnail image <i>(top right)</i></li>
-                    <li>You can use both unicode and custom emoji <i>(custom emoji must be in a server with the bot)</i></li>
-                </ul>
-            </p>
-        </div>
+            <div class="bot-info">
+                <img src="/icons/gattinhosBot/stef.png" alt="Stef's Avatar" class="bot-avatar">
+                <h1 class="bot-name">Stef</h1>
+            </div>
+        </header>
         
-        <div class="feature">
-            <img src="/icons/gattinhosBot/welcome.png" alt="Welcome System">
-            <h2>Welcome System</h2>
-            <p>
-                <ul>
-                    <li>You can choose if have an image with the member info</li>
-                    <li>You can customize the background (must be <code>1100x500</code> in size)</li>
-                    <li>You can choose if have an embed</li>
-                    <li>You can customize the color, title, description footer</li>
-                    <li>You can customize the embed image <i>(custom or the member info)</i>, the footer image <i>(bottom left)</i> and the thumbnail image <i>(top right)</i></li>
-                    <li>You can choose if have the timestamp <i>(the date at the bottom)</i></li>
-                </ul>
-            </p>
-        </div>
+        <section class="features">
+            <div class="feature">
+                <img src="/icons/gattinhosBot/reactionRoles.png" alt="Reaction Roles System">
+                <h2>Reaction Roles System</h2>
+                <p>
+                    <ul>
+                        <li>You can choose if add a text before the reaction legend</li>
+                        <li>You can choose if have an embed</li>
+                        <li>You can customize the color, the title, the footer, the embed image and the thumbnail image <i>(top right)</i></li>
+                        <li>You can use both unicode and custom emoji <i>(custom emoji must be in a server with the bot)</i></li>
+                    </ul>
+                </p>
+            </div>
+            
+            <div class="feature">
+                <img src="/icons/gattinhosBot/welcome.png" alt="Welcome System">
+                <h2>Welcome System</h2>
+                <p>
+                    <ul>
+                        <li>You can choose if have an image with the member info</li>
+                        <li>You can customize the background (must be <code>1100x500</code> in size)</li>
+                        <li>You can choose if have an embed</li>
+                        <li>You can customize the color, title, description footer</li>
+                        <li>You can customize the embed image <i>(custom or the member info)</i>, the footer image <i>(bottom left)</i> and the thumbnail image <i>(top right)</i></li>
+                        <li>You can choose if have the timestamp <i>(the date at the bottom)</i></li>
+                    </ul>
+                </p>
+            </div>
+            
+            <div class="feature">
+                <img src="/icons/gattinhosBot/leveling.png" alt="Leveling System">
+                <h2>Leveling System</h2>
+                <p>
+                    <ul>
+                        <li>You can customize the XP timeout <i>(how often give the XP)</i>, the XP rate <i>(Increase or decrease the amount of XP needed for the next level)</i>, the level up message</li>
+                        <li>You can blacklist users and channels</li>
+                    </ul>
+                </p>
+            </div>
+            
+            <div class="feature">
+                <img src="/icons/gattinhosBot/logs.png" alt="Logs System">
+                <h2>Logs System</h2>
+                <p>
+                    <ul>
+                        <li>You can choose which logs use through 2 select menus</li>
+                    </ul>
+                </p>
+            </div>
+            
+            <!-- DIV TO KEEP AS TEMPLATE FOR FUTURE FEATURES -->
+            <!-- <div class="feature">
+                <img src="/images/image.png" alt="Feature 2">
+                <h2>Feature name</h2>
+                <p>Feature description</p>
+            </div> -->
+        </section>
+    </div>
+
+    <div class="mobile-site">
+        <header>
+            <a class="bot-invite" href="/gattinhosBot/invite">
+                <div>
+                    <img src="/icons/gattinhosBot/gattinhosBot.png" alt="GattinhosBot" class="bot-avatar">
+                    <h1 class="bot-name">GattinhosBot</h1>
+                </div>
+            </a>
+            <div class="bot-info">
+                <img src="/icons/gattinhosBot/stef.png" alt="Stef's Avatar" class="bot-avatar">
+                <h1 class="bot-name">Stef</h1>
+            </div>
+        </header>
         
-        <div class="feature">
-            <img src="/icons/gattinhosBot/leveling.png" alt="Leveling System">
-            <h2>Leveling System</h2>
-            <p>
-                <ul>
-                    <li>You can customize the XP timeout <i>(how often give the XP)</i>, the XP rate <i>(Increase or decrease the amount of XP needed for the next level)</i>, the level up message</li>
-                    <li>You can blacklist users and channels</li>
-                </ul>
-            </p>
-        </div>
-        
-        <div class="feature">
-            <img src="/icons/gattinhosBot/logs.png" alt="Logs System">
-            <h2>Logs System</h2>
-            <p>
-                <ul>
-                    <li>You can choose which logs use through 2 select menus</li>
-                </ul>
-            </p>
-        </div>
-        
-        <!-- DIV TO KEEP AS TEMPLATE FOR FUTURE FEATURES -->
-        <!-- <div class="feature">
-            <img src="/images/image.png" alt="Feature 2">
-            <h2>Feature name</h2>
-            <p>Feature description</p>
-        </div> -->
-    </section>
+        <section class="features">
+            <div class="bot-description">
+                <p>GattinhosBot is a little cat with customizable welcome system, reaction roles system, leveling system and logs system.</p>
+                <button class="invite-button" id="inviteButton">Invite Bot</button>
+            </div>
+            <div class="feature">
+                <img src="/icons/gattinhosBot/reactionRoles.png" alt="Reaction Roles System">
+                <h2>Reaction Roles System</h2>
+                <p>
+                    <ul>
+                        <li>You can choose if add a text before the reaction legend</li>
+                        <li>You can choose if have an embed</li>
+                        <li>You can customize the color, the title, the footer, the embed image and the thumbnail image <i>(top right)</i></li>
+                        <li>You can use both unicode and custom emoji <i>(custom emoji must be in a server with the bot)</i></li>
+                    </ul>
+                </p>
+            </div>
+            
+            <div class="feature">
+                <img src="/icons/gattinhosBot/welcome.png" alt="Welcome System">
+                <h2>Welcome System</h2>
+                <p>
+                    <ul>
+                        <li>You can choose if have an image with the member info</li>
+                        <li>You can customize the background (must be <code>1100x500</code> in size)</li>
+                        <li>You can choose if have an embed</li>
+                        <li>You can customize the color, title, description footer</li>
+                        <li>You can customize the embed image <i>(custom or the member info)</i>, the footer image <i>(bottom left)</i> and the thumbnail image <i>(top right)</i></li>
+                        <li>You can choose if have the timestamp <i>(the date at the bottom)</i></li>
+                    </ul>
+                </p>
+            </div>
+            
+            <div class="feature">
+                <img src="/icons/gattinhosBot/leveling.png" alt="Leveling System">
+                <h2>Leveling System</h2>
+                <p>
+                    <ul>
+                        <li>You can customize the XP timeout <i>(how often give the XP)</i>, the XP rate <i>(Increase or decrease the amount of XP needed for the next level)</i>, the level up message</li>
+                        <li>You can blacklist users and channels</li>
+                    </ul>
+                </p>
+            </div>
+            
+            <div class="feature">
+                <img src="/icons/gattinhosBot/logs.png" alt="Logs System">
+                <h2>Logs System</h2>
+                <p>
+                    <ul>
+                        <li>You can choose which logs use through 2 select menus</li>
+                    </ul>
+                </p>
+            </div>
+            
+            <!-- DIV TO KEEP AS TEMPLATE FOR FUTURE FEATURES -->
+            <!-- <div class="feature">
+                <img src="/images/image.png" alt="Feature 2">
+                <h2>Feature name</h2>
+                <p>Feature description</p>
+            </div> -->
+        </section>
+    </div>
 
     <script src="/js/gattinhosBot.js"></script>
     <script defer data-domain="stefdp.is-a.dev" src="https://analytics.is-a.dev/js/script.js"></script>

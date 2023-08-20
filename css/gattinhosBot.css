@@ -87,10 +87,15 @@ header img.bot-avatar {
 .bot-description {
     text-align: center;
     background-color: #f5f5f500;
+    color: white;
     padding: 20px;
     position: sticky;
     top: 0;
     z-index: 1;
+}
+
+.mobile-site > section > .bot-description {
+    padding-top: 0px;
 }
 
 .bot-invite {
@@ -104,4 +109,18 @@ ul {
 
 li {
     margin-top: 10px;
+}
+
+.mobile-site {
+    display: none;
+}
+
+@media only screen and (max-width: 720px) {
+    .desktop-site {
+    display: none;
+    }
+    
+    .mobile-site {
+    display: block;
+    }
 }
