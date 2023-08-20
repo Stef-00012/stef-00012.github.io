@@ -1,5 +1,10 @@
-const inviteButton = document.getElementById('inviteButton')
+const inviteButtonDesktop = document.getElementById('inviteButtonDesktop')
+const inviteButtonMobile = document.getElementById('inviteButtonMobile')
 
-inviteButton.addEventListener('click', function() {
+inviteButtonDesktop.addEventListener('click', function() {
+    window.location.href = '/gattinhosBot/invite'
+})
+
+inviteButtonMobile.addEventListener('click', function() {
     window.location.href = '/gattinhosBot/invite'
 })
