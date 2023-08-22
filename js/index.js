@@ -63,18 +63,18 @@ document.querySelectorAll('.collapsible-button').forEach(btn => {
         btn.classList.toggle('active')
 
         if (btn.classList.contains('active')) {
-          if (collapsibleContent.children[0].classList.contains('embed-github')) {
-            if (collapsibleContent.children[0].classList.contains('desktop')) {
-                for (const embed of collapsibleContent.children) {
-                    embed.style.display = 'inline-block'
-                }
-            } else {
-                for (const embed of collapsibleContent.children) {
-                    embed.style.display = 'block'
+            if (collapsibleContent.children[0].classList.contains('embed-github')) {
+                if (collapsibleContent.children[0].classList.contains('desktop')) {
+                    for (const embed of collapsibleContent.children) {
+                        embed.style.display = 'inline-block'
+                    }
+                } else {
+                    for (const embed of collapsibleContent.children) {
+                        embed.style.display = 'block'
+                    }
                 }
             }
-          }
-          
+            
             if (collapsibleContent.children[0] && collapsibleContent.children[0].classList.contains('code-block')) {
                 codeBlock.style.display = 'block'
                 spoiler.style.display = 'block'
@@ -95,9 +95,9 @@ document.querySelectorAll('.collapsible-button').forEach(btn => {
             }
             
             if (collapsibleContent.children[0] && collapsibleContent.children[0].children[0] && collapsibleContent.children[0].children[0].classList.contains('small-social-logo')) {
-              for (const social of collapsibleContent.children[0].children) {
-                social.style.display = 'inline'
-              }
+                for (const social of collapsibleContent.children[0].children) {
+                    social.style.display = 'inline'
+                }
             }
 
             btn.style.height = '40px'
@@ -121,18 +121,109 @@ document.querySelectorAll('.collapsible-button').forEach(btn => {
                     spoilerDesktop.style.display = 'none'
                 }
 
-              if (collapsibleContent.children[0].classList.contains('embed-github')) {
-                for (const embed of collapsibleContent.children) {
-                  embed.style.display = 'none'
+                if (collapsibleContent.children[0].classList.contains('embed-github')) {
+                    for (const embed of collapsibleContent.children) {
+                        embed.style.display = 'none'
+                    }
                 }
-              }
-              
-                if (collapsibleContent.children[0] && collapsibleContent.children[0].children[0] && collapsibleContent.children[0].children[0].classList.contains('small-social-logo')) {
-                  for (const social of collapsibleContent.children[0].children) {
-                    social.style.display = 'none'
-                  }
+                
+                    if (collapsibleContent.children[0] && collapsibleContent.children[0].children[0] && collapsibleContent.children[0].children[0].classList.contains('small-social-logo')) {
+                        for (const social of collapsibleContent.children[0].children) {
+                            social.style.display = 'none'
+                        }
+                    }
+                
+                if (collapsibleContent.children[1] && collapsibleContent.children[1].classList.contains('collapsible-content-image')) {
+                    for (const image of collapsibleContent.children) {
+                        image.style.display = 'none'
+                    }
                 }
-              
+
+                btn.style.height = '20px'
+                collapsibleContent.style.color = 'transparent'
+            }, 200)
+        }
+    })
+})
+
+document.querySelectorAll('.collapsible-content').forEach(collapsibleContent => {
+    collapsibleContent.addEventListener('click', () => {
+        const btn = collapsibleContent.previousElementSibling
+        if (btn.classList.contains('active')) return;
+        
+        btn.classList.toggle('active')
+
+        if (btn.classList.contains('active')) {
+            if (collapsibleContent.children[0].classList.contains('embed-github')) {
+                if (collapsibleContent.children[0].classList.contains('desktop')) {
+                    for (const embed of collapsibleContent.children) {
+                        embed.style.display = 'inline-block'
+                    }
+                } else {
+                    for (const embed of collapsibleContent.children) {
+                        embed.style.display = 'block'
+                    }
+                }
+            }
+            
+            if (collapsibleContent.children[0] && collapsibleContent.children[0].classList.contains('code-block')) {
+                codeBlock.style.display = 'block'
+                spoiler.style.display = 'block'
+                codeBlockDesktop.style.display = 'block'
+                spoilerDesktop.style.display = 'block'
+            }
+
+            if (collapsibleContent.children[1] && collapsibleContent.children[1].classList.contains('collapsible-content-image')) {
+                if (collapsibleContent.children[1].classList.contains('desktop')) {
+                    for (const image of collapsibleContent.children) {
+                        image.style.display = 'inline-block'
+                    }
+                } else {
+                    for (const image of collapsibleContent.children) {
+                        image.style.display = 'block'
+                    }
+                }
+            }
+            
+            if (collapsibleContent.children[0] && collapsibleContent.children[0].children[0] && collapsibleContent.children[0].children[0].classList.contains('small-social-logo')) {
+                for (const social of collapsibleContent.children[0].children) {
+                    social.style.display = 'inline'
+                }
+            }
+
+            btn.style.height = '40px'
+            collapsibleContent.style.border = '4px solid #a2a3a5'
+            collapsibleContent.style.borderTop = '0px'
+            
+            collapsibleContent.style.height = collapsibleContent.scrollHeight + 'px'
+            setTimeout(() => {
+                collapsibleContent.style.color = 'white'
+            }, 100)
+            
+            
+        } else {
+            collapsibleContent.style.height = '25px'
+            
+            setTimeout(() => {
+                if (collapsibleContent.children[0] && collapsibleContent.children[0].classList.contains('code-block')) {
+                    codeBlock.style.display = 'none'
+                    spoiler.style.display = 'none'
+                    codeBlockDesktop.style.display = 'none'
+                    spoilerDesktop.style.display = 'none'
+                }
+
+                if (collapsibleContent.children[0].classList.contains('embed-github')) {
+                    for (const embed of collapsibleContent.children) {
+                        embed.style.display = 'none'
+                    }
+                }
+                
+                    if (collapsibleContent.children[0] && collapsibleContent.children[0].children[0] && collapsibleContent.children[0].children[0].classList.contains('small-social-logo')) {
+                        for (const social of collapsibleContent.children[0].children) {
+                            social.style.display = 'none'
+                        }
+                    }
+                
                 if (collapsibleContent.children[1] && collapsibleContent.children[1].classList.contains('collapsible-content-image')) {
                     for (const image of collapsibleContent.children) {
                         image.style.display = 'none'
