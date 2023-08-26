@@ -1,0 +1,33 @@
+name: Merge Pull Requests
+
+on:
+  pull_request:
+    types:
+      - opened
+
+jobs:
+  merge_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v2
+
+      - name: Merge Pull Request
+        run: |
+          pull_number=${{ github.event.pull_request.number }}
+          
+          # Check if the pull request was made by the GitHub Actions bot
+          if [[ "${{ github.event.pull_request.user.login }}" == "github-actions[bot]" ]]; then
+            # Fetch the pull request changes
+            git fetch origin pull/${pull_number}/merge:PR${pull_number}
+            
+            # Merge the pull request changes into the main branch
+            git checkout main
+            git merge PR${pull_number} --no-edit
+            
+            # Push the merged changes to the main branch
+            git push origin main
+          else
+            echo "Skipping merge because the pull request was not made by GitHub Actions bot."
+          fi
