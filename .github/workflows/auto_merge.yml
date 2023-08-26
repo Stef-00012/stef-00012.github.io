@@ -18,7 +18,7 @@ jobs:
           pull_number=${{ github.event.pull_request.number }}
           
           # Check if the pull request was made by the GitHub Actions bot
-          if [[ "${{ github.event.pull_request.user.login }}" == "github-actions[bot]" ]]; then
+          if [[ "${{ github.event.pull_request.user.login }}" == "github-actions" ]]; then
             # Fetch the pull request changes
             git fetch origin pull/${pull_number}/merge:PR${pull_number}
             
