@@ -25,6 +25,7 @@ jobs:
       id: cpr
       uses: peter-evans/create-pull-request@v3
       with:
+        base: main
         signoff: true
         title: "Automated sitemap update"
         body: > 
