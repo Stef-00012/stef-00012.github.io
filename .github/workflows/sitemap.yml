@@ -21,8 +21,6 @@ jobs:
       with:
         base-url-path: https://stefdp.is-a.dev/
 
-    - run: rm -rf .git/hooks
-
     - name: Create Pull Request
       id: cpr
       uses: peter-evans/create-pull-request@v3
