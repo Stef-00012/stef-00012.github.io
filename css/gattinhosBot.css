@@ -30,7 +30,7 @@ header img.bot-avatar {
     border-radius: 50%;
 }
 
-.invite-button {
+.invite-button, .support-button {
     background-color: #340c47;
     color: #fff;
     border: none;
