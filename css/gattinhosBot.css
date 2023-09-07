@@ -117,11 +117,11 @@ li {
 
 @media only screen and (max-width: 720px) {
     .desktop-site {
-    display: none;
+        display: none;
     }
     
     .mobile-site {
-    display: block;
+        display: block;
     }
 }
 

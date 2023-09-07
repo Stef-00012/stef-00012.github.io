@@ -1,5 +1,5 @@
 body {
-    background-image: url('/icons/bio-bg.png');
+    background-image: url('/assets/bio-bg.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -7,7 +7,7 @@ body {
 }
 
 body.christmas {
-    background-image: url('/icons/bio-bg-christmas.png');
+    background-image: url('/assets/bio-bg-christmas.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -15,7 +15,7 @@ body.christmas {
 }
 
 body.easter {
-    background-image: url('/icons/bio-bg-easter.png');
+    background-image: url('/assets/bio-bg-easter.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -23,7 +23,7 @@ body.easter {
 }
 
 body.halloween {
-    background-image: url('/icons/bio-bg-halloween.png');
+    background-image: url('/assets/bio-bg-halloween.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -31,7 +31,7 @@ body.halloween {
 }
 
 body.epiphany {
-    background-image: url('/icons/bio-bg-epiphany.png');
+    background-image: url('/assets/bio-bg-epiphany.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -39,7 +39,7 @@ body.epiphany {
 }
 
 body.newyear {
-    background-image: url('/icons/bio-bg-newyear.png');
+    background-image: url('/assets/bio-bg-newyear.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -431,11 +431,11 @@ body.newyear {
 
 @media only screen and (max-width: 720px) {
     .desktop-site {
-    display: none;
+        display: none;
     }
     
     .mobile-site {
-    display: block;
+        display: block;
     }
 }
 
