@@ -361,7 +361,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: '<b>Twitter</b><br /><i>Stef_Del_Prete</i>'
+        content: '<b>X (Twitter)</b><br /><i>Stef_Del_Prete</i>'
     });
 
     new jBox('Mouse', {
@@ -370,7 +370,7 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: '<b>Twitter</b><br /><i>Stef_Del_Prete</i>'
+        content: '<b>X (Twitter)</b><br /><i>Stef_Del_Prete</i>'
     });
 
     
@@ -484,6 +484,24 @@ jQuery(() => {
             'y': 'top'
         },
         content: '<b>Steam</b><br /><i>Stefano_Del_Prete</i>'
+    })
+
+    new jBox('Mouse', {
+        attach: '#tooltip-mail',
+        position: {
+            x: 'right',
+            'y': 'top'
+        },
+        content: '<b>Mail</b><br /><i>admin@stefdp.is-a.dev</i>'
+    })
+
+    new jBox('Mouse', {
+        attach: '#tooltip-mail-desktop',
+        position: {
+            x: 'right',
+            'y': 'top'
+        },
+        content: '<b>Mail</b><br /><i>admin@stefdp.is-a.dev</i>'
     })
 })
 

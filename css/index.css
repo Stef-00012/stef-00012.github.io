@@ -119,11 +119,12 @@ body.newyear {
 }
 
 .social.youtube {
-    padding-top: 4px;
+    padding-top: 0px;
 }
 
 .social.tiktok {
     width: 48px;
+    margin-top: 2px;
 }
 
 .social.revolt {
@@ -135,6 +136,7 @@ body.newyear {
 }
 
 .social.mastodon {
+    padding-top: -4px;
     width: 45px;
 }
 
@@ -142,8 +144,31 @@ body.newyear {
     padding-top: 5px;
 }
 
+.social.github {
+    margin-top: -3px;
+}
+
 .social.steam {
+    width: 47px;
+    margin-top: -1px;
+}
+
+.social.steam.desktop {
+    margin-top: 3px;
     width: 47px
+}
+
+.social.mail {
+    margin-top: 4px;
+}
+
+.social.mail.desktop {
+    margin-top: 7px;
+}
+
+.social.twitter {
+    margin-top: 7px;
+    width: 40px
 }
 
 #socials-2 {
@@ -220,6 +245,10 @@ body.newyear {
     color: #552370;
 }
 
+.social-url.mail {
+    color: #c5221f;
+}
+
 .social-url:hover {
     filter: brightness(0.8);
 }
@@ -228,13 +257,22 @@ body.newyear {
     width: 15px;
     height: 15px;
     border-radius: 4px;
-    padding-right: 5px;
+    margin-right: 5px;
     display: none;
 }
 
 .small-social-logo.gattinhosBot {
     border-bottom-right-radius: 4px;
     border-top-right-radius: 4px;
+}
+
+.small-social-logo.mail {
+    height: 11px;
+    border-radius: 0;
+}
+
+.small-social-logo.twitter {
+    border-radius: 0;
 }
 
 .collapsible-content-image {
@@ -399,6 +437,7 @@ s {
     scrollbar-width: none;
 }
 
+
 #jBox1 > .jBox-container, #jBox2 > .jBox-container {
     background-color: #3342dd;
     border: 3px solid #212b90;
@@ -466,4 +505,9 @@ s {
 #jBox25 > .jBox-container, #jBox26 > .jBox-container {
     background-color: #122b60;
     border: 3px solid #071539;
+}
+
+#jBox27 > .jBox-container, #jBox28 > .jBox-container {
+    background-color: #c5221f;
+    border: 3px solid #a31b18;
 }
