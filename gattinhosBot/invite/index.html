@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <script>
-        window.location.href = 'https://discord.com/api/oauth2/authorize?client_id=1122853658418237520&permissions=138244648128&scope=bot%20applications.commands'
-    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invite GattinhosBot</title>
+    <link href="/css/invite.css" rel="stylesheet">
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-002L9WP8JT"></script>
@@ -13,4 +15,19 @@
 
     gtag('config', 'G-002L9WP8JT');
 </script>
-<script defer data-domain="stefdp.is-a.dev" src="https://analytics.is-a.dev/js/script.js"></script>
+<body>
+    <div class="container">
+        <h1>Invite GattinhosBot</h1>
+        <button class="discord-button" id="invite-button" disabled>Invite Bot</button>
+        <label class="checkbox-container">
+            <span class="custom-checkbox">
+                <input type="checkbox" id="terms-checkbox">
+            </span>
+            <span class="checkbox-label">I accept the <a href="/gattinhosBot/terms">terms</a> and <a href="/gattinhosBot/privacy">privacy policy</a></span>
+        </label>
+    </div>
+    
+    <script src="/js/invite.js"></script>
+    <script defer data-domain="stefdp.is-a.dev" src="https://analytics.is-a.dev/js/script.js"></script>
+</body>
+</html>
