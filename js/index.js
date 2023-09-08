@@ -325,12 +325,12 @@ jQuery(() => {
     });
 
     new jBox('Mouse', {
-      attach: '#tooltip-telegram-desktop',
-      position: {
-          x: 'right',
-          y: 'top'
-      },
-      content: '<b>Telegram</b><br /><i>Stef_DP</i>'
+        attach: '#tooltip-telegram-desktop',
+        position: {
+            x: 'right',
+            y: 'top'
+        },
+        content: '<b>Telegram</b><br /><i>Stef_DP</i>'
     });
     
 
@@ -344,13 +344,13 @@ jQuery(() => {
     });
 
     new jBox('Mouse', {
-      attach: '#tooltip-youtube-desktop',
-      position: {
-          x: 'right',
-          y: 'top'
-      },
-      content: '<b>Youtube</b><br /><i>Stefano Del Prete</i>'
-  });
+        attach: '#tooltip-youtube-desktop',
+        position: {
+            x: 'right',
+            y: 'top'
+        },
+        content: '<b>Youtube</b><br /><i>Stefano Del Prete</i>'
+    });
 
     
     new jBox('Mouse', {
@@ -416,16 +416,16 @@ jQuery(() => {
             x: 'right',
             y: 'top'
         },
-        content: '<b>Reddit</b><br /><i>XxDemonDark08xX</i>'
+        content: '<b>Reddit</b><br /><i>Stef_DP</i>'
     });
 
     new jBox('Mouse', {
-      attach: '#tooltip-reddit-desktop',
-      position: {
-          x: 'right',
-          y: 'top'
-      },
-      content: '<b>Reddit</b><br /><i>XxDemonDark08xX</i>'
+        attach: '#tooltip-reddit-desktop',
+        position: {
+            x: 'right',
+            y: 'top'
+        },
+        content: '<b>Reddit</b><br /><i>Stef_DP</i>'
     });
     
     
@@ -439,13 +439,13 @@ jQuery(() => {
     });
 
     new jBox('Mouse', {
-      attach: '#tooltip-revolt-desktop',
-      position: {
-          x: 'right',
-          y: 'top'
-      },
-      content: '<b>Revolt</b><br /><i>Stef</i>'
-  });
+        attach: '#tooltip-revolt-desktop',
+        position: {
+            x: 'right',
+            y: 'top'
+        },
+        content: '<b>Revolt</b><br /><i>Stef</i>'
+    });
 
     
     new jBox('Mouse', {
@@ -458,13 +458,13 @@ jQuery(() => {
     });
 
     new jBox('Mouse', {
-      attach: '#tooltip-mastodon-desktop',
-      position: {
-          x: 'right',
-          y: 'top'
-      },
-      content: '<b>Mastodon</b><br /><i>Stef_DP</i>'
-  });
+        attach: '#tooltip-mastodon-desktop',
+        position: {
+            x: 'right',
+            y: 'top'
+        },
+        content: '<b>Mastodon</b><br /><i>Stef_DP</i>'
+    });
 
     new jBox('Mouse', {
         attach: '#tooltip-steam',
