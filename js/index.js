@@ -1,44 +1,46 @@
-const spoiler = document.getElementById('spoiler')
-const spoilerDesktop = document.getElementById('spoiler-desktop')
+const spoilerMobile = document.getElementById('spoilerMobile')
+const spoilerDesktop = document.getElementById('spoilerDesktop')
 
-const codeBlock = document.getElementById('code-block')
-const codeBlockDesktop = document.getElementById('code-block-desktop')
+const  codeBlockMobile = document.getElementById('codeBlockMobile')
+const codeBlockDesktop = document.getElementById('codeBlockDesktop')
 
-const gattinhosBotButton = document.getElementById('gattinhosBotButton')
+const gattinhosBotButtonMobile = document.getElementById('gattinhosBotButtonMobile')
 const gattinhosBotButtonDesktop = document.getElementById('gattinhosBotButtonDesktop')
 
 
-function backgroundImageSet() {
-    const date = new Date();
-    const day = date.getDate();
-    const month = date.getMonth() + 1;
-    if ((month == 12 && day >= 8 && day <= 31) || (month == 1 && day >= 2 && day <= 3)) {
-        document.body.className = "christmas"; //christmas
-    }
-    
-    if (month == 4 && day >= 9 && day <= 12) {
-        document.body.className = "easter"; //easter
-    }
-    
-    if (month == 10 && day >= 25 && day <= 31) {
-        document.body.className = "halloween"; //halloween
-    }
-    
-    if (month == 1 && day >= 4 && day <= 8) {
-        document.body.className = "epiphany"; //epiphany
-    }
-    
-    if (month == 1 == day == 1) {
-        document.body.className = "newyear" //new year
-    }
-}
+fetch('/data/aboutMeCodeBlock.txt')
+    .then(res => res.text())
+    .then(text => {
+        codeBlockMobile.innerHTML = text
+        codeBlockDesktop.innerHTML = text
 
-backgroundImageSet();
+        hljs.highlightAll();
+    })
+
+fetch('/data/codeBlockPlaceholders.json')
+    .then(res => res.json())
+    .then(json => {
+        codeBlockDesktop.innerHTML = codeBlockDesktop.innerHTML
+            .replace(/\[\[([^\]]+)\]\]/g, (match, key) => {
+                if (json?.[key]) return json[key]
+                
+                return match
+            })
+
+        codeBlockMobile.innerHTML = codeBlockMobile.innerHTML
+            .replace(/\[\[([^\]]+)\]\]/g, (match, key) => {
+                if (json?.[key]) return json[key]
+                
+                return match
+            })
+    })
+
+backgroundImageSet()
 
 
-spoiler.onclick = function() {
-    spoiler.style.backgroundColor = "rgba(54, 47, 46, 0.65)";
-    spoiler.style.color = "rgba(255, 255, 255, 0.85)";
+spoilerMobile.onclick = function() {
+    spoilerMobile.style.backgroundColor = "rgba(54, 47, 46, 0.65)";
+    spoilerMobile.style.color = "rgba(255, 255, 255, 0.85)";
 }
 
 spoilerDesktop.onclick = function() {
@@ -47,7 +49,7 @@ spoilerDesktop.onclick = function() {
 }
 
 
-gattinhosBotButton.onclick = function() {
+gattinhosBotButtonMobile.onclick = function() {
     window.location.href = '/gattinhosBot'
 }
 
@@ -75,9 +77,9 @@ document.querySelectorAll('.collapsible-button').forEach(btn => {
                 }
             }
             
-            if (collapsibleContent.children[0] && collapsibleContent.children[0].classList.contains('code-block')) {
-                codeBlock.style.display = 'block'
-                spoiler.style.display = 'block'
+            if (collapsibleContent.children[0]?.children[0] && collapsibleContent.children[0].children[0].classList.contains('code-block')) {
+                codeBlockMobile.style.display = 'block'
+                spoilerMobile.style.display = 'block'
                 codeBlockDesktop.style.display = 'block'
                 spoilerDesktop.style.display = 'block'
             }
@@ -94,7 +96,7 @@ document.querySelectorAll('.collapsible-button').forEach(btn => {
                 }
             }
             
-            if (collapsibleContent.children[0] && collapsibleContent.children[0].children[0] && collapsibleContent.children[0].children[0].classList.contains('small-social-logo')) {
+            if (collapsibleContent.children[0]?.children[0] && collapsibleContent.children[0].children[0].classList.contains('small-social-logo')) {
                 for (const social of collapsibleContent.children[0].children) {
                     social.style.display = 'inline'
                 }
@@ -114,9 +116,9 @@ document.querySelectorAll('.collapsible-button').forEach(btn => {
             collapsibleContent.style.height = '25px'
             
             setTimeout(() => {
-                if (collapsibleContent.children[0] && collapsibleContent.children[0].classList.contains('code-block')) {
-                    codeBlock.style.display = 'none'
-                    spoiler.style.display = 'none'
+                if (collapsibleContent.children[0]?.children[0] && collapsibleContent.children[0].children[0].classList.contains('code-block')) {
+                    codeBlockMobile.style.display = 'none'
+                    spoilerMobile.style.display = 'none'
                     codeBlockDesktop.style.display = 'none'
                     spoilerDesktop.style.display = 'none'
                 }
@@ -127,11 +129,11 @@ document.querySelectorAll('.collapsible-button').forEach(btn => {
                     }
                 }
                 
-                    if (collapsibleContent.children[0] && collapsibleContent.children[0].children[0] && collapsibleContent.children[0].children[0].classList.contains('small-social-logo')) {
-                        for (const social of collapsibleContent.children[0].children) {
-                            social.style.display = 'none'
-                        }
+                if (collapsibleContent.children[0]?.children[0] && collapsibleContent.children[0].children[0].classList.contains('small-social-logo')) {
+                    for (const social of collapsibleContent.children[0].children) {
+                        social.style.display = 'none'
                     }
+                }
                 
                 if (collapsibleContent.children[1] && collapsibleContent.children[1].classList.contains('collapsible-content-image')) {
                     for (const image of collapsibleContent.children) {
@@ -166,9 +168,9 @@ document.querySelectorAll('.collapsible-content').forEach(collapsibleContent => 
                 }
             }
             
-            if (collapsibleContent.children[0] && collapsibleContent.children[0].classList.contains('code-block')) {
-                codeBlock.style.display = 'block'
-                spoiler.style.display = 'block'
+            if (collapsibleContent.children[0]?.children[0] && collapsibleContent.children[0].children[0].classList.contains('code-block')) {
+                codeBlockMobile.style.display = 'block'
+                spoilerMobile.style.display = 'block'
                 codeBlockDesktop.style.display = 'block'
                 spoilerDesktop.style.display = 'block'
             }
@@ -185,7 +187,7 @@ document.querySelectorAll('.collapsible-content').forEach(collapsibleContent => 
                 }
             }
             
-            if (collapsibleContent.children[0] && collapsibleContent.children[0].children[0] && collapsibleContent.children[0].children[0].classList.contains('small-social-logo')) {
+            if (collapsibleContent.children[0]?.children[0] && collapsibleContent.children[0].children[0].classList.contains('small-social-logo')) {
                 for (const social of collapsibleContent.children[0].children) {
                     social.style.display = 'inline'
                 }
@@ -205,9 +207,9 @@ document.querySelectorAll('.collapsible-content').forEach(collapsibleContent => 
             collapsibleContent.style.height = '25px'
             
             setTimeout(() => {
-                if (collapsibleContent.children[0] && collapsibleContent.children[0].classList.contains('code-block')) {
-                    codeBlock.style.display = 'none'
-                    spoiler.style.display = 'none'
+                if (collapsibleContent.children[0]?.children[0] && collapsibleContent.children[0].children[0].classList.contains('code-block')) {
+                    codeBlockMobile.style.display = 'none'
+                    spoilerMobile.style.display = 'none'
                     codeBlockDesktop.style.display = 'none'
                     spoilerDesktop.style.display = 'none'
                 }
@@ -218,11 +220,11 @@ document.querySelectorAll('.collapsible-content').forEach(collapsibleContent => 
                     }
                 }
                 
-                    if (collapsibleContent.children[0] && collapsibleContent.children[0].children[0] && collapsibleContent.children[0].children[0].classList.contains('small-social-logo')) {
-                        for (const social of collapsibleContent.children[0].children) {
-                            social.style.display = 'none'
-                        }
+                if (collapsibleContent.children[0]?.children[0] && collapsibleContent.children[0].children[0].classList.contains('small-social-logo')) {
+                    for (const social of collapsibleContent.children[0].children) {
+                        social.style.display = 'none'
                     }
+                }
                 
                 if (collapsibleContent.children[1] && collapsibleContent.children[1].classList.contains('collapsible-content-image')) {
                     for (const image of collapsibleContent.children) {
@@ -484,3 +486,29 @@ jQuery(() => {
         content: '<b>Steam</b><br /><i>Stefano_Del_Prete</i>'
     })
 })
+
+
+function backgroundImageSet() {
+    const date = new Date();
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    if ((month == 12 && day >= 8 && day <= 31) || (month == 1 && day >= 2 && day <= 3)) {
+        document.body.className = "christmas"; //christmas
+    }
+    
+    if (month == 4 && day >= 9 && day <= 12) {
+        document.body.className = "easter"; //easter
+    }
+    
+    if (month == 10 && day >= 25 && day <= 31) {
+        document.body.className = "halloween"; //halloween
+    }
+    
+    if (month == 1 && day >= 4 && day <= 8) {
+        document.body.className = "epiphany"; //epiphany
+    }
+    
+    if (month == 1 == day == 1) {
+        document.body.className = "newyear" //new year
+    }
+}

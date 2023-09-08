@@ -1,0 +1,111 @@
+/*
+    My personal informations
+*/
+
+const personalInfo = {
+    fullName: "Stefano Del Prete",
+    age: undefined,
+    birthday: new Date(1678834800000).toLocaleString('it').split(',')[0].replace('2023', '200#'), // 15/3/200#
+    nationality: "Italian 🇮🇹",
+    status: "[[striketrhoughStart]]Single[[striketrhoughEnd]] Alone... :(",
+    pets: [{
+        type: "rabbit",
+        name: "Pallino",
+        age: 10 // 75 in rabbit years
+    }]
+};
+
+/*
+    Spoken Languages
+*/
+
+const knownLanguages = [
+    {
+        name: "Italian",
+        level: 100 // 0-100 (kinda obv since it's my native lang)
+    },
+    {
+        name: "English",
+        level: 95 // 0-100 (this is how I think I am, idk if others think so too)
+    },
+    {
+        name: "French",
+        level: 2 // 0-100 (I remember just the basic things)
+    }
+];
+
+/*
+    Programming Languages, Markup Languages and Terminal
+*/
+
+const knownProgramming = [
+    {
+        name: "Javascript",
+        level: 90 // 0-100
+    },
+    {
+        name: "HTML",
+        level: 55 // 0-100
+    },
+    {
+        name: "CSS",
+        level: 60 // 0-100
+    },
+    {
+        name: "Bash/Shell",
+        level: 80 // 0-100
+    }
+];
+
+/*
+    Some info about my socials
+*/
+
+const discord = {
+    botDeveloper: true,
+    badges: [
+        "House of Bravery",
+        "Active Developer",
+        "Originally Known as Stef#6705"
+    ],
+    publicBots: [
+        {
+            name: "GattinhosBot",
+            serverCount: 13, // Last updated September 9 2023, 12:22
+            inviteURL: "[[aStart_inviteUrl]]https://stefdp.is-a.dev/gattinhosBot/invite[[aEnd]]",
+            supportServer: "[[aStart_supportUrl]]https://stefdp.is-a.dev/gattinhosBot/support[[aEnd]]",
+            topGgPage: "[[aStart_topGgUrl]]https://top.gg/bot/1122853658418237520[[aEnd]]",
+            website: "[[aStart_websiteUrl]]https://stefdp.is-a.dev/gattinhosBot[[aEnd]]",
+            features: [
+                "Welcome System",
+                "Reaction Roles System",
+                "Leveling System",
+                "Logs System"
+            ]
+        }
+    ]
+};
+
+const instagram = {
+    followers: 85 // Last updated September 9 2023, 12:28
+};
+
+const revolt = {
+    botDeveloper: true,
+    badges: [],
+    publicBots: []
+};
+
+const github = {
+    followers: 6, // Last updated September 9 2023, 12:26
+    repositories: 15 // Last updated September 9 2023, 12:26
+};
+
+const reddit = {
+    oldAccountKarma: 241, // Last updated September 9 2023, 12:27
+    newAccountKarma: 1 // Last updated September 9 2023, 12:27
+};
+
+const twitter = {
+    followers: 4 // Last updated September 9 2023, 12:29
+};
