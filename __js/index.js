@@ -8,7 +8,7 @@ const gattinhosBotButtonMobile = document.getElementById('gattinhosBotButtonMobi
 const gattinhosBotButtonDesktop = document.getElementById('gattinhosBotButtonDesktop')
 
 
-fetch('/data/aboutMeCodeBlock.txt')
+fetch('/__data/aboutMeCodeBlock.txt')
     .then(res => res.text())
     .then(text => {
         codeBlockMobile.innerHTML = text
@@ -17,7 +17,7 @@ fetch('/data/aboutMeCodeBlock.txt')
         hljs.highlightAll();
     })
 
-fetch('/data/codeBlockPlaceholders.json')
+fetch('/__data/codeBlockPlaceholders.json')
     .then(res => res.json())
     .then(json => {
         codeBlockDesktop.innerHTML = codeBlockDesktop.innerHTML

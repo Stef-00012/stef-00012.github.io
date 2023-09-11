@@ -66,7 +66,9 @@ const discord = {
     badges: [
         "House of Bravery",
         "Active Developer",
-        "Originally Known as Stef#6705"
+        "Originally Known as Stef#6705", // Switch from discriminator to pomelo (Stef#6705 => stef_dp)
+        "Subscriber since Sep 9, 2023", // Nitro
+        "Boosting since Sep 9, 2023" // Boosting
     ],
     publicBots: [
         {

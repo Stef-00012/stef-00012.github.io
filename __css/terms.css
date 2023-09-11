@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background-image: url('/assets/gattinhosBot/headerBackground.jpg');
+    background-image: url('/__assets/gattinhosBot/headerBackground.jpg');
     background-repeat: no-repeat;
     background-position: 50%;
     background-size:cover;
