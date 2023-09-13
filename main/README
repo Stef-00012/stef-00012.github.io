@@ -1,0 +1,21 @@
+Welcome to your is-a.dev webserver!
+
+You can find 3 files in this directory:
+
+- README: this file
+- index.html: the main page of your website
+- config.json: the configuration file of your website
+
+Let's go over them:
+
+- README: this file
+- index.html is the main page of your website. You can edit it to your liking. You can also add more files to this directory, they will be served by the webserver.
+- config.json is the configuration file of your website.
+
+You can edit the config.json file to change the configuration of your website. The following options are available:
+
+- password: set a password that's required to access your website. If you don't want to set a password, dont set this option.
+- ftp: set this option to true if you want to enable FTP access to your website. If you don't want to enable FTP access, set this option to false or don't set it at all.
+- ftp_password: the password for the FTP access.
+
+Enjoy! 🎉
