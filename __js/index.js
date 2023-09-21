@@ -8,7 +8,7 @@ const gattinhosBotButtonMobile = document.getElementById('gattinhosBotButtonMobi
 const gattinhosBotButtonDesktop = document.getElementById('gattinhosBotButtonDesktop')
 
 
-fetch('https://33289840.r.cdn36.com/__data/aboutMeCodeBlock.txt')
+fetch('https://cdn.stefdp.is-a.dev/__data/aboutMeCodeBlock.txt')
     .then(res => res.text())
     .then(text => {
         codeBlockMobile.innerHTML = text
@@ -17,7 +17,7 @@ fetch('https://33289840.r.cdn36.com/__data/aboutMeCodeBlock.txt')
         hljs.highlightAll();
     })
 
-fetch('https://33289840.r.cdn36.com/__data/codeBlockPlaceholders.json')
+fetch('https://cdn.stefdp.is-a.dev/__data/codeBlockPlaceholders.json')
     .then(res => res.json())
     .then(json => {
         codeBlockDesktop.innerHTML = codeBlockDesktop.innerHTML
