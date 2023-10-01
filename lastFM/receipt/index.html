@@ -58,18 +58,19 @@
 </head>
 <body>
     <div class="receipt">
-        <h1 class="align-center">stef receipt</h1>
+        <h1 class="align-center" id="receiptTitle">receipt</h1>
         <h2 class="align-center bold" id="timePeriod">
-            {{time-period}}
+            
         </h2>
         <br />
         <p class="date align-center" id="orderFor">
-            ORDER #{{order}} FOR {{lfm-username}}
+            
         </p>
         <p class="align-center" id="dateGenerated">
-            {{date-generated}}
+            
         </p>
         <br />
+        <p id="totalTracks">TOTAL TRACKS:</p>
         <table>
             <thead>
                 <tr class="divider">
@@ -88,7 +89,7 @@
                 </tr>
             </thead>
             <tbody id="tracks">
-                {{tracks}}
+                
             </tbody>
         </table>
         <table>
@@ -102,7 +103,7 @@
                         SUBTOTAL:
                     </td>
                     <td class="align-right" id="subtotal">
-                        {{subtotal}}
+                        
                     </td>
                 </tr>
                 <tr class="divider">
@@ -114,7 +115,7 @@
                         TOTAL PLAYS:
                     </td>
                     <td class="align-right" id="total">
-                        {{total-plays}} <!-- just sum from api -->
+                        
                     </td>
                 </tr>
             </tbody>
@@ -122,17 +123,17 @@
         <br />
         <br />
         <p class="date" id="cardYear">
-            CARD #: **** **** **** {{year}} <!-- 2023 -->
+            CARD #: **** **** **** 
         </p>
         <p class="date" id="authCode">
-            AUTH CODE: {{auth-code}} <!-- 702403 -->
+            AUTH CODE: 
         </p>
         <p class="date" id="cardHolder">
-            CARDHOLDER: {{discord-username}} <!-- stef -->
+            CARDHOLDER: 
         </p>
         <br />
         <p class="align-center" id="thanks">
-            {{thanks}}
+            
         </p>
     </div>
 </body>
@@ -141,6 +142,7 @@
     const query = getQueryParams(window.location.href)
 
     const tracksParam = query.tracks
+    const totalTracksParam = query.totalTracks
     const timePeriodParam = query.timePeriod
     const orderParam = query.order
     const lfmUsernameParam = query.lfmUsername
@@ -157,6 +159,7 @@
 
     if (
         !tracksParam ||
+        !totalTracksParam ||
         !timePeriodParam ||
         !orderParam ||
         !lfmUsernameParam ||
@@ -175,13 +178,32 @@
 
         try {
             const data = fetch(`https://api.stefdp.is-a.dev/last.fm/receiptData${query}`).then(res => res.json()).then(data => {
-                window.location.href = window.location.pathname + data.query
+                const dataParams = getQueryParams(data.query)
+
+                console.log(dataParams)
+                
+                if (
+                    dataParams.tracks &&
+                    dataParams.totalTracks &&
+                    dataParams.timePeriod &&
+                    dataParams.order &&
+                    dataParams.lfmUsername &&
+                    dataParams.dateGenerated &&
+                    dataParams.subtotal &&
+                    dataParams.total &&
+                    dataParams.year &&
+                    dataParams.authCode &&
+                    dataParams.cardHolder &&
+                    dataParams.thanks
+                ) window.location.href = window.location.pathname + data.query
             })
         } catch(e) {
 
         }
     } else {
+        const receiptTitle = document.getElementById('receiptTitle')
         const tracks = document.getElementById('tracks')
+        const totalTracks = document.getElementById('totalTracks')
         const timePeriod = document.getElementById('timePeriod')
         const orderFor = document.getElementById('orderFor')
         const dateGenerated = document.getElementById('dateGenerated')
@@ -202,6 +224,8 @@
         })
 
         tracks.innerHTML = htmlTracks.join('')
+        receiptTitle.innerText = `${cardHolderParam}'s receipt`
+        totalTracks.innerText = `TOTAL TRACKS: ${decodeURIComponent(totalTracksParam)}`
         timePeriod.innerText = decodeURIComponent(timePeriodParam)
         orderFor.innerText = `ORDER #${decodeURIComponent(orderParam)} FOR ${decodeURIComponent(lfmUsernameParam)}`
         dateGenerated.innerText = decodeURIComponent(dateGeneratedParam)
