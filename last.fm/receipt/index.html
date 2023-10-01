@@ -127,7 +127,7 @@
     <div class="receipt" id="receipt">
         <h1 class="align-center" id="receiptTitle">receipt</h1>
         <h2 class="align-center bold" id="timePeriod">
-            
+            IN THE LAST MONTH
         </h2>
         <br />
         <p class="date align-center" id="orderFor">
@@ -248,9 +248,9 @@
     const authCodeParam = query.authCode
     const cardHolderParam = query.cardHolder
     const thanksParam = query.thanks
-
     const userParam = query.user
     const trackCountParam = query.trackCount
+    const periodParam = query.period
 
     if (userParam) {
         form.setAttribute('disabled', '')
@@ -260,6 +260,7 @@
         let query = `?user=${userParam}`
 
         if (trackCountParam) query += `&trackCount=${trackCountParam}`
+        if (periodParam) query += `&period=${periodParam}`
         if (cardHolderParam) query += `&cardHolder=${cardHolderParam}`
         if (authCodeParam) query += `&authCode=${authCodeParam}`
         if (thanksParam) query += `&thanks=${thanksParam}`
@@ -288,7 +289,7 @@
                 tracks.innerHTML = data.tracksData.map(track => `<tr><td>${track.artist.name} - ${track.name}</td><td class="align-right">${track.playcount}</td></tr>`).join('')
                 receiptTitle.innerText = `${data.cardHolder}'s RECEIPT`
                 totalTracks.innerText = `TOTAL TRACKS: ${data.totalTracks}`
-                timePeriod.innerText.innerText = data.period
+                timePeriod.innerText = data.period
                 orderFor.innerText = `ORDER #${data.orderNumber} FOR ${data.lastFMUsername}`
                 dateGenerated.innerText = data.dateGenerated
                 subtotal.innerText = data.subTotal
@@ -319,6 +320,7 @@
             let query = `?user=${user}`
 
             if (trackCount) query += `&trackCount=${encodeURIComponent(trackCount)}`
+            if (period) query += `&period=${period}`
             if (cardHolder) query += `&cardHolder=${encodeURIComponent(cardHolder)}`
             if (order) query += `&order=${encodeURIComponent(order)}`
             if (authCode) query += `&authCode=${encodeURIComponent(authCode)}`
