@@ -146,12 +146,13 @@
     const tracksParam = query.tracks
     const totalTracksParam = query.totalTracks
     const timePeriodParam = query.timePeriod
-    const orderParam = query.order
     const lfmUsernameParam = query.lfmUsername
     const dateGeneratedParam = query.dateGenerated
     const subtotalParam = query.subtotal
     const totalParam = query.total
     const yearParam = query.year
+    
+    const orderParam = query.order
     const authCodeParam = query.authCode
     const cardHolderParam = query.cardHolder
     const thanksParam = query.thanks
@@ -177,12 +178,14 @@
 
         if (userParam) query.length > 0 ? query += `&user=${userParam}` : query += `?user=${userParam}`
         if (trackCountParam) query.length > 0 ? query += `&trackCount=${trackCountParam}` : query += `?trackCount=${trackCountParam}`
+        if (cardHolderParam) query.length > 0 ? query += `&cardHolder=${cardHolderParam}` : query += `?cardHolder=${cardHolderParam}`
+        if (authCodeParam) query.length > 0 ? query += `&authCode=${authCodeParam}` : query += `?authCode=${authCodeParam}`
+        if (thanksParam) query.length > 0 ? query += `&thanks=${thanksParam}` : query += `?thanks=${thanksParam}`
+        if (orderParam) query.length > 0 ? query += `&order=${orderParam}` : query += `?order=${orderParam}`
 
         try {
-            const data = fetch(`https://api.stefdp.is-a.dev/last.fm/receiptData${query}`).then(res => res.json()).then(data => {
+            const data = fetch(`https://api.stefdp.is-a.dev/last.fm/receiptData/${query}`).then(res => res.json()).then(data => {
                 const dataParams = getQueryParams(data.query)
-
-                console.log(dataParams)
                 
                 if (
                     dataParams.tracks &&
@@ -199,9 +202,7 @@
                     dataParams.thanks
                 ) window.location.href = window.location.pathname + data.query
             })
-        } catch(e) {
-
-        }
+        } catch(e) {}
     } else {
         const receiptTitle = document.getElementById('receiptTitle')
         const tracks = document.getElementById('tracks')
@@ -226,16 +227,16 @@
         })
 
         tracks.innerHTML = htmlTracks.join('')
-        receiptTitle.innerText = `${cardHolderParam}'s receipt`
+        receiptTitle.innerText = `${decodeURIComponent(cardHolderParam)}'s receipt`
         totalTracks.innerText = `TOTAL TRACKS: ${decodeURIComponent(totalTracksParam)}`
         timePeriod.innerText = decodeURIComponent(timePeriodParam)
         orderFor.innerText = `ORDER #${decodeURIComponent(orderParam)} FOR ${decodeURIComponent(lfmUsernameParam)}`
         dateGenerated.innerText = decodeURIComponent(dateGeneratedParam)
-        subtotal.innerText = subtotalParam
-        total.innerText = totalParam
-        cardYear.innerText = `CARD #: **** **** **** ${yearParam}`
-        authCode.innerText = `AUTH CODE: ${authCodeParam}`
-        cardHolder.innerText = `CARDHOLDER: ${cardHolderParam}`
+        subtotal.innerText = decodeURIComponent(subtotalParam)
+        total.innerText = decodeURIComponent(totalParam)
+        cardYear.innerText = `CARD #: **** **** **** ${decodeURIComponent(yearParam)}`
+        authCode.innerText = `AUTH CODE: ${decodeURIComponent(authCodeParam)}`
+        cardHolder.innerText = `CARDHOLDER: ${decodeURIComponent(cardHolderParam)}`
         thanks.innerText = decodeURIComponent(thanksParam)
     }
 </script>
