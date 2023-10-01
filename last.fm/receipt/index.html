@@ -12,11 +12,11 @@
             margin-right: 30px;
             margin-left: 30px;
             background-position: -200px;
-            max-width: 439px;
             background-size: cover;
         }
 
         .receipt {
+            display: none;
             padding-top: 25px;
             padding-bottom: 25px;
         }
@@ -55,10 +55,76 @@
         .min-width {
             min-width: 160px;
         }
+
+
+        /* Style the form container */
+        #inputs {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        /* Style the labels */
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        /* Style the input fields */
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+        }
+
+        /* Style the submit button */
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Style the submit button on hover */
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* Style the optional input fields */
+        input[type="text"]:not([required]),
+        input[type="number"]:not([required]) {
+            background-color: #f0f0f0;
+        }
+
+        /* Style the validation message */
+        input:invalid {
+            border-color: #ff4a4a; /* Change the border color to indicate it's invalid */
+            background-color: #ffeeee; /* Change the background color to indicate it's invalid */
+            color: #ff0000; /* Change the text color to red to indicate it's invalid */
+        }
+
+        /* Style the bottom text input */
+        #thanksInput {
+            font-style: italic;
+            color: #555;
+        }
     </style>
 </head>
 <body>
-    <div class="receipt">
+    <div class="receipt" id="receipt">
         <h1 class="align-center" id="receiptTitle">receipt</h1>
         <h2 class="align-center bold" id="timePeriod">
             
@@ -137,21 +203,47 @@
             
         </p>
     </div>
+    <div id="inputs">
+        <form id="inputData">
+            <label for="user">Last.FM Username:</label>
+            <input type="text" name="user" id="userInput" oninput="validateUsername(this)" required>
+            
+            <label for="trackCount">Track Count (optional):</label>
+            <input type="number" name="trackCount" id="trackCountInput" pattern="^([0-9]+)$" value="20">
+            
+            <label for="period">Period (optional):</label>
+            <select name="period" id="period">
+                <option value="overall">Overall</option>
+                <option value="7day">1 Week</option>
+                <option value="1month">1 Month</option>
+                <option value="3month">3 Months</option>
+                <option value="6month">6 Months</option>
+                <option value="12month">1 Year</option>
+            </select>
+            
+            <label for="cardHolder">Card Holder (optional):</label>
+            <input type="text" name="cardHolder" id="cardHolderInput">
+            
+            <label for="order">Order Number (optional):</label>
+            <input type="number" name="order" id="orderInput" pattern="^([0-9]{4})$" value="4316">
+            
+            <label for="authCode">Auth Code (optional):</label>
+            <input type="number" name="authCode" id="authCodeInput" pattern="^([0-9]{6})$" value="702403">
+            
+            <label for="thanks">Bottom Text (optional):</label>
+            <input type="text" name="thanks" id="thanksInput" value="Thank you for using stef's website">
+
+            <button type="submit" id="inputData">Submit</button>
+        </form>
+    </div>
 </body>
 <script src="https://cdn.stefdp.is-a.dev/__js/getQueryParams.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
 <script>
+    const form = document.getElementById('inputData')
+
     const query = getQueryParams(window.location.href)
 
-    const tracksParam = query.tracks
-    const totalTracksParam = query.totalTracks
-    const timePeriodParam = query.timePeriod
-    const lfmUsernameParam = query.lfmUsername
-    const dateGeneratedParam = query.dateGenerated
-    const subtotalParam = query.subtotal
-    const totalParam = query.total
-    const yearParam = query.year
-    
     const orderParam = query.order
     const authCodeParam = query.authCode
     const cardHolderParam = query.cardHolder
@@ -160,84 +252,90 @@
     const userParam = query.user
     const trackCountParam = query.trackCount
 
-    if (
-        !tracksParam ||
-        !totalTracksParam ||
-        !timePeriodParam ||
-        !orderParam ||
-        !lfmUsernameParam ||
-        !dateGeneratedParam ||
-        !subtotalParam ||
-        !totalParam ||
-        !yearParam ||
-        !authCodeParam ||
-        !cardHolderParam ||
-        !thanksParam
-    ) {
-        let query = ''
+    if (userParam) {
+        form.setAttribute('disabled', '')
+        
+        form.innerText = 'Fetching...'
 
-        if (userParam) query.length > 0 ? query += `&user=${userParam}` : query += `?user=${userParam}`
-        if (trackCountParam) query.length > 0 ? query += `&trackCount=${trackCountParam}` : query += `?trackCount=${trackCountParam}`
-        if (cardHolderParam) query.length > 0 ? query += `&cardHolder=${cardHolderParam}` : query += `?cardHolder=${cardHolderParam}`
-        if (authCodeParam) query.length > 0 ? query += `&authCode=${authCodeParam}` : query += `?authCode=${authCodeParam}`
-        if (thanksParam) query.length > 0 ? query += `&thanks=${thanksParam}` : query += `?thanks=${thanksParam}`
-        if (orderParam) query.length > 0 ? query += `&order=${orderParam}` : query += `?order=${orderParam}`
+        let query = `?user=${userParam}`
+
+        if (trackCountParam) query += `&trackCount=${trackCountParam}`
+        if (cardHolderParam) query += `&cardHolder=${cardHolderParam}`
+        if (authCodeParam) query += `&authCode=${authCodeParam}`
+        if (thanksParam) query += `&thanks=${thanksParam}`
+        if (orderParam) query += `&order=${orderParam}`
 
         try {
-            const data = fetch(`https://api.stefdp.is-a.dev/last.fm/receiptData/${query}`).then(res => res.json()).then(data => {
-                const dataParams = getQueryParams(data.query)
-                
-                if (
-                    dataParams.tracks &&
-                    dataParams.totalTracks &&
-                    dataParams.timePeriod &&
-                    dataParams.order &&
-                    dataParams.lfmUsername &&
-                    dataParams.dateGenerated &&
-                    dataParams.subtotal &&
-                    dataParams.total &&
-                    dataParams.year &&
-                    dataParams.authCode &&
-                    dataParams.cardHolder &&
-                    dataParams.thanks
-                ) window.location.href = window.location.pathname + data.query
+            fetch(`https://api.stefdp.is-a.dev/last.fm/receiptData/${query}`).then(res => res.json()).then(data => {
+                document.body.style.maxWidth = '439px'
+
+                const receipt = document.getElementById('receipt')
+                const inputs = document.getElementById('inputs')
+
+                const receiptTitle = document.getElementById('receiptTitle')
+                const tracks = document.getElementById('tracks')
+                const totalTracks = document.getElementById('totalTracks')
+                const timePeriod = document.getElementById('timePeriod')
+                const orderFor = document.getElementById('orderFor')
+                const dateGenerated = document.getElementById('dateGenerated')
+                const subtotal = document.getElementById('subtotal')
+                const total = document.getElementById('total')
+                const cardYear = document.getElementById('cardYear')
+                const authCode = document.getElementById('authCode')
+                const cardHolder = document.getElementById('cardHolder')
+                const thanks = document.getElementById('thanks')
+
+                tracks.innerHTML = data.tracksData.map(track => `<tr><td>${track.artist.name} - ${track.name}</td><td class="align-right">${track.playcount}</td></tr>`).join('')
+                receiptTitle.innerText = `${data.cardHolder}'s RECEIPT`
+                totalTracks.innerText = `TOTAL TRACKS: ${data.totalTracks}`
+                timePeriod.innerText.innerText = data.period
+                orderFor.innerText = `ORDER #${data.orderNumber} FOR ${data.lastFMUsername}`
+                dateGenerated.innerText = data.dateGenerated
+                subtotal.innerText = data.subTotal
+                total.innerText = data.total
+                cardYear.innerText = `CARD #: **** **** **** ${data.year}`
+                authCode.innerText = `AUTH CODE: ${decodeURIComponent(data.authCode)}`
+                cardHolder.innerText = `CARDHOLDER: ${data.cardHolder}`
+                thanks.innerText = data.thanks
+
+                inputs.style.display = 'none'
+                receipt.style.display = 'block'
+            }).catch(e => {
+                form.innerText = 'Something went wrong'
             })
-        } catch(e) {}
+        } catch(e) {
+            form.innerText = 'Something went wrong'
+        }
     } else {
-        const receiptTitle = document.getElementById('receiptTitle')
-        const tracks = document.getElementById('tracks')
-        const totalTracks = document.getElementById('totalTracks')
-        const timePeriod = document.getElementById('timePeriod')
-        const orderFor = document.getElementById('orderFor')
-        const dateGenerated = document.getElementById('dateGenerated')
-        const subtotal = document.getElementById('subtotal')
-        const total = document.getElementById('total')
-        const cardYear = document.getElementById('cardYear')
-        const authCode = document.getElementById('authCode')
-        const cardHolder = document.getElementById('cardHolder')
-        const thanks = document.getElementById('thanks')
+        form.addEventListener('submit', (event) => {
+            const user = document.getElementById('userInput').value
+            const trackCount = document.getElementById('trackCountInput').value
+            const period = document.getElementById('periodInput').value
+            const cardHolder = document.getElementById('cardHolderInput').value
+            const order = document.getElementById('orderInput').value
+            const authCode = document.getElementById('authCodeInput').value
+            const thanks = document.getElementById('thanksInput').value
 
-        const tracksArray = decodeURIComponent(query.tracks).split(' ~||~ ')
+            let query = `?user=${user}`
 
-        const htmlTracks = tracksArray.map(trackToDecode => {
-            const artistAndSong = trackToDecode.split(' |~~| ')[0]
-            const plays = trackToDecode.split(' |~~| ')[1]
+            if (trackCount) query += `&trackCount=${encodeURIComponent(trackCount)}`
+            if (cardHolder) query += `&cardHolder=${encodeURIComponent(cardHolder)}`
+            if (order) query += `&order=${encodeURIComponent(order)}`
+            if (authCode) query += `&authCode=${encodeURIComponent(authCode)}`
+            if (thanks) query += `&thanks=${encodeURIComponent(thanks)}`
 
-            return `<tr><td>${artistAndSong}</td><td class="align-right">${plays}</td></tr>`
+            window.location.href = window.location.pathname + query
         })
+    }
 
-        tracks.innerHTML = htmlTracks.join('')
-        receiptTitle.innerText = `${decodeURIComponent(cardHolderParam)}'s receipt`
-        totalTracks.innerText = `TOTAL TRACKS: ${decodeURIComponent(totalTracksParam)}`
-        timePeriod.innerText = decodeURIComponent(timePeriodParam)
-        orderFor.innerText = `ORDER #${decodeURIComponent(orderParam)} FOR ${decodeURIComponent(lfmUsernameParam)}`
-        dateGenerated.innerText = decodeURIComponent(dateGeneratedParam)
-        subtotal.innerText = decodeURIComponent(subtotalParam)
-        total.innerText = decodeURIComponent(totalParam)
-        cardYear.innerText = `CARD #: **** **** **** ${decodeURIComponent(yearParam)}`
-        authCode.innerText = `AUTH CODE: ${decodeURIComponent(authCodeParam)}`
-        cardHolder.innerText = `CARDHOLDER: ${decodeURIComponent(cardHolderParam)}`
-        thanks.innerText = decodeURIComponent(thanksParam)
+    function validateUsername(input) {
+        const usernameRegex = /^[a-zA-Z][a-zA-Z0-9-_]{1,14}$/
+
+        if (!usernameRegex.test(input.value)) {
+            input.setCustomValidity("The username should be between 2 and 15 characters, begin with a letter and contain only letters, number, '-' or '_'.")
+        } else {
+            input.setCustomValidity('')
+        }
     }
 </script>
 </html>
