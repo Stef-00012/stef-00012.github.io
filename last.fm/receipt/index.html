@@ -1,6 +1,7 @@
 <html>
 <head>
-    <link rel="stylesheet" href="https://cdn.stefdp.is-a.dev/__css/receipt.css" async>
+    <!-- <link rel="stylesheet" href="https://cdn.stefdp.is-a.dev/__css/receipt.css" async> -->
+    <link rel="stylesheet" href="/main/__css/receipt.css" async>
 </head>
 <body>
     <div class="receipt" id="receipt">
@@ -20,19 +21,22 @@
         <table>
             <thead>
                 <tr class="divider">
-                    <td class="divider" colspan="3">----------------------------------------------</td>
+                    <td class="divider align-right" colspan="4">---------------------------------------------------</td>
                 </tr>
                 <tr>
                     <td>AMT</td>
                     <td>
                         TRACK
                     </td>
-                    <td class="align-right time">
+                    <td class="align-right">
                         TIME
+                    </td>
+                    <td class="align-right">
+                        TOT TIME
                     </td>
                 </tr>
                 <tr class="divider">
-                    <td class="divider" colspan="3">----------------------------------------------</td>
+                    <td class="divider align-right" colspan="4">---------------------------------------------------</td>
                 </tr>
             </thead>
             <tbody id="tracks">
@@ -52,11 +56,11 @@
                     <td class="align-right" colspan="4">SUBTOTAL:</td>
                 </tr>
                 <tr class="divider">
-                    <td class="divider align-right" colspan="4">----------------------------------------------</td>
+                    <td class="divider align-right" colspan="4">---------------------------------------------------</td>
                 </tr>
                 <tr>
                     <td id="subtotalAmount"></td>
-                    <td class="align-right time" id="subtotalTime" colspan="3"></td>
+                    <td class="align-right" id="subtotalTime" colspan="3"></td>
                 </tr>
                 <tr class="divider">
                     <td></td>
@@ -69,12 +73,12 @@
                     <td class="align-right" colspan="4">TOTAL:</td>
                 </tr>
                 <tr class="divider">
-                    <td class="divider align-right" colspan="4">----------------------------------------------</td>
+                    <td class="divider align-right" colspan="4">---------------------------------------------------</td>
                 </tr>
                 <tr>
                     <td id="totalAmount"></td><td></td>
                     <td></td>
-                    <td class="align-right time" id="totalTime"></td>
+                    <td class="align-right" id="totalTime"></td>
                 </tr>
             </tbody>
         </table>
@@ -129,5 +133,6 @@
     </div>
 </body>
 <script src="https://cdn.stefdp.is-a.dev/__js/getQueryParams.js"></script>
-<script src="https://cdn.stefdp.is-a.dev/__js/receipt.js"></script>
+<!-- <script src="https://cdn.stefdp.is-a.dev/__js/receipt.js"></script> -->
+<script src="/main/__js/receipt.js"></script>
 </html>
