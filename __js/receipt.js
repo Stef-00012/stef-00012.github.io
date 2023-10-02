@@ -45,7 +45,9 @@ if (userParam) {
         const cardHolder = document.getElementById('cardHolder')
         const thanks = document.getElementById('thanks')
 
-        tracks.innerHTML = data.tracksData.map(track => `<tr><td class="playCount">${track.playCount}</td><td><a href="${track.artist.url}" class="song-url">${track.artist.name}</a> - <a href="${track.url}" class="song-url">${track.name}</a></td><td class="align-right">${track.duration}</td><td class="align-right">${track.totalDuration}</td></tr>`).join('')
+        data.tracksData.forEach(t => console.log(t.name, t.totalDuration))
+
+        tracks.innerHTML = data.tracksData.map(track => `<tr><td class="playCount">${track.playCount}</td><td><a href="${track.artist.url}" class="song-url">${track.artist.name}</a> - <a href="${track.url}" class="song-url">${track.name}</a></td><td class="align-right">${track.duration}</td><td class="align-right tot-time">${track.totalDuration}</td></tr>`).join('')
         receiptTitle.innerText = `${data.cardHolder}'s RECEIPT`
         totalTracks.innerText = `TOTAL TRACKS: ${data.tracks}`
         timePeriod.innerText = data.period
