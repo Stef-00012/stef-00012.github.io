@@ -1,125 +1,6 @@
 <html>
 <head>
-    <style>
-        @font-face {
-            font-family: "receipt";
-            src: url("https://fmbot.xyz/fonts/receipt.ttf") format("truetype");
-        }
-
-        body {
-            background-image: url("https://cdn.stefdp.is-a.dev/__assets/receiptBackground.webp");
-            font-family: "receipt";
-            margin-right: 30px;
-            margin-left: 30px;
-        }
-
-        .receipt {
-            display: none;
-            padding-top: 25px;
-            padding-bottom: 25px;
-        }
-
-        .divider {
-            height: 5px;
-            padding-bottom: 0;
-            padding-top: 0;
-            padding-left: 2px;
-        }
-
-        .align-right {
-            text-align: right;
-            padding-right: 0;
-        }
-
-        .align-center {
-            text-align: center;
-        }
-
-        .playCount {
-            padding-right: 15px;
-        }
-
-        p {
-            margin-block-start: 0;
-            margin-block-end: 0;
-            margin-left: 3px;
-        }
-
-        .bold {
-            font-weight: bold;
-        }
-
-        table {
-            width: 100%;
-            max-width: 100%;
-        }
-
-        .min-width {
-            min-width: 160px;
-        }
-
-        #inputs {
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        input[type="text"],
-        input[type="number"],
-        select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            font-size: 16px;
-        }
-
-        button[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 3px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        button[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-
-        input[type="text"]:not([required]),
-        input[type="number"]:not([required]) {
-            background-color: #f0f0f0;
-        }
-
-        input:invalid {
-            border-color: #ff4a4a;
-            background-color: #ffeeee;
-            color: #ff0000;
-        }
-
-        #thanksInput {
-            font-style: italic;
-            color: #555;
-        }
-
-        .song-url {
-            color: black;
-            text-decoration: none;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdn.stefdp.is-a.dev/__css/receipt.css" async>
 </head>
 <body>
     <div class="receipt" id="receipt">
@@ -216,10 +97,10 @@
     <div id="inputs">
         <form id="inputData">
             <label for="user">Last.FM Username:</label>
-            <input type="text" name="user" id="userInput" oninput="validateUsername(this)" required>
+            <input type="text" name="user" id="userInput" oninput="validate('username', this)" placeholder="Your Last.FM username" required>
             
             <label for="trackCount">Track Count (optional):</label>
-            <input type="number" name="trackCount" id="trackCountInput" pattern="^([0-9]+)$" value="20">
+            <input type="number" name="trackCount" id="trackCountInput" value="20">
             
             <label for="period">Period (optional):</label>
             <select name="period" id="period">
@@ -232,122 +113,21 @@
             </select>
             
             <label for="cardHolder">Card Holder (optional):</label>
-            <input type="text" name="cardHolder" id="cardHolderInput">
+            <input type="text" name="cardHolder" id="cardHolderInput" placeholder="Name shown on top and next to card holder">
             
             <label for="order">Order Number (optional):</label>
-            <input type="number" name="order" id="orderInput" pattern="^([0-9]{4})$" value="4316">
+            <input type="number" name="order" id="orderInput" oninput="validate('order', this)" placeholder="4316 (Any 4 digit number)">
             
             <label for="authCode">Auth Code (optional):</label>
-            <input type="number" name="authCode" id="authCodeInput" pattern="^([0-9]{6})$" value="702403">
+            <input type="number" name="authCode" id="authCodeInput" oninput="validate('authCode', this)" placeholder="702403 (Any 6 digit number)">
             
             <label for="thanks">Bottom Text (optional):</label>
-            <input type="text" name="thanks" id="thanksInput" value="Thank you for using stef's website">
+            <input type="text" name="thanks" id="thanksInput" placeholder="Thank you for using stef's website">
 
             <button type="submit" id="inputData">Submit</button>
         </form>
     </div>
 </body>
 <script src="https://cdn.stefdp.is-a.dev/__js/getQueryParams.js"></script>
-<script>
-    const form = document.getElementById('inputData')
-
-    const query = getQueryParams(window.location.href)
-
-    const orderParam = query.order
-    const authCodeParam = query.authCode
-    const cardHolderParam = query.cardHolder
-    const thanksParam = query.thanks
-    const userParam = query.user
-    const trackCountParam = query.trackCount
-    const periodParam = query.period
-
-    if (userParam) {
-        form.setAttribute('disabled', '')
-        
-        form.innerText = 'Fetching...'
-
-        let query = `?user=${userParam}`
-
-        if (trackCountParam) query += `&trackCount=${trackCountParam}`
-        if (periodParam) query += `&period=${periodParam}`
-        if (cardHolderParam) query += `&cardHolder=${cardHolderParam}`
-        if (authCodeParam) query += `&authCode=${authCodeParam}`
-        if (thanksParam) query += `&thanks=${thanksParam}`
-        if (orderParam) query += `&order=${orderParam}`
-
-        fetch(`https://api.stefdp.is-a.dev/last.fm/receiptData/${query}`).then(res => res.json()).then(data => {
-            document.body.style.maxWidth = '505px'
-
-            const receipt = document.getElementById('receipt')
-            const inputs = document.getElementById('inputs')
-
-            const receiptTitle = document.getElementById('receiptTitle')
-            const tracks = document.getElementById('tracks')
-            const totalTracks = document.getElementById('totalTracks')
-            const timePeriod = document.getElementById('timePeriod')
-            const orderFor = document.getElementById('orderFor')
-            const dateGenerated = document.getElementById('dateGenerated')
-            const subtotalTime = document.getElementById('subtotalTime')
-            const subtotalAmount = document.getElementById('subtotalAmount')
-            const totalTime = document.getElementById('totalTime')
-            const totalAmount = document.getElementById('totalAmount')
-            const cardYear = document.getElementById('cardYear')
-            const authCode = document.getElementById('authCode')
-            const cardHolder = document.getElementById('cardHolder')
-            const thanks = document.getElementById('thanks')
-
-            tracks.innerHTML = data.tracksData.map(track => `<tr><td class="playCount">${track.playCount}</td><td><a href="${track.artist.url}" class="song-url">${track.artist.name}</a> - <a href="${track.url}" class="song-url">${track.name}</a></td><td class="align-right time">${track.duration}</td></tr>`).join('')
-            receiptTitle.innerText = `${data.cardHolder}'s RECEIPT`
-            totalTracks.innerText = `TOTAL TRACKS: ${data.tracks}`
-            timePeriod.innerText = data.period
-            orderFor.innerText = `ORDER #${data.orderNumber} FOR ${data.lastFMUsername}`
-            dateGenerated.innerText = data.dateGenerated
-            subtotalTime.innerText = data.subTotal.duration
-            subtotalAmount.innerText = data.subTotal.amount
-            totalTime.innerText = data.total.duration
-            totalAmount.innerText = data.total.amount
-            cardYear.innerText = `CARD #: **** **** **** ${data.year}`
-            authCode.innerText = `AUTH CODE: ${decodeURIComponent(data.authCode)}`
-            cardHolder.innerText = `CARDHOLDER: ${data.cardHolder}`
-            thanks.innerText = data.thanks
-
-            inputs.style.display = 'none'
-            receipt.style.display = 'block'
-        }).catch(e => {
-            console.log(e)
-            form.innerText = 'Something went wrong'
-        })
-    } else {
-        form.addEventListener('submit', (event) => {
-            const user = document.getElementById('userInput').value
-            const trackCount = document.getElementById('trackCountInput').value
-            const period = document.getElementById('periodInput').value
-            const cardHolder = document.getElementById('cardHolderInput').value
-            const order = document.getElementById('orderInput').value
-            const authCode = document.getElementById('authCodeInput').value
-            const thanks = document.getElementById('thanksInput').value
-
-            let query = `?user=${user}`
-
-            if (trackCount) query += `&trackCount=${encodeURIComponent(trackCount)}`
-            if (period) query += `&period=${period}`
-            if (cardHolder) query += `&cardHolder=${encodeURIComponent(cardHolder)}`
-            if (order) query += `&order=${encodeURIComponent(order)}`
-            if (authCode) query += `&authCode=${encodeURIComponent(authCode)}`
-            if (thanks) query += `&thanks=${encodeURIComponent(thanks)}`
-
-            window.location.href = window.location.pathname + query
-        })
-    }
-
-    function validateUsername(input) {
-        const usernameRegex = /^[a-zA-Z][a-zA-Z0-9-_]{1,14}$/
-
-        if (!usernameRegex.test(input.value)) {
-            input.setCustomValidity("The username should be between 2 and 15 characters, begin with a letter and contain only letters, number, '-' or '_'.")
-        } else {
-            input.setCustomValidity('')
-        }
-    }
-</script>
+<script src="https://cdn.stefdp.is-a.dev/__js/receipt.js"></script>
 </html>
