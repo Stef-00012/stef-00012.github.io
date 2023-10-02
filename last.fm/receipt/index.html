@@ -35,6 +35,10 @@
             text-align: center;
         }
 
+        .playCount {
+            padding-right: 15px;
+        }
+
         p {
             margin-block-start: 0;
             margin-block-end: 0;
@@ -54,8 +58,6 @@
             min-width: 160px;
         }
 
-
-        /* Style the form container */
         #inputs {
             max-width: 400px;
             margin: 0 auto;
@@ -65,14 +67,12 @@
             background-color: #f9f9f9;
         }
 
-        /* Style the labels */
         label {
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
         }
 
-        /* Style the input fields */
         input[type="text"],
         input[type="number"],
         select {
@@ -84,7 +84,6 @@
             font-size: 16px;
         }
 
-        /* Style the submit button */
         button[type="submit"] {
             width: 100%;
             padding: 10px;
@@ -96,28 +95,29 @@
             cursor: pointer;
         }
 
-        /* Style the submit button on hover */
         button[type="submit"]:hover {
             background-color: #0056b3;
         }
 
-        /* Style the optional input fields */
         input[type="text"]:not([required]),
         input[type="number"]:not([required]) {
             background-color: #f0f0f0;
         }
 
-        /* Style the validation message */
         input:invalid {
-            border-color: #ff4a4a; /* Change the border color to indicate it's invalid */
-            background-color: #ffeeee; /* Change the background color to indicate it's invalid */
-            color: #ff0000; /* Change the text color to red to indicate it's invalid */
+            border-color: #ff4a4a;
+            background-color: #ffeeee;
+            color: #ff0000;
         }
 
-        /* Style the bottom text input */
         #thanksInput {
             font-style: italic;
             color: #555;
+        }
+
+        .song-url {
+            color: black;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -139,18 +139,19 @@
         <table>
             <thead>
                 <tr class="divider">
-                    <td class="divider" colspan="3">----------------------------------------</td>
+                    <td class="divider" colspan="3">----------------------------------------------</td>
                 </tr>
                 <tr>
+                    <td>AMT</td>
                     <td>
-                        ITEM
+                        TRACK
                     </td>
-                    <td class="align-right">
-                        AMT
+                    <td class="align-right time">
+                        TIME
                     </td>
                 </tr>
                 <tr class="divider">
-                    <td class="divider" colspan="3">----------------------------------------</td>
+                    <td class="divider" colspan="3">----------------------------------------------</td>
                 </tr>
             </thead>
             <tbody id="tracks">
@@ -160,28 +161,39 @@
         <table>
             <tbody>
                 <tr class="divider">
-                    <td class="divider align-right" colspan="3">---------------------</td>
-                </tr>
-                <tr>
-                    <td class="min-width"></td>
-                    <td>
-                        SUBTOTAL:
-                    </td>
-                    <td class="align-right" id="subtotal">
-                        
-                    </td>
+                    <td></td>
+                    <td></td>
+                    <td><br /></td>
                 </tr>
                 <tr class="divider">
-                    <td class="divider align-right" colspan="3">---------------------</td>
+                    <td></td>
+                    <td></td>
+                    <td class="align-right" colspan="4">SUBTOTAL:</td>
                 </tr>
-                <tr class="">
-                    <td class="min-width"></td>
-                    <td>
-                        TOTAL PLAYS:
-                    </td>
-                    <td class="align-right" id="total">
-                        
-                    </td>
+                <tr class="divider">
+                    <td class="divider align-right" colspan="4">----------------------------------------------</td>
+                </tr>
+                <tr>
+                    <td id="subtotalAmount"></td>
+                    <td class="align-right time" id="subtotalTime" colspan="3"></td>
+                </tr>
+                <tr class="divider">
+                    <td></td>
+                    <td></td>
+                    <td><br /></td>
+                </tr>
+                <tr class="divider">
+                    <td></td>
+                    <td></td>
+                    <td class="align-right" colspan="4">TOTAL:</td>
+                </tr>
+                <tr class="divider">
+                    <td class="divider align-right" colspan="4">----------------------------------------------</td>
+                </tr>
+                <tr>
+                    <td id="totalAmount"></td><td></td>
+                    <td></td>
+                    <td class="align-right time" id="totalTime"></td>
                 </tr>
             </tbody>
         </table>
@@ -236,7 +248,6 @@
     </div>
 </body>
 <script src="https://cdn.stefdp.is-a.dev/__js/getQueryParams.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
 <script>
     const form = document.getElementById('inputData')
 
@@ -264,47 +275,50 @@
         if (thanksParam) query += `&thanks=${thanksParam}`
         if (orderParam) query += `&order=${orderParam}`
 
-        try {
-            fetch(`https://api.stefdp.is-a.dev/last.fm/receiptData/${query}`).then(res => res.json()).then(data => {
-                document.body.style.maxWidth = '439px'
+        fetch(`https://api.stefdp.is-a.dev/last.fm/receiptData/${query}`).then(res => res.json()).then(data => {
+            data = {"tracksData":[{"name":"Trust Me Mate","artist":{"url":"https://www.last.fm/music/Dean+Lewis","name":"Dean Lewis"},"url":"https://www.last.fm/music/Dean+Lewis/_/Trust+Me+Mate","duration":"02:58","durationSeconds":178,"playCount":347},{"name":"i'm sorry","artist":{"url":"https://www.last.fm/music/Camylio","name":"Camylio"},"url":"https://www.last.fm/music/Camylio/_/i%27m+sorry","duration":"03:13","durationSeconds":193,"playCount":15},{"name":"safer side","artist":{"url":"https://www.last.fm/music/Ismail","name":"Ismail"},"url":"https://www.last.fm/music/Ismail/_/safer+side","duration":"03:38","durationSeconds":218,"playCount":15},{"name":"amnesia","artist":{"url":"https://www.last.fm/music/Camylio","name":"Camylio"},"url":"https://www.last.fm/music/Camylio/_/amnesia","duration":"02:52","durationSeconds":172,"playCount":14},{"name":"I Tried","artist":{"url":"https://www.last.fm/music/Camylio","name":"Camylio"},"url":"https://www.last.fm/music/Camylio/_/I+Tried","duration":"02:40","durationSeconds":160,"playCount":14},{"name":"leaving home","artist":{"url":"https://www.last.fm/music/Camylio","name":"Camylio"},"url":"https://www.last.fm/music/Camylio/_/leaving+home","duration":"02:53","durationSeconds":173,"playCount":14},{"name":"love and hate","artist":{"url":"https://www.last.fm/music/Camylio","name":"Camylio"},"url":"https://www.last.fm/music/Camylio/_/love+and+hate","duration":"03:10","durationSeconds":190,"playCount":14},{"name":"Monsters","artist":{"url":"https://www.last.fm/music/Camylio","name":"Camylio"},"url":"https://www.last.fm/music/Camylio/_/Monsters","duration":"02:53","durationSeconds":173,"playCount":14},{"name":"sometimes","artist":{"url":"https://www.last.fm/music/Camylio","name":"Camylio"},"url":"https://www.last.fm/music/Camylio/_/sometimes","duration":"02:36","durationSeconds":156,"playCount":14},{"name":"strangers","artist":{"url":"https://www.last.fm/music/Camylio","name":"Camylio"},"url":"https://www.last.fm/music/Camylio/_/strangers","duration":"02:52","durationSeconds":172,"playCount":14},{"name":"unwanted","artist":{"url":"https://www.last.fm/music/Camylio","name":"Camylio"},"url":"https://www.last.fm/music/Camylio/_/unwanted","duration":"02:38","durationSeconds":158,"playCount":14},{"name":"Lose My Mind","artist":{"url":"https://www.last.fm/music/Dean+Lewis","name":"Dean Lewis"},"url":"https://www.last.fm/music/Dean+Lewis/_/Lose+My+Mind","duration":"03:12","durationSeconds":192,"playCount":14},{"name":"As You Are","artist":{"url":"https://www.last.fm/music/Ismail","name":"Ismail"},"url":"https://www.last.fm/music/Ismail/_/As+You+Are","duration":"03:01","durationSeconds":181,"playCount":14},{"name":"broken world","artist":{"url":"https://www.last.fm/music/Ismail","name":"Ismail"},"url":"https://www.last.fm/music/Ismail/_/broken+world","duration":"02:47","durationSeconds":167,"playCount":14},{"name":"If I Fall","artist":{"url":"https://www.last.fm/music/Ismail","name":"Ismail"},"url":"https://www.last.fm/music/Ismail/_/If+I+Fall","duration":"02:33","durationSeconds":153,"playCount":14},{"name":"no surprise","artist":{"url":"https://www.last.fm/music/Ismail","name":"Ismail"},"url":"https://www.last.fm/music/Ismail/_/no+surprise","duration":"03:25","durationSeconds":205,"playCount":14},{"name":"Lost Without You (with Dean Lewis)","artist":{"url":"https://www.last.fm/music/Kygo","name":"Kygo"},"url":"https://www.last.fm/music/Kygo/_/Lost+Without+You+(with+Dean+Lewis)","duration":"03:23","durationSeconds":203,"playCount":13},{"name":"Used To Love (with Dean Lewis)","artist":{"url":"https://www.last.fm/music/Martin+Garrix","name":"Martin Garrix"},"url":"https://www.last.fm/music/Martin+Garrix/_/Used+To+Love+(with+Dean+Lewis)","duration":"","durationSeconds":0,"playCount":13},{"name":"IN THE STARS","artist":{"url":"https://www.last.fm/music/Benson+Boone","name":"Benson Boone"},"url":"https://www.last.fm/music/Benson+Boone/_/IN+THE+STARS","duration":"03:36","durationSeconds":216,"playCount":12},{"name":"How Do I Say Goodbye","artist":{"url":"https://www.last.fm/music/Dean+Lewis","name":"Dean Lewis"},"url":"https://www.last.fm/music/Dean+Lewis/_/How+Do+I+Say+Goodbye","duration":"02:43","durationSeconds":163,"playCount":12}],"totalTracks":"64","tracks":20,"total":{"amount":961,"duration":"01:21:12:51","timeSeconds":162771},"subTotal":{"amount":609,"duration":"01:05:37:26","timeSeconds":106646},"year":2023,"period":"in the last month","dateGenerated":"Monday, 2 October 2023","orderNumber":9814,"lastFMUsername":"Stef_DP","cardHolder":"stef","authCode":702403,"thanks":"Thank you for using stef's website"}
 
-                const receipt = document.getElementById('receipt')
-                const inputs = document.getElementById('inputs')
+            document.body.style.maxWidth = '505px'
 
-                const receiptTitle = document.getElementById('receiptTitle')
-                const tracks = document.getElementById('tracks')
-                const totalTracks = document.getElementById('totalTracks')
-                const timePeriod = document.getElementById('timePeriod')
-                const orderFor = document.getElementById('orderFor')
-                const dateGenerated = document.getElementById('dateGenerated')
-                const subtotal = document.getElementById('subtotal')
-                const total = document.getElementById('total')
-                const cardYear = document.getElementById('cardYear')
-                const authCode = document.getElementById('authCode')
-                const cardHolder = document.getElementById('cardHolder')
-                const thanks = document.getElementById('thanks')
+            const receipt = document.getElementById('receipt')
+            const inputs = document.getElementById('inputs')
 
-                tracks.innerHTML = data.tracksData.map(track => `<tr><td>${track.artist.name} - ${track.name}</td><td class="align-right">${track.playcount}</td></tr>`).join('')
-                receiptTitle.innerText = `${data.cardHolder}'s RECEIPT`
-                totalTracks.innerText = `TOTAL TRACKS: ${data.totalTracks}`
-                timePeriod.innerText = data.period
-                orderFor.innerText = `ORDER #${data.orderNumber} FOR ${data.lastFMUsername}`
-                dateGenerated.innerText = data.dateGenerated
-                subtotal.innerText = data.subTotal
-                total.innerText = data.total
-                cardYear.innerText = `CARD #: **** **** **** ${data.year}`
-                authCode.innerText = `AUTH CODE: ${decodeURIComponent(data.authCode)}`
-                cardHolder.innerText = `CARDHOLDER: ${data.cardHolder}`
-                thanks.innerText = data.thanks
+            const receiptTitle = document.getElementById('receiptTitle')
+            const tracks = document.getElementById('tracks')
+            const totalTracks = document.getElementById('totalTracks')
+            const timePeriod = document.getElementById('timePeriod')
+            const orderFor = document.getElementById('orderFor')
+            const dateGenerated = document.getElementById('dateGenerated')
+            const subtotalTime = document.getElementById('subtotalTime')
+            const subtotalAmount = document.getElementById('subtotalAmount')
+            const totalTime = document.getElementById('totalTime')
+            const totalAmount = document.getElementById('totalAmount')
+            const cardYear = document.getElementById('cardYear')
+            const authCode = document.getElementById('authCode')
+            const cardHolder = document.getElementById('cardHolder')
+            const thanks = document.getElementById('thanks')
 
-                inputs.style.display = 'none'
-                receipt.style.display = 'block'
-            }).catch(e => {
-                form.innerText = 'Something went wrong'
-            })
-        } catch(e) {
+            tracks.innerHTML = data.tracksData.map(track => `<tr><td class="playCount">${track.playCount}</td><td><a href="${track.artist.url}" class="song-url">${track.artist.name}</a> - <a href="${track.url}" class="song-url">${track.name}</a></td><td class="align-right time">${track.duration}</td></tr>`).join('')
+            receiptTitle.innerText = `${data.cardHolder}'s RECEIPT`
+            totalTracks.innerText = `TOTAL TRACKS: ${data.tracks}`
+            timePeriod.innerText = data.period
+            orderFor.innerText = `ORDER #${data.orderNumber} FOR ${data.lastFMUsername}`
+            dateGenerated.innerText = data.dateGenerated
+            subtotalTime.innerText = data.subTotal.duration
+            subtotalAmount.innerText = data.subTotal.amount
+            totalTime.innerText = data.total.duration
+            totalAmount.innerText = data.total.amount
+            cardYear.innerText = `CARD #: **** **** **** ${data.year}`
+            authCode.innerText = `AUTH CODE: ${decodeURIComponent(data.authCode)}`
+            cardHolder.innerText = `CARDHOLDER: ${data.cardHolder}`
+            thanks.innerText = data.thanks
+
+            inputs.style.display = 'none'
+            receipt.style.display = 'block'
+        }).catch(e => {
+            console.log(e)
             form.innerText = 'Something went wrong'
-        }
+        })
     } else {
         form.addEventListener('submit', (event) => {
             const user = document.getElementById('userInput').value
