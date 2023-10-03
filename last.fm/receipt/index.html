@@ -1,101 +1,102 @@
 <html>
 <head>
     <link rel="stylesheet" href="https://cdn.stefdp.is-a.dev/__css/receipt.css" async>
+    <!-- <link rel="stylesheet" href="/main/__css/receipt.css" async> -->
 </head>
 <body>
     <div class="receipt" id="receipt">
-        <h1 class="align-center" id="receiptTitle">receipt</h1>
-        <h2 class="align-center bold" id="timePeriod">
-            IN THE LAST MONTH
-        </h2>
-        <br />
-        <p class="date align-center" id="orderFor">
+    <h1 class="align-center" id="receiptTitle">receipt</h1>
+    <h2 class="align-center bold" id="timePeriod">
+        IN THE LAST MONTH
+    </h2>
+    <br />
+    <p class="date align-center" id="orderFor">
+        
+    </p>
+    <p class="align-center" id="dateGenerated">
+        
+    </p>
+    <br />
+    <p id="totalTracks">TOTAL TRACKS:</p>
+    <table>
+        <thead>
+            <tr class="divider">
+                <td class="divider align-right" colspan="4">---------------------------------------------------</td>
+            </tr>
+            <tr>
+                <td>AMT</td>
+                <td>
+                    TRACK
+                </td>
+                <td class="align-right time">
+                    TIME
+                </td>
+                <td class="align-right tot-time">
+                    TOT TIME
+                </td>
+            </tr>
+            <tr class="divider">
+                <td class="divider align-right" colspan="4">---------------------------------------------------</td>
+            </tr>
+        </thead>
+        <tbody id="tracks">
             
-        </p>
-        <p class="align-center" id="dateGenerated">
-            
-        </p>
-        <br />
-        <p id="totalTracks">TOTAL TRACKS:</p>
-        <table>
-            <thead>
-                <tr class="divider">
-                    <td class="divider align-right" colspan="4">---------------------------------------------------</td>
-                </tr>
-                <tr>
-                    <td>AMT</td>
-                    <td>
-                        TRACK
-                    </td>
-                    <td class="align-right">
-                        TIME
-                    </td>
-                    <td class="align-right tot-time">
-                        TOT TIME
-                    </td>
-                </tr>
-                <tr class="divider">
-                    <td class="divider align-right" colspan="4">---------------------------------------------------</td>
-                </tr>
-            </thead>
-            <tbody id="tracks">
-                
-            </tbody>
-        </table>
-        <table>
-            <tbody>
-                <tr class="divider">
-                    <td></td>
-                    <td></td>
-                    <td><br /></td>
-                </tr>
-                <tr class="divider">
-                    <td></td>
-                    <td></td>
-                    <td class="align-right" colspan="4">SUBTOTAL:</td>
-                </tr>
-                <tr class="divider">
-                    <td class="divider align-right" colspan="4">---------------------------------------------------</td>
-                </tr>
-                <tr>
-                    <td id="subtotalAmount"></td>
-                    <td class="align-right" id="subtotalTime" colspan="3"></td>
-                </tr>
-                <tr class="divider">
-                    <td></td>
-                    <td></td>
-                    <td><br /></td>
-                </tr>
-                <tr class="divider">
-                    <td></td>
-                    <td></td>
-                    <td class="align-right" colspan="4">TOTAL:</td>
-                </tr>
-                <tr class="divider">
-                    <td class="divider align-right" colspan="4">---------------------------------------------------</td>
-                </tr>
-                <tr>
-                    <td id="totalAmount"></td><td></td>
-                    <td></td>
-                    <td class="align-right" id="totalTime"></td>
-                </tr>
-            </tbody>
-        </table>
-        <br />
-        <br />
-        <p class="date" id="cardYear">
-            CARD #: **** **** **** 
-        </p>
-        <p class="date" id="authCode">
-            AUTH CODE: 
-        </p>
-        <p class="date" id="cardHolder">
-            CARDHOLDER: 
-        </p>
-        <br />
-        <p class="align-center" id="thanks">
-            
-        </p>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <tr class="divider">
+                <td></td>
+                <td></td>
+                <td><br /></td>
+            </tr>
+            <tr class="divider">
+                <td></td>
+                <td></td>
+                <td class="align-right" colspan="4">SUBTOTAL:</td>
+            </tr>
+            <tr class="divider">
+                <td class="divider align-right" colspan="4">---------------------------------------------------</td>
+            </tr>
+            <tr>
+                <td id="subtotalAmount"></td>
+                <td class="align-right" id="subtotalTime" colspan="3"></td>
+            </tr>
+            <tr class="divider">
+                <td></td>
+                <td></td>
+                <td><br /></td>
+            </tr>
+            <tr class="divider">
+                <td></td>
+                <td></td>
+                <td class="align-right" colspan="4">TOTAL:</td>
+            </tr>
+            <tr class="divider">
+                <td class="divider align-right" colspan="4">---------------------------------------------------</td>
+            </tr>
+            <tr>
+                <td id="totalAmount"></td><td></td>
+                <td></td>
+                <td class="align-right" id="totalTime"></td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <br />
+    <p class="date" id="cardYear">
+        CARD #: **** **** **** 
+    </p>
+    <p class="date" id="authCode">
+        AUTH CODE: 
+    </p>
+    <p class="date" id="cardHolder">
+        CARDHOLDER: 
+    </p>
+    <br />
+    <p class="align-center" id="thanks">
+        
+    </p>
     </div>
     <div id="inputs">
         <form id="inputData">
@@ -128,9 +129,12 @@
             <input type="text" name="thanks" id="thanksInput" placeholder="Thank you for using stef's website">
 
             <button type="submit" id="inputData">Submit</button>
+            <button type="button" id="spotifyLogin" class="spotify">Login with spotify</button>
         </form>
     </div>
 </body>
 <script src="https://cdn.stefdp.is-a.dev/__js/getQueryParams.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.4.3/luxon.min.js"></script>
 <script src="https://cdn.stefdp.is-a.dev/__js/receipt.js"></script>
+<!-- <script src="/main/__js/receipt.js"></script> -->
 </html>

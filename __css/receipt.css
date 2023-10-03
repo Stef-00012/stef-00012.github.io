@@ -1,6 +1,6 @@
 @font-face {
     font-family: "receipt";
-    src: url("https://fmbot.xyz/fonts/receipt.ttf") format("truetype");
+    src: url("https://cdn.stefdp.is-a.dev/__fonts/receipt.ttf") format("truetype");
 }
 
 body {
@@ -11,9 +11,11 @@ body {
 }
 
 .receipt {
+    max-width: 558px;
     display: none;
     padding-top: 25px;
     padding-bottom: 25px;
+    margin: 0 auto;
 }
 
 .divider {
@@ -89,6 +91,18 @@ button[type="submit"] {
     width: 100%;
     padding: 10px;
     background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button.spotify {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    background-color: #1cc357;
     color: white;
     border: none;
     border-radius: 3px;
