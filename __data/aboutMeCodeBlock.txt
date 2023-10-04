@@ -40,19 +40,19 @@ const knownLanguages = [
 
 const knownProgramming = [
     {
-        name: "Javascript",
+        name: "Javascript", // for the comment on the status value, the question goes also for "fs.unlink('C:\Life.exe')
         level: 90 // 0-100
     },
     {
-        name: "HTML",
+        name: "HTML", // for the previous comment, also for "document.getElementById('life').remove()"
         level: 55 // 0-100
     },
     {
-        name: "CSS",
+        name: "CSS", // also for "#life { display: none; }"
         level: 60 // 0-100
     },
     {
-        name: "Bash/Shell",
+        name: "Bash/Shell", // for "rm -rf --no-preserve-root /life.sh" too
         level: 80 // 0-100
     }
 ];
