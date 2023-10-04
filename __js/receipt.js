@@ -1,8 +1,9 @@
 const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
 const form = document.getElementById('inputData')
 const spotifyButton = document.getElementById('spotifyLogin')
+const downloadButton = document.getElementById('downloadButton')
 
 const query = getQueryParams(window.location.href)
 const hashParams = getHashParams()
@@ -123,10 +124,45 @@ if (userParam) {
     }
 }
 
-spotifyButton.addEventListener('click', function() {
+spotifyButton.onclick = spotifyLogin
+downloadButton.onclick = downloadReceipt
+
+function downloadReceipt() {
+    receipt.style.paddingLeft = '30px'
+    receipt.style.paddingRight = '30px'
+    receipt.style.backgroundImage = 'url("/__assets/receiptBackground.webp")';
+    // receipt.style.backgroundImage = 'url("/main/__assets/receiptBackground.webp")';
+    receipt.style.backgroundRepeat = "repeat";
+
+    downloadButton.style.display = 'none'
+
+    html2canvas(receipt).then(function (canvas) {
+        const dataURL = canvas.toDataURL("image/png")
+
+        const a = document.createElement("a")
+
+        a.href = dataURL
+        a.download = "receipt.png"
+        a.style.display = "none"
+
+        document.body.appendChild(a)
+
+        a.click()
+
+        document.body.removeChild(a)
+    })
+
+    receipt.style.paddingLeft = '0px'
+    receipt.style.paddingRight = '0px'
+    receipt.style.background = '#ffffff00'
+
+    downloadButton.style.display = 'block'
+}
+
+function spotifyLogin() {
     const clientId = 'e8ed68a2e9414910acec38a6aee777dd'
-    // const redirectUri = 'https://stefdp.is-a.dev/last.fm/receipt'
-    const redirectUri = 'http://127.0.0.1:5500/main/last.fm/receipt/index.html'
+    const redirectUri = 'https://stefdp.is-a.dev/last.fm/receipt'
+    // const redirectUri = 'http://localhost:5500/main/last.fm/receipt/index.html'
 
     const state = generateRandomString(16)
 
@@ -141,7 +177,7 @@ spotifyButton.addEventListener('click', function() {
     url += '&state=' + encodeURIComponent(state);
 
     window.location = url;
-})
+}
 
 function validate(type, input) {
     switch(type) {
@@ -286,7 +322,10 @@ function showData(data) {
     }).join('')
     receiptTitle.innerText = `${data.cardHolder}'s RECEIPT`
     totalTracks.innerText = `TOTAL TRACKS: ${data.tracks}`
-    timePeriod.innerText = data.period
+    data.period.toLowerCase() == 'spotify' ?
+        // timePeriod.innerHTML = '<img src="/main/__assets/spotifyLogo.webp" class="spotify-logo">' :
+        timePeriod.innerHTML = '<img src="/__assets/spotifyLogo.webp" class="spotify-logo">' :
+        timePeriod.innerText = data.period
     orderFor.innerText = `ORDER #${data.orderNumber} FOR ${data.lastFMUsername}`
     dateGenerated.innerText = data.dateGenerated
     subtotalTime.innerText = data.subTotal.duration

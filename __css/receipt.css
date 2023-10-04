@@ -38,6 +38,10 @@ body {
     text-align: center;
 }
 
+.spotify-logo {
+    max-height: 50px;
+}
+
 .playCount {
     padding-right: 15px;
 }
@@ -98,7 +102,8 @@ button[type="submit"] {
     cursor: pointer;
 }
 
-button.spotify {
+button.spotify,
+button.download {
     margin-top: 15px;
     width: 100%;
     padding: 10px;
