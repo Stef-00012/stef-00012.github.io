@@ -37,10 +37,17 @@ if (userParam) {
     if (orderParam) query += `&order=${orderParam}`
 
     fetch(`https://api.stefdp.is-a.dev/last.fm/receiptData/${query}`).then(res => res.json()).then(data => {
+        if (data.message) {
+            console.log(data.message)
+            form.innerText = data.message
+            
+            return;
+        }
+
         showData(data)
     }).catch(e => {
-        console.log(e, e.message)
-        form.innerText = e.message ?? 'Something went wrong'
+        console.log(e)
+        form.innerText = 'Something went wrong'
     })
 } else if (accessToken) {
     if (state && state == storedState) {
@@ -48,10 +55,17 @@ if (userParam) {
         
         if (accessToken) {
             fetch(`https://api.stefdp.is-a.dev/spotify/receiptData?accessToken=${accessToken}`).then(res => res.json()).then(data => {
+                if (data.message) {
+                    console.log(data.message)
+                    form.innerText = data.message
+
+                    return;
+                }
+
                 showData(data)
             }).catch(e => {
-                console.log(e, e.message)
-                form.innerText = e.message ?? 'Something went wrong'
+                console.log(e)
+                form.innerText = 'Something went wrong'
             })
         }
     }
