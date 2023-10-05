@@ -39,86 +39,19 @@ if (userParam) {
     fetch(`https://api.stefdp.is-a.dev/last.fm/receiptData/${query}`).then(res => res.json()).then(data => {
         showData(data)
     }).catch(e => {
-        console.log(e)
-        form.innerText = 'Something went wrong'
+        console.log(e, e.message)
+        form.innerText = e.message ?? 'Something went wrong'
     })
 } else if (accessToken) {
     if (state && state == storedState) {
         localStorage.removeItem(stateKey)
         
         if (accessToken) {
-            let spotifyUsername = 'Unknown';
-
-            fetch('https://api.spotify.com/v1/me', {
-                headers: {
-                    'Authorization': `Bearer ${accessToken}`
-                },
-            }).then(res => res.json()).then(data => {
-                spotifyUsername = data.display_name
+            fetch(`https://api.stefdp.is-a.dev/spotify/receiptData?accessToken=${accessToken}`).then(res => res.json()).then(data => {
+                showData(data)
             }).catch(e => {
-                console.log(e)
-            })
-
-            fetch('https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=50', {
-                headers: {
-                    'Authorization': `Bearer ${accessToken}`
-                },
-            }).then(res => res.json()).then(data => {
-                const spotifyTracksData = data.items.map(track => {
-                    return {
-                        name: track.name,
-                        artist: {
-                            url: track.artists[0].external_urls.spotify,
-                            name: track.artists[0].name
-                        },
-                        artists: track.artists.map(artist => {
-                            return {
-                                url: artist.external_urls.spotify,
-                                name: artist.name
-                            }
-                        }),
-                        url: track.external_urls.spotify,
-                        duration: convertMsToTime(track.duration_ms),
-                        durationSeconds: parseInt(track.duration / 1000),
-                        totalDuration: convertMsToTime(track.duration_ms),
-                        totalDurationSeconds: parseInt(track.duration / 1000),
-                        playCount: 1
-                    }
-                })
-
-                for (const index in spotifyTracksData) {
-                    const playCount = parseInt(index) < 9 ? `0${parseInt(index) + 1}` : `${parseInt(index) + 1}`
-
-                    spotifyTracksData[index].playCount = playCount
-                }
-
-                const date = new Date()
-                
-                showData({
-                    tracksData: spotifyTracksData,
-                    totalTracks: data.total,
-                    tracks: data.limit,
-                    total: {
-                        amount: data.total,
-                        duration: convertMsToTime(sum(data.items.map(track => track.duration_ms))),
-                        durationSeconds: sum(data.items.map(track => parseInt(track.duration_ms / 1000)))
-                    },
-                    subTotal: {
-                        amount: data.limit,
-                        duration: convertMsToTime(sum(data.items.map(track => track.duration_ms))),
-                        durationSeconds: sum(data.items.map(track => parseInt(track.duration_ms / 1000)))
-                    },
-                    year: date.getFullYear(),
-                    period: 'Spotify',
-                    dateGenerated: `${weekdays[date.getDay()]}, ${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`,
-                    orderNumber: Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000,
-                    lastFMUsername: spotifyUsername,
-                    cardHolder: spotifyUsername,
-                    authCode: Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000,
-                    thanks: "Thank you for using stef's website"
-                })
-            }).catch(e => {
-                console.log(e)
+                console.log(e, e.message)
+                form.innerText = e.message ?? 'Something went wrong'
             })
         }
     }
@@ -169,12 +102,16 @@ function spotifyLogin() {
     localStorage.setItem(stateKey, state)
     const scope = 'user-top-read user-read-private'
 
-    let url = 'https://accounts.spotify.com/authorize';
-    url += '?response_type=token';
-    url += '&client_id=' + encodeURIComponent(clientId);
-    url += '&scope=' + encodeURIComponent(scope);
-    url += '&redirect_uri=' + encodeURIComponent(redirectUri);
-    url += '&state=' + encodeURIComponent(state);
+    const urlParams = [
+        'https://accounts.spotify.com/authorize',
+        '?response_type=token',
+        `&client_id=${encodeURIComponent(clientId)}`,
+        `&scope=${encodeURIComponent(scope)}`,
+        `&redirect_uri=${encodeURIComponent(redirectUri)}`,
+        `&state=${encodeURIComponent(state)}`
+    ]
+
+    let url = urlParams.join('')
 
     window.location = url;
 }
@@ -326,7 +263,7 @@ function showData(data) {
         // timePeriod.innerHTML = '<img src="/main/__assets/spotifyLogo.webp" class="spotify-logo">' :
         timePeriod.innerHTML = '<img src="/__assets/spotifyLogo.webp" class="spotify-logo">' :
         timePeriod.innerText = data.period
-    orderFor.innerText = `ORDER #${data.orderNumber} FOR ${data.lastFMUsername}`
+    orderFor.innerText = `ORDER #${data.orderNumber} FOR ${data.username}`
     dateGenerated.innerText = data.dateGenerated
     subtotalTime.innerText = data.subTotal.duration
     subtotalAmount.innerText = data.subTotal.amount
