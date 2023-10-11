@@ -108,8 +108,8 @@ function downloadReceipt() {
 
 function spotifyLogin() {
     const clientId = 'e8ed68a2e9414910acec38a6aee777dd'
-    const redirectUri = 'https://stefdp.is-a.dev/last.fm/receipt'
-    // const redirectUri = 'http://localhost:5500/main/last.fm/receipt/index.html'
+    const redirectUri = 'https://stefdp.is-a.dev/receipt'
+    // const redirectUri = 'http://localhost:5500/main/receipt/index.html'
 
     const state = generateRandomString(16)
 

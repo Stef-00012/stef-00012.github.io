@@ -80,8 +80,7 @@ label {
     font-weight: bold;
 }
 
-input[type="text"],
-input[type="number"],
+input,
 select {
     width: 100%;
     padding: 10px;
@@ -91,8 +90,7 @@ select {
     font-size: 16px;
 }
 
-input[type="text"]:not([required]),
-input[type="number"]:not([required]) {
+input:not([required]) {
     background-color: #f0f0f0;
 }
 
@@ -105,6 +103,7 @@ input[type="number"]:invalid {
 
 button[type="submit"] {
     width: 100%;
+    margin-top: 10px;
     padding: 10px;
     background-color: #007bff;
     color: white;
