@@ -1,23 +1,25 @@
 <html>
 <head>
     <title>API Admin Console</title>
+    <link rel="stylesheet" href="https://unpkg.com/highlightjs@9.16.2/styles/atom-one-dark.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: #41444a;
         }
 
         h1 {
             text-align: center;
             padding: 20px;
+            color: #fff;
         }
 
         .container {
             max-width: 90%;
             margin: 0 auto;
-            background-color: #fff;
+            background-color: #202124;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -26,6 +28,8 @@
         label, select {
             display: block;
             margin: 10px 0;
+            color: #fff;
+            font-family: monospace;
         }
 
         input, textarea, select {
@@ -33,6 +37,8 @@
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
+            background-color: #282c34;
+            color: #fff;
         }
 
         button {
@@ -51,10 +57,12 @@
         #response {
             margin-top: 20px;
             padding: 10px;
-            background-color: #f0f0f0;
+            background-color: #282c34;
             border: 1px solid #ccc;
             border-radius: 4px;
             white-space: pre-wrap;
+            color: #fff;
+            font-family: monospace;
         }
 
         label {
@@ -70,9 +78,10 @@
             resize: vertical;
             overflow: scroll;
             text-wrap: nowrap;
+            font-family: monospace;
         }
 
-        #response {
+        input {
             font-family: monospace;
         }
     </style>
@@ -84,26 +93,35 @@
         <input type="text" id="endpoint" placeholder="API Endpoint">
 
         <label for="headers">Headers (JSON):</label>
-        <textarea id="headers" placeholder='{"Content-Type": "application/json"}'></textarea>
+        <textarea class="json" id="headers" placeholder='{"Content-Type": "application/json"}'></textarea>
 
         <label for="method">Method:</label>
         <select id="method">
             <option value="GET">GET</option>
             <option value="POST">POST</option>
-            <option value="PUT">PUT</option>
             <option value="DELETE">DELETE</option>
+            <option value="PATCH">PATCH</option>
+            <option value="PUT">PUT</option>
+            <option value="HEAD">HEAD</option>
+            <option value="OPTIONS">OPTIONS</option>
+            <option value="CONNECT">CONNECT</option>
+            <option value="TRACE">TRACE</option>
         </select>
 
         <label for="body">Body (JSON):</label>
-        <textarea id="body" placeholder='{"key": "value"}'></textarea>
+        <textarea class="json" id="body" placeholder='{"key": "value"}'></textarea>
 
         <button id="submitBtn">Submit</button>
 
-        <div id="response"></div>
+        <div class="json" id="response"></div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
     <script>
-        document.getElementById("submitBtn").addEventListener("click", () => {
+        const submitButton = document.getElementById("submitBtn")
+        const response = document.getElementById("response")
+        
+        submitButton.addEventListener("click", () => {
             const endpoint = document.getElementById("endpoint").value
             const headersValue = document.getElementById("headers").value
             const headers = headersValue.length > 0 ? JSON.parse(headersValue) : {}
@@ -119,10 +137,12 @@
             })
             .then(response => response.json())
             .then(data => {
-                document.getElementById("response").textContent = JSON.stringify(data, null, 2)
+                response.textContent = JSON.stringify(data, null, 2)
+                hljs.highlightElement(response)
             })
             .catch(error => {
-                document.getElementById("response").textContent = "Error: " + error.message
+                response.textContent = `"${error.message}"`
+                hljs.highlightElement(response)
             })
         })
     </script>
