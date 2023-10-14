@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Admin Console</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label, select {
+            display: block;
+            margin: 10px 0;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #response {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            white-space: pre-wrap;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        button {
+            transition: background-color 0.2s;
+        }
+
+        #response {
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>API Admin Console</h1>
+    <div class="container">
+        <label for="endpoint">Endpoint:</label>
+        <input type="text" id="endpoint" placeholder="API Endpoint">
+
+        <label for="headers">Headers (JSON):</label>
+        <textarea id="headers" placeholder='{"Content-Type": "application/json"}'></textarea>
+
+        <label for="method">Method:</label>
+        <select id="method">
+            <option value="GET">GET</option>
+            <option value="POST">POST</option>
+            <option value="PUT">PUT</option>
+            <option value="DELETE">DELETE</option>
+        </select>
+
+        <label for="body">Body (JSON):</label>
+        <textarea id="body" placeholder='{"key": "value"}'></textarea>
+
+        <button id="submitBtn">Submit</button>
+
+        <div id="response"></div>
+    </div>
+
+    <script>
+        document.getElementById("submitBtn").addEventListener("click", () => {
+            const endpoint = document.getElementById("endpoint").value;
+            const headersValue = document.getElementById("headers").value
+            const headers = headersValue.length > 0 ? JSON.parse(headersValue) : {};
+            const method = document.getElementById("method").value;
+            const bodyValue = document.getElementById("body").value;
+            const body = bodyValue.length > 0 ? JSON.parse(bodyValue) : {}
+            const url = `https://api.stefdp.is-a.dev${endpoint}`
+
+            fetch(url, {
+                method: method,
+                headers: headers,
+                body: (!['GET', 'HEAD'].includes(method)) ? body : null
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("response").textContent = JSON.stringify(data, null, 2);
+            })
+            .catch(error => {
+                document.getElementById("response").textContent = "Error: " + error.message;
+            });
+        });
+    </script>
+</body>
+</html>
