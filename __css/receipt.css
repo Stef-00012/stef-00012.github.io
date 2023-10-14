@@ -1,10 +1,10 @@
 @font-face {
     font-family: "receipt";
-    src: url("https://cdn.stefdp.is-a.dev/__fonts/receipt.ttf") format("truetype");
+    src: url("/__fonts/receipt.ttf") format("truetype");
 }
 
 body {
-    background-image: url("https://cdn.stefdp.is-a.dev/__assets/receiptBackground.webp");
+    background-image: url("/__assets/receiptBackground.webp");
     font-family: "receipt";
     margin-right: 30px;
     margin-left: 30px;

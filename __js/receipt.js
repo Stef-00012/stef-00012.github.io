@@ -274,8 +274,8 @@ function showData(data) {
     receiptTitle.innerText = `${data.cardHolder}'s RECEIPT`
     totalTracks.innerText = `TOTAL TRACKS: ${data.tracks}`
     data.period.toLowerCase() == 'spotify' ?
-        // timePeriod.innerHTML = '<img src="/main/__assets/spotifyLogo.webp" class="spotify-logo">' :
-        timePeriod.innerHTML = '<img src="/__assets/spotifyLogo.webp" class="spotify-logo">' :
+        // timePeriod.innerHTML = '<img src="/main/assets/spotifyLogo.webp" class="spotify-logo">' :
+        timePeriod.innerHTML = '<img src="/assets/spotifyLogo.webp" class="spotify-logo">' :
         timePeriod.innerText = data.period
     orderFor.innerText = `ORDER #${data.orderNumber} FOR ${data.username}`
     dateGenerated.innerText = data.dateGenerated
