@@ -7,7 +7,7 @@
 <script>
     const a = document.getElementById('url')
 
-    const newUrl = `${window.location.origin}/receipt${window.location.search ?? ''}`
+    const newUrl = `https://receiptify.is-a.dev/${window.location.search ?? ''}`
 
     a.href = newUrl
     a.innerText = newUrl.split('?').shift()

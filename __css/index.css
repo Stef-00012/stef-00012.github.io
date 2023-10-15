@@ -291,6 +291,11 @@ body.newyear {
     background-color: rgba(54, 47, 46, 1);
     border-radius: 5px;
     display: none;
+    cursor: pointer;
+}
+
+.spoiler.opened {
+    cursor: default;
 }
 
 .ghstat.desktop {
@@ -331,6 +336,7 @@ body.newyear {
     border-bottom: 0px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
+    cursor: pointer;
 }
 
 .collapsible-button::after {
@@ -378,6 +384,7 @@ body.newyear {
     border-bottom: 0px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
+    cursor: pointer;
 }
 
 .button-redirect-2 {
@@ -395,6 +402,7 @@ body.newyear {
     border-bottom-right-radius: 25px;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    cursor: pointer;
 }
 
 .mobile-site {

@@ -1,75 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | GattinhosBot</title>
-    <link href="/__css/privacy.css" rel="stylesheet">
+    <title>Redirect</title>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-002L9WP8JT"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-002L9WP8JT');
-</script>
 <body>
-    <div class="desktop-site">
-        <header>
-            <div class="logo">
-                <img src="/assets/gattinhosBot/gattinhosBot.webp" alt="Logo">
-                <h1>GattinhosBot</h1>
-            </div>
-            <h1 class="privacy-policy-desktop">Privacy Policy</h1>
-        </header>
-        <div class="container">
-            <h1 class="collected-informations">Information We Collect</h1>
-            <p>We may collect and store the following information:</p>
-            <ul>
-                <li><span class="collected-information">Your Discord server ID</span>: we may collect and store your Discord server ID in order to store the bot's data of the server such as reaction roles data, welcome messages data or any server-specific feature.</li>
-                <li><span class="collected-information">Your Discord user ID and username</span>: we may collect and store you Discord ID to store your leveling data for each server you're in. We may collect your Discord username in order to show your username in the <code>/leaderboard</code> command.</li>
-                <li><span class="collected-information">Your Discord user avatar and banner URLs</span>: we may collect and store your Discord avatar and banner URLs to store a permanent URL which is used in the logs system.</li>
-                <li><span class="collected-information">The URLs of any image that can be used in the logs.</span></li>
-                <li><span class="collected-information">Any data submitted through slash commands, buttons, select menus and modals</span>: we may collect and store the any data submitted through slash commands, buttons, select menus and modals used for any server-specific feature.</li>
-            </ul>
-            <p style="font-size: 15px;">The bot also sends anything done with it (slash commands executed, buttons pressed, used select menus and modals submitted along with the modal data) to a private discord channels accessible <b><u>only</u></b> by the developers.</p>
-            <p style="font-size: 15px;">If you want to opt-out this kind of logging or want to opt-out the images (Discord user avatar and banner, Discord server icon and banner, emojis, stickers, event's covers, role icons etc.) collection, you can opt-out by pressing the "Opt-Out" button in the <code>/privacy</code> command. If you have the "Administrator" permission you will have the choice to opt-out just for yourself as user or for the whole server.</p>
-    
-            <h1 class="owner-informations">Owner Information</h1>
-            <span class="owner-information">Discord user</span>: stef_dp (ID: <code>694986201739952229</code>)<br />
-            <span class="owner-information">Mail</span>: <a class="mail" href="mailto:stefano.delprete.08@gmail.com">stefano.delprete.08@gmail.com</a>
-        </div>
-    </div>
-
-    <div class="mobile-site">
-        <header>
-            <div class="logo">
-                <img src="/assets/gattinhosBot/gattinhosBot.webp" alt="Logo">
-                <h1>GattinhosBot</h1>
-            </div>
-            <h1 class="privacy-policy-mobile">Privacy Policy</h1>
-        </header>
-        <div class="container">
-            <h1 class="collected-informations">Information We Collect</h1>
-            <p>We may collect and store the following information:</p>
-            <ul>
-                <li><span class="collected-information">Your Discord server ID</span>: we may collect and store your Discord server ID in order to store the bot's data of the server such as reaction roles data, welcome messages data or any server-specific feature.</li>
-                <li><span class="collected-information">Your Discord user ID and username</span>: we may collect and store you Discord ID to store your leveling data for each server you're in. We may collect your Discord username in order to show your username in the <code>/leaderboard</code> command.</li>
-                <li><span class="collected-information">Your Discord user avatar and banner URLs</span>: we may collect and store your Discord avatar and banner URLs to store a permanent URL which is used in the logs system.</li>
-                <li><span class="collected-information">The URLs of any image that can be used in the logs.</span></li>
-                <li><span class="collected-information">Any data submitted through slash commands, buttons, select menus and modals</span>: we may collect and store the any data submitted through slash commands, buttons, select menus and modals used for any server-specific feature.</li>
-            </ul>
-            <p style="font-size: 15px;">The bot also sends anything done with it (slash commands executed, buttons pressed, used select menus and modals submitted along with the modal data) to a private discord channels accessible <b><u>only</u></b> by the developers.</p>
-            <p style="font-size: 15px;">If you want to opt-out this kind of logging or want to opt-out the images (Discord user avatar and banner, Discord server icon and banner, emojis, stickers, event's covers, role icons etc.) collection, you can opt-out by pressing the "Opt-Out" button in the <code>/privacy</code> command. If you have the "Administrator" permission you will have the choice to opt-out just for yourself as user or for the whole server.</p>
-    
-            <h1 class="owner-informations">Owner Information</h1>
-            <span class="owner-information">Discord user</span>: stef_dp (ID: <code>694986201739952229</code>)<br />
-            <span class="owner-information">Mail</span>: <a class="mail" href="mailto:stefano.delprete.08@gmail.com">stefano.delprete.08@gmail.com</a>
-        </div>
-    </div>
-
-    <script defer data-domain="stefdp.is-a.dev" src="https://analytics.is-a.dev/js/script.js"></script>
+    The page has moved to <a id="url"></a>. Use this URL from now on<br />You will be automatically redirected to the new page in a few seconds
 </body>
-</html>
+<script>
+    const a = document.getElementById('url')
+
+    const newUrl = `https://gattinhosbot.is-a.dev/privacy${window.location.search ?? ''}`
+
+    a.href = newUrl
+    a.innerText = newUrl.split('?').shift()
+
+    setTimeout(() => {
+        window.location.href = newUrl
+    }, 3000)
+</script>

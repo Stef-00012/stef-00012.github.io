@@ -74,10 +74,10 @@ const discord = {
         {
             name: "GattinhosBot",
             serverCount: 13, // Last updated September 9 2023, 12:22
-            inviteURL: "[[aStart_inviteUrl]]https://stefdp.is-a.dev/gattinhosBot/invite[[aEnd]]",
-            supportServer: "[[aStart_supportUrl]]https://stefdp.is-a.dev/gattinhosBot/support[[aEnd]]",
+            inviteURL: "[[aStart_inviteUrl]]https://gattinhosbot.is-a.dev/invite[[aEnd]]",
+            supportServer: "[[aStart_supportUrl]]https://gattinhosbot.is-a.dev/support[[aEnd]]",
             topGgPage: "[[aStart_topGgUrl]]https://top.gg/bot/1122853658418237520[[aEnd]]",
-            website: "[[aStart_websiteUrl]]https://stefdp.is-a.dev/gattinhosBot[[aEnd]]",
+            website: "[[aStart_websiteUrl]]https://gattinhosbot.is-a.dev[[aEnd]]",
             features: [
                 "Welcome System",
                 "Reaction Roles System",

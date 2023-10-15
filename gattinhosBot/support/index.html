@@ -1,16 +1,18 @@
-<!DOCTYPE html>
 <head>
-    <script>
-        window.location.href = 'https://discord.gg/E9GC45WSaF'
-    </script>
+    <title>Redirect</title>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-002L9WP8JT"></script>
+<body>
+    The page has moved to <a id="url"></a>. Use this URL from now on<br />You will be automatically redirected to the new page in a few seconds
+</body>
 <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    const a = document.getElementById('url')
 
-    gtag('config', 'G-002L9WP8JT');
+    const newUrl = `https://gattinhosbot.is-a.dev/support${window.location.search ?? ''}`
+
+    a.href = newUrl
+    a.innerText = newUrl.split('?').shift()
+
+    setTimeout(() => {
+        window.location.href = newUrl
+    }, 3000)
 </script>
-<script defer data-domain="stefdp.is-a.dev" src="https://analytics.is-a.dev/js/script.js"></script>

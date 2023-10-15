@@ -7,6 +7,9 @@ const codeBlockDesktop = document.getElementById('codeBlockDesktop')
 const gattinhosBotButtonMobile = document.getElementById('gattinhosBotButtonMobile')
 const gattinhosBotButtonDesktop = document.getElementById('gattinhosBotButtonDesktop')
 
+const receiptifyButtonMobile = document.getElementById('receiptifyButtonMobile')
+const receiptifyButtonDesktop = document.getElementById('receiptifyButtonDesktop')
+
 
 fetch('/__data/aboutMeCodeBlock.txt')
     .then(res => res.text())
@@ -16,46 +19,32 @@ fetch('/__data/aboutMeCodeBlock.txt')
 
         hljs.highlightAll();
     })
-
-fetch('/__data/codeBlockPlaceholders.json')
-    .then(res => res.json())
-    .then(json => {
-        codeBlockDesktop.innerHTML = codeBlockDesktop.innerHTML
-            .replace(/\[\[([^\]]+)\]\]/g, (match, key) => {
-                if (json?.[key]) return json[key]
-                
-                return match
-            })
-
-        codeBlockMobile.innerHTML = codeBlockMobile.innerHTML
-            .replace(/\[\[([^\]]+)\]\]/g, (match, key) => {
-                if (json?.[key]) return json[key]
-                
-                return match
+    .then(response => {
+        fetch('/__data/codeBlockPlaceholders.json')
+            .then(res => res.json())
+            .then(json => {
+                codeBlockDesktop.innerHTML = replacePlaceholders(codeBlockDesktop.innerHTML, json)
+                codeBlockMobile.innerHTML = replacePlaceholders(codeBlockMobile.innerHTML, json)
             })
     })
+
 
 backgroundImageSet()
 
 
-spoilerMobile.onclick = function() {
-    spoilerMobile.style.backgroundColor = "rgba(54, 47, 46, 0.65)";
-    spoilerMobile.style.color = "rgba(255, 255, 255, 0.85)";
-}
+spoilerMobile.onclick = revealSpoiler(spoilerMobile)
 
-spoilerDesktop.onclick = function() {
-    spoilerDesktop.style.backgroundColor = "rgba(54, 47, 46, 0.65)";
-    spoilerDesktop.style.color = "rgba(255, 255, 255, 0.85)";
-}
+spoilerDesktop.onclick = revealSpoiler(spoilerDesktop)
 
 
-gattinhosBotButtonMobile.onclick = function() {
-    window.location.href = '/gattinhosBot'
-}
+gattinhosBotButtonMobile.onclick = gattinhosBotRedirect
 
-gattinhosBotButtonDesktop.onclick = function() {
-    window.location.href = '/gattinhosBot'
-}
+gattinhosBotButtonDesktop.onclick = gattinhosBotRedirect
+
+
+receiptifyButtonMobile.onclick = receiptifyRedirect
+
+receiptifyButtonDesktop.onclick = receiptifyRedirect
 
 
 document.querySelectorAll('.collapsible-button').forEach(btn => {
@@ -505,6 +494,30 @@ jQuery(() => {
     })
 })
 
+
+function replacePlaceholders(html, json) {
+    return html.replace(/\[\[([^\]]+)\]\]/g, (match, key) => {
+        if (json?.[key]) return json[key]
+        
+        return match
+    })
+}
+
+function revealSpoiler(element) {
+    return () => {
+        element.classList.add('opened')
+        element.style.backgroundColor = "rgba(54, 47, 46, 0.65)";
+        element.style.color = "rgba(255, 255, 255, 0.85)";
+    }
+}
+
+function gattinhosBotRedirect() {
+    window.location.href = 'https://gattinhosbot.is-a.dev'
+}
+
+function receiptifyRedirect() {
+    window.location.href = 'https://receiptify.is-a.dev'
+}
 
 function backgroundImageSet() {
     const date = new Date();

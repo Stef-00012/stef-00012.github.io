@@ -2,9 +2,9 @@
     "striketrhoughStart": "<s>",
     "striketrhoughEnd": "</s>",
 
-    "aStart_inviteUrl": "<a class=\"code-block-url\" href=\"https://stefdp.is-a.dev/gattinhosBot/invite\">",
-    "aStart_supportUrl": "<a class=\"code-block-url\" href=\"https://stefdp.is-a.dev/gattinhosBot/support\">",
+    "aStart_inviteUrl": "<a class=\"code-block-url\" href=\"https://gattinhosbot.is-a.dev/invite\">",
+    "aStart_supportUrl": "<a class=\"code-block-url\" href=\"https://gattinhosbot.is-a.dev/support\">",
     "aStart_topGgUrl": "<a class=\"code-block-url\" href=\"https://top.gg/bot/1122853658418237520\">",
-    "aStart_websiteUrl": "<a class=\"code-block-url\" href=\"https://stefdp.is-a.dev/gattinhosBot\">",
+    "aStart_websiteUrl": "<a class=\"code-block-url\" href=\"https://gattinhosbot.is-a.dev\">",
     "aEnd": "</a>"
 }
