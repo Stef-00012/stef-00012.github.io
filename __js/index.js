@@ -4,6 +4,9 @@ const spoilerDesktop = document.getElementById('spoilerDesktop')
 const  codeBlockMobile = document.getElementById('codeBlockMobile')
 const codeBlockDesktop = document.getElementById('codeBlockDesktop')
 
+const apiButtonMobile = document.getElementById('apiButtonMobile')
+const apiButtonDesktop = document.getElementById('apiButtonDesktop')
+
 const gattinhosBotButtonMobile = document.getElementById('gattinhosBotButtonMobile')
 const gattinhosBotButtonDesktop = document.getElementById('gattinhosBotButtonDesktop')
 
@@ -33,203 +36,84 @@ backgroundImageSet()
 
 
 spoilerMobile.onclick = revealSpoiler(spoilerMobile)
-
 spoilerDesktop.onclick = revealSpoiler(spoilerDesktop)
 
+apiButtonMobile.onclick = apiDocsRedirect
+apiButtonDesktop.onclick = apiDocsRedirect
 
 gattinhosBotButtonMobile.onclick = gattinhosBotRedirect
-
 gattinhosBotButtonDesktop.onclick = gattinhosBotRedirect
 
-
 receiptifyButtonMobile.onclick = receiptifyRedirect
-
 receiptifyButtonDesktop.onclick = receiptifyRedirect
 
 
 document.querySelectorAll('.collapsible-button').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const collapsibleContent = btn.nextElementSibling
-        
-        btn.classList.toggle('active')
-
-        if (btn.classList.contains('active')) {
-            if (collapsibleContent.children[0].classList.contains('embed-github')) {
-                if (collapsibleContent.children[0].classList.contains('desktop')) {
-                    for (const embed of collapsibleContent.children) {
-                        embed.style.display = 'inline-block'
-                    }
-                } else {
-                    for (const embed of collapsibleContent.children) {
-                        embed.style.display = 'block'
-                    }
-                }
-            }
-            
-            if (collapsibleContent.children[0]?.children[0] && collapsibleContent.children[0].children[0].classList.contains('code-block')) {
-                codeBlockMobile.style.display = 'block'
-                spoilerMobile.style.display = 'block'
-                codeBlockDesktop.style.display = 'block'
-                spoilerDesktop.style.display = 'block'
-            }
-
-            if (collapsibleContent.children[1] && collapsibleContent.children[1].classList.contains('collapsible-content-image')) {
-                if (collapsibleContent.children[1].classList.contains('desktop')) {
-                    for (const image of collapsibleContent.children) {
-                        image.style.display = 'inline-block'
-                    }
-                } else {
-                    for (const image of collapsibleContent.children) {
-                        image.style.display = 'block'
-                    }
-                }
-            }
-            
-            if (collapsibleContent.children[0]?.children[0] && collapsibleContent.children[0].children[0].classList.contains('small-social-logo')) {
-                for (const social of collapsibleContent.children[0].children) {
-                    social.style.display = 'inline'
-                }
-            }
-
-            btn.style.height = '40px'
-            collapsibleContent.style.border = '4px solid #a2a3a5'
-            collapsibleContent.style.borderTop = '0px'
-            
-            collapsibleContent.style.height = collapsibleContent.scrollHeight + 'px'
-            setTimeout(() => {
-                collapsibleContent.style.color = 'white'
-            }, 100)
-            
-            
-        } else {
-            collapsibleContent.style.height = '25px'
-            
-            setTimeout(() => {
-                if (collapsibleContent.children[0]?.children[0] && collapsibleContent.children[0].children[0].classList.contains('code-block')) {
-                    codeBlockMobile.style.display = 'none'
-                    spoilerMobile.style.display = 'none'
-                    codeBlockDesktop.style.display = 'none'
-                    spoilerDesktop.style.display = 'none'
-                }
-
-                if (collapsibleContent.children[0].classList.contains('embed-github')) {
-                    for (const embed of collapsibleContent.children) {
-                        embed.style.display = 'none'
-                    }
-                }
-                
-                if (collapsibleContent.children[0]?.children[0] && collapsibleContent.children[0].children[0].classList.contains('small-social-logo')) {
-                    for (const social of collapsibleContent.children[0].children) {
-                        social.style.display = 'none'
-                    }
-                }
-                
-                if (collapsibleContent.children[1] && collapsibleContent.children[1].classList.contains('collapsible-content-image')) {
-                    for (const image of collapsibleContent.children) {
-                        image.style.display = 'none'
-                    }
-                }
-
-                btn.style.height = '20px'
-                collapsibleContent.style.color = 'transparent'
-            }, 200)
-        }
-    })
+    handleCollapsible('button', btn)
 })
 
 document.querySelectorAll('.collapsible-content').forEach(collapsibleContent => {
-    collapsibleContent.addEventListener('click', () => {
-        const btn = collapsibleContent.previousElementSibling
-        if (btn.classList.contains('active')) return;
-        
-        btn.classList.toggle('active')
-
-        if (btn.classList.contains('active')) {
-            if (collapsibleContent.children[0].classList.contains('embed-github')) {
-                if (collapsibleContent.children[0].classList.contains('desktop')) {
-                    for (const embed of collapsibleContent.children) {
-                        embed.style.display = 'inline-block'
-                    }
-                } else {
-                    for (const embed of collapsibleContent.children) {
-                        embed.style.display = 'block'
-                    }
-                }
-            }
-            
-            if (collapsibleContent.children[0]?.children[0] && collapsibleContent.children[0].children[0].classList.contains('code-block')) {
-                codeBlockMobile.style.display = 'block'
-                spoilerMobile.style.display = 'block'
-                codeBlockDesktop.style.display = 'block'
-                spoilerDesktop.style.display = 'block'
-            }
-
-            if (collapsibleContent.children[1] && collapsibleContent.children[1].classList.contains('collapsible-content-image')) {
-                if (collapsibleContent.children[1].classList.contains('desktop')) {
-                    for (const image of collapsibleContent.children) {
-                        image.style.display = 'inline-block'
-                    }
-                } else {
-                    for (const image of collapsibleContent.children) {
-                        image.style.display = 'block'
-                    }
-                }
-            }
-            
-            if (collapsibleContent.children[0]?.children[0] && collapsibleContent.children[0].children[0].classList.contains('small-social-logo')) {
-                for (const social of collapsibleContent.children[0].children) {
-                    social.style.display = 'inline'
-                }
-            }
-
-            btn.style.height = '40px'
-            collapsibleContent.style.border = '4px solid #a2a3a5'
-            collapsibleContent.style.borderTop = '0px'
-            
-            collapsibleContent.style.height = collapsibleContent.scrollHeight + 'px'
-            setTimeout(() => {
-                collapsibleContent.style.color = 'white'
-            }, 100)
-            
-            
-        } else {
-            collapsibleContent.style.height = '25px'
-            
-            setTimeout(() => {
-                if (collapsibleContent.children[0]?.children[0] && collapsibleContent.children[0].children[0].classList.contains('code-block')) {
-                    codeBlockMobile.style.display = 'none'
-                    spoilerMobile.style.display = 'none'
-                    codeBlockDesktop.style.display = 'none'
-                    spoilerDesktop.style.display = 'none'
-                }
-
-                if (collapsibleContent.children[0].classList.contains('embed-github')) {
-                    for (const embed of collapsibleContent.children) {
-                        embed.style.display = 'none'
-                    }
-                }
-                
-                if (collapsibleContent.children[0]?.children[0] && collapsibleContent.children[0].children[0].classList.contains('small-social-logo')) {
-                    for (const social of collapsibleContent.children[0].children) {
-                        social.style.display = 'none'
-                    }
-                }
-                
-                if (collapsibleContent.children[1] && collapsibleContent.children[1].classList.contains('collapsible-content-image')) {
-                    for (const image of collapsibleContent.children) {
-                        image.style.display = 'none'
-                    }
-                }
-
-                btn.style.height = '20px'
-                collapsibleContent.style.color = 'transparent'
-            }, 200)
-        }
-    })
+    handleCollapsible('content', collapsibleContent)
 })
 
 
-jQuery(() => {
+jQuery(handleJQuery)
+
+
+function replacePlaceholders(html, json) {
+    return html.replace(/\[\[([^\]]+)\]\]/g, (match, key) => {
+        if (json?.[key]) return json[key]
+        
+        return match
+    })
+}
+
+function revealSpoiler(element) {
+    return () => {
+        element.classList.add('opened')
+        element.style.backgroundColor = "rgba(54, 47, 46, 0.65)";
+        element.style.color = "rgba(255, 255, 255, 0.85)";
+    }
+}
+
+function apiDocsRedirect() {
+    window.location.href = 'https://docs.stefdp.is-a.dev'
+}
+
+function gattinhosBotRedirect() {
+    window.location.href = 'https://gattinhosbot.is-a.dev'
+}
+
+function receiptifyRedirect() {
+    window.location.href = 'https://receiptify.is-a.dev'
+}
+
+function backgroundImageSet() {
+    const date = new Date();
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    if ((month == 12 && day >= 8 && day <= 31) || (month == 1 && day >= 2 && day <= 3)) {
+        document.body.className = "christmas"; //christmas
+    }
+    
+    if (month == 4 && day >= 9 && day <= 12) {
+        document.body.className = "easter"; //easter
+    }
+    
+    if (month == 10 && day >= 25 && day <= 31) {
+        document.body.className = "halloween"; //halloween
+    }
+    
+    if (month == 1 && day >= 4 && day <= 8) {
+        document.body.className = "epiphany"; //epiphany
+    }
+    
+    if (month == 1 == day == 1) {
+        document.body.className = "newyear" //new year
+    }
+}
+
+function handleJQuery() {
     new jBox('Mouse', {
         attach: '#tooltip-discord',
         position: {
@@ -492,54 +376,193 @@ jQuery(() => {
         },
         content: '<b>Mail</b><br /><i>admin@stefdp.is-a.dev</i>'
     })
-})
+}
 
-
-function replacePlaceholders(html, json) {
-    return html.replace(/\[\[([^\]]+)\]\]/g, (match, key) => {
-        if (json?.[key]) return json[key]
+function handleCollapsible(type, element) {
+    switch(type) {
+        case 'button': {
+            element.addEventListener('click', () => {
+                const collapsibleContent = element.nextElementSibling
+                
+                element.classList.toggle('active')
         
-        return match
-    })
-}
+                if (element.classList.contains('active')) {
+                    if (collapsibleContent.children[0].classList.contains('embed-github')) {
+                        if (collapsibleContent.children[0].classList.contains('desktop')) {
+                            for (const embed of collapsibleContent.children) {
+                                embed.style.display = 'inline-block'
+                            }
+                        } else {
+                            for (const embed of collapsibleContent.children) {
+                                embed.style.display = 'block'
+                            }
+                        }
+                    }
+                    
+                    if (collapsibleContent.children[0]?.children[0] && collapsibleContent.children[0].children[0].classList.contains('code-block')) {
+                        codeBlockMobile.style.display = 'block'
+                        spoilerMobile.style.display = 'block'
+                        codeBlockDesktop.style.display = 'block'
+                        spoilerDesktop.style.display = 'block'
+                    }
+        
+                    if (collapsibleContent.children[1] && collapsibleContent.children[1].classList.contains('collapsible-content-image')) {
+                        if (collapsibleContent.children[1].classList.contains('desktop')) {
+                            for (const image of collapsibleContent.children) {
+                                image.style.display = 'inline-block'
+                            }
+                        } else {
+                            for (const image of collapsibleContent.children) {
+                                image.style.display = 'block'
+                            }
+                        }
+                    }
+                    
+                    if (collapsibleContent.children[0]?.children[0] && collapsibleContent.children[0].children[0].classList.contains('small-social-logo')) {
+                        for (const social of collapsibleContent.children[0].children) {
+                            social.style.display = 'inline'
+                        }
+                    }
+        
+                    element.style.height = '40px'
+                    collapsibleContent.style.border = '4px solid #a2a3a5'
+                    collapsibleContent.style.borderTop = '0px'
+                    
+                    collapsibleContent.style.height = collapsibleContent.scrollHeight + 'px'
+                    setTimeout(() => {
+                        collapsibleContent.style.color = 'white'
+                    }, 100)
+                    
+                    
+                } else {
+                    collapsibleContent.style.height = '25px'
+                    
+                    setTimeout(() => {
+                        if (collapsibleContent.children[0]?.children[0] && collapsibleContent.children[0].children[0].classList.contains('code-block')) {
+                            codeBlockMobile.style.display = 'none'
+                            spoilerMobile.style.display = 'none'
+                            codeBlockDesktop.style.display = 'none'
+                            spoilerDesktop.style.display = 'none'
+                        }
+        
+                        if (collapsibleContent.children[0].classList.contains('embed-github')) {
+                            for (const embed of collapsibleContent.children) {
+                                embed.style.display = 'none'
+                            }
+                        }
+                        
+                        if (collapsibleContent.children[0]?.children[0] && collapsibleContent.children[0].children[0].classList.contains('small-social-logo')) {
+                            for (const social of collapsibleContent.children[0].children) {
+                                social.style.display = 'none'
+                            }
+                        }
+                        
+                        if (collapsibleContent.children[1] && collapsibleContent.children[1].classList.contains('collapsible-content-image')) {
+                            for (const image of collapsibleContent.children) {
+                                image.style.display = 'none'
+                            }
+                        }
+        
+                        element.style.height = '20px'
+                        collapsibleContent.style.color = 'transparent'
+                    }, 200)
+                }
+            })
 
-function revealSpoiler(element) {
-    return () => {
-        element.classList.add('opened')
-        element.style.backgroundColor = "rgba(54, 47, 46, 0.65)";
-        element.style.color = "rgba(255, 255, 255, 0.85)";
-    }
-}
+            break;
+        }
 
-function gattinhosBotRedirect() {
-    window.location.href = 'https://gattinhosbot.is-a.dev'
-}
+        case 'content': {
+            element.addEventListener('click', () => {
+                const btn = element.previousElementSibling
+                if (btn.classList.contains('active')) return;
+                
+                btn.classList.toggle('active')
+        
+                if (btn.classList.contains('active')) {
+                    if (element.children[0].classList.contains('embed-github')) {
+                        if (element.children[0].classList.contains('desktop')) {
+                            for (const embed of element.children) {
+                                embed.style.display = 'inline-block'
+                            }
+                        } else {
+                            for (const embed of element.children) {
+                                embed.style.display = 'block'
+                            }
+                        }
+                    }
+                    
+                    if (element.children[0]?.children[0] && element.children[0].children[0].classList.contains('code-block')) {
+                        codeBlockMobile.style.display = 'block'
+                        spoilerMobile.style.display = 'block'
+                        codeBlockDesktop.style.display = 'block'
+                        spoilerDesktop.style.display = 'block'
+                    }
+        
+                    if (element.children[1] && element.children[1].classList.contains('collapsible-content-image')) {
+                        if (element.children[1].classList.contains('desktop')) {
+                            for (const image of element.children) {
+                                image.style.display = 'inline-block'
+                            }
+                        } else {
+                            for (const image of element.children) {
+                                image.style.display = 'block'
+                            }
+                        }
+                    }
+                    
+                    if (element.children[0]?.children[0] && element.children[0].children[0].classList.contains('small-social-logo')) {
+                        for (const social of element.children[0].children) {
+                            social.style.display = 'inline'
+                        }
+                    }
+        
+                    btn.style.height = '40px'
+                    element.style.border = '4px solid #a2a3a5'
+                    element.style.borderTop = '0px'
+                    
+                    element.style.height = element.scrollHeight + 'px'
+                    setTimeout(() => {
+                        element.style.color = 'white'
+                    }, 100)
+                    
+                    
+                } else {
+                    element.style.height = '25px'
+                    
+                    setTimeout(() => {
+                        if (element.children[0]?.children[0] && element.children[0].children[0].classList.contains('code-block')) {
+                            codeBlockMobile.style.display = 'none'
+                            spoilerMobile.style.display = 'none'
+                            codeBlockDesktop.style.display = 'none'
+                            spoilerDesktop.style.display = 'none'
+                        }
+        
+                        if (element.children[0].classList.contains('embed-github')) {
+                            for (const embed of element.children) {
+                                embed.style.display = 'none'
+                            }
+                        }
+                        
+                        if (element.children[0]?.children[0] && element.children[0].children[0].classList.contains('small-social-logo')) {
+                            for (const social of element.children[0].children) {
+                                social.style.display = 'none'
+                            }
+                        }
+                        
+                        if (element.children[1] && element.children[1].classList.contains('collapsible-content-image')) {
+                            for (const image of element.children) {
+                                image.style.display = 'none'
+                            }
+                        }
+        
+                        btn.style.height = '20px'
+                        element.style.color = 'transparent'
+                    }, 200)
+                }
+            })
 
-function receiptifyRedirect() {
-    window.location.href = 'https://receiptify.is-a.dev'
-}
-
-function backgroundImageSet() {
-    const date = new Date();
-    const day = date.getDate();
-    const month = date.getMonth() + 1;
-    if ((month == 12 && day >= 8 && day <= 31) || (month == 1 && day >= 2 && day <= 3)) {
-        document.body.className = "christmas"; //christmas
-    }
-    
-    if (month == 4 && day >= 9 && day <= 12) {
-        document.body.className = "easter"; //easter
-    }
-    
-    if (month == 10 && day >= 25 && day <= 31) {
-        document.body.className = "halloween"; //halloween
-    }
-    
-    if (month == 1 && day >= 4 && day <= 8) {
-        document.body.className = "epiphany"; //epiphany
-    }
-    
-    if (month == 1 == day == 1) {
-        document.body.className = "newyear" //new year
+            break;
+        }
     }
 }
