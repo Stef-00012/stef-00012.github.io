@@ -1,5 +1,5 @@
 body {
-    background-image: url('/__assets/bio-bg.webp');
+    background-image: url('/__assets/bio/main.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -7,7 +7,7 @@ body {
 }
 
 body.christmas {
-    background-image: url('/__assets/bio-bg-christmas.webp');
+    background-image: url('/__assets/bio/christmas.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -15,7 +15,7 @@ body.christmas {
 }
 
 body.easter {
-    background-image: url('/__assets/bio-bg-easter.webp');
+    background-image: url('/__assets/bio/easter.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -23,7 +23,7 @@ body.easter {
 }
 
 body.halloween {
-    background-image: url('/__assets/bio-bg-halloween.webp');
+    background-image: url('/__assets/bio/halloween.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -31,7 +31,7 @@ body.halloween {
 }
 
 body.epiphany {
-    background-image: url('/__assets/bio-bg-epiphany.webp');
+    background-image: url('/__assets/bio/epiphany.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -39,7 +39,7 @@ body.epiphany {
 }
 
 body.newyear {
-    background-image: url('/__assets/bio-bg-newyear.webp');
+    background-image: url('/__assets/bio/newyear.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -243,6 +243,10 @@ body.newyear {
 
 .social-url.gattinhosBot {
     color: #552370;
+}
+
+.social-url.receiptify {
+    color: #b4bbb8;
 }
 
 .social-url.mail {
