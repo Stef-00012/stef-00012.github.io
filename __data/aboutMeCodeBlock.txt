@@ -58,6 +58,43 @@ const knownProgramming = [
 ];
 
 /*
+    My Apps
+*/
+
+const myApps = [
+    {
+        name: "GattinhosBot",
+        serverCount: 15, // Last updated October 19 2023, 19:48 (7:48 PM)
+        inviteURL: "[[aStart_inviteUrl]]https://gattinhosbot.is-a.dev/invite[[aEnd]]",
+        supportServer: "[[aStart_supportUrl]]https://gattinhosbot.is-a.dev/support[[aEnd]]",
+        topGgPage: "[[aStart_topGgUrl]]https://top.gg/bot/1122853658418237520[[aEnd]]",
+        website: "[[aStart_websiteUrl]]https://gattinhosbot.is-a.dev[[aEnd]]",
+        features: [
+            "Welcome System",
+            "Reaction Roles System",
+            "Leveling System",
+            "Logs System"
+        ]
+    },
+    {
+        name: "Receiptify",
+        description: "Converts your top tracks to a receipt (currently only supports last.fm, spotify as soon as my application gets accepted)",
+        url: "[[aStart_receiptify]]https://receiptify.is-a.dev[[aEnd]]"
+    },
+    {
+        name: "API",
+        url: "[[aStart_api]]https://api.stefdp.is-a.dev[[aEnd]]",
+        docs: "[[aStart_apiDocs]]https://docs.stefdp.is-a.dev[[aEnd]]",
+        endpoints: [ // see docs for more info on each endpoint
+            "/gattinhosBot/guilds/:GUILD_ID/features/:FEATURE?/:ID?",
+            "/gattinhosBot/guilds/:GUILD_ID/users/:FEATURE?/:ID?",
+            "/receiptData/last.fm",
+            "/receiptData/spotify"
+        ]
+    }
+]
+
+/*
     Some info about my socials
 */
 
@@ -66,48 +103,30 @@ const discord = {
     badges: [
         "House of Bravery",
         "Active Developer",
-        "Originally Known as Stef#6705", // Switch from discriminator to pomelo (Stef#6705 => stef_dp)
-        "Subscriber since Sep 9, 2023", // Nitro
-        "Boosting since Sep 9, 2023" // Boosting
-    ],
-    publicBots: [
-        {
-            name: "GattinhosBot",
-            serverCount: 13, // Last updated September 9 2023, 12:22
-            inviteURL: "[[aStart_inviteUrl]]https://gattinhosbot.is-a.dev/invite[[aEnd]]",
-            supportServer: "[[aStart_supportUrl]]https://gattinhosbot.is-a.dev/support[[aEnd]]",
-            topGgPage: "[[aStart_topGgUrl]]https://top.gg/bot/1122853658418237520[[aEnd]]",
-            website: "[[aStart_websiteUrl]]https://gattinhosbot.is-a.dev[[aEnd]]",
-            features: [
-                "Welcome System",
-                "Reaction Roles System",
-                "Leveling System",
-                "Logs System"
-            ]
-        }
+        "Originally Known as Stef#6705" // Switch from discriminator to pomelo (Stef#6705 => stef_dp)
     ]
 };
 
 const instagram = {
-    followers: 85 // Last updated September 9 2023, 12:28
+    followers: 87 // Last updated October 19 2023, 20:03 (08:03 PM)
 };
 
 const revolt = {
-    botDeveloper: true,
+    botDeveloper: true, // inactive
     badges: [],
     publicBots: []
 };
 
 const github = {
-    followers: 6, // Last updated September 9 2023, 12:26
-    repositories: 15 // Last updated September 9 2023, 12:26
+    followers: 6, // Last updated October 19 2023, 20:03 (08:03 PM)
+    repositories: 23 // Some are private, last updated October 19 2023, 20:03 (08:03 PM)
 };
 
 const reddit = {
-    oldAccountKarma: 241, // Last updated September 9 2023, 12:27
-    newAccountKarma: 1 // Last updated September 9 2023, 12:27
+    oldAccountKarma: 241,
+    newAccountKarma: 1 // Last updated October 19 2023, 20:03 (08:03 PM)
 };
 
 const twitter = {
-    followers: 4 // Last updated September 9 2023, 12:29
+    followers: 8 // Last updated October 19 2023, 20:05 (08:05 PM)
 };

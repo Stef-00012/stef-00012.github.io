@@ -6,5 +6,8 @@
     "aStart_supportUrl": "<a class=\"code-block-url\" href=\"https://gattinhosbot.is-a.dev/support\">",
     "aStart_topGgUrl": "<a class=\"code-block-url\" href=\"https://top.gg/bot/1122853658418237520\">",
     "aStart_websiteUrl": "<a class=\"code-block-url\" href=\"https://gattinhosbot.is-a.dev\">",
+    "aStart_receiptify": "<a class=\"code-block-url\" href=\"https://receiptify.is-a.dev\">",
+    "aStart_api": "<a class=\"code-block-url\" href=\"https://api.stefdp.is-a.dev\">",
+    "aStart_apiDocs": "<a class=\"code-block-url\" href=\"https://docs.stefdp.is-a.dev\">",
     "aEnd": "</a>"
 }
