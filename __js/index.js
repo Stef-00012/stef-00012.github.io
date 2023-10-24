@@ -1,3 +1,5 @@
+startLoading()
+
 const spoilerMobile = document.getElementById('spoilerMobile')
 const spoilerDesktop = document.getElementById('spoilerDesktop')
 
@@ -22,7 +24,7 @@ fetch('/__data/aboutMeCodeBlock.txt')
 
         hljs.highlightAll();
     })
-    .then(response => {
+    .then(() => {
         fetch('/__data/codeBlockPlaceholders.json')
             .then(res => res.json())
             .then(json => {
@@ -30,9 +32,6 @@ fetch('/__data/aboutMeCodeBlock.txt')
                 codeBlockMobile.innerHTML = replacePlaceholders(codeBlockMobile.innerHTML, json)
             })
     })
-
-
-backgroundImageSet()
 
 
 spoilerMobile.onclick = revealSpoiler(spoilerMobile)
@@ -86,31 +85,6 @@ function gattinhosBotRedirect() {
 
 function receiptifyRedirect() {
     window.location.href = 'https://receiptify.is-a.dev'
-}
-
-function backgroundImageSet() {
-    const date = new Date();
-    const day = date.getDate();
-    const month = date.getMonth() + 1;
-    if ((month == 12 && day >= 8 && day <= 31) || (month == 1 && day >= 2 && day <= 3)) {
-        document.body.className = "christmas"; //christmas
-    }
-    
-    if (month == 4 && day >= 9 && day <= 12) {
-        document.body.className = "easter"; //easter
-    }
-    
-    if (month == 10 && day >= 25 && day <= 31) {
-        document.body.className = "halloween"; //halloween
-    }
-    
-    if (month == 1 && day >= 4 && day <= 8) {
-        document.body.className = "epiphany"; //epiphany
-    }
-    
-    if (month == 1 == day == 1) {
-        document.body.className = "newyear" //new year
-    }
 }
 
 function handleJQuery() {

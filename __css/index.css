@@ -1,49 +1,51 @@
 body {
-    background-image: url('/__assets/bio/main.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
     font-family: "Inter", sans-serif;
 }
 
-body.christmas {
-    background-image: url('/__assets/bio/christmas.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    font-family: "Inter", sans-serif;
+.loading {
+    z-index: 9999;
+    background-color: #1a1a1a;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: flex;
 }
 
-body.easter {
-    background-image: url('/__assets/bio/easter.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    font-family: "Inter", sans-serif;
+.loading-overlay {
+    z-index: -9998;
+    background-color: #0000008e;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    overflow: hidden;
 }
 
-body.halloween {
-    background-image: url('/__assets/bio/halloween.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    font-family: "Inter", sans-serif;
+.loading-text {
+    font-family: monospace;
+    color: #fff;
+    padding-left: 5px;
+    margin-top: 5px;
+    font-size: large;
+    white-space: pre-wrap;
 }
 
-body.epiphany {
-    background-image: url('/__assets/bio/epiphany.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    font-family: "Inter", sans-serif;
-}
-
-body.newyear {
-    background-image: url('/__assets/bio/newyear.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    font-family: "Inter", sans-serif;
+.skip-button {
+    position: fixed;
+    bottom: 50px;
+    font-size: large;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: transparent;
+    color: #0F0;
+    border: none;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
 }
 
 .avatar {

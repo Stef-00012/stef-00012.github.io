@@ -34,7 +34,13 @@
         gtag('config', 'G-002L9WP8JT');
     </script>
     
-    <body class="default">
+    <body>
+        <div class="loading" id="loading">
+            <p id="loadingText" class="loading-text"></p>
+            <button class="skip-button" id="skipLoading" onclick="displayWebsite()">Skip Animation</button>
+        </div>
+        <div class="loading-overlay"></div>
+
         <div class="mobile-site">
             <div>
                 <img alt="Avatar" class="avatar" src="/__assets/bio/pfp.webp">
@@ -558,12 +564,13 @@
         
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter&display=swap">
         <link rel="stylesheet" href="https://unpkg.com/highlightjs@9.16.2/styles/atom-one-dark.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.2/dist/jBox.all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/StephanWagner/highlightjs@v1.3.2/dist/jBox.all.min.css">
         
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.2/dist/jBox.all.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
-        <!-- <script defer src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script> -->
+        <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+        <script src="/__js/loading.js"></script>
         <script src="/__js/index.js"></script>
         <script defer data-domain="stefdp.is-a.dev" src="https://analytics.is-a.dev/js/script.js"></script>
     </body>
