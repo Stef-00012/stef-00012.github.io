@@ -1,5 +1,6 @@
 body {
     font-family: "Inter", sans-serif;
+    overflow: hidden;
 }
 
 .loading {
@@ -11,6 +12,8 @@ body {
     left: 0;
     position: fixed;
     display: flex;
+    word-break: break-all;
+    overflow: scroll;
 }
 
 .loading-overlay {
@@ -23,7 +26,8 @@ body {
     margin: 0;
     padding: 0;
     position: fixed;
-    overflow: hidden;
+    overflow: scroll;
+    word-break: break-all;
 }
 
 .loading-text {

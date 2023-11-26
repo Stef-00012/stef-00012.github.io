@@ -1,15 +1,24 @@
 const loading = document.getElementById('loading')
 const skipLoading = document.getElementById('skipLoading')
 
+const scrollInterval = setInterval(() => {
+    loading.scrollTop = loading.clientHeight
+}, 100)
+
 const typeIt = new TypeIt("#loadingText", {
-    waitUntilVisible: true,
+    // waitUntilVisible: true,
     speed: 50,
     cursorChar: '▐'
 })
 
 function displayWebsite() {
     loading.style.zIndex = -9999
+    loading.style.overflow = 'hidden'
     skipLoading.style.display = 'none'
+
+    document.body.style.overflow = 'scroll'
+
+    clearInterval(scrollInterval)
 }
 
 function startLoading() {
@@ -26,6 +35,7 @@ function startLoading() {
     .break({ instant: true })
     .type('The authenticity of host \'stefdp.is-a.dev (217.174.245.249)\' can\'t be established.', { instant: true })
     .type('ECDSA key fingerprint is SHA256:Bhvy0+Nafdu90JBR2OzKcPye7vmFcgqPPnBo4ywMDV9.', { instant: true })
+    .break({ instant: true })
     .type('Are you sure you want to continue connecting (yes/no/[fingerprint])? ', { instant: true, delay: 500 })
     .type('yes', { delay: 200 })
     .break({ instant: true })
