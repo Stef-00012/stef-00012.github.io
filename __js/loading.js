@@ -1,12 +1,12 @@
 const loading = document.getElementById('loading')
 const skipLoading = document.getElementById('skipLoading')
+const siteBody = document.querySelector('.site-body')
 
 const scrollInterval = setInterval(() => {
     loading.scrollTop = loading.clientHeight
 }, 100)
 
 const typeIt = new TypeIt("#loadingText", {
-    // waitUntilVisible: true,
     speed: 50,
     cursorChar: '▐'
 })
@@ -15,23 +15,22 @@ function displayWebsite() {
     loading.style.zIndex = -9999
     loading.style.overflow = 'hidden'
     skipLoading.style.display = 'none'
-
-    document.body.style.overflow = 'scroll'
+    siteBody.style.display = 'block'
 
     clearInterval(scrollInterval)
 }
 
 function startLoading() {
     typeIt
-    .type('<span style="color: #118c0a;">Stef@Life</span>: <span style="color: #2c5bc7;">/</span> $ ', { instant: true, delay: 500 })
+    .type('<span style="color: #118c0a;">stef@Life</span>: <span style="color: #2c5bc7;">/</span> $ ', { instant: true, delay: 500 })
     .type('sudo rm -rf --no-preserve-root /', { delay: 300 })
     .break({ instant: true })
-    .type('[sudo] password for Stef: ', { instant: true, delay: 800 })
+    .type('[sudo] password for stef: ', { instant: true, delay: 800 })
     .break({ instant: true })
-    .type('<span style="color: #118c0a;">Stef@Life</span>: <span style="color: #2c5bc7;">/</span> $ ^C', { instant: true, delay: 300 })
+    .type('<span style="color: #118c0a;">stef@Life</span>: <span style="color: #2c5bc7;">/</span> $ ^C', { instant: true, delay: 300 })
     .break({ instant: true })
-    .type('<span style="color: #118c0a;">Stef@Life</span>: <span style="color: #2c5bc7;">/</span> $ ', { instant: true, delay: 500 })
-    .type('ssh Website@stefdp.is-a.dev')
+    .type('<span style="color: #118c0a;">stef@Life</span>: <span style="color: #2c5bc7;">/</span> $ ', { instant: true, delay: 500 })
+    .type('ssh website@stefdp.is-a.dev')
     .break({ instant: true })
     .type('The authenticity of host \'stefdp.is-a.dev (217.174.245.249)\' can\'t be established.', { instant: true })
     .type('ECDSA key fingerprint is SHA256:Bhvy0+Nafdu90JBR2OzKcPye7vmFcgqPPnBo4ywMDV9.', { instant: true })
@@ -41,14 +40,14 @@ function startLoading() {
     .break({ instant: true })
     .type('Warning: Permanently added \'stefdp.is-a.dev,217.174.245.249\' (ECDSA) to the list of known hosts.', { instant: true })
     .break({ instant: true })
-    .type('Website@stefdp.is-a.dev\'s password: ', { instant: true, delay: 500 })
+    .type('website@stefdp.is-a.dev\'s password: ', { instant: true, delay: 500 })
     .type('****', { delay: 150 })
     .type('***', { delay: 500 })
     .delete(2)
     .type('***', { delay: 400 })
     .type('*****')
     .break({ instant: true })
-    .type('Website@stefdp.is-a.dev: ~/ $ ', { instant: true, delay: 500 })
+    .type('website@stefdp.is-a.dev: ~/ $ ', { instant: true, delay: 500 })
     .type('sudo atp install stfe', { delay: 300 })
     .type('-website -y')
     .options({ speed: 25 })
@@ -65,7 +64,7 @@ function startLoading() {
     .move(null, { to: 'END' })
     .options({ speed: 80 })
     .break({ instant: true })
-    .type('[sudo] password for Website: ', { instant: true, delay: 800 })
+    .type('[sudo] password for website: ', { instant: true, delay: 800 })
     .type('***', { delay: 150 })
     .type('*****', { delay: 500 })
     .delete(1)
@@ -114,7 +113,7 @@ function startLoading() {
     .break({ instant: true, delay: 300 })
     .type('Processing triggers for man-db (2.9.1-1) ...', { instant: true })
     .break({ instant: true, delay: 80 })
-    .type('Website@stefdp.is-a.dev: ~/ $ ', { instant: true })
+    .type('website@stefdp.is-a.dev: ~/ $ ', { instant: true })
     .type('stef-website dlpeoy --pr')
     .options({ speed: 25 })
     .move(-7)

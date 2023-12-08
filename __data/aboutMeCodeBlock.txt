@@ -78,7 +78,7 @@ const myApps = [
     },
     {
         name: "Receiptify",
-        description: "Converts your top tracks to a receipt (currently only supports last.fm, spotify as soon as my application gets accepted)",
+        description: "Converts your top tracks to a receipt (supports last.fm and spotify)",
         url: "[[aStart_receiptify]]https://receiptify.is-a.dev[[aEnd]]"
     },
     {

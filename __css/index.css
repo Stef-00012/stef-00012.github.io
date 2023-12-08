@@ -1,6 +1,5 @@
 body {
     font-family: "Inter", sans-serif;
-    overflow: hidden;
 }
 
 .loading {
@@ -14,6 +13,10 @@ body {
     display: flex;
     word-break: break-all;
     overflow: scroll;
+}
+
+.site-body {
+    display: none;
 }
 
 .loading-overlay {
@@ -54,11 +57,7 @@ body {
 
 .avatar {
     width: 120px;
-    height: 120px;
     padding-top: 60px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
     transition: transform .65s, padding-bottom .65s;
 }
 
@@ -97,19 +96,6 @@ body {
     transform: scale(1.35);
 }
 
-.socials {
-    margin: auto;
-    display: flex;
-    justify-content: center;
-}
-
-.discord-data {
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
 .discord-data a {
     display: flex;
 }
@@ -120,6 +106,7 @@ body {
 
 .socials-bg {
     padding: 15px;
+    width: auto;
     background-color: rgba(00, 00, 00, 0.6);
     border-radius: 22px;
 }
@@ -186,7 +173,6 @@ body {
 }
 
 .social-url {
-    display: none;
     font-weight: bold;
     text-decoration: none;
 }
@@ -206,7 +192,7 @@ body {
 }
 
 .social-url.github {
-    color: #171516;
+    color: #a7a7a7;
 }
 
 .social-url.telegram {
@@ -268,7 +254,6 @@ body {
     height: 15px;
     border-radius: 4px;
     margin-right: 5px;
-    display: none;
 }
 
 .small-social-logo.gattinhosBot {
@@ -286,21 +271,17 @@ body {
 }
 
 .collapsible-content-image {
+    object-fit: contain;
     width: 100%;
+    height: 100%;
+    max-height: 60vh;
     display: none;
-}
-
-.collapsible-content-image.desktop {
-    width: 24.7%;
-    display: none;
-    vertical-align: top;
 }
 
 .spoiler {
     color: transparent;
     background-color: rgba(54, 47, 46, 1);
     border-radius: 5px;
-    display: none;
     cursor: pointer;
 }
 
@@ -308,18 +289,31 @@ body {
     cursor: default;
 }
 
-.ghstat.desktop {
-    display: none;
-}
-
 .embed-github {
-    display: none;
+    width: 47%;
     padding: 5px;
     vertical-align: top;
 }
 
-.desktop-site {
+.button-redirect {
+    border: 4px solid #a2a3a5;
+    height: 55px;
+    border-radius: 25px;
+
     display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: left;
+    color: white;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 720px) {
+    .embed-github {
+        width: 100%
+    }
 }
 
 .collapsible-content::-webkit-scrollbar{
@@ -335,7 +329,7 @@ body {
 .collapsible-button {
     display: block;
     width: 100%;
-    height: 20px;
+    height: 55px;
     padding: 10px;
     font-size: 20px;
     background-color: rgba(0, 0, 0, 0.5);
@@ -343,10 +337,12 @@ body {
     text-align: left;
     color: white;
     border-radius: 25px;
-    border-bottom: 0px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
     cursor: pointer;
+    transition: border-bottom-left-radius 0.4s, border-bottom-right-radius 0.4s;
+}
+
+#rabbit {
+    overflow: hidden;
 }
 
 .collapsible-button::after {
@@ -356,6 +352,10 @@ body {
     transform: rotate(0deg)
 }
 
+.collapsible-button.active {
+    transition: border-bottom-right-radius 0s, border-bottom-left-radius 0s;
+}
+
 .collapsible-button.active::after {
     content: '˅';
     float: right;
@@ -363,70 +363,22 @@ body {
     transition: transform 0.3s;
 }
 
+#alternativeLinks {
+    color: #fff;
+}
+
 .collapsible-content {
     overflow: hidden;
-    height: 25px;
     max-height: 75vh;
     overflow-y: scroll;
-    transition: height 0.4s, padding 0.4s;
     padding: 0 15px;
     border: 4px solid #a2a3a5;
     background-color: rgba(0, 0, 0, 0.5);
     border-top: 0px;
-    color: transparent;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
     -ms-overflow-style: none;
     scrollbar-width: none;
-}
-
-.button-redirect {
-    display: block;
-    width: 100%;
-    height: 20px;
-    padding: 10px;
-    font-size: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 4px solid #a2a3a5;
-    text-align: left;
-    color: white;
-    border-radius: 25px;
-    border-bottom: 0px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    cursor: pointer;
-}
-
-.button-redirect-2 {
-    overflow: hidden;
-    height: 25px;
-    max-height: 75vh;
-    overflow-y: scroll;
-    transition: height 0.4s, padding 0.4s;
-    padding: 0 15px;
-    border: 4px solid #a2a3a5;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-top: 0px;
-    color: transparent;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    cursor: pointer;
-}
-
-.mobile-site {
-    display: none;
-}
-
-@media only screen and (max-width: 720px) {
-    .desktop-site {
-        display: none;
-    }
-    
-    .mobile-site {
-        display: block;
-    }
 }
 
 s {
@@ -434,11 +386,12 @@ s {
     text-decoration-thickness: 1.7px;
 }
 
-#codeBlockMobile, #codeBlockDesktop {
+#codeBlockDesktop {
     border-radius: 10px;
     max-height: 350px;
     overflow: scroll;
-    display: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 .code-block-url {
@@ -456,76 +409,106 @@ s {
 }
 
 
-#jBox1 > .jBox-container, #jBox2 > .jBox-container {
+/* discord */
+#jBox1 > .jBox-container {
+    padding: 3px;
     background-color: #3342dd;
     border: 3px solid #212b90;
 }
 
-#jBox3 > .jBox-container, #jBox4 > .jBox-container {
+/* twitch */
+#jBox2 > .jBox-container {
+    padding: 3px;
     background-color: #6b33b2;
     border: 3px solid #3d1d65;
 }
 
-#jBox5 > .jBox-container, #jBox6 > .jBox-container {
+/* instagram */
+#jBox3 > .jBox-container {
+    padding: 3px;
     background-color: #e52a5d;
     border: 3px solid #981b3d;
 }
 
-#jBox7, #jBox8 {
+/* github */
+#jBox4 {
     color: #ffffff;
 }
 
-#jBox7 > .jBox-container, #jBox8 > .jBox-container {
+/* github */
+#jBox4 > .jBox-container {
+    padding: 3px;
     background-color: #313131;
     border: 3px solid #000000;
 }
 
-#jBox9 > .jBox-container, #jBox10 > .jBox-container {
+/* telegram */
+#jBox5 > .jBox-container {
+    padding: 3px;
     background-color: #2279a7;
     border: 3px solid #12415a;
 }
 
-#jBox11 > .jBox-container, #jBox12 > .jBox-container {
+/* youtube */
+#jBox6 > .jBox-container {
+    padding: 3px;
     background-color: #b20000;
     border: 3px solid #600000;
 }
 
-#jBox13 > .jBox-container, #jBox14 > .jBox-container {
+/* X / twitter */
+#jBox7 > .jBox-container {
+    padding: 3px;
     background-color: #0087bb;
     border: 3px solid #004f6e;
 }
 
-#jBox15 > .jBox-container, #jBox16 > .jBox-container {
+/* spotify */
+#jBox8 > .jBox-container {
+    padding: 3px;
     background-color: #12a449;
     border: 3px solid #095726;
 }
 
-#jBox17 > .jBox-container, #jBox18 > .jBox-container {
+/* tiktok */
+#jBox9 > .jBox-container {
+    padding: 3px;
     background-color: #af0035;
     border: 3px solid #62001d;
 }
 
-#jBox19 > .jBox-container, #jBox20 > .jBox-container {
+/* reddit */
+#jBox10 > .jBox-container {
+    padding: 3px;
     background-color: #b12f00;
     border: 3px solid #641a00;
 }
 
-#jBox21 > .jBox-container, #jBox22 > .jBox-container {
+/* revolt */
+#jBox11 > .jBox-container {
+    padding: 3px;
     background-color: #b2303a;
     border: 3px solid #651b21;
 }
 
-#jBox23 > .jBox-container, #jBox24 > .jBox-container {
+/* mastodon */
+#jBox12 > .jBox-container {
+    padding: 3px;
     background-color: #4433a5;
     border: 3px solid #241b58;
 }
 
-#jBox25 > .jBox-container, #jBox26 > .jBox-container {
+/* steam */
+#jBox13 > .jBox-container {
+    color: #b0b0b0;
+    padding: 3px;
     background-color: #122b60;
     border: 3px solid #071539;
 }
 
-#jBox27 > .jBox-container, #jBox28 > .jBox-container {
+/* mail */
+#jBox14 > .jBox-container {
+    padding: 3px;
     background-color: #c5221f;
     border: 3px solid #a31b18;
 }

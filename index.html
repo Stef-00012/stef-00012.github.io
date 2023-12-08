@@ -23,6 +23,10 @@
         <link rel="prefetch" href="https://github-stats-stef-00012.vercel.app/api?username=Stef-00012&show_icons=true&theme=tokyonight">
         <link rel="prefetch" href="https://github-stats-stef-00012.vercel.app/api/top-langs/?username=Stef-00012&theme=tokyonight">
         <link rel="prefetch" href="https://github-readme-streak-stats-stef-00012.vercel.app/?user=Stef-00012&theme=radical">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     </head>
     
     <body>
@@ -32,333 +36,71 @@
         </div>
         <div class="loading-overlay"></div>
 
-        <div class="mobile-site">
+        <div class="site-body">
             <div>
-                <img alt="Avatar" class="avatar" src="/__assets/bio/pfp.webp">
+                <img alt="Avatar" class="avatar mx-auto d-block" src="/__assets/bio/pfp.webp">
                 <p class="name"><b><code class="name-bg">Stef</code></b></p>
             </div>
     
             <div class="socials-bg">
-                <div class="socials">
+                <div class="m-auto d-flex flex-wrap justify-content-center">
                     <a href="/socials/discord">
-                        <img alt="Discord logo" class="social discord" id="tooltip-discord" src="/__assets/social_logos/discord.webp">
+                        <img alt="Discord logo" class="social discord desktop" id="tooltip-discord" src="/__assets/social_logos/discord.webp">
                     </a>
                     <a href="/socials/twitch">
-                        <img alt="Twitch logo" class="social twitch" id="tooltip-twitch" src="/__assets/social_logos/twitch.webp">
+                        <img alt="Twitch logo" class="social twitch desktop" id="tooltip-twitch" src="/__assets/social_logos/twitch.webp">
                     </a>
                     <a href="/socials/instagram">
-                        <img alt="Instagram logo" class="social instagram" id="tooltip-instagram" src="/__assets/social_logos/instagram.webp">
+                        <img alt="Instagram logo" class="social instagram desktop" id="tooltip-instagram" src="/__assets/social_logos/instagram.webp">
                     </a>
                     <a href="/code/github">
-                        <img alt="Github logo" class="social github" id="tooltip-github" src="/__assets/social_logos/github.webp">
+                        <img alt="Github logo" class="social github desktop" id="tooltip-github" src="/__assets/social_logos/github.webp">
                     </a>
                     <a href="/socials/telegram">
-                        <img alt="Telegram logo" class="social telegram" id="tooltip-telegram" src="/__assets/social_logos/telegram.webp">
-                    </a>
-                </div>
-    
-                <div class="socials" id="socials-2">
-                    <a href="/socials/youtube">
-                        <img alt="Youtube logo" class="social youtube" id="tooltip-youtube" src="/__assets/social_logos/youtube.webp">
-                    </a>
-                    <a href="/socials/twitter">
-                        <img alt="X (twitter) logo" class="social twitter" id="tooltip-twitter" src="/__assets/social_logos/twitter.webp">
-                    </a>
-                    <a href="/socials/spotify">
-                        <img alt="Spotify logo" class="social spotify" id="tooltip-spotify" src="/__assets/social_logos/spotify.webp">
-                    </a>
-                    <a href="/socials/tiktok">
-                        <img alt="Tiktok logo" class="social tiktok" id="tooltip-tiktok" src="/__assets/social_logos/tiktok.webp">
-                    </a>
-                    <a href="/socials/reddit">
-                        <img alt="Reddit logo" class="social reddit" id="tooltip-reddit" src="/__assets/social_logos/reddit.webp">
-                    </a>
-                </div>
-    
-                <div class="socials" id="socials-3">
-                    <a href="/socials/revolt">
-                        <img alt="Revolt logo" class="social revolt" id="tooltip-revolt" src="/__assets/social_logos/revolt.webp">
-                    </a>
-                    <a href="/socials/mastodon">
-                        <img alt="Mastodon logo" class="social mastodon" id="tooltip-mastodon" src="/__assets/social_logos/mastodon.webp">
-                    </a>
-                    <a href="/socials/steam">
-                        <img alt="Steam logo" class="social steam" id="tooltip-steam" src="/__assets/social_logos/steam.webp">
-                    </a>
-                    <a href="mailto:admin@stefdp.is-a.dev">
-                        <img alt="Gmail logo" class="social mail" id="tooltip-mail" src="/__assets/social_logos/mail.webp">
-                    </a>
-                </div>
-            </div>
-    
-            <div class="discord-data">
-                <img alt="Discord status" src="https://api.statusbadges.me/badge/status/694986201739952229" alt="Discord Status"><br />
-                <img alt="Currently playing" src="https://api.statusbadges.me/badge/playing/694986201739952229" alt="Currently Playing..."><br />
-                <img alt="Currently coding" src="https://api.statusbadges.me/badge/vscode/694986201739952229" alt="Currently Coding..."><br />
-                <a href="https://api.statusbadges.me/openspotify/694986201739952229" target="_blank" rel="noopener"><img alt="Currently listening to" src="https://api.statusbadges.me/badge/spotify/694986201739952229" alt="Currently Listening to..."></a>
-            </div>
-    
-            <div class="collapsible">
-                <button type="button" class="collapsible-button">A Small About Me</button>
-                <div class="collapsible-content">
-                    <pre>
-                        <code class="language-javascript  code-block" id="codeBlockMobile"></code>
-                    </pre>
-                    <p>
-                        <em class="spoiler" id="spoilerMobile">(My old reddit account got banned)</em>
-                    </p>
-                </div>
-            </div>
-    
-            <div class="collapsible">
-                <button type="button" class="collapsible-button">My Rabbit</button>
-                <div class="collapsible-content">
-                    <p>his name is <b>Pallino</b></p>
-                    <img alt="1st rabbit image" class="collapsible-content-image" src="/__assets/rabbit/photo/pallino-1.webp">
-                    <img alt="2nd rabbit image" class="collapsible-content-image" src="/__assets/rabbit/photo/pallino-2.webp">
-                    <img alt="3rd rabbit image" class="collapsible-content-image" src="/__assets/rabbit/photo/pallino-3.webp">
-                    <img alt="4th rabbit image" class="collapsible-content-image" src="/__assets/rabbit/photo/pallino-4.webp">
-                    <img alt="5th rabbit image" class="collapsible-content-image" src="/__assets/rabbit/photo/pallino-5.webp">
-                    <img alt="6th rabbit image" class="collapsible-content-image" src="/__assets/rabbit/photo/pallino-6.webp">
-                    <img alt="7th rabbit image" class="collapsible-content-image" src="/__assets/rabbit/photo/pallino-7.webp">
-                    <img alt="8th rabbit image" class="collapsible-content-image" src="/__assets/rabbit/photo/pallino-8.webp">
-                    <img alt="9th rabbit image" class="collapsible-content-image" src="/__assets/rabbit/photo/pallino-9.webp">
-                    <img alt="10th rabbit image" class="collapsible-content-image" src="/__assets/rabbit/photo/pallino-10.webp">
-                    <img alt="11th rabbit image" class="collapsible-content-image" src="/__assets/rabbit/photo/pallino-11.webp">
-                    <img alt="12th rabbit image" class="collapsible-content-image" src="/__assets/rabbit/photo/pallino-12.webp">
-                    <img alt="13th rabbit image" class="collapsible-content-image" src="/__assets/rabbit/photo/pallino-13.webp">
-                </div>
-            </div>
-    
-            <div class="collapsible">
-                <button type="button" class="collapsible-button">Alternative Links</button>
-                <div class="collapsible-content">
-                    <p>
-                        <img alt="Discord logo" class="small-social-logo discord" src="/__assets/social_logos/discordLogo.webp">
-                        <b>
-                            Discord
-                        </b>:
-                        <a class="social-url discord" href="/socials/discord">
-                            https://stefdp.is-a.dev/socials/discord
-                        </a><br />
-    
-                        <img alt="Twitch logo" class="small-social-logo twitch" src="/__assets/social_logos/twitchLogo.webp">
-                        <b>
-                            Twitch
-                        </b>:
-                        <a class="social-url twitch" href="/socials/twitch">
-                            https://stefdp.is-a.dev/socials/twitch
-                        </a><br />
-    
-                        <img alt="Instagram logo" class="small-social-logo instagram" src="/__assets/social_logos/instagramLogo.webp">
-                        <b>
-                            Instagram
-                        </b>:
-                        <a class="social-url instagram" href="/socials/instagram">
-                            https://stefdp.is-a.dev/socials/instagram
-                        </a><br />
-    
-                        <img alt="Github logo" class="small-social-logo github" src="/__assets/social_logos/githubLogo.webp">
-                        <b>
-                            Github
-                        </b>:
-                        <a class="social-url github" href="/code/github">
-                            https://stefdp.is-a.dev/code/github
-                        </a><br />
-    
-                        <img alt="Telegram logo" class="small-social-logo telegram" src="/__assets/social_logos/telegramLogo.webp">
-                        <b>
-                            Telegram
-                        </b>:
-                        <a class="social-url telegram" href="/socials/telegram">
-                            https://stefdp.is-a.dev/socials/telegram
-                        </a><br />
-    
-                        <img alt="Youtube logo" class="small-social-logo youtube" src="/__assets/social_logos/youtubeLogo.webp">
-                        <b>
-                            Youtube
-                        </b>:
-                        <a class="social-url youtube" href="/socials/youtube">
-                            https://stefdp.is-a.dev/socials/youtube
-                        </a><br />
-    
-                        <img alt="X (twitter) logo" class="small-social-logo twitter" src="/__assets/social_logos/twitter.webp">
-                        <b>
-                            X (Twitter)
-                        </b>:
-                        <a class="social-url twitter" href="/socials/twitter">
-                            https://stefdp.is-a.dev/socials/twitter
-                        </a><br />
-    
-                        <img alt="Spotify logo" class="small-social-logo spotify" src="/__assets/social_logos/spotifyLogo.webp">
-                        <b>
-                            Spotify
-                        </b>:
-                        <a class="social-url spotify" href="/socials/spotify">
-                            https://stefdp.is-a.dev/socials/spotify
-                        </a><br />
-    
-                        <img alt="Tiktok logo" class="small-social-logo tiktok" src="/__assets/social_logos/tiktokLogo.webp">
-                        <b>
-                            Tiktok
-                        </b>:
-                        <a class="social-url tiktok" href="/socials/tiktok">
-                            https://stefdp.is-a.dev/socials/tiktok
-                        </a><br />
-    
-                        <img alt="Revolt logo" class="small-social-logo revolt" src="/__assets/social_logos/revoltLogo.webp">
-                        <b>
-                            Revolt
-                        </b>:
-                        <a class="social-url revolt" href="/socials/revolt">
-                            https://stefdp.is-a.dev/socials/revolt
-                        </a><br />
-    
-                        <img alt="Reddit logo" class="small-social-logo reddit" src="/__assets/social_logos/redditLogo.webp">
-                        <b>
-                            Reddit
-                        </b>:
-                        <a class="social-url reddit" href="/socials/reddit">
-                            https://stefdp.is-a.dev/socials/reddit
-                        </a><br />
-    
-                        <img alt="Mastodon logo" class="small-social-logo mastodon" src="/__assets/social_logos/mastodon.webp">
-                        <b>
-                            Mastodon
-                        </b>:
-                        <a class="social-url mastodon" href="/socials/mastodon">
-                            https://stefdp.is-a.dev/socials/mastodon
-                        </a><br />
-    
-                        <img alt="Steam logo" class="small-social-logo steam" src="/__assets/social_logos/steam.webp">
-                        <b>
-                            Steam
-                        </b>:
-                        <a class="social-url steam" href="/socials/steam">
-                            https://stefdp.is-a.dev/socials/steam
-                        </a><br />
-    
-                        <img alt="GattinhosBot icom" class="small-social-logo gattinhosBot" src="/__assets/gattinhosBot/gattinhosBot.webp">
-                        <b>
-                            GattinhosBot
-                        </b>:
-                        <a class="social-url gattinhosBot" href="https://gattinhosbot.is-a.dev">
-                            https://gattinhosbot.is-a.dev
-                        </a><br />
-
-                        <img alt="Receiptify icon" class="small-social-logo receiptify" src="/__assets/receiptify/receipt.webp">
-                        <b>
-                            Receiptify
-                        </b>:
-                        <a class="social-url receiptify" href="https://receiptify.is-a.dev">
-                            https://receiptify.is-a.dev
-                        </a><br />
-    
-                        <img alt="Gmail logo" class="small-social-logo mail" src="/__assets/social_logos/mail.webp">
-                        <b>
-                            Mail
-                        </b>:
-                        <a class="social-url mail" href="mailto:admin@stefdp.is-a.dev">
-                            admin@stefdp.is-a.dev
-                        </a>
-                    </p>
-                </div>
-            </div>
-    
-            <div class="collapsible">
-                <button type="button" class="collapsible-button">Github Stats</button>
-                <div class="collapsible-content">
-                    <embed type="text/html"
-                        src="https://github-stats-stef-00012.vercel.app/api?username=Stef-00012&show_icons=true&theme=tokyonight"
-                        width="100%" class="embed-github">
-                    <embed type="text/html"
-                        src="https://github-stats-stef-00012.vercel.app/api/top-langs/?username=Stef-00012&theme=tokyonight" width="100%"
-                        class="embed-github">
-                    <embed class="embed-github"
-                    src="https://github-readme-streak-stats-stef-00012.vercel.app/?user=Stef-00012&theme=radical"
-                    width="100%">
-                </div>
-            </div>
-
-            <div class="collapsible">
-                <button type="button" class="button-redirect" id="apiButtonMobile">My API</button>
-                <div class="button-redirect-2"></div>
-            </div>
-    
-            <div class="collapsible">
-                <button type="button" class="button-redirect" id="gattinhosBotButtonMobile">GattinhosBot</button>
-                <div class="button-redirect-2"></div>
-            </div>
-            
-            <div class="collapsible">
-                <button type="button" class="button-redirect" id="receiptifyButtonMobile">Receiptify</button>
-                <div class="button-redirect-2"></div>
-            </div>
-        </div>
-    
-        <div class="desktop-site">
-            <div>
-                <img alt="Avatar" class="avatar" src="/__assets/bio/pfp.webp">
-                <p class="name"><b><code class="name-bg">Stef</code></b></p>
-            </div>
-    
-            <div class="socials-bg">
-                <div class="socials">
-                    <a href="/socials/discord">
-                        <img alt="Discord logo" class="social discord desktop" id="tooltip-discord-desktop" src="/__assets/social_logos/discord.webp">
-                    </a>
-                    <a href="/socials/twitch">
-                        <img alt="Twitch logo" class="social twitch desktop" id="tooltip-twitch-desktop" src="/__assets/social_logos/twitch.webp">
-                    </a>
-                    <a href="/socials/instagram">
-                        <img alt="Instagram logo" class="social instagram desktop" id="tooltip-instagram-desktop" src="/__assets/social_logos/instagram.webp">
-                    </a>
-                    <a href="/code/github">
-                        <img alt="Github logo" class="social github desktop" id="tooltip-github-desktop" src="/__assets/social_logos/github.webp">
-                    </a>
-                    <a href="/socials/telegram">
-                        <img alt="Telegram logo" class="social telegram desktop" id="tooltip-telegram-desktop" src="/__assets/social_logos/telegram.webp">
+                        <img alt="Telegram logo" class="social telegram desktop" id="tooltip-telegram" src="/__assets/social_logos/telegram.webp">
                     </a>
                     <a href="/socials/youtube">
-                        <img alt="Youtube logo" class="social youtube desktop" id="tooltip-youtube-desktop" src="/__assets/social_logos/youtube.webp">
+                        <img alt="Youtube logo" class="social youtube desktop" id="tooltip-youtube" src="/__assets/social_logos/youtube.webp">
                     </a>
                     <a href="/socials/twitter">
-                        <img alt="X (twitter) logo" class="social twitter desktop" id="tooltip-twitter-desktop" src="/__assets/social_logos/twitter.webp">
+                        <img alt="X (twitter) logo" class="social twitter desktop" id="tooltip-twitter" src="/__assets/social_logos/twitter.webp">
                     </a>
                     <a href="/socials/spotify">
-                        <img alt="Spotify logo" class="social spotify desktop" id="tooltip-spotify-desktop" src="/__assets/social_logos/spotify.webp">
+                        <img alt="Spotify logo" class="social spotify desktop" id="tooltip-spotify" src="/__assets/social_logos/spotify.webp">
                     </a>
                     <a href="/socials/tiktok">
-                        <img alt="Tiktok logo" class="social tiktok desktop" id="tooltip-tiktok-desktop" src="/__assets/social_logos/tiktok.webp">
+                        <img alt="Tiktok logo" class="social tiktok desktop" id="tooltip-tiktok" src="/__assets/social_logos/tiktok.webp">
                     </a>
                     <a href="/socials/reddit">
-                        <img alt="Reddit logo" class="social reddit desktop" id="tooltip-reddit-desktop" src="/__assets/social_logos/reddit.webp">
+                        <img alt="Reddit logo" class="social reddit desktop" id="tooltip-reddit" src="/__assets/social_logos/reddit.webp">
                     </a>
                     <a href="/socials/revolt">
-                        <img alt="Revolt logo" class="social revolt desktop" id="tooltip-revolt-desktop" src="/__assets/social_logos/revolt.webp">
+                        <img alt="Revolt logo" class="social revolt desktop" id="tooltip-revolt" src="/__assets/social_logos/revolt.webp">
                     </a>
                     <a href="/socials/mastodon">
-                        <img alt="Mastodon logo" class="social mastodon desktop" id="tooltip-mastodon-desktop" src="/__assets/social_logos/mastodon.webp">
+                        <img alt="Mastodon logo" class="social mastodon desktop" id="tooltip-mastodon" src="/__assets/social_logos/mastodon.webp">
                     </a>
                     <a href="/socials/steam">
-                        <img alt="Steam logo" class="social steam desktop" id="tooltip-steam-desktop" src="/__assets/social_logos/steam.webp">
+                        <img alt="Steam logo" class="social steam desktop" id="tooltip-steam" src="/__assets/social_logos/steam.webp">
                     </a>
                     <a href="mailto:admin@stefdp.is-a.dev">
-                        <img alt="Gmail logo" class="social mail desktop" id="tooltip-mail-desktop" src="/__assets/social_logos/mail.webp">
+                        <img alt="Gmail logo" class="social mail desktop" id="tooltip-mail" src="/__assets/social_logos/mail.webp">
                     </a>
                 </div>
             </div>
     
-            <div class="discord-data">
+            <div class="discord-data d-flex justify-content-center flex-wrap mx-auto mt-4">
                 <img alt="Discord status" src="https://api.statusbadges.me/badge/status/694986201739952229?label=Currently&labelColor=5865F2" alt="Discord Status">
                 <img alt="Currently playing" src="https://api.statusbadges.me/badge/playing/694986201739952229?label=Playing" alt="Currently Playing...">
                 <img alt="Currently coding" src="https://api.statusbadges.me/badge/vscode/694986201739952229?label=Coding" alt="Currently Coding...">
                 <a href="https://api.statusbadges.me/openspotify/694986201739952229" target="_blank" rel="noopener"><img alt="Currently listening to" src="https://api.statusbadges.me/badge/spotify/694986201739952229?label=Listening%20to" alt="Currently Listening to..."></a>
             </div>
-    
-            <div class="collapsible">
-                <button type="button" class="collapsible-button">A Small About Me</button>
-                <div class="collapsible-content">
+
+            <div class="mx-4 mt-4">
+                <button class="collapsible-button" type="button" data-bs-toggle="collapse" data-bs-target="#aboutMe" aria-expanded="false" aria-controls="aboutMe">
+                    A Small About Me
+                </button>
+                <div id="aboutMe" class="collapse collapsible-content">
                     <pre>
                         <code class="language-javascript code-block" id="codeBlockDesktop"></code>
                     </pre>
@@ -367,30 +109,86 @@
                     </p>
                 </div>
             </div>
-    
-            <div class="collapsible">
-                <button type="button" class="collapsible-button">My Rabbit</button>
-                <div class="collapsible-content">
-                    <p>his name is <b>Pallino</b></p>
-                    <img alt="1st rabbit image" class="collapsible-content-image desktop" src="/__assets/rabbit/photo/pallino-1.webp">
-                    <img alt="2nd rabbit image" class="collapsible-content-image desktop" src="/__assets/rabbit/photo/pallino-2.webp">
-                    <img alt="3rd rabbit image" class="collapsible-content-image desktop" src="/__assets/rabbit/photo/pallino-3.webp">
-                    <img alt="4th rabbit image" class="collapsible-content-image desktop" src="/__assets/rabbit/photo/pallino-4.webp">
-                    <img alt="5th rabbit image" class="collapsible-content-image desktop" src="/__assets/rabbit/photo/pallino-5.webp">
-                    <img alt="6th rabbit image" class="collapsible-content-image desktop" src="/__assets/rabbit/photo/pallino-6.webp">
-                    <img alt="7th rabbit image" class="collapsible-content-image desktop" src="/__assets/rabbit/photo/pallino-7.webp">
-                    <img alt="8th rabbit image" class="collapsible-content-image desktop" src="/__assets/rabbit/photo/pallino-8.webp">
-                    <img alt="9th rabbit image" class="collapsible-content-image desktop" src="/__assets/rabbit/photo/pallino-9.webp">
-                    <img alt="10th rabbit image" class="collapsible-content-image desktop" src="/__assets/rabbit/photo/pallino-10.webp">
-                    <img alt="11th rabbit image" class="collapsible-content-image desktop" src="/__assets/rabbit/photo/pallino-11.webp">
-                    <img alt="12th rabbit image" class="collapsible-content-image desktop" src="/__assets/rabbit/photo/pallino-12.webp">
-                    <img alt="13th rabbit image" class="collapsible-content-image desktop" src="/__assets/rabbit/photo/pallino-13.webp">
+
+            <div class="mx-4 mt-4">
+                <button class="collapsible-button" type="button" data-bs-toggle="collapse" data-bs-target="#rabbit" aria-expanded="false" aria-controls="rabbit">
+                    My Rabbit
+                </button>
+                <div id="rabbit" class="collapse collapsible-content">
+                    <div id="carouselExampleIndicators" class="carousel slide">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="9" aria-label="Slide 10"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="10" aria-label="Slide 11"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="11" aria-label="Slide 12"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="12" aria-label="Slide 13"></button>
+                        </div>
+                        <div class="carousel-inner p-4 ">
+                            <div class="carousel-item active">
+                                <img src="/__assets/rabbit/photo/pallino-1.webp" class="d-block collapsible-content-image desktop m-auto" alt="1st rabbit image">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/__assets/rabbit/photo/pallino-2.webp" class="d-block collapsible-content-image desktop m-auto" alt="2nd rabbit image">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/__assets/rabbit/photo/pallino-3.webp" class="d-block collapsible-content-image desktop m-auto" alt="3rd rabbit image">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/__assets/rabbit/photo/pallino-4.webp" class="d-block collapsible-content-image desktop m-auto" alt="4th rabbit image">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/__assets/rabbit/photo/pallino-5.webp" class="d-block collapsible-content-image desktop m-auto" alt="5th rabbit image">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/__assets/rabbit/photo/pallino-6.webp" class="d-block collapsible-content-image desktop m-auto" alt="6th rabbit image">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/__assets/rabbit/photo/pallino-7.webp" class="d-block collapsible-content-image desktop m-auto" alt="7th rabbit image">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/__assets/rabbit/photo/pallino-8.webp" class="d-block collapsible-content-image desktop m-auto" alt="8th rabbit image">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/__assets/rabbit/photo/pallino-9.webp" class="d-block collapsible-content-image desktop m-auto" alt="9th rabbit image">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/__assets/rabbit/photo/pallino-10.webp" class="d-block collapsible-content-image desktop m-auto" alt="10th rabbit image">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/__assets/rabbit/photo/pallino-11.webp" class="d-block collapsible-content-image desktop m-auto" alt="11th rabbit image">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/__assets/rabbit/photo/pallino-12.webp" class="d-block collapsible-content-image desktop m-auto" alt="12th rabbit image">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/__assets/rabbit/photo/pallino-13.webp" class="d-block collapsible-content-image desktop m-auto" alt="13th rabbit image">
+                            </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
                 </div>
             </div>
-    
-            <div class="collapsible">
-                <button type="button" class="collapsible-button">Alternative Links</button>
-                <div class="collapsible-content">
+
+            <div class="mx-4 mt-4">
+                <button class="collapsible-button" type="button" data-bs-toggle="collapse" data-bs-target="#alternativeLinks" aria-expanded="false" aria-controls="alternativeLinks">
+                    Alternative Links
+                </button>
+                <div id="alternativeLinks" class="collapse collapsible-content">
                     <p>
                         <img alt="Discord logo" class="small-social-logo discord" src="/__assets/social_logos/discordLogo.webp">
                         <b>
@@ -503,7 +301,7 @@
                         <a class="social-url gattinhosBot" href="https://gattinhosbot.is-a.dev">
                             https://gattinhosbot.is-a.dev
                         </a><br />
-
+    
                         <img alt="Receiptify icon" class="small-social-logo receiptify" src="/__assets/receiptify/receipt.webp">
                         <b>
                             Receiptify
@@ -522,41 +320,41 @@
                     </p>
                 </div>
             </div>
-    
-            <div class="collapsible">
-                <button type="button" class="collapsible-button">Github Stats</button>
-                <div class="collapsible-content">
-                    <embed class="embed-github ghstat desktop" type="text/html"
-                        src="https://github-stats-stef-00012.vercel.app/api/top-langs/?username=Stef-00012&theme=tokyonight" width="47%">
-                    <embed class="embed-github ghstat desktop" type="text/html"
-                        src="https://github-stats-stef-00012.vercel.app/api?username=Stef-00012&show_icons=true&theme=tokyonight"
-                        width="47%">
-                    <embed class="embed-github ghstat desktop"
-                        src="https://github-readme-streak-stats-stef-00012.vercel.app/?user=Stef-00012&theme=radical"
-                        width="47%">
+
+            <div class="mx-4 mt-4">
+                <button class="collapsible-button" type="button" data-bs-toggle="collapse" data-bs-target="#githubStats" aria-expanded="false" aria-controls="githubStats">
+                    Github Stats
+                </button>
+                <div id="githubStats" class="collapse collapsible-content">
+                    <div class="d-flex flex-wrap ">
+                        <embed class="embed-github ghstat desktop" type="text/html" src="https://github-stats-stef-00012.vercel.app/api/top-langs/?username=Stef-00012&theme=tokyonight">
+                        <embed class="embed-github ghstat desktop" type="text/html" src="https://github-stats-stef-00012.vercel.app/api?username=Stef-00012&show_icons=true&theme=tokyonight">
+                        <embed class="embed-github ghstat desktop" src="https://github-readme-streak-stats-stef-00012.vercel.app/?user=Stef-00012&theme=radical">
+                    </div>
                 </div>
             </div>
-    
-            <div class="collapsible">
-                <button type="button" class="button-redirect" id="apiButtonDesktop">My API - api.stefdp.is-a.dev</button>
-                <div class="button-redirect-2"></div>
-            </div>
 
-            <div class="collapsible">
-                <button type="button" class="button-redirect" id="gattinhosBotButtonDesktop">My Discord Bot - GattinhosBot</button>
-                <div class="button-redirect-2"></div>
+            <div class="mx-4 mt-4">
+                <a href="https://docs.stefdp.is-a.dev" class="text-decoration-none"><button type="button" class="button-redirect" id="apiButtonDesktop">
+                    My API
+                </button></a>
             </div>
     
-            <div class="collapsible">
-                <button type="button" class="button-redirect" id="receiptifyButtonDesktop">Convert your tracks to a receipt - Receiptify</button>
-                <div class="button-redirect-2"></div>
+            <div class="mx-4 mt-4">
+                <a href="https://gattinhosbot.is-a.dev" class="text-decoration-none"><button type="button" class="button-redirect" id="gattinhosBotButtonDesktop">
+                    My Discord Bot - GattinhosBot
+                </button></a>
+            </div>
+    
+            <div class="mx-4 mt-4">
+                <a href="https://receiptify.is-a.dev" class="text-decoration-none"><button type="button" class="button-redirect" id="receiptifyButtonDesktop">
+                    Receiptify
+                </button></a>
             </div>
         </div>
         
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter&display=swap">
         <link rel="stylesheet" href="https://unpkg.com/highlightjs@9.16.2/styles/atom-one-dark.css">
-        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/StephanWagner/highlightjs@v1.3.2/dist/jBox.all.min.css"> -->
-        
         
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.2/dist/jBox.all.min.js"></script>
