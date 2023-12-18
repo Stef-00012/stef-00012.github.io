@@ -2,6 +2,7 @@ startLoading()
 
 const spoilerDesktop = document.getElementById('spoilerDesktop')
 const codeBlockDesktop = document.getElementById('codeBlockDesktop')
+const socialsContainer = document.getElementById('socials')
 
 
 fetch('/__data/aboutMeCodeBlock.txt')
@@ -43,142 +44,16 @@ function revealSpoiler(element) {
 }
 
 function handleJQuery() {
-    new jBox('Mouse', {
-        attach: '#tooltip-discord',
-        position: {
-            x: 'right',
-            y: 'top'
-        },
-        content: '<b>Discord</b><br /><i>stef_dp</i> (Ex: <i>Stef#6705</i>)'
-    })
-    
-
-    new jBox('Mouse', {
-        attach: '#tooltip-twitch',
-        position: {
-            x: 'right',
-            y: 'top'
-        },
-        content: '<b>Twitch</b><br /><i>Stef_DP</i>'
-    })
-
-    
-    new jBox('Mouse', {
-        attach: '#tooltip-instagram',
-        position: {
-            x: 'right',
-            y: 'top'
-        },
-        content: '<b>Instagram</b><br /><i>stefanodelprete_</i>'
-    })
-
-    
-    new jBox('Mouse', {
-        attach: '#tooltip-github',
-        position: {
-            x: 'right',
-            y: 'top'
-        },
-        content: '<b>Github</b><br /><i>Stef-00012</i>'
-    })
-    
-
-    new jBox('Mouse', {
-        attach: '#tooltip-telegram',
-        position: {
-            x: 'right',
-            y: 'top'
-        },
-        content: '<b>Telegram</b><br /><i>Stef_DP</i>'
-    })
-    
-
-    new jBox('Mouse', {
-        attach: '#tooltip-youtube',
-        position: {
-            x: 'right',
-            y: 'top'
-        },
-        content: '<b>Youtube</b><br /><i>Stefano Del Prete</i>'
-    })
-
-    
-    new jBox('Mouse', {
-        attach: '#tooltip-twitter',
-        position: {
-            x: 'right',
-            y: 'top'
-        },
-        content: '<b>X (Twitter)</b><br /><i>Stef_Del_Prete</i>'
-    })
-
-    
-    new jBox('Mouse', {
-        attach: '#tooltip-spotify',
-        position: {
-            x: 'right',
-            y: 'top'
-        },
-        content: '<b>Spotify</b><br /><i>Stef</i>'
-    })
-
-    
-    new jBox('Mouse', {
-        attach: '#tooltip-tiktok',
-        position: {
-            x: 'right',
-            y: 'top'
-        },
-        content: '<b>Tiktok</b><br /><i>stefano0122</i>'
-    })
-
-    
-    new jBox('Mouse', {
-        attach: '#tooltip-reddit',
-        position: {
-            x: 'right',
-            y: 'top'
-        },
-        content: '<b>Reddit</b><br /><i>Stef_DP</i>'
-    })
-    
-    
-    new jBox('Mouse', {
-        attach: '#tooltip-revolt',
-        position: {
-            x: 'right',
-            y: 'top'
-        },
-        content: '<b>Revolt</b><br /><i>Stef</i>'
-    })
-
-    
-    new jBox('Mouse', {
-        attach: '#tooltip-mastodon',
-        position: {
-            x: 'right',
-            y: 'top'
-        },
-        content: '<b>Mastodon</b><br /><i>Stef_DP</i>'
-    })
-
-    new jBox('Mouse', {
-        attach: '#tooltip-steam',
-        position: {
-            x: 'right',
-            'y': 'top'
-        },
-        content: '<b>Steam</b><br /><i>Stefano_Del_Prete</i>'
-    })
-
-    new jBox('Mouse', {
-        attach: '#tooltip-mail',
-        position: {
-            x: 'right',
-            'y': 'top'
-        },
-        content: '<b>Mail</b><br /><i>admin@stefdp.is-a.dev</i>'
-    })
+    for (const social of socialsContainer.children) {
+        new jBox('Mouse', {
+            attach: `#${social.children[0].id}`,
+            position: {
+                x: 'right',
+                y: 'top'
+            },
+            content: social.dataset.tooltip ?? 'Missing tooltip'
+        })
+    }
 }
 
 

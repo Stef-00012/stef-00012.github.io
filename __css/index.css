@@ -413,6 +413,8 @@ s {
 /* discord */
 #jBox1 > .jBox-container {
     padding: 3px;
+    color: #000;
+    border-radius: 5px;
     background-color: #3342dd;
     border: 3px solid #212b90;
 }
@@ -420,6 +422,8 @@ s {
 /* twitch */
 #jBox2 > .jBox-container {
     padding: 3px;
+    color: #000;
+    border-radius: 5px;
     background-color: #6b33b2;
     border: 3px solid #3d1d65;
 }
@@ -427,89 +431,114 @@ s {
 /* instagram */
 #jBox3 > .jBox-container {
     padding: 3px;
+    color: #000;
+    border-radius: 5px;
     background-color: #e52a5d;
     border: 3px solid #981b3d;
 }
 
-/* github */
+/* threads */
 #jBox4 {
+    padding: 3px;
     color: #ffffff;
+    border-radius: 5px;
+    background-color: #1a1919;
+    border: 3px solid #000000;
 }
 
 /* github */
-#jBox4 > .jBox-container {
+#jBox5 > .jBox-container {
     padding: 3px;
+    color: #ffffff;
+    border-radius: 5px;
     background-color: #313131;
     border: 3px solid #000000;
 }
 
 /* telegram */
-#jBox5 > .jBox-container {
+#jBox6 > .jBox-container {
     padding: 3px;
+    color: #000;
+    border-radius: 5px;
     background-color: #2279a7;
     border: 3px solid #12415a;
 }
 
 /* youtube */
-#jBox6 > .jBox-container {
+#jBox7 > .jBox-container {
     padding: 3px;
+    color: #000;
     background-color: #b20000;
     border: 3px solid #600000;
 }
 
 /* X / twitter */
-#jBox7 > .jBox-container {
+#jBox8 > .jBox-container {
     padding: 3px;
+    color: #000;
+    border-radius: 5px;
     background-color: #0087bb;
     border: 3px solid #004f6e;
 }
 
 /* spotify */
-#jBox8 > .jBox-container {
+#jBox9 > .jBox-container {
     padding: 3px;
+    color: #000;
+    border-radius: 5px;
     background-color: #12a449;
     border: 3px solid #095726;
 }
 
 /* tiktok */
-#jBox9 > .jBox-container {
+#jBox10 > .jBox-container {
     padding: 3px;
+    color: #000;
     background-color: #af0035;
     border: 3px solid #62001d;
 }
 
 /* reddit */
-#jBox10 > .jBox-container {
+#jBox11 > .jBox-container {
     padding: 3px;
+    color: #000;
+    border-radius: 5px;
     background-color: #b12f00;
     border: 3px solid #641a00;
 }
 
 /* revolt */
-#jBox11 > .jBox-container {
+#jBox12 > .jBox-container {
     padding: 3px;
+    color: #000;
+    border-radius: 5px;
     background-color: #b2303a;
     border: 3px solid #651b21;
 }
 
 /* mastodon */
-#jBox12 > .jBox-container {
+#jBox13 > .jBox-container {
     padding: 3px;
+    color: #000;
+    border-radius: 5px;
     background-color: #4433a5;
     border: 3px solid #241b58;
 }
 
 /* steam */
-#jBox13 > .jBox-container {
-    color: #b0b0b0;
+#jBox14 > .jBox-container {
     padding: 3px;
+    color: #b0b0b0;
+    border-radius: 5px;
     background-color: #122b60;
     border: 3px solid #071539;
 }
 
 /* mail */
-#jBox14 > .jBox-container {
+#jBox15 > .jBox-container {
     padding: 3px;
+    color: #000;
+    border-radius: 5px;
     background-color: #c5221f;
-    border: 3px solid #a31b18;
+    border: 3px solid #8a1614;
 }
