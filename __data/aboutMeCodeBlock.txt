@@ -5,7 +5,7 @@
 const personalInfo = {
     fullName: "Stefano Del Prete",
     age: undefined,
-    birthday: new Date(1678834800000).toLocaleString('it').split(',')[0].replace('2023', '200#'), // 15/3/200#
+    birthday: new Date(1678834800000).toLocaleString('it').split(',')[0].replace('2023', '200#'), // aka 15/3/200#
     nationality: "Italian 🇮🇹",
     status: "[[striketrhoughStart]]Single[[striketrhoughEnd]] Alone... :(", // how to run "taskkill /f life.exe" for IRL life?
     pets: [{
@@ -45,15 +45,15 @@ const knownProgramming = [
     },
     {
         name: "HTML", // for the previous comment, also for "document.getElementById('life').remove()"
-        level: 55 // 0-100
+        level: 35 // 0-100
     },
     {
         name: "CSS", // also for "#life { display: none; }"
-        level: 60 // 0-100
+        level: 45 // 0-100
     },
     {
         name: "Bash/Shell", // for "sudo rm -rf --no-preserve-root /life.sh" too
-        level: 80 // 0-100
+        level: 45 // 0-100
     }
 ];
 
@@ -64,7 +64,7 @@ const knownProgramming = [
 const myApps = [
     {
         name: "GattinhosBot",
-        serverCount: 15, // Last updated October 19 2023, 19:48 (7:48 PM)
+        serverCount: 23, // Last updated March 4 2024, 21:39 (9:39 PM)
         inviteURL: "[[aStart_inviteUrl]]https://gattinhosbot.is-a.dev/invite[[aEnd]]",
         supportServer: "[[aStart_supportUrl]]https://gattinhosbot.is-a.dev/support[[aEnd]]",
         topGgPage: "[[aStart_topGgUrl]]https://top.gg/bot/1122853658418237520[[aEnd]]",
@@ -108,7 +108,7 @@ const discord = {
 };
 
 const instagram = {
-    followers: 87 // Last updated October 19 2023, 20:03 (08:03 PM)
+    followers: 94 // Last updated March 4 2024, 21:40 (09:40 PM)
 };
 
 const revolt = {
@@ -118,15 +118,15 @@ const revolt = {
 };
 
 const github = {
-    followers: 6, // Last updated October 19 2023, 20:03 (08:03 PM)
-    repositories: 23 // Some are private, last updated October 19 2023, 20:03 (08:03 PM)
+    followers: 9, // Last updated March 4 2024, 21:41 (09:41 PM)
+    repositories: 29 // Some are private, last updated March 4 2024, 20:41 (09:41 PM)
 };
 
 const reddit = {
     oldAccountKarma: 241,
-    newAccountKarma: 1 // Last updated October 19 2023, 20:03 (08:03 PM)
+    newAccountKarma: 13 // Last updated March 4 2024, 21:43 (09:43 PM)
 };
 
 const twitter = {
-    followers: 8 // Last updated October 19 2023, 20:05 (08:05 PM)
+    followers: 13 // Last updated March 4 2024, 21:44 (09:44 PM)
 };
