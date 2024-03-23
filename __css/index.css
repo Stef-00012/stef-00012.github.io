@@ -534,8 +534,17 @@ s {
     border: 3px solid #071539;
 }
 
-/* mail */
+/* github */
 #jBox15 > .jBox-container {
+    padding: 3px;
+    color: #ffffff;
+    border-radius: 5px;
+    background-color: #313131;
+    border: 3px solid #000000;
+}
+
+/* mail */
+#jBox16 > .jBox-container {
     padding: 3px;
     color: #000;
     border-radius: 5px;
