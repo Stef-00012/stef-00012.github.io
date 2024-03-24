@@ -246,6 +246,18 @@ body {
     color: #c5221f;
 }
 
+.social-url.threads {
+    color: #d3d3d3;
+}
+
+.social-url.homepage {
+    color: #dbdada;
+}
+
+.social-url.matrix {
+    color: #a7a7a7;
+}
+
 .social-url:hover {
     filter: brightness(0.8);
 }
