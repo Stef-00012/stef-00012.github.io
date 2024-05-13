@@ -68,17 +68,16 @@ const nowPlayingText = document.getElementById('nowPlayingText');
 const playPauseIcon = document.getElementById('playPauseIcon');
 
 loadSong(currentSongIndex)
-// togglePlayPause(true)
 
-function loadSong(songIndex) {
+async function loadSong(songIndex) {
     const songPath = songList[songIndex];
     const songData = songNames[parseInt(songPath.split('/').pop()) - 1]
     
     nowPlayingText.textContent = `Now Playing | ${songData.name} - ${songData.artist}`;
     audioPlayer.src = songList[songIndex];
     
-    audioPlayer.load();
-    playPauseButton.click()
+    await audioPlayer.load();
+    await playPauseButton.click();
     
     console.log(`Started playing "${songData.name}" by "${songData.artist}" [index ${songIndex}]`)
 }
