@@ -101,6 +101,26 @@
                     </a>
                 </div>
             </div>
+            
+            <!--music -->
+        <div class="container music-player" style="text-align: center;">
+            <div id="musicPlayer" style="background-color: transparent; padding: 10px; border-radius: 5px; margin: 0 auto;">
+              <button id="prev" class="player-btn">
+                <img id="Previous" src="/__assets/images/back.svg" class="button-svg" alt="Previous">
+
+              </button>
+              <button id="playPause" class="player-btn">
+                <img id="playPauseIcon" src="/__assets/images/play.svg" class="button-svg" alt="Play/Pause">
+              </button>
+              <button id="next" class="player-btn">
+                <img id="Next" src="/__assets/images/next.svg" class="button-svg" alt="Next">
+              </button>
+              <audio id="audioPlayer"></audio>
+              <div id="nowPlayingContainer">
+                <div id="nowPlayingText" class="now-playing">Now Playing - </div>
+              </div>
+            </div>
+          </div>
     
             <!-- status -->
             <div class="discord-data d-flex justify-content-center flex-wrap mx-auto mt-4">
@@ -413,6 +433,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
         <script src="/__js/loading.js"></script>
         <script src="/__js/index.js"></script>
+        <script src="/__js/oneko.js"></script>
+        <script src="/__js/music.js"></script>
         
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/__js?id=G-002L9WP8JT"></script>
