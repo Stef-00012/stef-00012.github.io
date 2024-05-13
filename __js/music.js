@@ -68,7 +68,6 @@ const nowPlayingText = document.getElementById('nowPlayingText');
 const playPauseIcon = document.getElementById('playPauseIcon');
 
 loadSong(currentSongIndex)
-updatePlayPauseIcon(true)
 
 function loadSong(songIndex) {
     const songPath = songList[songIndex];
@@ -92,8 +91,8 @@ function togglePlayPause() {
     updatePlayPauseIcon();
 }
 
-function updatePlayPauseIcon(status) {
-    if (audioPlayer.paused || !status) {
+function updatePlayPauseIcon() {
+    if (audioPlayer.paused) {
         playPauseIcon.src = '/__assets/images/play.svg';
     } else {
         playPauseIcon.src = '/__assets/images/pause.svg';

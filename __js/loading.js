@@ -18,6 +18,15 @@ function displayWebsite() {
     siteBody.style.display = 'block'
 
     clearInterval(scrollInterval)
+    
+    loadSong(currentSongIndex);
+    
+    audioPlayer.play().then(() => {
+        console.log("Started playing music");
+        updatePlayPauseIcon();
+    }).catch(error => {
+        console.log("Error while playing music:", error);
+    });
 }
 
 function startLoading() {
