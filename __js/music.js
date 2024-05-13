@@ -77,7 +77,6 @@ function loadSong(songIndex) {
     audioPlayer.src = songList[songIndex];
     
     audioPlayer.load();
-    audioPlayer.play()
     
     console.log(`Started playing "${songData.name}" by "${songData.artist}" [index ${songIndex}]`)
 }
