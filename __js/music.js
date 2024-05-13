@@ -78,13 +78,13 @@ function loadSong(songIndex) {
     audioPlayer.src = songList[songIndex];
     
     audioPlayer.load();
-    togglePlayPause(true)
+    playPauseButton.click()
     
     console.log(`Started playing "${songData.name}" by "${songData.artist}" [index ${songIndex}]`)
 }
 
-function togglePlayPause(status) {
-    if (audioPlayer.paused || audioPlayer.ended || (status && audioPlayer.paused)) {
+function togglePlayPause() {
+    if (audioPlayer.paused || audioPlayer.ended) {
         audioPlayer.play();
     } else {
         audioPlayer.pause();
