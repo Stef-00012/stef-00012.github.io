@@ -68,7 +68,7 @@ const nowPlayingText = document.getElementById('nowPlayingText');
 const playPauseIcon = document.getElementById('playPauseIcon');
 
 loadSong(currentSongIndex)
-togglePlayPause(true)
+// togglePlayPause(true)
 
 function loadSong(songIndex) {
     const songPath = songList[songIndex];
@@ -83,7 +83,7 @@ function loadSong(songIndex) {
 }
 
 function togglePlayPause(status) {
-    if (audioPlayer.paused || audioPlayer.ended || (status && audioPlayer.paused)) {
+    if (audioPlayer.paused || audioPlayer.ended /*|| (status && audioPlayer.paused)*/) {
         audioPlayer.play();
     } else {
         audioPlayer.pause();
