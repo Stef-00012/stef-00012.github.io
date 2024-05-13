@@ -69,15 +69,14 @@ const playPauseIcon = document.getElementById('playPauseIcon');
 
 loadSong(currentSongIndex)
 
-async function loadSong(songIndex) {
+function loadSong(songIndex) {
     const songPath = songList[songIndex];
     const songData = songNames[parseInt(songPath.split('/').pop()) - 1]
     
     nowPlayingText.textContent = `Now Playing | ${songData.name} - ${songData.artist}`;
     audioPlayer.src = songList[songIndex];
     
-    await audioPlayer.load();
-    await playPauseButton.click();
+    audioPlayer.load();
     
     console.log(`Started playing "${songData.name}" by "${songData.artist}" [index ${songIndex}]`)
 }
