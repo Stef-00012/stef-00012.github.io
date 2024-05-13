@@ -68,6 +68,7 @@ const nowPlayingText = document.getElementById('nowPlayingText');
 const playPauseIcon = document.getElementById('playPauseIcon');
 
 loadSong(currentSongIndex)
+updatePlayPauseIcon()
 
 function loadSong(songIndex) {
     const songPath = songList[songIndex];
