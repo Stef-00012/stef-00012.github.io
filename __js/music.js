@@ -62,12 +62,12 @@ const songNames = [
 
 let currentSongIndex = Math.floor(Math.random() * songList.length);
 
-loadSong(currentSongIndex)
-
 const audioPlayer = document.getElementById('audioPlayer');
 const playPauseButton = document.getElementById('playPause');
 const nowPlayingText = document.getElementById('nowPlayingText');
 const playPauseIcon = document.getElementById('playPauseIcon');
+
+loadSong(currentSongIndex)
 
 function loadSong(songIndex) {
     const songPath = songList[songIndex];
