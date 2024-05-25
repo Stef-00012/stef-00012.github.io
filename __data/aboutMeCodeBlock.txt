@@ -8,7 +8,7 @@ const personalInfo = {
     gender: "Male",
     birthday: new Date(1678834800000).toLocaleString('it').split(',')[0].replace('2023', '200#'), // aka 15/3/200#
     nationality: "Italian 🇮🇹",
-    status: "[[striketrhoughStart]]Single[[striketrhoughEnd]] Alone... :(", // how to run "taskkill /f life.exe" for IRL life?
+    status: "[[striketrhoughStart]]Single[[striketrhoughEnd]] [[striketrhoughStart]]Alone... :([[striketrhoughEnd]] Just Want to Die", // how to run "taskkill /f life.exe" for IRL life?
     pets: [{
         type: "rabbit",
         name: "Pallino",
