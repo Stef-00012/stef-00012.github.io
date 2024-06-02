@@ -79,6 +79,8 @@ function loadSong(songIndex) {
     nowPlayingText.textContent = `Now Playing | ${songData.name} - ${songData.artist}`;
     audioPlayer.src = songList[songIndex];
     
+    console.log(songIndex, songList[songIndex], songData)
+    
     audioPlayer.load();
     
     console.log(`Started playing "${songData.name}" by "${songData.artist}" [index ${songIndex}]`)
