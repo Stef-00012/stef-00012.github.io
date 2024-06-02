@@ -11,7 +11,7 @@ const songList = [
     '/__assets/music/9-all_the_stars.mp3',
     '/__assets/music/10-in_the_cards.mp3',
     '/__assets/music/11-all_these_years.mp3',
-    '/__assets/music/12-all_i_ever_wanted/mp3'
+    '/__assets/music/12-all_i_ever_wanted.mp3'
 ];
 
 const songNames = [
