@@ -11,7 +11,12 @@ const songList = [
     '/__assets/music/9-all_the_stars.mp3',
     '/__assets/music/10-in_the_cards.mp3',
     '/__assets/music/11-all_these_years.mp3',
-    '/__assets/music/12-all_i_ever_wanted.mp3'
+    '/__assets/music/12-all_i_ever_wanted.mp3',
+    '/__assets/music/13-rewrite-the-stars.mp3',
+    '/__assets/music/14-when-i-die.mp3',
+    '/__assets/music/15-nothing-to-miss.mp3',
+    '/__assets/music/16-somebody-to-someone.mp3',
+    '/__assets/music/17-kid.mp3'
 ];
 
 const songNames = [
@@ -20,7 +25,7 @@ const songNames = [
         artist: "Ismail"
     }, 
     {
-        name: "Talking to Myself",
+        name: "Talking To Myself",
         artist: "Jon Caryl"
     },
     {
@@ -36,7 +41,7 @@ const songNames = [
         artist: "Henry Moodie"
     },
     {
-        name: "Broken by You",
+        name: "Broken By You",
         artist: "Alexander Stewart"
     },
     {
@@ -62,6 +67,26 @@ const songNames = [
     {
         name: "All I Ever Wanted",
         artist: "Dean Lewis"
+    },
+    {
+        name: "Rewrite the Stars",
+        artist: "Here At Last"
+    },
+    {
+        name: "When I Die",
+        artist: "Kyle Hume"
+    },
+    {
+        name: "Nothing To Miss",
+        artist: "Jamie Miller"
+    },
+    {
+        name: "Somebody To Someone (I Just Wanna Fall In Love)",
+        arist: "Natalie Jane"
+    },
+    {
+        name: "Kid",
+        artist: "Paul Eckert"
     }
 ]
 
@@ -74,7 +99,7 @@ const playPauseIcon = document.getElementById('playPauseIcon');
 
 function loadSong(songIndex) {
     const songPath = songList[songIndex];
-    const songData = songNames[parseInt(songPath.split('/').pop()) - 1]
+    const songData = songNames[Number.parseInt(songPath.split('/').pop()) - 1]
     
     nowPlayingText.textContent = `Now Playing | ${songData.name} - ${songData.artist}`;
     audioPlayer.src = songList[songIndex];
@@ -104,7 +129,7 @@ function updatePlayPauseIcon() {
     }
 }
 
-document.getElementById('prev').addEventListener('click', function () {
+document.getElementById('prev').addEventListener('click', () => {
     currentSongIndex = (currentSongIndex - 1 + songList.length) % songList.length;
     
     loadSong(currentSongIndex);
@@ -112,7 +137,7 @@ document.getElementById('prev').addEventListener('click', function () {
     updatePlayPauseIcon();
 });
 
-document.getElementById('next').addEventListener('click', function () {
+document.getElementById('next').addEventListener('click', () => {
     currentSongIndex = (currentSongIndex + 1) % songList.length;
     
     loadSong(currentSongIndex);
@@ -120,7 +145,7 @@ document.getElementById('next').addEventListener('click', function () {
     updatePlayPauseIcon();
 });
 
-audioPlayer.addEventListener('ended', function () {
+audioPlayer.addEventListener('ended', () => {
     currentSongIndex = (currentSongIndex + 1) % songList.length;
     
     loadSong(currentSongIndex);
