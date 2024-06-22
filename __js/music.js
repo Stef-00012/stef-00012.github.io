@@ -82,7 +82,7 @@ const songNames = [
     },
     {
         name: "Somebody To Someone (I Just Wanna Fall In Love)",
-        arist: "Natalie Jane"
+        artist: "Natalie Jane"
     },
     {
         name: "Kid",
