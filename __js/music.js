@@ -16,7 +16,8 @@ const songList = [
     '/__assets/music/14-when-i-die.mp3',
     '/__assets/music/15-nothing-to-miss.mp3',
     '/__assets/music/16-somebody-to-someone.mp3',
-    '/__assets/music/17-kid.mp3'
+    '/__assets/music/17-kid.mp3',
+    '/__assets/music/18-bulletproof.mp3'
 ];
 
 const songNames = [
@@ -87,6 +88,10 @@ const songNames = [
     {
         name: "Kid",
         artist: "Paul Eckert"
+    },
+    {
+        name: "Bulletproof",
+        artist: "Kado"
     }
 ]
 
