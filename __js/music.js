@@ -17,7 +17,8 @@ const songList = [
     '/__assets/music/15-nothing-to-miss.mp3',
     '/__assets/music/16-somebody-to-someone.mp3',
     '/__assets/music/17-kid.mp3',
-    '/__assets/music/18-bulletproof.mp3'
+    '/__assets/music/18-bulletproof.mp3',
+    '/__assets/music/19-bite_the_bullet.mp3'
 ];
 
 const songNames = [
@@ -92,6 +93,10 @@ const songNames = [
     {
         name: "Bulletproof",
         artist: "Kado"
+    },
+    {
+        name: "Bite the Bullet",
+        artist: "Jessica Baio"
     }
 ]
 
