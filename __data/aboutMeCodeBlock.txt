@@ -64,6 +64,11 @@ const knownProgramming = [
 
 const myApps = [
     {
+        name: "Zipline Upload",
+        description: "A chrome extension that lets users upload right clicked files to their [[aStart_zipline]]Zipline[[aEnd]] instance or shorten URLs with [[aStart_zipline]]Zipline[[aEnd]]",
+        url: "[[aStart_ziplineUpload]]https://github.com/Stef-00012/Zipline-Upload-Extension[[aEnd]]"
+    },
+    {
         name: "GattinhosBot",
         serverCount: 23, // Last updated March 4 2024, 21:39 (9:39 PM)
         inviteURL: "[[aStart_inviteUrl]]https://gattinhosbot.is-a.dev/invite[[aEnd]]",
