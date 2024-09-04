@@ -18,7 +18,8 @@ const songList = [
     '/__assets/music/16-somebody-to-someone.mp3',
     '/__assets/music/17-kid.mp3',
     '/__assets/music/18-bulletproof.mp3',
-    '/__assets/music/19-bite_the_bullet.mp3'
+    '/__assets/music/19-bite_the_bullet.mp3',
+    '/__assets/music/20-lies_to_the_mirror.mp3'
 ];
 
 const songNames = [
@@ -97,6 +98,10 @@ const songNames = [
     {
         name: "Bite the Bullet",
         artist: "Jessica Baio"
+    },
+    {
+        name: "Lies To The Mirror",
+        artist: "Kado, Promoting Sounds"
     }
 ]
 
