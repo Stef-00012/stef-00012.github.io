@@ -103,7 +103,7 @@ function startLoading() {
     .break({ instant: true, delay: 150 })
     .type('The following NEW packages will be installed:', { instant: true })
     .break({ instant: true, delay: 120 })
-    .type('googletagmanager font-inter highlightjs highlightjs-atom-one-theme jbox jquery analytics typeit', { instant: true })
+    .type('googletagmanager font-inter highlightjs highlightjs-atom-one-theme jbox jquery analytics typeit bootstrap-5.3.2', { instant: true })
     .break({ instant: true, delay: 140 })
     .type('0 upgraded, 8 newly installed, 0 to remove and 0 not upgraded.', { instant: true })
     .break({ instant: true, delay: 90 })
