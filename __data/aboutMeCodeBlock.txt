@@ -69,6 +69,12 @@ const myApps = [
         url: "[[aStart_ziplineUpload]]https://github.com/Stef-00012/Zipline-Upload-Extension[[aEnd]]"
     },
     {
+        name: "User Apps",
+        description: "A user-installed Discord bot for some utility commands such as tags (message presets), reminders, ai and more",
+        url: "[[aStart_userApps]]https://discord.com/oauth2/authorize?client_id=1223221223685886032[[aEnd]]"
+        source: "[[aStart_userAppsSource]]https://github.com/Stef-00012/Discord-User-Installed-Apps[[aEnd]]"
+    },
+    {
         name: "GattinhosBot",
         serverCount: 23, // Last updated March 4 2024, 21:39 (9:39 PM)
         inviteURL: "[[aStart_inviteUrl]]https://gattinhosbot.is-a.dev/invite[[aEnd]]",
@@ -136,3 +142,24 @@ const reddit = {
 const twitter = {
     followers: 13 // Last updated March 4 2024, 21:44 (09:44 PM)
 };
+
+/*
+    Exports
+*/
+
+const socials = {
+    instagram,
+    discord,
+    twitter,
+    revolt,
+    github,
+    reddit
+}
+
+module.exports = {
+    knownProgramming,
+    knownLanguages,
+    personalInfo,
+    socials,
+    myApps
+}
