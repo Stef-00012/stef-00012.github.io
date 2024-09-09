@@ -248,6 +248,10 @@ body {
     color: #552370;
 }
 
+.social-url.zipline-extension {
+  color: #212f49;
+}
+
 .social-url.receiptify {
     color: #b4bbb8;
 }
