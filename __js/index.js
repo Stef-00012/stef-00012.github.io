@@ -4,6 +4,9 @@ const spoilerDesktop = document.getElementById('spoilerDesktop')
 const codeBlockDesktop = document.getElementById('codeBlockDesktop')
 const socialsContainer = document.getElementById('socials')
 
+const copyrightYear = document.getElementById('copyrightYear')
+
+copyrightYear.innerText = new Date().getFullYear()
 
 fetch('/__data/aboutMeCodeBlock.txt')
     .then(res => res.text())

@@ -1246,3 +1246,15 @@ s {
     text-transform: none;
   }
 }
+
+footer {
+  text-align: center;
+  background-color: #000000a1;
+  color: #fff;
+  margin-top: 20px;
+}
+
+footer p {
+  margin-bottom: 0;
+  padding: 15px;
+}
