@@ -22,6 +22,7 @@ jobs:
         base-url-path: https://stefdp.is-a.dev/
 
     - name: Create Pull Request
+      id: create_pr
       uses: peter-evans/create-pull-request@v3
       with:
         title: "Automated sitemap update"
@@ -35,3 +36,11 @@ jobs:
         echo "sitemap-path = ${{ steps.sitemap.outputs.sitemap-path }}"
         echo "url-count = ${{ steps.sitemap.outputs.url-count }}"
         echo "excluded-count = ${{ steps.sitemap.outputs.excluded-count }}"
+
+    - name: Auto Merge the PR
+      if: steps.create_pr.outputs.pull-request-number != ''
+      run: |
+        echo "Merging PR #${{ steps.create_pr.outputs.pull-request-number }}"
+        gh pr merge ${{ steps.create_pr.outputs.pull-request-number }} --merge --repo ${{ github.repository }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
