@@ -19,7 +19,8 @@ const songList = [
     '/assets/music/17-kid.mp3',
     '/assets/music/18-bulletproof.mp3',
     '/assets/music/19-bite_the_bullet.mp3',
-    '/assets/music/20-lies_to_the_mirror.mp3'
+    '/assets/music/20-lies_to_the_mirror.mp3',
+    '/assets/music/21-would_anyone_care.mp3'
 ];
 
 const songNames = [
@@ -102,6 +103,10 @@ const songNames = [
     {
         name: "Lies To The Mirror",
         artist: "Kado, Promoting Sounds"
+    },
+    {
+        name: "Would Anyone Care",
+        artist: "Citizen Soldier"
     }
 ]
 
