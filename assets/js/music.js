@@ -113,13 +113,13 @@ const nowPlayingText = document.getElementById('nowPlayingText');
 const playPauseIcon = document.getElementById('playPauseIcon');
 
 function loadSong(songIndex) {
+    if (!songList[songIndex]) songIndex = 0;
+
     const songPath = songList[songIndex];
     const songData = songNames[Number.parseInt(songPath.split('/').pop()) - 1]
     
     nowPlayingText.textContent = `Now Playing | ${songData.name} - ${songData.artist}`;
     audioPlayer.src = songList[songIndex];
-    
-    console.log(songIndex, songList[songIndex], songData)
     
     audioPlayer.load();
     

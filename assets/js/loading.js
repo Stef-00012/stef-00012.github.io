@@ -2,6 +2,8 @@ const loading = document.getElementById('loading')
 const skipLoading = document.getElementById('skipLoading')
 const siteBody = document.querySelector('.site-body')
 
+let websiteDisplayed = false;
+
 const scrollInterval = setInterval(() => {
     loading.scrollTop = loading.clientHeight
 }, 100)
@@ -12,6 +14,8 @@ const typeIt = new TypeIt("#loadingText", {
 })
 
 function displayWebsite() {
+    websiteDisplayed = true;
+
     loading.style.zIndex = -9999
     loading.style.overflow = 'hidden'
     skipLoading.style.display = 'none'
@@ -171,7 +175,7 @@ function startLoading() {
     .exec(() => {
         setTimeout(() => {
             typeIt.destroy(true)
-            displayWebsite()
+            if (!websiteDisplayed) displayWebsite();
         }, 1500)
     })
     .go()
