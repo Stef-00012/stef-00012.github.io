@@ -52,12 +52,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     // Fetch basic IP data
     const basic = await (await fetch('https://wtfismyip.com/json').catch(e)).json().catch(e);
-    console.log(basic);
+    // console.log(basic);
     p('IP Address', basic.YourFuckingIPAddress);
     p('Full Location', basic.YourFuckingLocation);
     // Fetch detailed location data
     const detailed = await (await fetch(`https://we-are-jammin.xyz/json/${basic.YourFuckingIPAddress}`).catch(() => e('Disable your aggressive ad-blocker and refresh'))).json().catch(e);
-    console.log(detailed);
+    // console.log(detailed);
     p('Country', detailed.country);
     p('Region', detailed.regionName);
     p('City', detailed.city);
@@ -104,6 +104,11 @@ document.addEventListener('DOMContentLoaded', async () => {
                 audioElement.volume = 0;
                 clearInterval(fadeInterval);
                 audioElement.pause();
+
+                setTimeout(() => {
+                    console.log('aaaa')
+                    window.location.href = "/"
+                }, 2000)
             }
         }, interval);
     }
