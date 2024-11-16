@@ -20,7 +20,8 @@ const songList = [
     '/assets/music/18-bulletproof.mp3',
     '/assets/music/19-bite_the_bullet.mp3',
     '/assets/music/20-lies_to_the_mirror.mp3',
-    '/assets/music/21-would_anyone_care.mp3'
+    '/assets/music/21-would_anyone_care.mp3',
+    '/assets/music/22-surviving.mp3'
 ];
 
 const songNames = [
@@ -107,6 +108,10 @@ const songNames = [
     {
         name: "Would Anyone Care",
         artist: "Citizen Soldier"
+    },
+    {
+        name: "Surviving",
+        artist: "Kado"
     }
 ]
 
