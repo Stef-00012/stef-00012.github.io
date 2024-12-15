@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+body {
+    @apply bg-black overflow-hidden m-0;
+}
+
+body::after {
+    @apply content-[""] fixed w-full h-[80vh] [background:linear-gradient(_to_bottom,rgba(0,0,0,1)_61%,rgba(0,0,0,0.54)_79%,rgba(0,0,0,0)_100%_)] z-[1] left-0 top-0;
+}
+
+p {
+    @apply text-[#ffe81f];
+}
+
+@keyframes intro {
+	0% {
+		opacity: 0;
+	}
+	20% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes logo {
+	0% {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(2);
+	}
+	70% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translate(-50%, -50%) scale(0.1);
+	}
+}
+
+@keyframes scoller {
+	0% {
+		top: 100%;
+	}
+	100% {
+		top: -200%;
+	}
+}

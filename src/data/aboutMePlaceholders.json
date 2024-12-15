@@ -1,0 +1,20 @@
+{
+	"striketrhoughStart": "<s>",
+	"striketrhoughEnd": "</s>",
+
+	"aStart_inviteUrl": "<a class=\"code-block-url\" href=\"https://gattinhosbot.is-a.dev/invite\">",
+	"aStart_supportUrl": "<a class=\"code-block-url\" href=\"https://gattinhosbot.is-a.dev/support\">",
+	"aStart_topGgUrl": "<a class=\"code-block-url\" href=\"https://top.gg/bot/1122853658418237520\">",
+	"aStart_websiteUrl": "<a class=\"code-block-url\" href=\"https://gattinhosbot.is-a.dev\">",
+	"aStart_receiptify": "<a class=\"code-block-url\" href=\"https://receiptify.stefdp.lol\">",
+	"aStart_api": "<a class=\"code-block-url\" href=\"https://api.stefdp.lol\">",
+	"aStart_apiDocs": "<a class=\"code-block-url\" href=\"https://docs.stefdp.is-a.dev\">",
+	"aStart_zipline": "<a class=\"code-block-url\" href=\"https://zipline.diced.sh\">",
+	"aStart_ziplineUpload": "<a class=\"code-block-url\" href=\"https://github.com/Stef-00012/Zipline-Upload-Extension\">",
+	"aStart_userApps": "<a class=\"code-block-url\" href=\"https://discord.com/oauth2/authorize?client_id=1223221223685886032\">",
+	"aStart_userAppsSource": "<a class=\"code-block-url\" href=\"https://github.com/Stef-00012/Discord-User-Installed-Apps\">",
+	"aEnd": "</a>",
+
+	"currentYear": "__execjs:new Date().getFullYear()",
+	"currentTimestamp": "__execjs:const currentYear = new Date().getFullYear(); new Date(currentYear, 2, 15).getTime()"
+}

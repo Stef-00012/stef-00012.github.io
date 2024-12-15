@@ -1,0 +1,11 @@
+.square-bracket {
+	@apply text-[#4A4B09] font-bold text-sm;
+}
+
+.host {
+	@apply text-[#AD0101] font-bold text-sm;
+}
+
+.text, .command {
+	@apply text-[#C6C8C7] font-bold text-sm;
+}
