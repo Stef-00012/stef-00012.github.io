@@ -1,14 +1,4 @@
-export interface Social {
-	name: string;
-	id: string;
-	image: string;
-	tooltip: string;
-	type: "social" | "mail";
-	tooltipStyle: React.CSSProperties;
-	tooltipBorder: string;
-	url: string;
-	username: string;
-}
+import type { Social } from "@/types/socials";
 
 export const socials: Array<Social> = [
 	{

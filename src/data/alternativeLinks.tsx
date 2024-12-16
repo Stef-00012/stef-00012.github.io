@@ -1,14 +1,7 @@
+import type { AlternativeLink } from "@/types/links";
 import { baseUrl } from "./constants";
 
-interface Link {
-	url: string;
-	image: string;
-	type: "link" | "mail";
-	name: string;
-	style: React.CSSProperties;
-}
-
-export const alterativeLinks: Array<Link> = [
+export const alterativeLinks: Array<AlternativeLink> = [
 	{
 		name: "Discord",
 		image: "/images/socialLogos/discordLogo.webp",

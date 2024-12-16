@@ -1,8 +1,4 @@
-export interface Music {
-	artist: string;
-	name: string;
-	filename: string;
-}
+import type { Music } from "@/types/music";
 
 export const musics: Array<Music> = [
 	{
@@ -115,6 +111,11 @@ export const musics: Array<Music> = [
 		artist: "Kado",
 		filename: "22-surviving.mp3",
 	},
+	{
+		name: "Happy We Happened",
+		artist: "Carter Ryan",
+		filename: "23-happy_we_happened.mp3"
+	}
 ];
 
 export const musicCount = musics.length;

@@ -1,7 +1,4 @@
-interface MainLink {
-	url: string;
-	name: string;
-}
+import type { MainLink } from "@/types/links";
 
 export const mainLinks: Array<MainLink> = [
 	{

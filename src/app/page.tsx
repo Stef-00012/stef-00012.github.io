@@ -1,20 +1,23 @@
 "use client";
 
-import { alterativeLinks } from "@/data/alternativeLinks";
-import { getCodeBlock } from "@/scripts/aboutMeHighlight";
+import GitHubRepoDisplay from "@/components/GitHubRepoDisplay";
 import MainLinkButton from "@/components/MainLinkButton";
 import { Carousel } from "react-responsive-carousel";
 import Collapsible from "@/components/Collapsible";
-import { rabbitImages } from "@/data/rabbitImages";
-import { type Music, musics } from "@/data/music";
-import { mainLinks } from "@/data/mailLinks";
-import { useEffect, useState } from "react";
 import Loading from "@/components/Loading";
-import { socials } from "@/data/socials";
 import { Tooltip } from "react-tooltip";
 import Script from "next/script";
 import Image from "next/image";
 import Link from "next/link";
+
+import { alterativeLinks } from "@/data/alternativeLinks";
+import { getCodeBlock } from "@/scripts/aboutMeHighlight";
+import { getRankedRepos } from "@/scripts/githubRepos";
+import { rabbitImages } from "@/data/rabbitImages";
+import { mainLinks } from "@/data/mailLinks";
+import { useEffect, useState } from "react";
+import { socials } from "@/data/socials";
+import { musics } from "@/data/music";
 import {
 	handlePrevious,
 	handlePlayPause,
@@ -22,19 +25,29 @@ import {
 	selectRandomSong,
 } from "@/scripts/Music";
 
+import type { ScoredFormattedRepo } from "@/types/github";
+import type { Music } from "@/types/music";
+
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "@/styles/home.css"
 
 export default function Home() {
 	const [isPlaying, setIsPlaying] = useState<boolean>(false);
-	const [currentSongIndex, setCurrentSongIndex] = useState<number>(0);
 	const [currentSong, setCurrentSong] = useState<Music>(musics[0]);
+	const [currentSongIndex, setCurrentSongIndex] = useState<number>(0);
 	const [aboutMeSpoilerOpen, setAboutMeSpoilerOpen] = useState<boolean>(false);
+	const [rankedRepos, setRankedRepos] = useState<Array<ScoredFormattedRepo>>([])
 
 	useEffect(() => {
 		const randomSongIndex = selectRandomSong();
 
 		setCurrentSongIndex(randomSongIndex);
+
+		(async () => {
+			const repos = await getRankedRepos()
+
+			setRankedRepos(repos)
+		})()
 	}, []);
 
 	useEffect(() => {
@@ -296,6 +309,17 @@ export default function Home() {
 						src="https://github-readme-streak-stats-stef-00012.vercel.app/?user=Stef-00012&theme=radical"
 					/>
 				</div>
+			</Collapsible>
+
+			<Collapsible title="Top GitHub Repos">
+				{rankedRepos.length <= 0 ? (
+					<p>Loading...</p>
+				) : rankedRepos.map(repo => (
+					<GitHubRepoDisplay
+						key={repo.id}
+						repo={repo}
+					/>
+				))}
 			</Collapsible>
 
 			{mainLinks.map((link) => (
