@@ -3,6 +3,7 @@ import ExternalLinkSVG from "@/components/images/external-link";
 import GitHubIssueSVG from "@/components/images/github-issue";
 import GitHubForkSVG from "@/components/images/github-fork";
 import GitHubStarSVG from "@/components/images/github-star";
+import GlobeSVG from "./images/globe";
 import Link from "next/link";
 
 import type { ScoredFormattedRepo } from "@/types/github";
@@ -28,6 +29,22 @@ export default function GitHubRepoDisplay({ repo }: Data) {
 						/>
 					</Link>
 				</div>
+				{repo.homepage && (
+					<div className="flex items-center mb-2 text-sm">
+						<GlobeSVG
+							alt="Repo Homepage"
+							className="h-4 w-4 mr-2 text-blue-300"
+						/>
+						<Link
+							href={repo.homepage}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-blue-300 hover:text-blue-400 hover:underline"
+						>
+							{repo.homepage}
+						</Link>
+					</div>
+				)}
 				{repo.description && (
 					<p className="text-sm mb-4 text-gray-300">{repo.description}</p>
 				)}

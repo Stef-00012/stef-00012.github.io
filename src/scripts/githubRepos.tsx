@@ -41,6 +41,7 @@ export async function getRankedRepos(): Promise<Array<ScoredFormattedRepo>> {
 				openIssues: repo.open_issues_count || 0,
 				fullName: repo.full_name,
 				url: repo.html_url,
+				homepage: repo.homepage || null,
 				description: repo.description,
 				license: {
 					key: repo.license?.key,

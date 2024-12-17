@@ -1,6 +1,7 @@
 export interface FormattedRepo {
 	license: RepoLicense | null;
 	description: string | null;
+	homepage: string | null;
 	openIssues: number;
 	fullName: string;
 	watchers: number;
