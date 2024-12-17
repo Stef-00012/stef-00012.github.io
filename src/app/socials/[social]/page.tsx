@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
-import { socials } from "@/data/socials";
-import { redirect } from "next/navigation";
 import { notFound } from "next/navigation";
+import { redirect } from "next/navigation";
+import { socials } from "@/data/socials";
+
+import type { Metadata } from "next";
 
 interface Data {
 	params: Promise<{

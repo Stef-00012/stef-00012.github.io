@@ -1,7 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import TypeIt from "typeit-react";
+import Link from "next/link";
+
 import { useEffect, useState } from "react";
 
 import "@/styles/not-found.css"

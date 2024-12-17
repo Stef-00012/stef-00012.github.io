@@ -1,6 +1,7 @@
 import TypeIt from "typeit-react";
-import { useState } from "react";
+
 import handleTyping from "@/scripts/Loading";
+import { useState } from "react";
 
 export default function Loading() {
 	const [loadingVisible, setLoadingVisible] = useState<boolean>(true);

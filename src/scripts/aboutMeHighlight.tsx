@@ -1,43 +1,45 @@
 import hljs from "highlight.js/lib/core";
-import javascript from "highlight.js/lib/languages/javascript";
 import { aboutMeText } from "@/data/aboutMe";
+import typescript from "highlight.js/lib/languages/typescript";
 import aboutMePlaceholders from "@/data/aboutMePlaceholders.json";
 
-hljs.registerLanguage("javascript", javascript);
+hljs.registerLanguage("typescript", typescript);
 
 export function getCodeBlock() {
 	let replacedAboutMetext = aboutMeText;
 
-	for (const placeholder in aboutMePlaceholders) {
-		let replace =
-			aboutMePlaceholders[placeholder as keyof typeof aboutMePlaceholders];
-
-		if (!replace.startsWith("__execjs:")) continue;
-
-		replace = eval(replace.split("__execjs:").pop() as string);
-
-		replacedAboutMetext = replacedAboutMetext.replaceAll(
-			`[[${placeholder}]]`,
-			replace,
-		);
-	}
+	replacedAboutMetext = replacePlaceholders(replacedAboutMetext, true)
 
 	let highlightedAboutMe = hljs.highlight(replacedAboutMetext, {
-		language: "javascript",
+		language: "typescript",
 		ignoreIllegals: true,
 	}).value;
 
+	highlightedAboutMe = replacePlaceholders(highlightedAboutMe, false)
+
+	return highlightedAboutMe;
+}
+
+function replacePlaceholders(text: string, js: boolean): string {
+	let replacedText = text;
+
 	for (const placeholder in aboutMePlaceholders) {
-		const replace =
+		let hasJs = false;
+
+		let replace =
 			aboutMePlaceholders[placeholder as keyof typeof aboutMePlaceholders];
 
-		if (replace.startsWith("__execjs:")) continue;
+		if (replace.startsWith("__execjs:")) hasJs = true;
 
-		highlightedAboutMe = highlightedAboutMe.replaceAll(
+		if ((js && !hasJs) || (!js && hasJs)) continue;
+
+		if (hasJs) replace = eval(replace.split("__execjs:").pop() as string);
+
+		replacedText = replacedText.replaceAll(
 			`[[${placeholder}]]`,
 			replace,
 		);
 	}
 
-	return highlightedAboutMe;
+	return replacedText;
 }

@@ -6,6 +6,7 @@ import { Carousel } from "react-responsive-carousel";
 import Collapsible from "@/components/Collapsible";
 import Loading from "@/components/Loading";
 import { Tooltip } from "react-tooltip";
+import TypeIt from "typeit-react";
 import Script from "next/script";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,7 +15,7 @@ import { alterativeLinks } from "@/data/alternativeLinks";
 import { getCodeBlock } from "@/scripts/aboutMeHighlight";
 import { getRankedRepos } from "@/scripts/githubRepos";
 import { rabbitImages } from "@/data/rabbitImages";
-import { mainLinks } from "@/data/mailLinks";
+import { mainLinks } from "@/data/mainLinks";
 import { useEffect, useState } from "react";
 import { socials } from "@/data/socials";
 import { musics } from "@/data/music";
@@ -27,16 +28,22 @@ import {
 
 import type { ScoredFormattedRepo } from "@/types/github";
 import type { Music } from "@/types/music";
+import type TypeItInstance from "typeit";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import "@/styles/home.css"
+import "@/styles/home.css";
 
 export default function Home() {
 	const [isPlaying, setIsPlaying] = useState<boolean>(false);
 	const [currentSong, setCurrentSong] = useState<Music>(musics[0]);
 	const [currentSongIndex, setCurrentSongIndex] = useState<number>(0);
 	const [aboutMeSpoilerOpen, setAboutMeSpoilerOpen] = useState<boolean>(false);
-	const [rankedRepos, setRankedRepos] = useState<Array<ScoredFormattedRepo>>([])
+	const [rankedRepos, setRankedRepos] = useState<Array<ScoredFormattedRepo>>(
+		[],
+	);
+	const [aboutMeTypeItInstance, setAboutMeTypeItInstance] = useState<
+		TypeItInstance | undefined
+	>(undefined);
 
 	useEffect(() => {
 		const randomSongIndex = selectRandomSong();
@@ -44,10 +51,10 @@ export default function Home() {
 		setCurrentSongIndex(randomSongIndex);
 
 		(async () => {
-			const repos = await getRankedRepos()
+			const repos = await getRankedRepos();
 
-			setRankedRepos(repos)
-		})()
+			setRankedRepos(repos);
+		})();
 	}, []);
 
 	useEffect(() => {
@@ -219,13 +226,33 @@ export default function Home() {
 				</div>
 			</div>
 
-			<Collapsible title="About Me">
+			<Collapsible
+				title="About Me"
+				onOpen={() => aboutMeTypeItInstance?.unfreeze()}
+				onClose={() => aboutMeTypeItInstance?.freeze()}
+			>
 				<div className="flex flex-wrap">
 					<pre className="w-full">
-						<code
-							className="rounded-[10px] max-h-[350px] overflow-scroll pb-0 mb-0 hljs text-sm"
-							dangerouslySetInnerHTML={{ __html: getCodeBlock() }}
-						/>
+						<code className="rounded-[10px] max-h-[350px] overflow-scroll pb-0 mb-0 hljs text-sm">
+							<TypeIt
+								getBeforeInit={(instance) => {
+									instance
+										.options({
+											speed: 3.5,
+											afterComplete: () => instance.destroy(),
+										})
+										.type(getCodeBlock())
+										.freeze();
+
+									return instance;
+								}}
+								getAfterInit={(instance) => {
+									setAboutMeTypeItInstance(instance);
+
+									return instance;
+								}}
+							/>
+						</code>
 					</pre>
 
 					<p
@@ -314,16 +341,20 @@ export default function Home() {
 			<Collapsible title="Top GitHub Repos">
 				{rankedRepos.length <= 0 ? (
 					<p>Loading...</p>
-				) : rankedRepos.map(repo => (
-					<GitHubRepoDisplay
-						key={repo.id}
-						repo={repo}
-					/>
-				))}
+				) : (
+					rankedRepos.map((repo) => (
+						<GitHubRepoDisplay key={repo.id} repo={repo} />
+					))
+				)}
 			</Collapsible>
 
 			{mainLinks.map((link) => (
-				<MainLinkButton key={link.url} title={link.name} href={link.url} />
+				<MainLinkButton
+					key={link.url}
+					title={link.name}
+					href={link.url}
+					alt={link.name}
+				/>
 			))}
 
 			<footer className="text-center bg-[#000000a1] text-white mt-5">

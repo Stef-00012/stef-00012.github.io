@@ -1,1 +1,1 @@
-export const baseUrl = "https://stefdp.lol"
+export const baseUrl = "https://stefdp.lol";

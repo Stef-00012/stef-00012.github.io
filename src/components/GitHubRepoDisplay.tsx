@@ -1,13 +1,11 @@
-import Image from "next/image";
+import GitHubWatchersSVG from "@/components/images/github-watchers";
+import ExternalLinkSVG from "@/components/images/external-link";
+import GitHubIssueSVG from "@/components/images/github-issue";
+import GitHubForkSVG from "@/components/images/github-fork";
+import GitHubStarSVG from "@/components/images/github-star";
 import Link from "next/link";
 
 import type { ScoredFormattedRepo } from "@/types/github";
-
-import externalLinkImage from "#/images/github/external-link.svg";
-import forkImage from "#/images/github/fork-icon.svg";
-import issueImage from "#/images/github/issue-icon.svg";
-import starImage from "#/images/github/star-icon.svg";
-import watchersImage from "#/images/github/watchers-icon.svg";
 
 interface Data {
 	repo: ScoredFormattedRepo;
@@ -24,9 +22,8 @@ export default function GitHubRepoDisplay({ repo }: Data) {
 						</Link>
 					</h2>
 					<Link href={repo.url} target="_blank" rel="noopener noreferrer">
-						<Image
-							src={externalLinkImage}
-							className="h-5 w-5"
+						<ExternalLinkSVG
+							className="h-5 w-5 text-blue-300 hover:text-blue-400"
 							alt="Open Repo"
 						/>
 					</Link>
@@ -36,26 +33,30 @@ export default function GitHubRepoDisplay({ repo }: Data) {
 				)}
 				<div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
 					<div className="flex items-center">
-						<Image className="h-4 w-4 mr-2" alt="Repo Stars" src={starImage} />
+						<GitHubStarSVG
+							className="h-4 w-4 mr-2 text-yellow-400"
+							alt="Repo Stars"
+						/>
 						<span>{repo.stars} stars</span>
 					</div>
 					<div className="flex items-center">
-						<Image className="h-4 w-4 mr-2" alt="Repo Forks" src={forkImage} />
+						<GitHubForkSVG
+							className="h-4 w-4 mr-2 text-green-400"
+							alt="Repo Forks"
+						/>
 						<span>{repo.forks} forks</span>
 					</div>
 					<div className="flex items-center">
-						<Image
-							className="h-4 w-4 mr-2"
+						<GitHubIssueSVG
+							className="h-4 w-4 mr-2 text-red-400"
 							alt="Repo Issues"
-							src={issueImage}
 						/>
 						<span>{repo.openIssues} issues</span>
 					</div>
 					<div className="flex items-center">
-						<Image
-							className="h-4 w-4 mr-2"
+						<GitHubWatchersSVG
+							className="h-4 w-4 mr-2 text-purple-400"
 							alt="Repo Watchers"
-							src={watchersImage}
 						/>
 						<span>{repo.watchers} watchers</span>
 					</div>

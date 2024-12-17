@@ -1,5 +1,6 @@
-import { musicCount, musics } from "@/data/music";
 import type { Dispatch, SetStateAction } from "react";
+
+import { musicCount, musics } from "@/data/music";
 
 export function handlePrevious(
 	currentIndex: number,

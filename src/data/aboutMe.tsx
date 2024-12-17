@@ -1,18 +1,31 @@
-export const aboutMeText = `
+export const aboutMeText = `import type {
+    PersonalInfo,
+    KnownLanguage,
+    KnownProgrammingLanguage,
+    MyApp,
+    DiscordSocialInfo,
+    InstagramSocialInfo,
+    RevoltSocialInfo,
+    GitHubSocialInfo,
+    RedditSocialInfo,
+    TwitterSocialInfo,
+    Socials
+} from "@/types/aboutMe";
+
 /*
     My personal informations
 */
 
-const personalInfo = {
+const personalInfo: PersonalInfo = {
     firstName: "Stefano",
     lastName: "Del Prete",
-    getFullName: function() {
+    getFullName: function(): string {
         return \`\${this.firstName} \${this.lastName}\`
     },
     age: undefined, // Not public
     gender: "Male",
-    birthday: new Date([[currentTimestamp]]).toLocaleString('it').split(',')[0].replace('[[currentYear]]', '200#'), // aka 15/3/200#
-    nationality: "Italian 🇮🇹", // Suca
+    birthday: new Date([[currentTimestamp]]).toLocaleString('it').split(',')[0].replace('[[currentYear]]', '200#'), // aka 15/03/200#
+    nationality: "Italian", // Suca
     status: "[[striketrhoughStart]]Single[[striketrhoughEnd]] [[striketrhoughStart]]Alone... :([[striketrhoughEnd]] Just Want to Die", // how to run "taskkill /f life.exe" for IRL life?
     pets: [{
         type: "rabbit",
@@ -25,7 +38,7 @@ const personalInfo = {
     Spoken Languages
 */
 
-const knownLanguages = [
+const knownLanguages: Array<KnownLanguage> = [
     {
         name: "Italian",
         level: 100 // 0-100 (kinda obv since it's my native lang)
@@ -44,9 +57,13 @@ const knownLanguages = [
     Programming Languages, Markup Languages and Terminal
 */
 
-const knownProgramming = [
+const knownProgramming: Array<KnownProgrammingLanguage> = [
     {
         name: "Javascript", // for the comment on the status value, the question goes also for "fs.unlink('C:\Life.exe')"
+        level: 90 // 0-100
+    },
+    {
+        name: "Typescript",
         level: 90 // 0-100
     },
     {
@@ -67,7 +84,7 @@ const knownProgramming = [
     My Apps
 */
 
-const myApps = [
+const myApps: Array<MyApp> = [
     {
         name: "Zipline Upload",
         description: "A chrome extension that lets users upload right clicked files to their [[aStart_zipline]]Zipline[[aEnd]] instance or shorten URLs with [[aStart_zipline]]Zipline[[aEnd]]",
@@ -96,12 +113,12 @@ const myApps = [
     {
         name: "Receiptify",
         description: "Converts your top tracks to a receipt (supports last.fm and spotify)",
-        url: "[[aStart_receiptify]]https://receiptify.is-a.dev[[aEnd]]"
+        url: "[[aStart_receiptify]]https://receiptify,stefdp.lol[[aEnd]]"
     },
     {
         name: "API",
-        url: "[[aStart_api]]https://api.stefdp.is-a.dev[[aEnd]]",
-        docs: "[[aStart_apiDocs]]https://docs.stefdp.is-a.dev[[aEnd]]",
+        url: "[[aStart_api]]https://api.stefdp.lol[[aEnd]]",
+        docs: "[[aStart_apiDocs]]https://docs.stefdp.lol[[aEnd]]",
         endpoints: [ // see docs for more info on each endpoint
             "/gattinhosBot/guilds/:GUILD_ID/features/:FEATURE?/:ID?",
             "/gattinhosBot/guilds/:GUILD_ID/users/:FEATURE?/:ID?",
@@ -109,13 +126,13 @@ const myApps = [
             "/receiptData/spotify"
         ]
     }
-]
+];
 
 /*
     Some info about my socials
 */
 
-const discord = {
+const discord: DiscordSocialInfo = {
     botDeveloper: true,
     badges: [
         "House of Bravery",
@@ -124,27 +141,27 @@ const discord = {
     ]
 };
 
-const instagram = {
+const instagram: InstagramSocialInfo = {
     followers: 94 // Last updated March 4 2024, 21:40 (09:40 PM)
 };
 
-const revolt = {
+const revolt: RevoltSocialInfo = {
     botDeveloper: true, // inactive
     badges: [],
     publicBots: []
 };
 
-const github = {
+const gitHub: GitHubSocialInfo = {
     followers: 9, // Last updated March 4 2024, 21:41 (09:41 PM)
     repositories: 29 // Some are private, last updated March 4 2024, 20:41 (09:41 PM)
 };
 
-const reddit = {
+const reddit: RedditSocialInfo = {
     oldAccountKarma: 241,
     newAccountKarma: 13 // Last updated March 4 2024, 21:43 (09:43 PM)
 };
 
-const twitter = {
+const twitter: TwitterSocialInfo = {
     followers: 13 // Last updated March 4 2024, 21:44 (09:44 PM)
 };
 
@@ -152,20 +169,20 @@ const twitter = {
     Exports
 */
 
-const socials = {
+const socials: Socials = {
     instagram,
     discord,
     twitter,
     revolt,
     github,
     reddit
-}
+};
 
-module.exports = {
+export default {
     knownProgramming,
     knownLanguages,
     personalInfo,
     socials,
     myApps
-}
+};
 `;

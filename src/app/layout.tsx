@@ -1,7 +1,9 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import type { Metadata, Viewport } from "next";
-import { baseUrl } from "@/data/constants";
 import Script from "next/script";
+
+import type { Metadata, Viewport } from "next";
+
+import { Geist, Geist_Mono } from "next/font/google";
+import { baseUrl } from "@/data/constants";
 
 import "./globals.css";
 
